@@ -1,0 +1,78 @@
+{
+  "train_5000": {
+    "count": 5000,
+    "md5_ok": true,
+    "bad_structure": 0,
+    "norm_duplicates": 0,
+    "excluded_present": 0,
+    "review_counts": {
+      "unreviewed": 4994,
+      "no_obvious_issue": 4,
+      "pending_verification": 2
+    },
+    "token_checks": {
+      "over512": 0,
+      "bad_eos": 0,
+      "unsupervised_eos": 0,
+      "zero_labels": 0
+    },
+    "max_tokens": 512
+  },
+  "test": {
+    "count": 100,
+    "md5_ok": true,
+    "bad_structure": 0,
+    "norm_duplicates": 0,
+    "excluded_present": 0,
+    "review_counts": {
+      "no_obvious_issue": 92,
+      "pending_verification": 8
+    },
+    "token_checks": {
+      "over512": 0,
+      "bad_eos": 0,
+      "unsupervised_eos": 0,
+      "zero_labels": 0
+    },
+    "max_tokens": 481
+  },
+  "val": {
+    "count": 100,
+    "md5_ok": true,
+    "bad_structure": 0,
+    "norm_duplicates": 0,
+    "excluded_present": 0,
+    "review_counts": {
+      "no_obvious_issue": 91,
+      "pending_verification": 9
+    },
+    "token_checks": {
+      "over512": 0,
+      "bad_eos": 0,
+      "unsupervised_eos": 0,
+      "zero_labels": 0
+    },
+    "max_tokens": 477
+  },
+  "smoke": {
+    "count": 32,
+    "md5_ok": true,
+    "bad_structure": 0,
+    "norm_duplicates": 0,
+    "excluded_present": 0,
+    "review_counts": {
+      "unreviewed": 32
+    }
+  },
+  "train_1000": {
+    "count": 1000,
+    "md5_ok": true,
+    "bad_structure": 0,
+    "norm_duplicates": 0,
+    "excluded_present": 0,
+    "review_counts": {
+      "unreviewed": 998,
+      "no_obvious_issue": 2
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "splits": {
+    "train": {
+      "count": 5000,
+      "md5_match": true,
+      "counters": {
+        "bad_structure": 0,
+        "embedded_special": 0,
+        "not_in_source": 0,
+        "over512": 0,
+        "over340": 4294,
+        "bad_eos_variant": 0,
+        "zero_labels_variant": 0,
+        "eos_not_supervised_variant": 0
+      },
+      "norm_duplicate_excess": 0,
+      "worst_tokens": {
+        "min": 141,
+        "p50": 403,
+        "max": 510
+      },
+      "minimum_supervised": 36
+    },
+    "val": {
+      "count": 100,
+      "md5_match": true,
+      "counters": {
+        "bad_structure": 0,
+        "embedded_special": 0,
+        "not_in_source": 0,
+        "over512": 0,
+        "over340": 84,
+        "bad_eos_variant": 0,
+        "zero_labels_variant": 0,
+        "eos_not_supervised_variant": 0
+      },
+      "norm_duplicate_excess": 0,
+      "worst_tokens": {
+        "min": 238,
+        "p50": 395,
+        "max": 477
+      },
+      "minimum_supervised": 184
+    },
+    "test": {
+      "count": 100,
+      "md5_match": true,
+      "counters": {
+        "bad_structure": 0,
+        "embedded_special": 0,
+        "not_in_source": 0,
+        "over512": 0,
+        "over340": 86,
+        "bad_eos_variant": 0,
+        "zero_labels_variant": 0,
+        "eos_not_supervised_variant": 0
+      },
+      "norm_duplicate_excess": 0,
+      "worst_tokens": {
+        "min": 265,
+        "p50": 409,
+        "max": 481
+      },
+      "minimum_supervised": 217
+    },
+    "smoke": {
+      "count": 32,
+      "md5_match": true,
+      "counters": {
+        "bad_structure": 0,
+        "embedded_special": 0,
+        "not_in_source": 0,
+        "over512": 0,
+        "over340": 25,
+        "bad_eos_variant": 0,
+        "zero_labels_variant": 0,
+        "eos_not_supervised_variant": 0
+      },
+      "norm_duplicate_excess": 0,
+      "worst_tokens": {
+        "min": 249,
+        "p50": 399,
+        "max": 493
+      },
+      "minimum_supervised": 197
+    }
+  },
+  "overlap": {
+    "train/val": 0,
+    "train/test": 0,
+    "val/test": 0
+  },
+  "known": [],
+  "smoke_is_train_prefix": true,
+  "source_md5_match": true
+}

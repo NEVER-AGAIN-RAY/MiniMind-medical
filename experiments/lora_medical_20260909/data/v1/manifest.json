@@ -1,0 +1,47 @@
+{
+  "seed": 42,
+  "sizes": {
+    "train": 5000,
+    "val": 100,
+    "test": 100,
+    "smoke": 32
+  },
+  "max_tokens": 512,
+  "drop_bottom": 0.15,
+  "score_cut": 0.7675,
+  "source": {
+    "path": "dataset/lora_medical.jsonl",
+    "md5": "e9d4b8b6cc866ef36d902e1984ac9f2c",
+    "rows": 25276
+  },
+  "funnel": {
+    "structural": 25276,
+    "after_dedup": 24883,
+    "after_hard_quality": 24874,
+    "excluded_by_human": 0,
+    "after_token_filter": 24726,
+    "after_score_drop": 21018
+  },
+  "files": {
+    "train.jsonl": {
+      "count": 5000,
+      "md5": "40455e6bb2d7e4bd9217c624373013f6",
+      "bytes": 6692310
+    },
+    "val.jsonl": {
+      "count": 100,
+      "md5": "8d857122c7b872fc2efb11874a38e8d5",
+      "bytes": 130028
+    },
+    "test.jsonl": {
+      "count": 100,
+      "md5": "d11c4520a5dd97c304155cbde983921b",
+      "bytes": 134222
+    },
+    "smoke.jsonl": {
+      "count": 32,
+      "md5": "b59397fcec2f2de74c560364f0c4a5bd",
+      "bytes": 41871
+    }
+  }
+}
