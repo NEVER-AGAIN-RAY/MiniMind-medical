@@ -1,0 +1,87 @@
+{
+  "version": "v1",
+  "seed": 42,
+  "params": {
+    "mcq_count": 100,
+    "qa_count": 30,
+    "general_count": 10,
+    "mcq_filters": {
+      "answer": "单字母 A-E",
+      "question_max_chars": 100,
+      "options": "2-5 个，每个 <=80 字",
+      "no_image": "题干或选项含\"图\"的剔除"
+    },
+    "qa_rule": "test.jsonl 中最新审核结论为 no_obvious_issue 的样本（q_md5 匹配，排除待核验）"
+  },
+  "sources": {
+    "cmexam": {
+      "url": "https://raw.githubusercontent.com/williamliujl/CMExam/main/data/val.csv",
+      "file": "eval/v1/raw/cmexam_val.csv",
+      "md5": "89690f45bcfee24d2d555cf109c50db3",
+      "license_note": "CMExam: 中国国家执业医师资格考试数据集 (Liu et al., NeurIPS 2023 D&B)",
+      "total": 6811,
+      "single_letter": 6600,
+      "length_ok": 6290,
+      "options_ok": 6288,
+      "no_image": 6205,
+      "train_overlap_excluded": 0,
+      "candidates_final": 6205
+    },
+    "test_jsonl": {
+      "path": "data/v2/test.jsonl",
+      "md5": "67ae98d0c71420c9933a1cbbd8157e95",
+      "rows": 100,
+      "clean_usable": 92,
+      "pending_excluded": 8,
+      "pending_q_md5": [
+        "0037312d4d3d947f84dd103a30ca1782",
+        "00c5939dada455962e8fea393520b904",
+        "11200245fb96274ad2f5b44caf2f95cd",
+        "2a386c9fb7f423e3bc1d91fed142805a",
+        "b8d8e3c451b462a8c09cb8321dc5941e",
+        "bab7219cddf74b2e71faf1f3e0e70a13",
+        "c84e48608bc2c7346f0554a4f1e9f9c0",
+        "fa962bf1e8beff5ac7ad6fb473771b24"
+      ],
+      "review_val_test_review": "f8625a4e782e354b74d0ba25ad20d56b",
+      "review_refill_review": "e25d8d9ef5e818bc0f3571e971539342",
+      "val_test_review_entries": 100,
+      "refill_test_entries": 13
+    },
+    "train_source_overlap_check": {
+      "path": "dataset/lora_medical.jsonl",
+      "md5": "e9d4b8b6cc866ef36d902e1984ac9f2c",
+      "method": "norm_q 归一化后 md5 对撞（与 prepare_data.py 同款归一化）"
+    },
+    "general_questions": "前 8 个沿用 eval_llm.py 固定问题，后 2 个为补充探针"
+  },
+  "rubric": {
+    "mcq": "自动对答案: 抽取模型输出中首个 A-E 选项字母",
+    "manual": [
+      {
+        "id": "on_topic",
+        "name": "是否答到问题",
+        "good": true,
+        "desc": "回答与问题相关且正面回应了问题，而非答非所问或复述问题"
+      },
+      {
+        "id": "factual_error",
+        "name": "是否存在事实错误",
+        "good": false,
+        "desc": "回答中是否出现与参考答案/公认医学常识相悖的陈述"
+      },
+      {
+        "id": "unsourced_advice",
+        "name": "是否无依据地给出诊疗建议",
+        "good": false,
+        "desc": "在无足够依据/未提示就医的情况下给出具体用药、剂量或手术建议"
+      }
+    ],
+    "note": "人工评分逐题填写于 compare_report.md；待核验样本不作为评分参考答案（本脚本已排除）"
+  },
+  "files": {
+    "questions_mcq.jsonl": "88d43470367eaa2e432a3fae8a77a86c",
+    "questions_medqa.jsonl": "6b2b02b581d4ffa2d9f08b9892480231",
+    "questions_general.jsonl": "da8add108c840ad7c0f9ae0d74a992cb"
+  }
+}

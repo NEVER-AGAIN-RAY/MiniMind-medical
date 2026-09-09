@@ -7,13 +7,73 @@ __package__ = "trainer"
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import random
 import math
+from contextlib import nullcontext
 import numpy as np
 import torch
+import torch.nn.functional as F
 import torch.distributed as dist
 from torch.nn.parallel import DistributedDataParallel
 from torch.utils.data import Sampler
 from transformers import AutoTokenizer, AutoModel, AutoModelForSequenceClassification
 from model.model_minimind import MiniMindForCausalLM
+
+def evaluate_val_loss(model, val_loader, device, autocast_ctx=None):
+    """
+    计算验证集上的加权平均交叉熵损失（按受监督的有效目标 token 数加权）：
+    - 关闭梯度，model.eval()
+    - 遍历 val_loader，计算 shift logits 与 shift labels 之间的 cross entropy sum
+    - 按实际 valid_tokens 进行加权平均，不直接平均各 batch 的 loss
+    - 验证完成后恢复 model 原有的 training/eval 状态
+    - 支持 DDP 多卡同步（如已初始化）
+    """
+    was_training = model.training
+    model.eval()
+    if autocast_ctx is None:
+        autocast_ctx = nullcontext()
+
+    total_loss = 0.0
+    total_tokens = 0
+
+    with torch.no_grad():
+        for batch in val_loader:
+            if isinstance(batch, (list, tuple)):
+                input_ids, labels = batch[0], batch[1]
+            elif isinstance(batch, dict):
+                input_ids, labels = batch['input_ids'], batch['labels']
+            else:
+                continue
+
+            input_ids = input_ids.to(device)
+            labels = labels.to(device)
+
+            with autocast_ctx:
+                outputs = model(input_ids)
+                logits = outputs.logits
+                shift_logits = logits[..., :-1, :].contiguous()
+                shift_labels = labels[..., 1:].contiguous()
+
+                valid_mask = (shift_labels != -100)
+                n_tokens = valid_mask.sum().item()
+                if n_tokens > 0:
+                    batch_loss_sum = F.cross_entropy(
+                        shift_logits.view(-1, shift_logits.size(-1)),
+                        shift_labels.view(-1),
+                        ignore_index=-100,
+                        reduction='sum'
+                    ).item()
+                    total_loss += batch_loss_sum
+                    total_tokens += n_tokens
+
+    if dist.is_initialized():
+        sync_tensor = torch.tensor([total_loss, float(total_tokens)], device=device, dtype=torch.float64)
+        dist.all_reduce(sync_tensor, op=dist.ReduceOp.SUM)
+        total_loss = sync_tensor[0].item()
+        total_tokens = int(sync_tensor[1].item())
+
+    if was_training:
+        model.train()
+
+    return (total_loss / total_tokens) if total_tokens > 0 else 0.0
 
 def get_model_params(model, config):
     total = sum(p.numel() for p in model.parameters()) / 1e6
