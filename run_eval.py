@@ -10,7 +10,7 @@ MiniMind LoRA 医学微调评估与对比脚本 (run_eval.py)
    - MCQ (64 tokens): 保守抽取选项、统计正确率与无效回答数
    - MedQA (512 tokens): 生成同分布医学问答回答（参考答案不输入模型）
    - General (256 tokens): 生成通用问题回答（灾难性遗忘检查）
-   - 可选 --val-loss: 复用 SFTDataset(max_length=512) 按有效目标 token 严格加权计算交叉熵
+   - 可选 --val-loss: 复用 SFTDataset(max_length=512, augment=False 固定模板) 按有效目标 token 严格加权计算交叉熵
    - 保存 mcq_answers.jsonl, medqa_answers.jsonl, general_answers.jsonl, summary.json
    - 支持 --limit N 用于云端冒烟测试（默认保存至独立 smoke 目录，防止覆盖正式结果）
 
@@ -334,7 +334,9 @@ def run_evaluation(args):
             print(f"⚠️ 警告: 验证集文件不存在: {val_path}，跳过 val_loss 计算")
         else:
             print(f"\n--- 计算验证集 Loss (SFTDataset, max_length=512, 路径: {val_path}) ---")
-            val_ds = SFTDataset(str(val_path), tokenizer, max_length=512)
+            # 评估必须用固定模板/固定标签(augment=False)，否则 base 与 lora 两次运行
+            # 的验证输入随机不同，val_loss 前后对比失去意义
+            val_ds = SFTDataset(str(val_path), tokenizer, max_length=512, augment=False)
             if args.limit is not None and args.limit > 0:
                 # 冒烟模式下只取少量样本
                 from torch.utils.data import Subset

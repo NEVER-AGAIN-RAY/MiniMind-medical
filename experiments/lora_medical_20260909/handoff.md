@@ -22,7 +22,7 @@
   - 接受单独字母（`A`, `(B)`, `【C】`, `**D**` 等）与明确前缀（`答案：B`, `选A`, `正确答案是C` 等）。
   - 选项必须属于该题实际有效集合；遇到冲突选项（如 `选A或者B`, `AB`）或无法识别判定为无效（记入总题数并判错）。
 - **验证集 Loss (`--val-loss`)**：
-  - 复用 `SFTDataset` (max_length=512)。
+  - 复用 `SFTDataset` (max_length=512, `augment=False` 固定模板/固定标签，与训练脚本验证集口径一致)。
   - 按实际受监督的有效目标 token 数（`shift_labels != -100`）加权计算平均交叉熵，不直接平均 batch loss。
 - **冒烟与输出隔离**：
   - 支持 `--limit N` 用于云端极速冒烟。
@@ -55,6 +55,7 @@
   6. 正式全量 LoRA 评估 (140 题 + val_loss)
   7. 生成前后对比报告 (`compare_report.md`)
 - 包含自动跳过机制（已完成产物无需重复跑）与灵活调度参数（`--step`, `--from-step`, `--skip-smoke`, `--force`）。
+- **日志落盘**：全流程终端输出（含 loss/val_loss 与报错堆栈）通过 `tee` 自动同步保存到 `experiments/lora_medical_20260909/logs/run_时间戳.log`（`latest.log` 软链指向最近一次），并在每次运行开头记录运行命令、GPU、关键依赖实测版本及完整 `pip freeze` 快照（`pip_freeze_时间戳.txt`）。纯 shell 层实现，不改变任何训练/评估代码逻辑。
 
 ---
 
@@ -70,6 +71,7 @@
 | **val_loss 加权机制** | Mock 批次数学校验 | ✅ 通过 | 严格按 valid tokens 加权交叉熵计算，忽略 `-100` |
 | **对比模式与一致性检查** | 5题合成数据测试 | ✅ 通过 | 错→对/对→错计数正确，ID错位与冒烟混用时能正确拦截报错 |
 | **Shell 脚本语法** | `bash -n` | ✅ 通过 | `run_cloud.sh` 无语法错误 |
+| **日志落盘与环境记录** | 替身进程 Shell 模拟运行 | ✅ 通过 | 中断/完成/重跑流程不变，终端输出完整落盘 logs/，含运行命令与 pip freeze 快照 |
 | **锁定题集完整性** | `wc -l` 与哈希对比 | ✅ 通过 | 100 MCQ + 30 MedQA + 10 General + manifest.json 保持锁定 |
 
 ---
@@ -168,25 +170,41 @@ python run_eval.py --compare \
   --save_report experiments/lora_medical_20260909/eval_results/compare_report.md
 ```
 
+> 注：通过 `run_cloud.sh` 运行时终端输出会自动保存到 `experiments/lora_medical_20260909/logs/`；若手动执行上述独立命令，请自行追加 `2>&1 | tee -a experiments/lora_medical_20260909/logs/manual_$(date +%Y%m%d_%H%M%S).log` 留存日志。
+
 ### 5.4 产物位置与下载方式
 执行完成后，生成的重要产物均集中在：
 - `out/lora_medical_formal_768.pth`: 正式微调 LoRA 权重
+- `out/lora_medical_formal_768.complete.sha256`: 训练完成标记与文件校验和（审计用，不能用于恢复训练）
+- `experiments/lora_medical_20260909/logs/`: 完整终端日志（`run_时间戳.log`，含 loss/val_loss、报错堆栈、运行参数、实测环境版本）与 `pip_freeze_时间戳.txt` 依赖快照
 - `experiments/lora_medical_20260909/eval_results/base/`: 基座全量评估产物 (4个文件)
 - `experiments/lora_medical_20260909/eval_results/lora/`: LoRA 全量评估产物 (4个文件)
 - `experiments/lora_medical_20260909/eval_results/compare_report.md`: Markdown 对比报告
 
-**在云端打包命令**：
+**在云端打包命令**（含日志与完成标记）：
 ```bash
 tar -czvf minimind_results.tar.gz \
   out/lora_medical_formal_768.pth \
+  out/lora_medical_formal_768.complete.sha256 \
+  experiments/lora_medical_20260909/logs/ \
   experiments/lora_medical_20260909/eval_results/
+```
+
+如需保留续训能力（日后 `--from_resume 1` 断点续训），打包时追加检查点目录：
+```bash
+tar -czvf minimind_results.tar.gz \
+  out/lora_medical_formal_768.pth \
+  out/lora_medical_formal_768.complete.sha256 \
+  experiments/lora_medical_20260909/logs/ \
+  experiments/lora_medical_20260909/eval_results/ \
+  checkpoints/
 ```
 
 **本地下载命令**（在本地电脑终端执行）：
 ```bash
 scp -P <端口> <用户名>@<云端IP>:<云端工作路径>/minimind_results.tar.gz ./
 ```
-解压后即可查阅 `compare_report.md` 并填写人工临床评估。
+解压后即可查阅 `compare_report.md` 并填写人工临床评估；训练与评估的完整过程日志见 `logs/` 目录。
 
 
 ## 6. 代码复核修复（2026-09-09）
@@ -199,7 +217,9 @@ scp -P <端口> <用户名>@<云端IP>:<云端工作路径>/minimind_results.tar
 - 答案冲突按无效处理；评分版本 2 写入 summary。锁定题集及 manifest 保持不变，其中旧的首字母评分描述由本说明和版本 2 实现更正。
 - 医学/通用回答中的换行、竖线和 Markdown 字符正确转义，避免破坏表格。
 - 本地执行 `python -m unittest discover -s tests -v`：14 项通过，含真实 Shell + 替身进程模拟中断/完成/重跑，未加载真实模型、未训练或生成回答。
+- 验证集一律使用固定模板固定标签：`SFTDataset` 新增 `augment` 开关，`train_lora.py` 验证集与 `run_eval.py --val-loss` 均传 `augment=False`，关闭随机 system 注入与空 think 随机移除，保证 val_loss 可复现、前后可比；训练集保持随机增强不变。
 - Python 语法、CLI 帮助与 Shell 语法可在本地检查；真实 CUDA 冒烟、正式训练和模型效果仍待云端验证。
+- 云端全流程终端日志通过 `tee` 自动落盘到 `experiments/lora_medical_20260909/logs/`（含报错堆栈），并在运行开头记录运行命令、GPU、关键依赖实测版本与完整 `pip freeze` 快照；下载打包包含日志与完成标记，需要续训时再追加 `checkpoints/`。
 
 云端完整执行命令保持不变：
 

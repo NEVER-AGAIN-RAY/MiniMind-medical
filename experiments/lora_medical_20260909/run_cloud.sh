@@ -26,6 +26,14 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "${SCRIPT_DIR}/../.." && pwd)"
 cd "${ROOT_DIR}"
 
+# 日志落盘：本次运行的全部终端输出(含 loss/val_loss 与报错堆栈)同步写入文件，终端仍实时显示
+TS="$(date '+%Y%m%d_%H%M%S')"
+LOG_DIR="experiments/lora_medical_20260909/logs"
+mkdir -p "${LOG_DIR}"
+LOG_FILE="${LOG_DIR}/run_${TS}.log"
+exec > >(tee -a "${LOG_FILE}") 2>&1
+ln -sfn "run_${TS}.log" "${LOG_DIR}/latest.log"
+
 # 寻找合适的 Python 解释器
 if [ -x "${ROOT_DIR}/.venv/bin/python" ]; then
     PYTHON="${ROOT_DIR}/.venv/bin/python"
@@ -43,6 +51,7 @@ echo " MiniMind 医学 LoRA 全流程云端运行系统"
 echo " 工作目录: ${ROOT_DIR}"
 echo " Python  : ${PYTHON} ($(${PYTHON} --version 2>&1))"
 echo " 时间    : $(date '+%Y-%m-%d %H:%M:%S')"
+echo " 日志    : ${LOG_FILE}"
 echo "================================================================================"
 
 # 参数解析
@@ -50,6 +59,7 @@ TARGET_STEP=""
 FROM_STEP=""
 SKIP_SMOKE=false
 FORCE=false
+RAW_ARGS="$*"
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -79,6 +89,32 @@ while [[ $# -gt 0 ]]; do
             ;;
     esac
 done
+
+# ==============================================================================
+# 记录运行参数与实测环境版本（随终端输出一并写入日志文件）
+# ==============================================================================
+echo "--------------------------------------------------------------------------------"
+echo " 运行命令: bash $0 ${RAW_ARGS}"
+echo " 主机时间: $(hostname 2>/dev/null || echo unknown-host) | ${TS}"
+if command -v git &>/dev/null && git -C "${ROOT_DIR}" rev-parse --short HEAD &>/dev/null; then
+    echo " Git 提交: $(git -C "${ROOT_DIR}" rev-parse --short HEAD)"
+fi
+if command -v nvidia-smi &>/dev/null; then
+    echo " GPU 信息: $(nvidia-smi --query-gpu=name,driver_version,memory.total --format=csv,noheader | head -1)"
+fi
+${PYTHON} - <<'PY'
+import sys
+import importlib.metadata as md
+print(f" Python  : {sys.version.split()[0]}")
+for pkg in ["torch", "transformers", "datasets", "accelerate", "numpy", "tokenizers"]:
+    try:
+        print(f"   {pkg:<14s}== {md.version(pkg)}")
+    except md.PackageNotFoundError:
+        print(f"   {pkg:<14s}: 未安装")
+PY
+${PYTHON} -m pip freeze > "${LOG_DIR}/pip_freeze_${TS}.txt" 2>/dev/null || true
+echo " 依赖快照: ${LOG_DIR}/pip_freeze_${TS}.txt (完整 pip freeze)"
+echo "--------------------------------------------------------------------------------"
 
 should_run_step() {
     local step_num="$1"
@@ -349,7 +385,10 @@ echo "   - 基座评估结果: ${RES_DIR}/base/"
 echo "   - 微调权重文件: ${FORMAL_LORA_WEIGHT}"
 echo "   - 微调评估结果: ${RES_DIR}/lora/"
 echo "   - 前后对比报告: ${RES_DIR}/compare_report.md"
+echo "   - 运行日志与环境快照: ${LOG_DIR}/ (本次日志: ${LOG_FILE})"
 echo ""
-echo " 建议下载指令 (在本地终端执行):"
-echo "   tar -czvf results_bundle.tar.gz ${RES_DIR}/ ${FORMAL_LORA_WEIGHT}"
+echo " 云端打包指令 (含日志与完成标记):"
+echo "   tar -czvf results_bundle.tar.gz ${RES_DIR}/ ${LOG_DIR}/ ${FORMAL_LORA_WEIGHT} ${FORMAL_DONE}"
+echo "   # 如需保留断点续训能力 (--from_resume 1)，打包时追加: checkpoints/"
+echo " 本地下载指令: scp -P <端口> <用户名>@<云端IP>:<云端工作路径>/results_bundle.tar.gz ./"
 echo "================================================================================"

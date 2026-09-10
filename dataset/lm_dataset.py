@@ -56,10 +56,13 @@ class PretrainDataset(Dataset):
 
 
 class SFTDataset(Dataset):
-    def __init__(self, jsonl_path, tokenizer, max_length=1024):
+    def __init__(self, jsonl_path, tokenizer, max_length=1024, augment=True):
         super().__init__()
         self.tokenizer = tokenizer
         self.max_length = max_length
+        # augment=True(训练集): 随机添加system/随机移除空think标签，增强鲁棒性
+        # augment=False(验证集): 固定模板固定标签，保证val_loss可复现、前后可比
+        self.augment = augment
         features = Features({'conversations': [{'role': Value('string'), 'content': Value('string'), 'reasoning_content': Value('string'), 'tools': Value('string'), 'tool_calls': Value('string')}]})
         self.samples = load_dataset('json', data_files=jsonl_path, split='train', features=features)
         self.bos_id = tokenizer(f'{tokenizer.bos_token}assistant\n', add_special_tokens=False).input_ids
@@ -105,9 +108,10 @@ class SFTDataset(Dataset):
 
     def __getitem__(self, index):
         sample = self.samples[index]
-        conversations = pre_processing_chat(sample['conversations'])
+        conversations = pre_processing_chat(sample['conversations']) if self.augment else sample['conversations']
         prompt = self.create_chat_prompt(conversations)
-        prompt = post_processing_chat(prompt)
+        if self.augment:
+            prompt = post_processing_chat(prompt)
         input_ids = self.tokenizer(prompt).input_ids[:self.max_length]
         input_ids += [self.tokenizer.pad_token_id] * (self.max_length - len(input_ids))
         labels = self.generate_labels(input_ids)
