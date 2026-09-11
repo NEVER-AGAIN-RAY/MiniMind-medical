@@ -1,0 +1,63 @@
+{
+  "training_log": "logs/run_20260910_115857.log",
+  "validation_points": [
+    [
+      0,
+      1.5743
+    ],
+    [
+      50,
+      1.5166
+    ],
+    [
+      100,
+      1.4996
+    ],
+    [
+      150,
+      1.4884
+    ],
+    [
+      200,
+      1.4806
+    ],
+    [
+      250,
+      1.4737
+    ],
+    [
+      300,
+      1.4712
+    ],
+    [
+      350,
+      1.4673
+    ],
+    [
+      400,
+      1.464
+    ],
+    [
+      450,
+      1.4619
+    ],
+    [
+      500,
+      1.4592
+    ],
+    [
+      550,
+      1.4588
+    ],
+    [
+      600,
+      1.458
+    ],
+    [
+      625,
+      1.4578
+    ]
+  ],
+  "curve_loss_relative_reduction_percent": 7.400114336530528,
+  "note": "Curve uses in-training validation. Single run; no smoothing or error bands. Multiple-choice evaluation is excluded from this figure."
+}

@@ -1,0 +1,87 @@
+================================================================================
+ MiniMind 医学 LoRA 全流程云端运行系统
+ 工作目录: /root/autodl-tmp/minimind-lora
+ Python  : /root/autodl-tmp/minimind-lora/.venv/bin/python (Python 3.12.3)
+ 时间    : 2026-09-10 12:01:06
+ 日志    : experiments/lora_medical_20260909/logs/run_20260910_120106.log
+================================================================================
+--------------------------------------------------------------------------------
+ 运行命令: bash experiments/lora_medical_20260909/run_cloud.sh --step 6
+ 主机时间: autodl-container-d0884780b4-d82ddd78 | 20260910_120106
+ GPU 信息: NVIDIA GeForce RTX 4090, 580.105.08, 24564 MiB
+ Python  : 3.12.3
+   torch         == 2.8.0+cu128
+   transformers  == 4.57.6
+   datasets      == 3.6.0
+   accelerate    : 未安装
+   numpy         == 1.26.4
+   tokenizers    == 0.22.2
+ 依赖快照: experiments/lora_medical_20260909/logs/pip_freeze_20260910_120106.txt (完整 pip freeze)
+--------------------------------------------------------------------------------
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+
+--------------------------------------------------------------------------------
+ [Step 6/7] 正式全量 LoRA 评估 (100 MCQ + 30 MedQA + 10 General + Val Loss)...
+--------------------------------------------------------------------------------
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+Traceback (most recent call last):
+  File "/root/autodl-tmp/minimind-lora/run_eval.py", line 788, in <module>
+    main()
+  File "/root/autodl-tmp/minimind-lora/run_eval.py", line 762, in main
+    summary = validate_results(args.out_dir, args.eval_dir, args.mode)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/minimind-lora/run_eval.py", line 418, in validate_results
+    summary = json.loads((result_dir / "summary.json").read_text())
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'experiments/lora_medical_20260909/eval_results/lora/summary.json'
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+[LORA] 加载基座权重: /root/autodl-tmp/minimind-lora/out/full_sft_768.pth
+[LORA] 应用 LoRA 并加载权重: /root/autodl-tmp/minimind-lora/out/lora_medical_formal_768.pth
+
+--- [1/3] 评估医学选择题 (MCQ, 共 100 题, max_new_tokens=64) ---
+MCQ 进度: 20/100 | 正确: 0 | 无效: 20
+MCQ 进度: 40/100 | 正确: 0 | 无效: 37
+MCQ 进度: 60/100 | 正确: 1 | 无效: 55
+MCQ 进度: 80/100 | 正确: 1 | 无效: 73
+MCQ 进度: 100/100 | 正确: 1 | 无效: 91
+MCQ 评估完成: 正确率 1.00% (1/100), 无效回答数: 91
+
+--- [2/3] 评估医学问答 (MedQA, 共 30 题, max_new_tokens=512) ---
+MedQA 进度: 10/30
+MedQA 进度: 20/30
+MedQA 进度: 30/30
+
+--- [3/3] 评估通用问题 (General QA, 共 10 题, max_new_tokens=256) ---
+
+--- 计算验证集 Loss (SFTDataset, max_length=512, 路径: experiments/lora_medical_20260909/data/v2/val.jsonl) ---
+/root/autodl-tmp/minimind-lora/run_eval.py:347: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  autocast_ctx = nullcontext() if device_type == "cpu" else torch.cuda.amp.autocast(dtype=target_dtype)
+验证集加权平均交叉熵 Loss: 1.4575
+
+✅ 评估成功完成，全部结果已写入: experiments/lora_medical_20260909/eval_results/lora
+summary: {"total": 100, "correct": 1, "accuracy": 0.01, "invalid_count": 91}, val_loss: 1.45753
+✅ Step 6 正式全量 LoRA 评估完成！
+
+================================================================================
+ 🎉 全部流程已顺利执行完成！
+ 产物清单：
+   - 基座评估结果: experiments/lora_medical_20260909/eval_results/base/
+   - 微调权重文件: out/lora_medical_formal_768.pth
+   - 微调评估结果: experiments/lora_medical_20260909/eval_results/lora/
+   - 前后对比报告: experiments/lora_medical_20260909/eval_results/compare_report.md
+   - 运行日志与环境快照: experiments/lora_medical_20260909/logs/ (本次日志: experiments/lora_medical_20260909/logs/run_20260910_120106.log)
+
+ 云端打包指令 (含日志与完成标记):
+   tar -czvf results_bundle.tar.gz experiments/lora_medical_20260909/eval_results/ experiments/lora_medical_20260909/logs/ out/lora_medical_formal_768.pth out/lora_medical_formal_768.complete.sha256
+   # 如需保留断点续训能力 (--from_resume 1)，打包时追加: checkpoints/
+ 本地下载指令: scp -P <端口> <用户名>@<云端IP>:<云端工作路径>/results_bundle.tar.gz ./
+================================================================================

@@ -1,0 +1,42 @@
+{
+  "mode": "lora",
+  "is_smoke": false,
+  "limit": null,
+  "timestamp": "2026-09-10T12:03:54.554779",
+  "completed_questions": {
+    "mcq": 100,
+    "medqa": 30,
+    "general": 10,
+    "total": 140
+  },
+  "mcq_metrics": {
+    "total": 100,
+    "correct": 1,
+    "accuracy": 0.01,
+    "invalid_count": 91
+  },
+  "val_loss": 1.45753,
+  "generation_config": {
+    "do_sample": false,
+    "open_thinking": false,
+    "add_generation_prompt": true,
+    "mcq_max_new_tokens": 64,
+    "medqa_max_new_tokens": 512,
+    "general_max_new_tokens": 256,
+    "mcq_parser_version": 2,
+    "repetition_penalty": 1.0
+  },
+  "runtime_env": {
+    "device": "cuda:0",
+    "dtype": "bfloat16"
+  },
+  "identity": {
+    "val_path_md5": "95e6bdc4edf0ca62dd3bd1475bbfaea0",
+    "base_weight_path": "/root/autodl-tmp/minimind-lora/out/full_sft_768.pth",
+    "base_weight_md5": "942a011c4b3868f6e17d7ba7d5bdc08a",
+    "lora_weight_path": "/root/autodl-tmp/minimind-lora/out/lora_medical_formal_768.pth",
+    "lora_weight_md5": "739f8ccce47c8f022e591d5ade0173ea",
+    "eval_set_manifest": "experiments/lora_medical_20260909/eval/v1/manifest.json",
+    "eval_set_manifest_md5": "90147fb29e2cdbc33158692aa94cace3"
+  }
+}

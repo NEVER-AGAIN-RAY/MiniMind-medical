@@ -1,0 +1,47 @@
+================================================================================
+ MiniMind 医学 LoRA 全流程云端运行系统
+ 工作目录: /root/autodl-tmp/minimind-lora
+ Python  : /root/autodl-tmp/minimind-lora/.venv/bin/python (Python 3.12.3)
+ 时间    : 2026-09-10 12:08:39
+ 日志    : experiments/lora_medical_20260909/logs/run_20260910_120839.log
+================================================================================
+--------------------------------------------------------------------------------
+ 运行命令: bash experiments/lora_medical_20260909/run_cloud.sh --step 7
+ 主机时间: autodl-container-d0884780b4-d82ddd78 | 20260910_120839
+ GPU 信息: NVIDIA GeForce RTX 4090, 580.105.08, 24564 MiB
+ Python  : 3.12.3
+   torch         == 2.8.0+cu128
+   transformers  == 4.57.6
+   datasets      == 3.6.0
+   accelerate    : 未安装
+   numpy         == 1.26.4
+   tokenizers    == 0.22.2
+ 依赖快照: experiments/lora_medical_20260909/logs/pip_freeze_20260910_120839.txt (完整 pip freeze)
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+ [Step 7/7] 生成 Base 与 LoRA 前后对比分析报告 (Markdown)...
+--------------------------------------------------------------------------------
+
+libgomp: Invalid value for environment variable OMP_NUM_THREADS
+正在检查 Base 与 LoRA 评估产物一致性...
+✅ 一致性校验通过，开始统计异动指标...
+
+🎉 比较报告已成功生成: experiments/lora_medical_20260909/eval_results/compare_report.md
+MCQ: Base 3.00% -> LoRA 1.00% (错→对: 0, 对→错: 2)
+✅ Step 7 前后对比报告生成完毕！路径: experiments/lora_medical_20260909/eval_results/compare_report.md
+
+================================================================================
+ 🎉 全部流程已顺利执行完成！
+ 产物清单：
+   - 基座评估结果: experiments/lora_medical_20260909/eval_results/base/
+   - 微调权重文件: out/lora_medical_formal_768.pth
+   - 微调评估结果: experiments/lora_medical_20260909/eval_results/lora/
+   - 前后对比报告: experiments/lora_medical_20260909/eval_results/compare_report.md
+   - 运行日志与环境快照: experiments/lora_medical_20260909/logs/ (本次日志: experiments/lora_medical_20260909/logs/run_20260910_120839.log)
+
+ 云端打包指令 (含日志与完成标记):
+   tar -czvf results_bundle.tar.gz experiments/lora_medical_20260909/eval_results/ experiments/lora_medical_20260909/logs/ out/lora_medical_formal_768.pth out/lora_medical_formal_768.complete.sha256
+   # 如需保留断点续训能力 (--from_resume 1)，打包时追加: checkpoints/
+ 本地下载指令: scp -P <端口> <用户名>@<云端IP>:<云端工作路径>/results_bundle.tar.gz ./
+================================================================================

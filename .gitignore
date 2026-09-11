@@ -16,3 +16,4 @@ venv/
 *.pt
 *.pth
 checkpoints/
+minimind_cloud_*.tar.gz
