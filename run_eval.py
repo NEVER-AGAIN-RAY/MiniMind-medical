@@ -172,7 +172,15 @@ def load_model_for_eval(args):
 
 
 @torch.no_grad()
-def generate_single_response(model, tokenizer, prompt_text: str, max_new_tokens: int, device: str) -> str:
+def generate_single_response(
+    model,
+    tokenizer,
+    prompt_text: str,
+    max_new_tokens: int,
+    device: str,
+    repetition_penalty: float = 1.0,
+    no_repeat_ngram_size: int = 0,
+) -> str:
     """确定性生成单轮回答 (do_sample=False, open_thinking=False)"""
     conversation = [{"role": "user", "content": prompt_text}]
     prompt_str = tokenizer.apply_chat_template(
@@ -202,7 +210,8 @@ def generate_single_response(model, tokenizer, prompt_text: str, max_new_tokens:
         do_sample=False,
         pad_token_id=tokenizer.pad_token_id,
         eos_token_id=tokenizer.eos_token_id,
-        repetition_penalty=1.0,
+        repetition_penalty=repetition_penalty,
+        no_repeat_ngram_size=no_repeat_ngram_size,
     )
 
     new_token_ids = generated_ids[0][prompt_len:]
@@ -263,7 +272,11 @@ def run_evaluation(args):
 
     for idx, item in enumerate(mcq_items, 1):
         prompt = format_mcq_prompt(item)
-        raw_ans = generate_single_response(model, tokenizer, prompt, max_new_tokens=64, device=args.device)
+        raw_ans = generate_single_response(
+            model, tokenizer, prompt, max_new_tokens=64, device=args.device,
+            repetition_penalty=args.repetition_penalty,
+            no_repeat_ngram_size=args.no_repeat_ngram_size,
+        )
         extracted = extract_mcq_choice(raw_ans, item["options"].keys())
         official = item.get("answer", "").strip().upper()
 
@@ -301,7 +314,11 @@ def run_evaluation(args):
     medqa_results = []
     for idx, item in enumerate(medqa_items, 1):
         prompt = item["question"].strip()
-        ans = generate_single_response(model, tokenizer, prompt, max_new_tokens=512, device=args.device)
+        ans = generate_single_response(
+            model, tokenizer, prompt, max_new_tokens=512, device=args.device,
+            repetition_penalty=args.repetition_penalty,
+            no_repeat_ngram_size=args.no_repeat_ngram_size,
+        )
         res_entry = {
             "id": item["id"],
             "q_md5": item.get("q_md5", ""),
@@ -318,7 +335,11 @@ def run_evaluation(args):
     gen_results = []
     for idx, item in enumerate(gen_items, 1):
         prompt = item["question"].strip()
-        ans = generate_single_response(model, tokenizer, prompt, max_new_tokens=256, device=args.device)
+        ans = generate_single_response(
+            model, tokenizer, prompt, max_new_tokens=256, device=args.device,
+            repetition_penalty=args.repetition_penalty,
+            no_repeat_ngram_size=args.no_repeat_ngram_size,
+        )
         res_entry = {
             "id": item["id"],
             "question": item["question"],
@@ -386,7 +407,8 @@ def run_evaluation(args):
             "medqa_max_new_tokens": 512,
             "general_max_new_tokens": 256,
             "mcq_parser_version": 2,
-            "repetition_penalty": 1.0,
+            "repetition_penalty": args.repetition_penalty,
+            "no_repeat_ngram_size": args.no_repeat_ngram_size,
         },
         "runtime_env": {
             "device": args.device,
@@ -738,6 +760,10 @@ def main():
     parser.add_argument("--dtype", type=str,
                         default="bfloat16" if (torch.cuda.is_available() and torch.cuda.is_bf16_supported()) else "float16",
                         help="推理混合精度类型 (bfloat16 / float16 / float32)")
+    parser.add_argument("--repetition_penalty", type=float, default=1.0,
+                        help="重复惩罚；1.0 表示关闭，医学 LoRA 可先尝试 1.1")
+    parser.add_argument("--no_repeat_ngram_size", type=int, default=0,
+                        help="禁止重复的 token n-gram 长度；0 表示关闭，建议先测试 3 或 4")
     parser.add_argument("--limit", type=int, default=None,
                         help="限制每类题目数量 N (用于云端快速冒烟)")
     parser.add_argument("--out_dir", type=str, default=None,

@@ -1,6 +1,12 @@
 __pycache__/
 *.pyc
 .DS_Store
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.profraw
 out
 website/
 docs-minimind/
@@ -17,3 +23,7 @@ venv/
 *.pth
 checkpoints/
 minimind_cloud_*.tar.gz
+
+# Experiment-local caches and scratch files
+experiments/**/cache/
+experiments/**/tmp/

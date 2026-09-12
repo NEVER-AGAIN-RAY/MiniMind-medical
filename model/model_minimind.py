@@ -8,6 +8,27 @@ from transformers.activations import ACT2FN
 from transformers.modeling_outputs import MoeCausalLMOutputWithPast
 
 
+def get_banned_ngram_tokens(input_ids, no_repeat_ngram_size):
+    """Return tokens that would recreate an n-gram for each sequence."""
+    if no_repeat_ngram_size <= 0:
+        return [[] for _ in range(input_ids.shape[0])]
+
+    banned_tokens = []
+    for sequence in input_ids.tolist():
+        if len(sequence) + 1 < no_repeat_ngram_size:
+            banned_tokens.append([])
+            continue
+
+        prefix_size = no_repeat_ngram_size - 1
+        prefix = tuple(sequence[-prefix_size:]) if prefix_size else ()
+        generated = {}
+        for index in range(len(sequence) - no_repeat_ngram_size + 1):
+            ngram = sequence[index : index + no_repeat_ngram_size]
+            generated.setdefault(tuple(ngram[:-1]), set()).add(ngram[-1])
+        banned_tokens.append(list(generated.get(prefix, ())))
+    return banned_tokens
+
+
 # 🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏
 #                                     MiniMind Config
 # 🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏🌎🌍🌏
@@ -485,8 +506,11 @@ class MiniMindForCausalLM(PreTrainedModel, GenerationMixin):
         num_return_sequences=1,
         do_sample=True,
         repetition_penalty=1.0,
+        no_repeat_ngram_size=0,
         **kwargs,
     ):
+        if no_repeat_ngram_size < 0:
+            raise ValueError("no_repeat_ngram_size must be greater than or equal to 0")
         input_ids = kwargs.pop("input_ids", inputs).repeat(num_return_sequences, 1)
         attention_mask = (
             attention_mask.repeat(num_return_sequences, 1)
@@ -530,6 +554,12 @@ class MiniMindForCausalLM(PreTrainedModel, GenerationMixin):
                         score / repetition_penalty,
                         score * repetition_penalty,
                     )
+            if no_repeat_ngram_size > 0:
+                for i, banned in enumerate(
+                    get_banned_ngram_tokens(input_ids, no_repeat_ngram_size)
+                ):
+                    if banned:
+                        logits[i, banned] = -float("inf")
             if top_k > 0:
                 logits[logits < torch.topk(logits, top_k)[0][..., -1, None]] = -float(
                     "inf"

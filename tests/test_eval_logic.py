@@ -24,7 +24,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.utils.data import DataLoader, TensorDataset
 
-from run_eval import extract_mcq_choice, run_comparison, format_mcq_prompt
+from run_eval import extract_mcq_choice, run_comparison, format_mcq_prompt, generate_single_response
+from model.model_minimind import get_banned_ngram_tokens
 from trainer.trainer_utils import evaluate_val_loss
 
 
@@ -79,6 +80,62 @@ class TestMCQExtraction(unittest.TestCase):
         self.assertIsNone(extract_mcq_choice("", opts))
         self.assertIsNone(extract_mcq_choice("   ", opts))
         self.assertIsNone(extract_mcq_choice("After careful review...", opts))
+
+
+class TestGenerationConfig(unittest.TestCase):
+    def test_bans_token_that_would_repeat_ngram(self):
+        input_ids = torch.tensor(
+            [
+                [1, 2, 3, 4, 2, 3],
+                [1, 2, 3, 4, 5, 6],
+            ]
+        )
+        self.assertEqual(get_banned_ngram_tokens(input_ids, 3), [[4], []])
+
+    def test_disabled_ngram_blocking_bans_nothing(self):
+        input_ids = torch.tensor([[1, 2, 1, 2]])
+        self.assertEqual(get_banned_ngram_tokens(input_ids, 0), [[]])
+
+    def test_repetition_controls_are_forwarded_to_generate(self):
+        class TokenBatch(dict):
+            pass
+
+        class DummyTokenizer:
+            pad_token_id = 0
+            eos_token_id = 2
+
+            def apply_chat_template(self, *args, **kwargs):
+                return "prompt"
+
+            def __call__(self, *args, **kwargs):
+                return TokenBatch(
+                    input_ids=torch.tensor([[1, 3]]),
+                    attention_mask=torch.tensor([[1, 1]]),
+                )
+
+            def decode(self, token_ids, skip_special_tokens=True):
+                return "answer"
+
+        class DummyModel:
+            config = type("Config", (), {"max_position_embeddings": 1024})()
+
+            def generate(self, **kwargs):
+                self.kwargs = kwargs
+                return torch.tensor([[1, 3, 4, 2]])
+
+        model = DummyModel()
+        answer = generate_single_response(
+            model,
+            DummyTokenizer(),
+            "question",
+            max_new_tokens=32,
+            device="cpu",
+            repetition_penalty=1.1,
+            no_repeat_ngram_size=4,
+        )
+        self.assertEqual(answer, "answer")
+        self.assertEqual(model.kwargs["repetition_penalty"], 1.1)
+        self.assertEqual(model.kwargs["no_repeat_ngram_size"], 4)
 
 
 class TestValLossCalculation(unittest.TestCase):
