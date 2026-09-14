@@ -1,0 +1,126 @@
+{
+  "experiment": "lora_medical_mcq_pilot",
+  "is_smoke": false,
+  "timestamp": "2026-09-13T14:18:43.352937",
+  "total_time_seconds": 210.8,
+  "status": "COMPLETED",
+  "improved": true,
+  "best_step": 1565,
+  "initial_val_loss": 2.3378,
+  "best_val_loss": 1.6302,
+  "provenance": {
+    "base_weight_path": "out/full_sft_768.pth",
+    "base_weight_md5": "942a011c4b3868f6e17d7ba7d5bdc08a",
+    "train_data_path": "experiments/lora_medical_mcq_pilot/data/knowledge_5k_v1/train.jsonl",
+    "train_data_md5": "001c4da4a7724d5322a3513aa87407ac",
+    "val_data_path": "experiments/lora_medical_mcq_pilot/data/knowledge_5k_v1/val.jsonl",
+    "val_data_md5": "5628e48857fb61cf01b5569c65556804",
+    "data_manifest_md5": "cedc14fa641972886d59b36e0c8aba35"
+  },
+  "selected_checkpoint": {
+    "path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/runs/concise_knowledge_5k_v1/checkpoints/best_lora.pth",
+    "filename": "best_lora.pth",
+    "md5": "96d0ca61a73bbf5029611ec16d3f2ca8",
+    "source_step": 1565
+  },
+  "all_checkpoints": {
+    "step_0_lora": {
+      "path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/runs/concise_knowledge_5k_v1/checkpoints/step_0_lora.pth",
+      "md5": "943b95989226884b63b3fd35df0586d5"
+    },
+    "best_lora": {
+      "path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/runs/concise_knowledge_5k_v1/checkpoints/best_lora.pth",
+      "md5": "96d0ca61a73bbf5029611ec16d3f2ca8"
+    },
+    "final_lora": {
+      "path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/runs/concise_knowledge_5k_v1/checkpoints/final_lora.pth",
+      "md5": "24b5cd9f1c79fa2b265fae186889e62e"
+    }
+  },
+  "effective_config": {
+    "experiment_name": "lora_medical_mcq_pilot",
+    "is_smoke": false,
+    "run_dir": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/runs/concise_knowledge_5k_v1",
+    "created_at": "2026-09-13T14:15:10.182780",
+    "base_model": {
+      "weight_path": "out/full_sft_768.pth",
+      "weight_md5": "942a011c4b3868f6e17d7ba7d5bdc08a",
+      "hidden_size": 768,
+      "num_hidden_layers": 8,
+      "use_moe": 0,
+      "model_dir": "/root/autodl-tmp/minimind-lora/model"
+    },
+    "lora_config": {
+      "rank": 16,
+      "target_modules": "Linear modules with in_features == out_features",
+      "save_name": "lora_medical_mcq"
+    },
+    "data": {
+      "train_path": "experiments/lora_medical_mcq_pilot/data/knowledge_5k_v1/train.jsonl",
+      "train_md5": "001c4da4a7724d5322a3513aa87407ac",
+      "val_path": "experiments/lora_medical_mcq_pilot/data/knowledge_5k_v1/val.jsonl",
+      "val_md5": "5628e48857fb61cf01b5569c65556804",
+      "manifest_path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/data/formal/manifest.json",
+      "manifest_md5": "cedc14fa641972886d59b36e0c8aba35",
+      "instruction_prompt": "请直接回答正确的医学内容，并用一句话说明依据。",
+      "target_mode": "concise_knowledge",
+      "max_seq_len": 768,
+      "seed": 42
+    },
+    "hyperparameters": {
+      "epochs": 5,
+      "batch_size": 16,
+      "learning_rate": 0.0002,
+      "weight_decay": 0.01,
+      "accumulation_steps": 2,
+      "grad_clip": 1.0,
+      "log_interval": 100,
+      "val_interval": 313,
+      "dtype": "bfloat16"
+    },
+    "device": "cuda:0"
+  },
+  "message": "训练在 Step 1565 取得更优 Loss (1.6302 < 初始 2.3378)，选定为最佳检查点。",
+  "history": [
+    {
+      "step": 313,
+      "epoch": 1,
+      "train_loss": 1.8968,
+      "val_loss": 1.6853,
+      "lr": 0.00018281152949374527,
+      "is_best": true
+    },
+    {
+      "step": 626,
+      "epoch": 2,
+      "train_loss": 1.5183,
+      "val_loss": 1.6523,
+      "lr": 0.00013781152949374526,
+      "is_best": true
+    },
+    {
+      "step": 939,
+      "epoch": 3,
+      "train_loss": 1.304,
+      "val_loss": 1.6345,
+      "lr": 8.218847050625476e-05,
+      "is_best": true
+    },
+    {
+      "step": 1252,
+      "epoch": 4,
+      "train_loss": 1.7646,
+      "val_loss": 1.6307,
+      "lr": 3.718847050625475e-05,
+      "is_best": true
+    },
+    {
+      "step": 1565,
+      "epoch": 5,
+      "train_loss": 2.051,
+      "val_loss": 1.6302,
+      "lr": 2e-05,
+      "is_best": true
+    }
+  ]
+}

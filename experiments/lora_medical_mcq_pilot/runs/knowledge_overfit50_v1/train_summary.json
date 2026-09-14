@@ -1,0 +1,166 @@
+{
+  "experiment": "lora_medical_mcq_pilot",
+  "is_smoke": false,
+  "timestamp": "2026-09-12T17:37:07.613981",
+  "total_time_seconds": 36.36,
+  "status": "COMPLETED",
+  "improved": true,
+  "best_step": 200,
+  "initial_val_loss": 2.6889,
+  "best_val_loss": 2.0215,
+  "provenance": {
+    "base_weight_path": "/root/autodl-tmp/minimind-lora/out/full_sft_768.pth",
+    "base_weight_md5": "942a011c4b3868f6e17d7ba7d5bdc08a",
+    "train_data_path": "experiments/lora_medical_mcq_pilot/data/knowledge_overfit50_v1/train.jsonl",
+    "train_data_md5": "9d2c91d0622ec3fc24f775a43dadfe5d",
+    "val_data_path": "experiments/lora_medical_mcq_pilot/data/knowledge_overfit50_v1/train.jsonl",
+    "val_data_md5": "9d2c91d0622ec3fc24f775a43dadfe5d",
+    "data_manifest_md5": "cedc14fa641972886d59b36e0c8aba35"
+  },
+  "selected_checkpoint": {
+    "path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/runs/knowledge_overfit50_v1/checkpoints/best_lora.pth",
+    "filename": "best_lora.pth",
+    "md5": "b4d8ec55ef0d1207d2b2b9d904826068",
+    "source_step": 200
+  },
+  "all_checkpoints": {
+    "step_0_lora": {
+      "path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/runs/knowledge_overfit50_v1/checkpoints/step_0_lora.pth",
+      "md5": "943b95989226884b63b3fd35df0586d5"
+    },
+    "best_lora": {
+      "path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/runs/knowledge_overfit50_v1/checkpoints/best_lora.pth",
+      "md5": "b4d8ec55ef0d1207d2b2b9d904826068"
+    },
+    "final_lora": {
+      "path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/runs/knowledge_overfit50_v1/checkpoints/final_lora.pth",
+      "md5": "a3a6a4cd18861dc27fbeaac8ebf9df8a"
+    }
+  },
+  "effective_config": {
+    "experiment_name": "lora_medical_mcq_pilot",
+    "is_smoke": false,
+    "run_dir": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/runs/knowledge_overfit50_v1",
+    "created_at": "2026-09-12T17:36:29.546971",
+    "base_model": {
+      "weight_path": "/root/autodl-tmp/minimind-lora/out/full_sft_768.pth",
+      "weight_md5": "942a011c4b3868f6e17d7ba7d5bdc08a",
+      "hidden_size": 768,
+      "num_hidden_layers": 8,
+      "use_moe": 0,
+      "model_dir": "/root/autodl-tmp/minimind-lora/model"
+    },
+    "lora_config": {
+      "rank": 16,
+      "target_modules": "Linear modules with in_features == out_features",
+      "save_name": "lora_medical_mcq"
+    },
+    "data": {
+      "train_path": "experiments/lora_medical_mcq_pilot/data/knowledge_overfit50_v1/train.jsonl",
+      "train_md5": "9d2c91d0622ec3fc24f775a43dadfe5d",
+      "val_path": "experiments/lora_medical_mcq_pilot/data/knowledge_overfit50_v1/train.jsonl",
+      "val_md5": "9d2c91d0622ec3fc24f775a43dadfe5d",
+      "manifest_path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/data/formal/manifest.json",
+      "manifest_md5": "cedc14fa641972886d59b36e0c8aba35",
+      "instruction_prompt": "请先给出正确答案的内容和字母，再依据医学知识进行解析。",
+      "target_mode": "answer_rationale",
+      "max_seq_len": 768,
+      "seed": 42
+    },
+    "hyperparameters": {
+      "epochs": 50,
+      "batch_size": 16,
+      "learning_rate": 0.0002,
+      "weight_decay": 0.01,
+      "accumulation_steps": 2,
+      "grad_clip": 1.0,
+      "log_interval": 5,
+      "val_interval": 20,
+      "dtype": "bfloat16"
+    },
+    "device": "cuda:0"
+  },
+  "message": "训练在 Step 200 取得更优 Loss (2.0215 < 初始 2.6889)，选定为最佳检查点。",
+  "history": [
+    {
+      "step": 20,
+      "epoch": 5,
+      "train_loss": 2.4277,
+      "val_loss": 2.499,
+      "lr": 0.00019559508646656385,
+      "is_best": true
+    },
+    {
+      "step": 40,
+      "epoch": 10,
+      "train_loss": 2.9078,
+      "val_loss": 2.3597,
+      "lr": 0.00018281152949374527,
+      "is_best": true
+    },
+    {
+      "step": 60,
+      "epoch": 15,
+      "train_loss": 3.1332,
+      "val_loss": 2.26,
+      "lr": 0.00016290067270632261,
+      "is_best": true
+    },
+    {
+      "step": 80,
+      "epoch": 20,
+      "train_loss": 2.5287,
+      "val_loss": 2.1846,
+      "lr": 0.00013781152949374526,
+      "is_best": true
+    },
+    {
+      "step": 100,
+      "epoch": 25,
+      "train_loss": 2.4392,
+      "val_loss": 2.1252,
+      "lr": 0.00011000000000000002,
+      "is_best": true
+    },
+    {
+      "step": 120,
+      "epoch": 30,
+      "train_loss": 1.7769,
+      "val_loss": 2.0829,
+      "lr": 8.218847050625476e-05,
+      "is_best": true
+    },
+    {
+      "step": 140,
+      "epoch": 35,
+      "train_loss": 2.5688,
+      "val_loss": 2.0555,
+      "lr": 5.709932729367744e-05,
+      "is_best": true
+    },
+    {
+      "step": 160,
+      "epoch": 40,
+      "train_loss": 1.8528,
+      "val_loss": 2.037,
+      "lr": 3.718847050625475e-05,
+      "is_best": true
+    },
+    {
+      "step": 180,
+      "epoch": 45,
+      "train_loss": 2.9019,
+      "val_loss": 2.0267,
+      "lr": 2.4404913533436186e-05,
+      "is_best": true
+    },
+    {
+      "step": 200,
+      "epoch": 50,
+      "train_loss": 2.5175,
+      "val_loss": 2.0215,
+      "lr": 2e-05,
+      "is_best": true
+    }
+  ]
+}

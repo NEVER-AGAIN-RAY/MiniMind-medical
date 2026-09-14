@@ -1,0 +1,213 @@
+{
+  "experiment": "lora_medical_mcq_pilot",
+  "is_smoke": false,
+  "timestamp": "2026-09-12T15:57:13.702124",
+  "total_time_seconds": 28.51,
+  "status": "COMPLETED",
+  "improved": true,
+  "best_step": 280,
+  "initial_val_loss": 2.4009,
+  "best_val_loss": 0.5336,
+  "provenance": {
+    "base_weight_path": "/root/autodl-tmp/minimind-lora/out/full_sft_768.pth",
+    "base_weight_md5": "942a011c4b3868f6e17d7ba7d5bdc08a",
+    "train_data_path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/data/formal/train.jsonl",
+    "train_data_md5": "bd51a76192da9faa9c56d90abd537056",
+    "val_data_path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/data/formal/val.jsonl",
+    "val_data_md5": "e01c3b433f03316d01966ac193c87147",
+    "data_manifest_md5": "cedc14fa641972886d59b36e0c8aba35"
+  },
+  "selected_checkpoint": {
+    "path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/runs/formal/checkpoints/best_lora.pth",
+    "filename": "best_lora.pth",
+    "md5": "4ea6c725d39a53f01da1cd5b09443503",
+    "source_step": 280
+  },
+  "all_checkpoints": {
+    "step_0_lora": {
+      "path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/runs/formal/checkpoints/step_0_lora.pth",
+      "md5": "943b95989226884b63b3fd35df0586d5"
+    },
+    "best_lora": {
+      "path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/runs/formal/checkpoints/best_lora.pth",
+      "md5": "4ea6c725d39a53f01da1cd5b09443503"
+    },
+    "final_lora": {
+      "path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/runs/formal/checkpoints/final_lora.pth",
+      "md5": "fde3c58972ac801d6e93977f3706560a"
+    }
+  },
+  "effective_config": {
+    "experiment_name": "lora_medical_mcq_pilot",
+    "is_smoke": false,
+    "run_dir": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/runs/formal",
+    "created_at": "2026-09-12T15:56:43.248613",
+    "base_model": {
+      "weight_path": "/root/autodl-tmp/minimind-lora/out/full_sft_768.pth",
+      "weight_md5": "942a011c4b3868f6e17d7ba7d5bdc08a",
+      "hidden_size": 768,
+      "num_hidden_layers": 8,
+      "use_moe": 0,
+      "model_dir": "/root/autodl-tmp/minimind-lora/model"
+    },
+    "lora_config": {
+      "rank": 16,
+      "target_modules": "Linear modules with in_features == out_features",
+      "save_name": "lora_medical_mcq"
+    },
+    "data": {
+      "train_path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/data/formal/train.jsonl",
+      "train_md5": "bd51a76192da9faa9c56d90abd537056",
+      "val_path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/data/formal/val.jsonl",
+      "val_md5": "e01c3b433f03316d01966ac193c87147",
+      "manifest_path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/data/formal/manifest.json",
+      "manifest_md5": "cedc14fa641972886d59b36e0c8aba35",
+      "instruction_prompt": "请直接输出正确选项的字母（如 A、B、C、D、E），不要输出多余解释。",
+      "max_seq_len": 340,
+      "seed": 42
+    },
+    "hyperparameters": {
+      "epochs": 5,
+      "batch_size": 16,
+      "learning_rate": 0.0002,
+      "weight_decay": 0.01,
+      "accumulation_steps": 2,
+      "grad_clip": 1.0,
+      "log_interval": 5,
+      "val_interval": 20,
+      "dtype": "bfloat16"
+    },
+    "device": "cuda:0"
+  },
+  "message": "训练在 Step 280 取得更优 Loss (0.5336 < 初始 2.4009)，选定为最佳检查点。",
+  "history": [
+    {
+      "step": 20,
+      "epoch": 1,
+      "train_loss": 0.5487,
+      "val_loss": 0.589,
+      "lr": 0.00019821552390636896,
+      "is_best": true
+    },
+    {
+      "step": 40,
+      "epoch": 1,
+      "train_loss": 0.5897,
+      "val_loss": 0.562,
+      "lr": 0.0001929328590683367,
+      "is_best": true
+    },
+    {
+      "step": 60,
+      "epoch": 1,
+      "train_loss": 0.5177,
+      "val_loss": 0.5473,
+      "lr": 0.00018436148968843956,
+      "is_best": true
+    },
+    {
+      "step": 80,
+      "epoch": 2,
+      "train_loss": 0.5166,
+      "val_loss": 0.5535,
+      "lr": 0.00017284131362774657,
+      "is_best": false
+    },
+    {
+      "step": 100,
+      "epoch": 2,
+      "train_loss": 0.5694,
+      "val_loss": 0.5456,
+      "lr": 0.00015882916374791836,
+      "is_best": true
+    },
+    {
+      "step": 120,
+      "epoch": 2,
+      "train_loss": 0.5274,
+      "val_loss": 0.5471,
+      "lr": 0.0001428806921929756,
+      "is_best": false
+    },
+    {
+      "step": 140,
+      "epoch": 3,
+      "train_loss": 0.5244,
+      "val_loss": 0.5354,
+      "lr": 0.00012562833599002375,
+      "is_best": true
+    },
+    {
+      "step": 160,
+      "epoch": 3,
+      "train_loss": 0.5498,
+      "val_loss": 0.535,
+      "lr": 0.00010775623774357343,
+      "is_best": true
+    },
+    {
+      "step": 180,
+      "epoch": 3,
+      "train_loss": 0.5433,
+      "val_loss": 0.5417,
+      "lr": 8.997311594393172e-05,
+      "is_best": false
+    },
+    {
+      "step": 200,
+      "epoch": 4,
+      "train_loss": 0.5407,
+      "val_loss": 0.5408,
+      "lr": 7.298416071824496e-05,
+      "is_best": false
+    },
+    {
+      "step": 220,
+      "epoch": 4,
+      "train_loss": 0.5677,
+      "val_loss": 0.5374,
+      "lr": 5.74630694988689e-05,
+      "is_best": false
+    },
+    {
+      "step": 240,
+      "epoch": 4,
+      "train_loss": 0.5677,
+      "val_loss": 0.5431,
+      "lr": 4.402533153531565e-05,
+      "is_best": false
+    },
+    {
+      "step": 260,
+      "epoch": 5,
+      "train_loss": 0.5472,
+      "val_loss": 0.5344,
+      "lr": 3.3203820653106e-05,
+      "is_best": true
+    },
+    {
+      "step": 280,
+      "epoch": 5,
+      "train_loss": 0.5332,
+      "val_loss": 0.5336,
+      "lr": 2.542766412926825e-05,
+      "is_best": true
+    },
+    {
+      "step": 300,
+      "epoch": 5,
+      "train_loss": 0.5157,
+      "val_loss": 0.5344,
+      "lr": 2.1005225639738434e-05,
+      "is_best": false
+    },
+    {
+      "step": 315,
+      "epoch": 5,
+      "train_loss": 0.5516,
+      "val_loss": 0.5344,
+      "lr": 2e-05,
+      "is_best": false
+    }
+  ]
+}
