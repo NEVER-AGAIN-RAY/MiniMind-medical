@@ -86,6 +86,12 @@ python experiments/lora_medical_mcq_pilot/train_mcq_lora.py
 python experiments/lora_medical_mcq_pilot/eval_mcq.py
 ```
 
+**归档时的路径变动**：各 run 的 `train_summary.json` 已从 `runs/<name>/checkpoints/`
+移到 `runs/<name>/`——`checkpoints/` 被 `.gitignore` 整目录排除，留在原处这些训练记录
+就无法入库。`train_mcq_lora.py` 仍写入 `checkpoints/train_summary.json`，因此**全新的
+训练→评测流程不受影响**；只有对已归档 run 重跑 `eval_mcq.py` 会找不到该文件，而这些
+run 的权重本就已删除。
+
 **权重说明**：清理时只保留了 `runs/concise_overfit50_v1/lora_rank16_final.pth`
 （复现"50 题记忆到 100%"这个关键正面结论所需）。其余 20 个 `.pth` 均为负面结果的
 中间产物，已删除；各 run 的 `train_summary.json` 中记录了对应的 md5。
