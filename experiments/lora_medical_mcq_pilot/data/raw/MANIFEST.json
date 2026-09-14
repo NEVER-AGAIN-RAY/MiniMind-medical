@@ -1,0 +1,28 @@
+{
+  "description": "CMExam 原始题库 CSV 的冻结依赖记录。CSV 本身不进 Git（约 49MB），按下方 URL 重新下载后校验 sha256 即可复现全部切分。",
+  "source": "CMExam (Chinese National Medical Licensing Examination)",
+  "repository": "https://github.com/williamliujl/CMExam",
+  "recorded_at": "2026-09-14",
+  "files": [
+    {
+      "name": "train.csv",
+      "bytes": 40576549,
+      "sha256": "3d6ca5e2499c510956534740c95179c483d9d47d2531e39fc5069333ffd23724",
+      "url": "https://raw.githubusercontent.com/williamliujl/CMExam/main/data/train.csv"
+    },
+    {
+      "name": "val.csv",
+      "bytes": 5126392,
+      "sha256": "58cc9776b2f17fdc3a235ceec9ae153ee3f617703293dda661c6decbffb1f190",
+      "url": "https://raw.githubusercontent.com/williamliujl/CMExam/main/data/val.csv"
+    },
+    {
+      "name": "test.csv",
+      "bytes": 5857392,
+      "sha256": "e998f69b3f8108bf08bcb8cc9a2a6ed276afeabde6ba3caa3015789b1f6fd407",
+      "url": "https://raw.githubusercontent.com/williamliujl/CMExam/main/data/test_with_annotations.csv"
+    }
+  ],
+  "verify": "cd experiments/lora_medical_mcq_pilot && shasum -a 256 -c <(python -c \"import json;[print(f[\\\"sha256\\\"]+'  data/raw/'+f[\\\"name\\\"]) for f in json.load(open('data/raw/MANIFEST.json'))['files']]\")",
+  "regenerate": "python experiments/lora_medical_mcq_pilot/prepare_data.py --download"
+}

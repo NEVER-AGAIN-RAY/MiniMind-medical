@@ -1,0 +1,40 @@
+{
+  "experiment": "knowledge_overfit50_v1",
+  "seed": 42,
+  "max_seq_len": 768,
+  "target_mode": "answer_rationale",
+  "counts": {
+    "train": 50,
+    "val": 10
+  },
+  "max_tokens": {
+    "train": 740,
+    "val": 452
+  },
+  "source_md5": {
+    "train": "08f03b97e699403a784d032f37bc045e",
+    "val": "89690f45bcfee24d2d555cf109c50db3"
+  },
+  "output_md5": {
+    "train": "9d2c91d0622ec3fc24f775a43dadfe5d",
+    "val": "4fb20d249b922a33fa577a4286fecd93"
+  },
+  "selection_stats": {
+    "train": {
+      "raw": 54497,
+      "missing_explanation": 18,
+      "answer_absent_from_explanation": 21,
+      "invalid": 9,
+      "excluded_or_duplicate": 0,
+      "too_long": 8
+    },
+    "val": {
+      "raw": 6811,
+      "missing_explanation": 5,
+      "answer_absent_from_explanation": 4,
+      "invalid": 1,
+      "excluded_or_duplicate": 1,
+      "too_long": 1
+    }
+  }
+}

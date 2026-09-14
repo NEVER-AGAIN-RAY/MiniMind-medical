@@ -1,0 +1,147 @@
+{
+  "experiment": "curated_knowledge_v1",
+  "description": "医学选择题精简知识训练集（答案选项文字 + 单句正向知识句）",
+  "seed": 42,
+  "near_duplicate_jaccard_threshold": 0.85,
+  "targets": {
+    "train_max": 5000,
+    "dev_target": 400,
+    "human_review": 100,
+    "train_per_letter_cap": 1000,
+    "dev_per_letter_cap": 80
+  },
+  "raw_question_count": 54497,
+  "final_counts": {
+    "train": 5000,
+    "dev": 400,
+    "human_review_100": 100,
+    "total": 5400
+  },
+  "answer_letter_counts": {
+    "train": {
+      "A": 1000,
+      "B": 1000,
+      "C": 1000,
+      "D": 1000,
+      "E": 1000
+    },
+    "dev": {
+      "A": 80,
+      "B": 80,
+      "C": 80,
+      "D": 80,
+      "E": 80
+    },
+    "human_review_100": {
+      "A": 12,
+      "B": 27,
+      "C": 18,
+      "D": 14,
+      "E": 29
+    }
+  },
+  "source_counts": {
+    "CMExam_train": 5400
+  },
+  "dedup_counts": {
+    "external_exact_duplicate": 4357,
+    "external_exact_by_source": {
+      "knowledge_5k_train": 3527,
+      "raw_test": 142,
+      "raw_val": 162,
+      "formal_train": 508,
+      "knowledge_5k_val": 4,
+      "eval_v1_mcq": 4,
+      "formal_val": 3,
+      "formal_test": 6,
+      "hist_qa_lora_medical": 1
+    },
+    "external_near_duplicate": 330,
+    "internal_exact_duplicate": 337,
+    "internal_near_duplicate": 228
+  },
+  "exclusion_reasons": {
+    "answer_absent_from_explanation": 6750,
+    "answer_not_in_options": 1684,
+    "answer_text_too_long_or_multi_sentence": 993,
+    "combination_options": 1176,
+    "explanation_answer_conflict": 376,
+    "explanation_missing_or_empty": 6137,
+    "external_exact_duplicate": 4357,
+    "external_near_duplicate": 330,
+    "garbled_or_html": 22,
+    "internal_exact_duplicate": 337,
+    "internal_near_duplicate": 228,
+    "invalid_options_format": 1488,
+    "knowledge_marker_remaining": 120,
+    "knowledge_mentions_wrong_options": 181,
+    "knowledge_negative_statement": 451,
+    "negative_question": 7863,
+    "no_knowledge_sentence": 543,
+    "question_truncated": 66,
+    "visual_or_table_dependency": 1151
+  },
+  "target_text_length_stats": {
+    "train": {
+      "min": 16,
+      "max": 120,
+      "mean": 45.17
+    },
+    "dev": {
+      "min": 16,
+      "max": 110,
+      "mean": 44.7
+    }
+  },
+  "answer_text_length_stats": {
+    "train": {
+      "min": 1,
+      "max": 30,
+      "mean": 5.38
+    },
+    "dev": {
+      "min": 1,
+      "max": 25,
+      "mean": 5.65
+    }
+  },
+  "knowledge_length_stats": {
+    "train": {
+      "min": 8,
+      "max": 100,
+      "mean": 33.78
+    },
+    "dev": {
+      "min": 8,
+      "max": 99,
+      "mean": 33.05
+    }
+  },
+  "input_md5": {
+    "/Users/lei/Desktop/minimind-master/experiments/lora_medical_mcq_pilot/data/raw/train.csv": "08f03b97e699403a784d032f37bc045e",
+    "/Users/lei/Desktop/minimind-master/experiments/lora_medical_mcq_pilot/data/formal/train.jsonl": "bd51a76192da9faa9c56d90abd537056",
+    "/Users/lei/Desktop/minimind-master/experiments/lora_medical_mcq_pilot/data/formal/val.jsonl": "e01c3b433f03316d01966ac193c87147",
+    "/Users/lei/Desktop/minimind-master/experiments/lora_medical_mcq_pilot/data/formal/test.jsonl": "efd8bfab9576a159ff380f3286ecb1a6",
+    "/Users/lei/Desktop/minimind-master/experiments/lora_medical_mcq_pilot/data/knowledge_5k_v1/train.jsonl": "001c4da4a7724d5322a3513aa87407ac",
+    "/Users/lei/Desktop/minimind-master/experiments/lora_medical_mcq_pilot/data/knowledge_5k_v1/val.jsonl": "5628e48857fb61cf01b5569c65556804",
+    "/Users/lei/Desktop/minimind-master/experiments/lora_medical_20260909/eval/v1/questions_mcq.jsonl": "88d43470367eaa2e432a3fae8a77a86c",
+    "/Users/lei/Desktop/minimind-master/experiments/lora_medical_20260909/eval/v1/questions_general.jsonl": "da8add108c840ad7c0f9ae0d74a992cb",
+    "/Users/lei/Desktop/minimind-master/experiments/lora_medical_20260909/eval/v1/questions_medqa.jsonl": "6b2b02b581d4ffa2d9f08b9892480231",
+    "/Users/lei/Desktop/minimind-master/dataset/lora_medical.jsonl": "e9d4b8b6cc866ef36d902e1984ac9f2c",
+    "/Users/lei/Desktop/minimind-master/experiments/lora_medical_mcq_pilot/data/raw/val.csv": "89690f45bcfee24d2d555cf109c50db3",
+    "/Users/lei/Desktop/minimind-master/experiments/lora_medical_mcq_pilot/data/raw/test.csv": "f08321a2924beb5ad788074f27eec12c"
+  },
+  "output_md5": {
+    "train.jsonl": "a609bf2f433080b91f0387b7330a43be",
+    "dev.jsonl": "afd3cc2ecf6c51ba4e81187534d92d20",
+    "human_review_100.jsonl": "7477d57ef20e92d1b39c066743bad387",
+    "rejected_stats.json": "2805cfb5049ba7b3c6a317cf15c9c951"
+  },
+  "missing_external_sources": [],
+  "notes": {
+    "source_row": "train.csv 中除去表头的数据行序号（1-based），可回溯原始题目",
+    "subject_balance": "raw train.csv 无科目元数据列，无法按医学科目分层；已按答案字母分层均衡",
+    "knowledge_rule": "知识句仅做标记清理（A对/B错/为本题正确答案等），不编造医学内容；无法可靠提取则整题排除",
+    "split_rule": "先dev后train，按答案字母分层等额抽取；train/dev共享同一去重池，天然无重复"
+  }
+}

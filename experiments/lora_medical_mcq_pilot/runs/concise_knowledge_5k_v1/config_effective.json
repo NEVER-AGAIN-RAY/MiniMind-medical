@@ -1,0 +1,43 @@
+{
+  "experiment_name": "lora_medical_mcq_pilot",
+  "is_smoke": false,
+  "run_dir": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/runs/concise_knowledge_5k_v1",
+  "created_at": "2026-09-13T14:15:10.182780",
+  "base_model": {
+    "weight_path": "out/full_sft_768.pth",
+    "weight_md5": "942a011c4b3868f6e17d7ba7d5bdc08a",
+    "hidden_size": 768,
+    "num_hidden_layers": 8,
+    "use_moe": 0,
+    "model_dir": "/root/autodl-tmp/minimind-lora/model"
+  },
+  "lora_config": {
+    "rank": 16,
+    "target_modules": "Linear modules with in_features == out_features",
+    "save_name": "lora_medical_mcq"
+  },
+  "data": {
+    "train_path": "experiments/lora_medical_mcq_pilot/data/knowledge_5k_v1/train.jsonl",
+    "train_md5": "001c4da4a7724d5322a3513aa87407ac",
+    "val_path": "experiments/lora_medical_mcq_pilot/data/knowledge_5k_v1/val.jsonl",
+    "val_md5": "5628e48857fb61cf01b5569c65556804",
+    "manifest_path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/data/formal/manifest.json",
+    "manifest_md5": "cedc14fa641972886d59b36e0c8aba35",
+    "instruction_prompt": "请直接回答正确的医学内容，并用一句话说明依据。",
+    "target_mode": "concise_knowledge",
+    "max_seq_len": 768,
+    "seed": 42
+  },
+  "hyperparameters": {
+    "epochs": 5,
+    "batch_size": 16,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.01,
+    "accumulation_steps": 2,
+    "grad_clip": 1.0,
+    "log_interval": 100,
+    "val_interval": 313,
+    "dtype": "bfloat16"
+  },
+  "device": "cuda:0"
+}

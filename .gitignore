@@ -27,3 +27,6 @@ minimind_cloud_*.tar.gz
 # Experiment-local caches and scratch files
 experiments/**/cache/
 experiments/**/tmp/
+
+# 大体积原始题库：按同目录 MANIFEST.json 的 URL 与 sha256 重新下载
+experiments/lora_medical_mcq_pilot/data/raw/*.csv

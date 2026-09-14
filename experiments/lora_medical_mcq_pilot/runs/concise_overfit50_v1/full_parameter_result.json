@@ -1,0 +1,1040 @@
+{
+  "name": "full_parameter",
+  "scope": "full",
+  "rank": null,
+  "epochs": 50,
+  "learning_rate": 0.0001,
+  "trainable_parameters": 63912192,
+  "total_parameters": 63912192,
+  "elapsed_seconds": 39.94,
+  "history": [
+    {
+      "epoch": 0,
+      "candidate_accuracy": 0.24
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.10162409842014312,
+      "candidate_accuracy": 1.0
+    },
+    {
+      "epoch": 25,
+      "train_loss": 0.0048455037525855,
+      "candidate_accuracy": 1.0
+    },
+    {
+      "epoch": 50,
+      "train_loss": 7.904741069069132e-05,
+      "candidate_accuracy": 1.0
+    }
+  ],
+  "final_candidate_accuracy": 1.0,
+  "candidate_details": [
+    {
+      "id": "knowledge_train_00001",
+      "gold": "D",
+      "predicted": "D",
+      "scores": {
+        "A": 7.551887,
+        "B": 2.53514,
+        "C": 6.393028,
+        "D": 5.4e-05,
+        "E": 4.922772
+      }
+    },
+    {
+      "id": "knowledge_train_00002",
+      "gold": "A",
+      "predicted": "A",
+      "scores": {
+        "A": 9.7e-05,
+        "B": 8.841108,
+        "C": 5.371462,
+        "D": 6.586363,
+        "E": 6.737381
+      }
+    },
+    {
+      "id": "knowledge_train_00003",
+      "gold": "E",
+      "predicted": "E",
+      "scores": {
+        "A": 1.642372,
+        "B": 2.378643,
+        "C": 2.805659,
+        "D": 2.328653,
+        "E": 2.8e-05
+      }
+    },
+    {
+      "id": "knowledge_train_00004",
+      "gold": "B",
+      "predicted": "B",
+      "scores": {
+        "A": 3.432414,
+        "B": 6.6e-05,
+        "C": 3.083379,
+        "D": 6.168885,
+        "E": 3.328059
+      }
+    },
+    {
+      "id": "knowledge_train_00005",
+      "gold": "D",
+      "predicted": "D",
+      "scores": {
+        "A": 4.818383,
+        "B": 4.683776,
+        "C": 5.044917,
+        "D": 4e-05,
+        "E": 4.227224
+      }
+    },
+    {
+      "id": "knowledge_train_00006",
+      "gold": "B",
+      "predicted": "B",
+      "scores": {
+        "A": 2.341897,
+        "B": 1.5e-05,
+        "C": 3.141388,
+        "D": 3.74398,
+        "E": 4.091698
+      }
+    },
+    {
+      "id": "knowledge_train_00007",
+      "gold": "B",
+      "predicted": "B",
+      "scores": {
+        "A": 5.192157,
+        "B": 1.9e-05,
+        "C": 7.748059,
+        "D": 3.324646,
+        "E": 11.247403
+      }
+    },
+    {
+      "id": "knowledge_train_00008",
+      "gold": "A",
+      "predicted": "A",
+      "scores": {
+        "A": 1.8e-05,
+        "B": 7.990507,
+        "C": 7.131761,
+        "D": 9.551436,
+        "E": 15.900183
+      }
+    },
+    {
+      "id": "knowledge_train_00009",
+      "gold": "A",
+      "predicted": "A",
+      "scores": {
+        "A": 6.4e-05,
+        "B": 4.687723,
+        "C": 5.923819,
+        "D": 3.630549,
+        "E": 9.01034
+      }
+    },
+    {
+      "id": "knowledge_train_00010",
+      "gold": "D",
+      "predicted": "D",
+      "scores": {
+        "A": 3.931445,
+        "B": 4.993783,
+        "C": 4.968995,
+        "D": 1e-06,
+        "E": 7.167731
+      }
+    },
+    {
+      "id": "knowledge_train_00011",
+      "gold": "B",
+      "predicted": "B",
+      "scores": {
+        "A": 3.136441,
+        "B": 3.6e-05,
+        "C": 4.006606,
+        "D": 2.965975,
+        "E": 3.237758
+      }
+    },
+    {
+      "id": "knowledge_train_00012",
+      "gold": "A",
+      "predicted": "A",
+      "scores": {
+        "A": 6e-05,
+        "B": 3.038946,
+        "C": 3.603666,
+        "D": 2.511329,
+        "E": 4.464257
+      }
+    },
+    {
+      "id": "knowledge_train_00013",
+      "gold": "C",
+      "predicted": "C",
+      "scores": {
+        "A": 1.494339,
+        "B": 1.734239,
+        "C": 5.2e-05,
+        "D": 2.042947,
+        "E": 2.367539
+      }
+    },
+    {
+      "id": "knowledge_train_00014",
+      "gold": "D",
+      "predicted": "D",
+      "scores": {
+        "A": 2.686396,
+        "B": 2.440003,
+        "C": 1.229316,
+        "D": 2.8e-05,
+        "E": 3.410114
+      }
+    },
+    {
+      "id": "knowledge_train_00015",
+      "gold": "E",
+      "predicted": "E",
+      "scores": {
+        "A": 8.83313,
+        "B": 4.345165,
+        "C": 6.921491,
+        "D": 7.117628,
+        "E": 2.1e-05
+      }
+    },
+    {
+      "id": "knowledge_train_00016",
+      "gold": "B",
+      "predicted": "B",
+      "scores": {
+        "A": 4.51116,
+        "B": 3.4e-05,
+        "C": 2.783231,
+        "D": 4.748629,
+        "E": 2.897532
+      }
+    },
+    {
+      "id": "knowledge_train_00017",
+      "gold": "B",
+      "predicted": "B",
+      "scores": {
+        "A": 4.39934,
+        "B": 3.7e-05,
+        "C": 4.816628,
+        "D": 4.907323,
+        "E": 4.376395
+      }
+    },
+    {
+      "id": "knowledge_train_00018",
+      "gold": "A",
+      "predicted": "A",
+      "scores": {
+        "A": 3.3e-05,
+        "B": 3.9263,
+        "C": 7.201403,
+        "D": 2.907656,
+        "E": 1.919687
+      }
+    },
+    {
+      "id": "knowledge_train_00019",
+      "gold": "B",
+      "predicted": "B",
+      "scores": {
+        "A": 1.257952,
+        "B": 0.000134,
+        "C": 4.352505,
+        "D": 4.342793,
+        "E": 3.662143
+      }
+    },
+    {
+      "id": "knowledge_train_00020",
+      "gold": "A",
+      "predicted": "A",
+      "scores": {
+        "A": 0.000111,
+        "B": 1.958472,
+        "C": 2.983056,
+        "D": 4.89714,
+        "E": 2.871248
+      }
+    },
+    {
+      "id": "knowledge_train_00021",
+      "gold": "C",
+      "predicted": "C",
+      "scores": {
+        "A": 5.895927,
+        "B": 11.283508,
+        "C": 3e-06,
+        "D": 12.46424,
+        "E": 11.078608
+      }
+    },
+    {
+      "id": "knowledge_train_00022",
+      "gold": "C",
+      "predicted": "C",
+      "scores": {
+        "A": 5.405861,
+        "B": 2.707673,
+        "C": 1.5e-05,
+        "D": 3.484928,
+        "E": 6.595061
+      }
+    },
+    {
+      "id": "knowledge_train_00023",
+      "gold": "A",
+      "predicted": "A",
+      "scores": {
+        "A": 4.1e-05,
+        "B": 4.800421,
+        "C": 3.915358,
+        "D": 4.409032,
+        "E": 2.479462
+      }
+    },
+    {
+      "id": "knowledge_train_00024",
+      "gold": "E",
+      "predicted": "E",
+      "scores": {
+        "A": 6.243548,
+        "B": 9.604484,
+        "C": 10.982281,
+        "D": 5.205964,
+        "E": 0.0
+      }
+    },
+    {
+      "id": "knowledge_train_00025",
+      "gold": "C",
+      "predicted": "C",
+      "scores": {
+        "A": 4.82274,
+        "B": 4.11623,
+        "C": 6.7e-05,
+        "D": 3.605664,
+        "E": 4.301689
+      }
+    },
+    {
+      "id": "knowledge_train_00026",
+      "gold": "C",
+      "predicted": "C",
+      "scores": {
+        "A": 4.766831,
+        "B": 2.725278,
+        "C": 9.7e-05,
+        "D": 2.981591,
+        "E": 4.794619
+      }
+    },
+    {
+      "id": "knowledge_train_00027",
+      "gold": "A",
+      "predicted": "A",
+      "scores": {
+        "A": 0.000127,
+        "B": 4.591255,
+        "C": 5.479893,
+        "D": 5.521146,
+        "E": 4.833552
+      }
+    },
+    {
+      "id": "knowledge_train_00028",
+      "gold": "C",
+      "predicted": "C",
+      "scores": {
+        "A": 4.631721,
+        "B": 6.082999,
+        "C": 4.1e-05,
+        "D": 5.038943,
+        "E": 7.301361
+      }
+    },
+    {
+      "id": "knowledge_train_00029",
+      "gold": "A",
+      "predicted": "A",
+      "scores": {
+        "A": 2.5e-05,
+        "B": 4.705816,
+        "C": 4.445008,
+        "D": 2.130976,
+        "E": 5.5615
+      }
+    },
+    {
+      "id": "knowledge_train_00030",
+      "gold": "C",
+      "predicted": "C",
+      "scores": {
+        "A": 6.184081,
+        "B": 6.016861,
+        "C": 2.5e-05,
+        "D": 7.407818,
+        "E": 7.46384
+      }
+    },
+    {
+      "id": "knowledge_train_00031",
+      "gold": "C",
+      "predicted": "C",
+      "scores": {
+        "A": 5.403101,
+        "B": 4.296628,
+        "C": 2.7e-05,
+        "D": 4.44557,
+        "E": 7.070012
+      }
+    },
+    {
+      "id": "knowledge_train_00032",
+      "gold": "A",
+      "predicted": "A",
+      "scores": {
+        "A": 1.3e-05,
+        "B": 10.042975,
+        "C": 12.47543,
+        "D": 8.142125,
+        "E": 5.597425
+      }
+    },
+    {
+      "id": "knowledge_train_00033",
+      "gold": "A",
+      "predicted": "A",
+      "scores": {
+        "A": 8.7e-05,
+        "B": 8.826786,
+        "C": 15.117222,
+        "D": 13.917759,
+        "E": 8.617028
+      }
+    },
+    {
+      "id": "knowledge_train_00034",
+      "gold": "B",
+      "predicted": "B",
+      "scores": {
+        "A": 4.229799,
+        "B": 7e-05,
+        "C": 1.194698,
+        "D": 1.20315,
+        "E": 2.634898
+      }
+    },
+    {
+      "id": "knowledge_train_00035",
+      "gold": "B",
+      "predicted": "B",
+      "scores": {
+        "A": 5.197405,
+        "B": 3.7e-05,
+        "C": 3.669975,
+        "D": 5.285563,
+        "E": 3.45612
+      }
+    },
+    {
+      "id": "knowledge_train_00036",
+      "gold": "B",
+      "predicted": "B",
+      "scores": {
+        "A": 9.800927,
+        "B": 7e-05,
+        "C": 22.65625,
+        "D": 11.810914,
+        "E": 6.655429
+      }
+    },
+    {
+      "id": "knowledge_train_00037",
+      "gold": "B",
+      "predicted": "B",
+      "scores": {
+        "A": 12.375023,
+        "B": 3.3e-05,
+        "C": 13.420115,
+        "D": 5.323533,
+        "E": 3.25154
+      }
+    },
+    {
+      "id": "knowledge_train_00038",
+      "gold": "E",
+      "predicted": "E",
+      "scores": {
+        "A": 5.408086,
+        "B": 9.770087,
+        "C": 6.658417,
+        "D": 5.383938,
+        "E": 5.8e-05
+      }
+    },
+    {
+      "id": "knowledge_train_00039",
+      "gold": "B",
+      "predicted": "B",
+      "scores": {
+        "A": 2.32666,
+        "B": 6.9e-05,
+        "C": 3.899137,
+        "D": 5.635503,
+        "E": 4.117318
+      }
+    },
+    {
+      "id": "knowledge_train_00040",
+      "gold": "A",
+      "predicted": "A",
+      "scores": {
+        "A": 3.9e-05,
+        "B": 4.261655,
+        "C": 2.884447,
+        "D": 3.364286,
+        "E": 6.03635
+      }
+    },
+    {
+      "id": "knowledge_train_00041",
+      "gold": "D",
+      "predicted": "D",
+      "scores": {
+        "A": 3.691298,
+        "B": 6.567939,
+        "C": 10.50847,
+        "D": 4.2e-05,
+        "E": 5.579358
+      }
+    },
+    {
+      "id": "knowledge_train_00042",
+      "gold": "C",
+      "predicted": "C",
+      "scores": {
+        "A": 3.717717,
+        "B": 5.432063,
+        "C": 3.9e-05,
+        "D": 3.70716,
+        "E": 3.973419
+      }
+    },
+    {
+      "id": "knowledge_train_00043",
+      "gold": "E",
+      "predicted": "E",
+      "scores": {
+        "A": 1.917959,
+        "B": 1.9706,
+        "C": 2.343799,
+        "D": 2.534361,
+        "E": 5.1e-05
+      }
+    },
+    {
+      "id": "knowledge_train_00044",
+      "gold": "E",
+      "predicted": "E",
+      "scores": {
+        "A": 3.340655,
+        "B": 5.190533,
+        "C": 6.329015,
+        "D": 5.815817,
+        "E": 2.3e-05
+      }
+    },
+    {
+      "id": "knowledge_train_00045",
+      "gold": "C",
+      "predicted": "C",
+      "scores": {
+        "A": 5.284135,
+        "B": 4.767479,
+        "C": 3.6e-05,
+        "D": 2.931251,
+        "E": 3.90238
+      }
+    },
+    {
+      "id": "knowledge_train_00046",
+      "gold": "B",
+      "predicted": "B",
+      "scores": {
+        "A": 9.979934,
+        "B": 4.7e-05,
+        "C": 7.45999,
+        "D": 4.923273,
+        "E": 9.968854
+      }
+    },
+    {
+      "id": "knowledge_train_00047",
+      "gold": "D",
+      "predicted": "D",
+      "scores": {
+        "A": 3.90304,
+        "B": 3.438146,
+        "C": 4.286471,
+        "D": 3e-05,
+        "E": 3.218268
+      }
+    },
+    {
+      "id": "knowledge_train_00048",
+      "gold": "C",
+      "predicted": "C",
+      "scores": {
+        "A": 5.260664,
+        "B": 5.34397,
+        "C": 0.000185,
+        "D": 3.062575,
+        "E": 2.162643
+      }
+    },
+    {
+      "id": "knowledge_train_00049",
+      "gold": "A",
+      "predicted": "A",
+      "scores": {
+        "A": 3.5e-05,
+        "B": 0.973358,
+        "C": 3.645008,
+        "D": 6.023257,
+        "E": 4.454425
+      }
+    },
+    {
+      "id": "knowledge_train_00050",
+      "gold": "A",
+      "predicted": "A",
+      "scores": {
+        "A": 0.000104,
+        "B": 4.875724,
+        "C": 2.201475,
+        "D": 6.303198,
+        "E": 10.910957
+      }
+    }
+  ],
+  "generation": {
+    "answer_text_prefix_accuracy": 1.0,
+    "natural_termination_rate": 0.8,
+    "items": [
+      {
+        "id": "knowledge_train_00001",
+        "gold": "D",
+        "answer_text": "瞳孔开大肌",
+        "output": "瞳孔开大肌。知识点：所以瞳孔对光反射没有瞳孔开大肌参与。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00002",
+        "gold": "A",
+        "answer_text": "关元",
+        "output": "关元。知识点：小肠病按诊常用腧穴为关元。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00003",
+        "gold": "E",
+        "answer_text": "洛伐他汀",
+        "output": "洛伐他汀。洛伐他汀属于内酯型前药，亲脂性较强，口服吸收率较低，须在肝脏中水解成为开环羟基酸型方有药理活性。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00004",
+        "gold": "B",
+        "answer_text": "隐性感染",
+        "output": "隐性感染。知识点：病原体被清除、隐性感染、显性感染、病原携带状态、潜伏性感染都是传染病感染过程的表现形式，其中隐性感染最常见，显性感染最少见。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00005",
+        "gold": "D",
+        "answer_text": "静脉注射乳剂",
+        "output": "静脉注射乳剂。知识点：罗拉匹坦制剂为静脉注射乳剂，用于预防成人原发性和反复发作性成纤维细胞癌的迟发性化疗相关的恶心呕吐。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00006",
+        "gold": "B",
+        "answer_text": "突然昏仆，不省人事",
+        "output": "突然昏仆，不省人事。知识点：因此三者的共同特点是突然昏仆，不省人事。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00007",
+        "gold": "B",
+        "answer_text": "附着丧失",
+        "output": "附着丧失。知识点：反应牙周组织破坏程度的为附着丧失。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00008",
+        "gold": "A",
+        "answer_text": "斑蝥",
+        "output": "斑蝥。知识点：本题考查的是斑蝥的理化鉴别。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00009",
+        "gold": "A",
+        "answer_text": "仅有唇（颊）舌向松动",
+        "output": "仅有唇（颊）舌向松动。知识点：Ⅲ度松动：松动幅度大于2mm；②以牙松动方向计算：Ⅰ度松动：仅有唇（颊）舌向松动。",
+        "answer_text_prefix_correct": true,
+        "termination": "max_tokens_truncated"
+      },
+      {
+        "id": "knowledge_train_00010",
+        "gold": "D",
+        "answer_text": "矽肺",
+        "output": "矽肺。知识点：本题考查矽肺病人症状和X线表现。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00011",
+        "gold": "B",
+        "answer_text": "补肾益气，活血壮骨",
+        "output": "补肾益气，活血壮骨。知识点：骨疏康颗粒的功能是补肾益气，活血壮骨。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00012",
+        "gold": "A",
+        "answer_text": "硝酸甘油",
+        "output": "硝酸甘油。知识点：本题考查硝酸甘油的不良反应。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00013",
+        "gold": "C",
+        "answer_text": "资源严重减少的主要常用野生药材物种",
+        "output": "资源严重减少的主要常用野生药材物种。知识点：国家三级野生药材物种是指资源严重减少的主要常用野生药材物种。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00014",
+        "gold": "D",
+        "answer_text": "密封，在干燥处保存",
+        "output": "密封，在干燥处保存。知识点：阿司匹林遇湿气即缓缓水解，《中国药典》规定其游离水杨酸允许限度为0.1%，适宜的贮存条件是密封，在干燥",
+        "answer_text_prefix_correct": true,
+        "termination": "max_tokens_truncated"
+      },
+      {
+        "id": "knowledge_train_00015",
+        "gold": "E",
+        "answer_text": "容量法",
+        "output": "容量法。知识点：效率较高、适用于工业生产散剂的分剂量方法是容量法。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00016",
+        "gold": "B",
+        "answer_text": "地塞米松",
+        "output": "地塞米松。知识点：本题考查地塞米松的作用机制。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00017",
+        "gold": "B",
+        "answer_text": "尿崩症",
+        "output": "尿崩症。知识点：超过2500mL/d称为多尿，尿崩症患者尿量多可达4～20L/d，比重常在1.005以下，部分性尿崩症患者�",
+        "answer_text_prefix_correct": true,
+        "termination": "max_tokens_truncated"
+      },
+      {
+        "id": "knowledge_train_00018",
+        "gold": "A",
+        "answer_text": "三萜皂苷",
+        "output": "三萜皂苷。知识点：《中国药典》中，柴胡质量控制成分的结构类型是三萜皂苷。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00019",
+        "gold": "B",
+        "answer_text": "药物甲以非线性动力学过程消除",
+        "output": "药物甲以非线性动力学过程消除。知识点：由表格可知，药物甲的半衰期随剂量增加而增加，故药物甲以非线性动力学过程消除（B对A错）；体内过程遵循线性动力学特征的药物其消除",
+        "answer_text_prefix_correct": true,
+        "termination": "max_tokens_truncated"
+      },
+      {
+        "id": "knowledge_train_00020",
+        "gold": "A",
+        "answer_text": "人群终生患癌超额危险度",
+        "output": "人群终生患癌超额危险度。知识点：危险度特征分析时，对无阈值化学物主要计算出：①人群终生患癌超额危险度（A对BCDE错）；②人均患",
+        "answer_text_prefix_correct": true,
+        "termination": "max_tokens_truncated"
+      },
+      {
+        "id": "knowledge_train_00021",
+        "gold": "C",
+        "answer_text": "寒热",
+        "output": "寒热。知识点：中医诊断用以分辨疾病性质的纲领是寒热。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00022",
+        "gold": "C",
+        "answer_text": "蛛网膜下隙",
+        "output": "蛛网膜下隙。知识点：脑脊液位于蛛网膜下隙，即脊髓蛛网膜与软脊膜之间的间隙。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00023",
+        "gold": "A",
+        "answer_text": "氯霉素",
+        "output": "氯霉素。知识点：因体内肝酶不足，易发生灰婴综合征的是氯霉素。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00024",
+        "gold": "E",
+        "answer_text": "百合",
+        "output": "百合。知识点：该题考查百合的功效，属记忆内容。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00025",
+        "gold": "C",
+        "answer_text": "有轻度的附着丧失",
+        "output": "有轻度的附着丧失。知识点：慢性龈炎的特点不包括有轻度的附着丧失。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00026",
+        "gold": "C",
+        "answer_text": "砷",
+        "output": "砷。知识点：本题考查砷导致的皮肤癌。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00027",
+        "gold": "A",
+        "answer_text": "常规监测",
+        "output": "常规监测。知识点：本题考查常规监测。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00028",
+        "gold": "C",
+        "answer_text": "补充体内物质",
+        "output": "补充体内物质。知识点：铁剂治疗缺铁性贫血的作用机制是补充体内物质。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00029",
+        "gold": "A",
+        "answer_text": "透脓散",
+        "output": "透脓散。知识点：肛痈火毒炽盛证治当清热解毒透脓，方选透脓散。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00030",
+        "gold": "C",
+        "answer_text": "共变法",
+        "output": "共变法。知识点：本题考查共变法。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00031",
+        "gold": "C",
+        "answer_text": "雷尼替丁",
+        "output": "雷尼替丁。知识点：为了减少氯吡格雷诱发的消化道出血，需联合应用的药品是雷尼替丁。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00032",
+        "gold": "A",
+        "answer_text": "牙震荡",
+        "output": "牙震荡。牙震荡是指牙外伤时，牙周膜的轻度损伤称为牙震荡，可由较轻外力，如在进食时骤然咀嚼硬物所致。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00033",
+        "gold": "A",
+        "answer_text": "冲脉",
+        "output": "冲脉。知识点：本题考查的是冲脉的基本功能。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00034",
+        "gold": "B",
+        "answer_text": "麻黄连翘赤小豆汤合五味消毒饮",
+        "output": "麻黄连翘赤小豆汤合五味消毒饮。知识点：故辨证为湿毒浸淫证，治宜宣肺解毒，利湿消肿，代表方麻黄连翘赤小豆汤合五",
+        "answer_text_prefix_correct": true,
+        "termination": "max_tokens_truncated"
+      },
+      {
+        "id": "knowledge_train_00035",
+        "gold": "B",
+        "answer_text": "石杉碱甲",
+        "output": "石杉碱甲。石杉碱甲系从石杉科植物千层塔中提取的一种生物碱，是强效的胆碱酯酶可逆性抑制剂。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00036",
+        "gold": "B",
+        "answer_text": "附录",
+        "output": "附录。知识点：检验方法制剂通则药品炮制通则应在附录。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00037",
+        "gold": "B",
+        "answer_text": "腹胀、腹泻",
+        "output": "腹胀、腹泻。知识点：肠内营养并发症主要包括误吸、腹胀腹泻，其中与输入速度及溶液浓度有关的是腹胀、腹泻。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00038",
+        "gold": "E",
+        "answer_text": "蜂房",
+        "output": "蜂房。蜂房具有攻毒杀虫，祛风止痛的功效。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00039",
+        "gold": "B",
+        "answer_text": "黏膜给药",
+        "output": "黏膜给药。知识点：滴眼剂主要吸收途径为角膜和结合膜，属黏膜给药；腔道给药有鼻腔、阴道给药等；注射给药包括皮下注射、",
+        "answer_text_prefix_correct": true,
+        "termination": "max_tokens_truncated"
+      },
+      {
+        "id": "knowledge_train_00040",
+        "gold": "A",
+        "answer_text": "心脏乳头肌断裂",
+        "output": "心脏乳头肌断裂。知识点：本例患者入院第三天出现心衰症状（喘憋、不能平卧、双肺满布湿啰音），且有心尖部收缩期杂音，均符合心�",
+        "answer_text_prefix_correct": true,
+        "termination": "max_tokens_truncated"
+      },
+      {
+        "id": "knowledge_train_00041",
+        "gold": "D",
+        "answer_text": "经粪-口途径传播",
+        "output": "经粪-口途径传播。知识点：戊型肝炎潜伏期平均40日（2～9周），其传播途径（主要经粪-口途径传播）和临床表现（隐性感染及急性肝炎，不",
+        "answer_text_prefix_correct": true,
+        "termination": "max_tokens_truncated"
+      },
+      {
+        "id": "knowledge_train_00042",
+        "gold": "C",
+        "answer_text": "补充体内活性物质",
+        "output": "补充体内活性物质。知识点：给Ⅰ型糖尿病患者皮下注射胰岛素控制血糖的机制属于补充体内活性物质。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00043",
+        "gold": "E",
+        "answer_text": "50%硫酸镁溶液湿敷",
+        "output": "50%硫酸镁溶液湿敷。50%硫酸镁溶液湿敷可消除水肿。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00044",
+        "gold": "E",
+        "answer_text": "宜温忌寒",
+        "output": "宜温忌寒。知识点：在养生防病时，对阴盛体质的宜温忌寒。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00045",
+        "gold": "C",
+        "answer_text": "促进骨骼发育",
+        "output": "促进骨骼发育。知识点：肾藏精，精生髓，髓居骨中以养骨，骨骼赖之以生长发育，所以促进骨骼发育与肾有关。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00046",
+        "gold": "B",
+        "answer_text": "发病密度",
+        "output": "发病密度。知识点：本题考查发病密度的概念。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00047",
+        "gold": "D",
+        "answer_text": "缝合撕裂牙龈",
+        "output": "缝合撕裂牙龈。缝合撕裂牙龈，可使微小血管腔闭塞，从而达到止血效果。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00048",
+        "gold": "C",
+        "answer_text": "香加皮",
+        "output": "香加皮。知识点：医师开具益气温阳、活血通络、利水消肿中药汤剂（黄芪、人参、黑顺片、丹参、葶苈子、水蛭、泽泻、桂�",
+        "answer_text_prefix_correct": true,
+        "termination": "max_tokens_truncated"
+      },
+      {
+        "id": "knowledge_train_00049",
+        "gold": "A",
+        "answer_text": "司盘20",
+        "output": "司盘20。知识点：脱水山梨醇月桂酸酯商品名为司盘20。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      },
+      {
+        "id": "knowledge_train_00050",
+        "gold": "A",
+        "answer_text": "pH值改变",
+        "output": "pH值改变。知识点：诺氟沙星注射液与氨苄青霉素钠注射液混合析出沉淀，其原因是pH值改变。",
+        "answer_text_prefix_correct": true,
+        "termination": "natural_eos"
+      }
+    ]
+  }
+}

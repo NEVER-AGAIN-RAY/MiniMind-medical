@@ -1,0 +1,43 @@
+{
+  "experiment_name": "lora_medical_mcq_pilot",
+  "is_smoke": false,
+  "run_dir": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/runs/knowledge_overfit50_v1",
+  "created_at": "2026-09-12T17:36:29.546971",
+  "base_model": {
+    "weight_path": "/root/autodl-tmp/minimind-lora/out/full_sft_768.pth",
+    "weight_md5": "942a011c4b3868f6e17d7ba7d5bdc08a",
+    "hidden_size": 768,
+    "num_hidden_layers": 8,
+    "use_moe": 0,
+    "model_dir": "/root/autodl-tmp/minimind-lora/model"
+  },
+  "lora_config": {
+    "rank": 16,
+    "target_modules": "Linear modules with in_features == out_features",
+    "save_name": "lora_medical_mcq"
+  },
+  "data": {
+    "train_path": "experiments/lora_medical_mcq_pilot/data/knowledge_overfit50_v1/train.jsonl",
+    "train_md5": "9d2c91d0622ec3fc24f775a43dadfe5d",
+    "val_path": "experiments/lora_medical_mcq_pilot/data/knowledge_overfit50_v1/train.jsonl",
+    "val_md5": "9d2c91d0622ec3fc24f775a43dadfe5d",
+    "manifest_path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/data/formal/manifest.json",
+    "manifest_md5": "cedc14fa641972886d59b36e0c8aba35",
+    "instruction_prompt": "请先给出正确答案的内容和字母，再依据医学知识进行解析。",
+    "target_mode": "answer_rationale",
+    "max_seq_len": 768,
+    "seed": 42
+  },
+  "hyperparameters": {
+    "epochs": 50,
+    "batch_size": 16,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.01,
+    "accumulation_steps": 2,
+    "grad_clip": 1.0,
+    "log_interval": 5,
+    "val_interval": 20,
+    "dtype": "bfloat16"
+  },
+  "device": "cuda:0"
+}

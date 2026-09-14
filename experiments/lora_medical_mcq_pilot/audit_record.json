@@ -1,0 +1,45 @@
+{
+  "project": "MiniMind",
+  "experiment": "lora_medical_mcq_pilot",
+  "timestamp": "2026-09-12T11:22:00+08:00",
+  "version": "2.3.0",
+  "audit_status": "READY_FOR_CLOUD_VALIDATION",
+  "round4_fixes": {
+    "fix_1_print_name_error_improved": {
+      "status": "CONFIRMED_AND_FIXED",
+      "location": "train_mcq_lora.py (line 466)",
+      "problem": "收尾打印语句中直接引用已被封装进 CheckpointTracker 的局部变量 improved，引发 NameError 并导致训练退出码异常。",
+      "solution": "修复为 ckpt_summary['improved']，确保收尾打印正常执行。"
+    },
+    "fix_2_weight_tensor_comparison_instead_of_file_md5": {
+      "status": "CONFIRMED_AND_FIXED",
+      "location": "test_mcq_pipeline.py (line 462)",
+      "problem": "PyTorch save 生成的文件包含归档和时间戳等元数据，分别保存的 step_0 与 best 文件 MD5 不一定完全逐字节一致，导致断言偶发误判。",
+      "solution": "在测试中分别 torch.load 两个检查点权重，逐项比对参数名称集合、Tensor 形状和 Tensor 数值 (torch.equal)；文件 MD5 仅用于追踪同一个 best_lora.pth 在训练步中是否发生重写。"
+    },
+    "fix_3_mock_data_disjoint_and_dedup_rejection_test": {
+      "status": "CONFIRMED_AND_FIXED",
+      "location": "test_mcq_pipeline.py (line 256 & 337)",
+      "problem": "虚拟数据中训练、验证、测试均从'病症0'开始命名导致全部重叠，去重后可能无法满足目标题数；缺乏针对去重剔除与样本不足的独立测试。",
+      "solution": "成功用例中为训练、验证、测试集生成完全互不重复的前缀题干（充足供给）；同时新增独立的 test_issue4_duplicate_rejection_and_insufficient_pool 用例，分别验证集合内精确/近重复剔除，以及跨集完全重叠导致样本不足时的异常阻断。"
+    }
+  },
+  "verification_status": {
+    "local": "NOT_EXECUTED (本地仅完成阅读、编写与严格静态代码审查，未运行任何 Python 进程、测试、模型或网络下载)",
+    "cloud_execution_sequence": [
+      "Step 0: python -m unittest experiments/lora_medical_mcq_pilot/test_mcq_pipeline.py",
+      "Step 1: python experiments/lora_medical_mcq_pilot/prepare_data.py --download",
+      "Step 2: 运行 runs/smoke 小样本冒烟训练 (20题) 与验证集评测对比，确认 GPU 通路无崩溃",
+      "Step 3: 正式基座评测 (runs/formal, 200题测试集)",
+      "Step 4: 正式 LoRA 训练 (1000题训练, 200题验证选优)",
+      "Step 5: 正式 LoRA 评测 (200题测试集)",
+      "Step 6: 正式 Base vs LoRA 严格全量量化对比 (必须全部条件与完整性通过)"
+    ]
+  },
+  "modified_files": [
+    "experiments/lora_medical_mcq_pilot/train_mcq_lora.py",
+    "experiments/lora_medical_mcq_pilot/eval_mcq.py",
+    "experiments/lora_medical_mcq_pilot/test_mcq_pipeline.py",
+    "experiments/lora_medical_mcq_pilot/audit_record.json"
+  ]
+}

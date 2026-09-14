@@ -1,0 +1,43 @@
+{
+  "experiment": "knowledge_5k_v1",
+  "date": "2026-09-12",
+  "hypothesis": "使用正确答案文字和CMExam原始医学解析作为训练目标，可以改善未见单选题的医学判断能力。",
+  "data": {
+    "train_count": 5000,
+    "checkpoint_validation_count": 200,
+    "locked_evaluation_count": 200,
+    "selection_rules": [
+      "原始解析非空",
+      "正确答案文字出现在原始解析中",
+      "完整输入和目标不超过768 tokens",
+      "排除锁定验证题、测试题和历史评测题"
+    ]
+  },
+  "training": {
+    "base_weight_md5_prefix": "942a011c4b",
+    "lora_rank": 16,
+    "epochs": 5,
+    "initial_validation_loss": 2.6145,
+    "best_validation_loss": 2.0560,
+    "best_step": 1565,
+    "best_lora_md5": "2d574e542b1579c0ebdb3285c40c04c5"
+  },
+  "locked_validation_results": {
+    "random_accuracy": 0.2015,
+    "letter_target_reference_accuracy": 0.21,
+    "answer_text_target_accuracy": 0.17,
+    "answer_rationale_generation_accuracy": 0.185,
+    "answer_rationale_format_compliance": 0.985,
+    "answer_rationale_natural_termination": 0.065,
+    "answer_rationale_truncation": 0.935,
+    "answer_content_candidate_scoring_accuracy": 0.195
+  },
+  "training_fit_diagnostics": {
+    "knowledge_5k_first_100_candidate_accuracy": 0.25,
+    "overfit_50_epochs": 50,
+    "overfit_50_training_accuracy": 0.48,
+    "overfit_50_best_lora_md5": "b4d8ec55ef0d1207d2b2b9d904826068"
+  },
+  "conclusion": "该方案能学习医学解析文本和回答格式，但在当前64M基座与rank-16 LoRA上没有提高未见选择题正确率。50题反复训练只能达到48%，说明当前训练能力不足以稳定记住题目、答案和长解析的对应关系；直接扩大到20000条预计不会单独解决问题。",
+  "recommended_next_test": "缩短监督目标，只训练正确答案文字和一条精炼的正向知识句；同时比较rank-16 LoRA、扩大LoRA覆盖范围或小规模全参数训练在50题上的可记忆性。只有50题训练准确率接近100%后，再扩大数据规模。"
+}

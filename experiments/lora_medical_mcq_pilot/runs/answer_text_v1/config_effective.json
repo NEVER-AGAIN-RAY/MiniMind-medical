@@ -1,0 +1,43 @@
+{
+  "experiment_name": "lora_medical_mcq_pilot",
+  "is_smoke": false,
+  "run_dir": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/runs/answer_text_v1",
+  "created_at": "2026-09-12T17:07:11.889624",
+  "base_model": {
+    "weight_path": "/root/autodl-tmp/minimind-lora/out/full_sft_768.pth",
+    "weight_md5": "942a011c4b3868f6e17d7ba7d5bdc08a",
+    "hidden_size": 768,
+    "num_hidden_layers": 8,
+    "use_moe": 0,
+    "model_dir": "/root/autodl-tmp/minimind-lora/model"
+  },
+  "lora_config": {
+    "rank": 16,
+    "target_modules": "Linear modules with in_features == out_features",
+    "save_name": "lora_medical_mcq"
+  },
+  "data": {
+    "train_path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/data/formal/train.jsonl",
+    "train_md5": "bd51a76192da9faa9c56d90abd537056",
+    "val_path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/data/formal/val.jsonl",
+    "val_md5": "e01c3b433f03316d01966ac193c87147",
+    "manifest_path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/data/formal/manifest.json",
+    "manifest_md5": "cedc14fa641972886d59b36e0c8aba35",
+    "instruction_prompt": "请按“正确答案：选项内容（字母）。”的格式回答，不要输出其他解释。",
+    "target_mode": "answer_text",
+    "max_seq_len": 384,
+    "seed": 42
+  },
+  "hyperparameters": {
+    "epochs": 5,
+    "batch_size": 16,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.01,
+    "accumulation_steps": 2,
+    "grad_clip": 1.0,
+    "log_interval": 5,
+    "val_interval": 20,
+    "dtype": "bfloat16"
+  },
+  "device": "cuda:0"
+}

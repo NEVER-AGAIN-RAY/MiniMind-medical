@@ -1,0 +1,1307 @@
+{
+  "split": "train",
+  "count": 100,
+  "accuracy": 0.3,
+  "details": [
+    {
+      "id": "formal_train_0001",
+      "gold": "B",
+      "pred": "B",
+      "correct": true,
+      "scores": {
+        "A": 0.27132,
+        "B": 0.23793,
+        "C": 0.43012,
+        "D": 0.46169,
+        "E": 0.27719
+      }
+    },
+    {
+      "id": "formal_train_0002",
+      "gold": "D",
+      "pred": "D",
+      "correct": true,
+      "scores": {
+        "A": 0.32123,
+        "B": 0.38692,
+        "C": 0.72037,
+        "D": 0.14526,
+        "E": 0.64807
+      }
+    },
+    {
+      "id": "formal_train_0003",
+      "gold": "A",
+      "pred": "E",
+      "correct": false,
+      "scores": {
+        "A": 0.34056,
+        "B": 0.39126,
+        "C": 0.15665,
+        "D": 0.27715,
+        "E": 0.15567
+      }
+    },
+    {
+      "id": "formal_train_0004",
+      "gold": "A",
+      "pred": "C",
+      "correct": false,
+      "scores": {
+        "A": 0.30138,
+        "B": 0.42464,
+        "C": 0.23695,
+        "D": 0.51256,
+        "E": 0.35659
+      }
+    },
+    {
+      "id": "formal_train_0005",
+      "gold": "E",
+      "pred": "D",
+      "correct": false,
+      "scores": {
+        "A": 0.23803,
+        "B": 0.21163,
+        "C": 0.23201,
+        "D": 0.19828,
+        "E": 0.36481
+      }
+    },
+    {
+      "id": "formal_train_0006",
+      "gold": "B",
+      "pred": "D",
+      "correct": false,
+      "scores": {
+        "A": 0.51079,
+        "B": 0.25295,
+        "C": 0.73156,
+        "D": 0.18961,
+        "E": 0.30828
+      }
+    },
+    {
+      "id": "formal_train_0007",
+      "gold": "D",
+      "pred": "A",
+      "correct": false,
+      "scores": {
+        "A": 0.19506,
+        "B": 0.32361,
+        "C": 0.45504,
+        "D": 0.46113,
+        "E": 0.49327
+      }
+    },
+    {
+      "id": "formal_train_0008",
+      "gold": "A",
+      "pred": "D",
+      "correct": false,
+      "scores": {
+        "A": 0.21726,
+        "B": 0.24766,
+        "C": 0.23759,
+        "D": 0.20114,
+        "E": 0.27276
+      }
+    },
+    {
+      "id": "formal_train_0009",
+      "gold": "B",
+      "pred": "D",
+      "correct": false,
+      "scores": {
+        "A": 0.30113,
+        "B": 0.23106,
+        "C": 0.59338,
+        "D": 0.11017,
+        "E": 0.24114
+      }
+    },
+    {
+      "id": "formal_train_0010",
+      "gold": "D",
+      "pred": "E",
+      "correct": false,
+      "scores": {
+        "A": 0.3697,
+        "B": 0.21688,
+        "C": 0.30663,
+        "D": 0.12133,
+        "E": 0.03343
+      }
+    },
+    {
+      "id": "formal_train_0011",
+      "gold": "B",
+      "pred": "B",
+      "correct": true,
+      "scores": {
+        "A": 0.32809,
+        "B": 0.13797,
+        "C": 0.48364,
+        "D": 0.54353,
+        "E": 0.60942
+      }
+    },
+    {
+      "id": "formal_train_0012",
+      "gold": "A",
+      "pred": "B",
+      "correct": false,
+      "scores": {
+        "A": 0.31514,
+        "B": 0.20604,
+        "C": 0.35571,
+        "D": 0.42711,
+        "E": 0.52956
+      }
+    },
+    {
+      "id": "formal_train_0013",
+      "gold": "D",
+      "pred": "A",
+      "correct": false,
+      "scores": {
+        "A": 0.15404,
+        "B": 0.3806,
+        "C": 0.79445,
+        "D": 0.21294,
+        "E": 0.75855
+      }
+    },
+    {
+      "id": "formal_train_0014",
+      "gold": "D",
+      "pred": "B",
+      "correct": false,
+      "scores": {
+        "A": 0.22497,
+        "B": 0.20721,
+        "C": 0.38911,
+        "D": 0.30442,
+        "E": 0.34012
+      }
+    },
+    {
+      "id": "formal_train_0015",
+      "gold": "C",
+      "pred": "C",
+      "correct": true,
+      "scores": {
+        "A": 0.61062,
+        "B": 0.28634,
+        "C": 0.15695,
+        "D": 0.2364,
+        "E": 0.37652
+      }
+    },
+    {
+      "id": "formal_train_0016",
+      "gold": "E",
+      "pred": "E",
+      "correct": true,
+      "scores": {
+        "A": 0.2711,
+        "B": 0.66252,
+        "C": 0.80281,
+        "D": 0.65252,
+        "E": 0.11121
+      }
+    },
+    {
+      "id": "formal_train_0017",
+      "gold": "C",
+      "pred": "C",
+      "correct": true,
+      "scores": {
+        "A": 0.55368,
+        "B": 0.4418,
+        "C": 0.03731,
+        "D": 0.55434,
+        "E": 0.28703
+      }
+    },
+    {
+      "id": "formal_train_0018",
+      "gold": "D",
+      "pred": "B",
+      "correct": false,
+      "scores": {
+        "A": 0.22435,
+        "B": 0.10628,
+        "C": 0.25637,
+        "D": 0.19122,
+        "E": 0.44199
+      }
+    },
+    {
+      "id": "formal_train_0019",
+      "gold": "A",
+      "pred": "C",
+      "correct": false,
+      "scores": {
+        "A": 0.57405,
+        "B": 0.29048,
+        "C": 0.17035,
+        "D": 0.27542,
+        "E": 0.38915
+      }
+    },
+    {
+      "id": "formal_train_0020",
+      "gold": "E",
+      "pred": "D",
+      "correct": false,
+      "scores": {
+        "A": 0.14546,
+        "B": 0.82901,
+        "C": 0.26222,
+        "D": 0.10371,
+        "E": 0.12467
+      }
+    },
+    {
+      "id": "formal_train_0021",
+      "gold": "D",
+      "pred": "D",
+      "correct": true,
+      "scores": {
+        "A": 0.55663,
+        "B": 0.40745,
+        "C": 0.28993,
+        "D": 0.22697,
+        "E": 0.4579
+      }
+    },
+    {
+      "id": "formal_train_0022",
+      "gold": "E",
+      "pred": "C",
+      "correct": false,
+      "scores": {
+        "A": 0.25963,
+        "B": 0.46511,
+        "C": 0.13062,
+        "D": 0.22925,
+        "E": 0.36703
+      }
+    },
+    {
+      "id": "formal_train_0023",
+      "gold": "E",
+      "pred": "A",
+      "correct": false,
+      "scores": {
+        "A": 0.20526,
+        "B": 0.21159,
+        "C": 0.25057,
+        "D": 0.52869,
+        "E": 0.29358
+      }
+    },
+    {
+      "id": "formal_train_0024",
+      "gold": "C",
+      "pred": "D",
+      "correct": false,
+      "scores": {
+        "A": 0.64141,
+        "B": 0.5294,
+        "C": 0.16539,
+        "D": 0.13231,
+        "E": 0.22735
+      }
+    },
+    {
+      "id": "formal_train_0025",
+      "gold": "C",
+      "pred": "B",
+      "correct": false,
+      "scores": {
+        "A": 0.61627,
+        "B": 0.16652,
+        "C": 0.41056,
+        "D": 0.35269,
+        "E": 0.2837
+      }
+    },
+    {
+      "id": "formal_train_0026",
+      "gold": "E",
+      "pred": "A",
+      "correct": false,
+      "scores": {
+        "A": 0.13603,
+        "B": 0.73951,
+        "C": 0.17508,
+        "D": 0.18703,
+        "E": 0.26563
+      }
+    },
+    {
+      "id": "formal_train_0027",
+      "gold": "D",
+      "pred": "C",
+      "correct": false,
+      "scores": {
+        "A": 0.22793,
+        "B": 0.26818,
+        "C": 0.17683,
+        "D": 0.47182,
+        "E": 0.42813
+      }
+    },
+    {
+      "id": "formal_train_0028",
+      "gold": "B",
+      "pred": "C",
+      "correct": false,
+      "scores": {
+        "A": 0.30127,
+        "B": 0.21396,
+        "C": 0.16574,
+        "D": 0.31045,
+        "E": 0.31979
+      }
+    },
+    {
+      "id": "formal_train_0029",
+      "gold": "A",
+      "pred": "A",
+      "correct": true,
+      "scores": {
+        "A": 0.20133,
+        "B": 0.24007,
+        "C": 0.33915,
+        "D": 0.28398,
+        "E": 0.35687
+      }
+    },
+    {
+      "id": "formal_train_0030",
+      "gold": "C",
+      "pred": "D",
+      "correct": false,
+      "scores": {
+        "A": 0.31795,
+        "B": 0.24553,
+        "C": 0.15865,
+        "D": 0.10622,
+        "E": 0.15863
+      }
+    },
+    {
+      "id": "formal_train_0031",
+      "gold": "D",
+      "pred": "D",
+      "correct": true,
+      "scores": {
+        "A": 0.31715,
+        "B": 0.28422,
+        "C": 0.25759,
+        "D": 0.2322,
+        "E": 0.67537
+      }
+    },
+    {
+      "id": "formal_train_0032",
+      "gold": "E",
+      "pred": "E",
+      "correct": true,
+      "scores": {
+        "A": 0.36549,
+        "B": 0.26032,
+        "C": 0.39769,
+        "D": 0.49143,
+        "E": 0.24933
+      }
+    },
+    {
+      "id": "formal_train_0033",
+      "gold": "B",
+      "pred": "D",
+      "correct": false,
+      "scores": {
+        "A": 0.22528,
+        "B": 0.34134,
+        "C": 0.43873,
+        "D": 0.16796,
+        "E": 0.21459
+      }
+    },
+    {
+      "id": "formal_train_0034",
+      "gold": "A",
+      "pred": "C",
+      "correct": false,
+      "scores": {
+        "A": 0.89221,
+        "B": 0.25835,
+        "C": 0.07299,
+        "D": 0.10856,
+        "E": 0.36795
+      }
+    },
+    {
+      "id": "formal_train_0035",
+      "gold": "C",
+      "pred": "C",
+      "correct": true,
+      "scores": {
+        "A": 0.4602,
+        "B": 0.4993,
+        "C": 0.11229,
+        "D": 0.30764,
+        "E": 0.22451
+      }
+    },
+    {
+      "id": "formal_train_0036",
+      "gold": "B",
+      "pred": "A",
+      "correct": false,
+      "scores": {
+        "A": 0.16977,
+        "B": 0.50833,
+        "C": 0.17147,
+        "D": 0.58023,
+        "E": 0.42353
+      }
+    },
+    {
+      "id": "formal_train_0037",
+      "gold": "A",
+      "pred": "D",
+      "correct": false,
+      "scores": {
+        "A": 0.39916,
+        "B": 0.63996,
+        "C": 0.50777,
+        "D": 0.38206,
+        "E": 0.44751
+      }
+    },
+    {
+      "id": "formal_train_0038",
+      "gold": "C",
+      "pred": "D",
+      "correct": false,
+      "scores": {
+        "A": 0.9719,
+        "B": 0.66669,
+        "C": 0.27502,
+        "D": 0.14903,
+        "E": 0.58308
+      }
+    },
+    {
+      "id": "formal_train_0039",
+      "gold": "A",
+      "pred": "A",
+      "correct": true,
+      "scores": {
+        "A": 0.13402,
+        "B": 0.28655,
+        "C": 0.37803,
+        "D": 0.27559,
+        "E": 0.3808
+      }
+    },
+    {
+      "id": "formal_train_0040",
+      "gold": "B",
+      "pred": "E",
+      "correct": false,
+      "scores": {
+        "A": 0.26235,
+        "B": 0.3088,
+        "C": 0.86574,
+        "D": 0.90054,
+        "E": 0.20462
+      }
+    },
+    {
+      "id": "formal_train_0041",
+      "gold": "B",
+      "pred": "A",
+      "correct": false,
+      "scores": {
+        "A": 0.12123,
+        "B": 0.32861,
+        "C": 0.39531,
+        "D": 0.65171,
+        "E": 0.38812
+      }
+    },
+    {
+      "id": "formal_train_0042",
+      "gold": "B",
+      "pred": "D",
+      "correct": false,
+      "scores": {
+        "A": 0.27691,
+        "B": 0.29477,
+        "C": 0.23839,
+        "D": 0.12275,
+        "E": 0.17934
+      }
+    },
+    {
+      "id": "formal_train_0043",
+      "gold": "E",
+      "pred": "E",
+      "correct": true,
+      "scores": {
+        "A": 0.27457,
+        "B": 0.46252,
+        "C": 0.34802,
+        "D": 0.63909,
+        "E": 0.16905
+      }
+    },
+    {
+      "id": "formal_train_0044",
+      "gold": "B",
+      "pred": "B",
+      "correct": true,
+      "scores": {
+        "A": 0.2438,
+        "B": 0.13821,
+        "C": 0.35329,
+        "D": 0.20043,
+        "E": 0.39106
+      }
+    },
+    {
+      "id": "formal_train_0045",
+      "gold": "A",
+      "pred": "C",
+      "correct": false,
+      "scores": {
+        "A": 0.38082,
+        "B": 0.14971,
+        "C": 0.14668,
+        "D": 0.78624,
+        "E": 0.56762
+      }
+    },
+    {
+      "id": "formal_train_0046",
+      "gold": "C",
+      "pred": "A",
+      "correct": false,
+      "scores": {
+        "A": 0.08363,
+        "B": 0.68303,
+        "C": 0.37967,
+        "D": 0.60121,
+        "E": 0.58425
+      }
+    },
+    {
+      "id": "formal_train_0047",
+      "gold": "C",
+      "pred": "B",
+      "correct": false,
+      "scores": {
+        "A": 0.246,
+        "B": 0.15482,
+        "C": 0.31198,
+        "D": 0.26538,
+        "E": 0.59378
+      }
+    },
+    {
+      "id": "formal_train_0048",
+      "gold": "A",
+      "pred": "A",
+      "correct": true,
+      "scores": {
+        "A": 0.13967,
+        "B": 0.39825,
+        "C": 0.36399,
+        "D": 0.36873,
+        "E": 0.41495
+      }
+    },
+    {
+      "id": "formal_train_0049",
+      "gold": "E",
+      "pred": "A",
+      "correct": false,
+      "scores": {
+        "A": 0.20911,
+        "B": 0.39905,
+        "C": 0.60453,
+        "D": 0.55663,
+        "E": 0.28794
+      }
+    },
+    {
+      "id": "formal_train_0050",
+      "gold": "C",
+      "pred": "A",
+      "correct": false,
+      "scores": {
+        "A": 0.13251,
+        "B": 0.45479,
+        "C": 0.16008,
+        "D": 0.25953,
+        "E": 0.48626
+      }
+    },
+    {
+      "id": "formal_train_0051",
+      "gold": "C",
+      "pred": "A",
+      "correct": false,
+      "scores": {
+        "A": 0.17846,
+        "B": 0.37237,
+        "C": 0.59914,
+        "D": 0.38737,
+        "E": 0.2552
+      }
+    },
+    {
+      "id": "formal_train_0052",
+      "gold": "B",
+      "pred": "A",
+      "correct": false,
+      "scores": {
+        "A": 0.16458,
+        "B": 0.41726,
+        "C": 0.36429,
+        "D": 0.45484,
+        "E": 0.74103
+      }
+    },
+    {
+      "id": "formal_train_0053",
+      "gold": "A",
+      "pred": "D",
+      "correct": false,
+      "scores": {
+        "A": 0.40225,
+        "B": 0.29325,
+        "C": 0.4108,
+        "D": 0.24012,
+        "E": 0.42185
+      }
+    },
+    {
+      "id": "formal_train_0054",
+      "gold": "C",
+      "pred": "B",
+      "correct": false,
+      "scores": {
+        "A": 0.27053,
+        "B": 0.14963,
+        "C": 0.48938,
+        "D": 0.43308,
+        "E": 0.45032
+      }
+    },
+    {
+      "id": "formal_train_0055",
+      "gold": "A",
+      "pred": "E",
+      "correct": false,
+      "scores": {
+        "A": 0.15284,
+        "B": 0.20015,
+        "C": 0.36742,
+        "D": 0.40541,
+        "E": 0.11479
+      }
+    },
+    {
+      "id": "formal_train_0056",
+      "gold": "A",
+      "pred": "D",
+      "correct": false,
+      "scores": {
+        "A": 0.37176,
+        "B": 0.56415,
+        "C": 0.23736,
+        "D": 0.07288,
+        "E": 0.47068
+      }
+    },
+    {
+      "id": "formal_train_0057",
+      "gold": "D",
+      "pred": "D",
+      "correct": true,
+      "scores": {
+        "A": 0.40927,
+        "B": 0.25901,
+        "C": 0.176,
+        "D": 0.12286,
+        "E": 0.21089
+      }
+    },
+    {
+      "id": "formal_train_0058",
+      "gold": "C",
+      "pred": "C",
+      "correct": true,
+      "scores": {
+        "A": 0.29886,
+        "B": 0.36847,
+        "C": 0.26853,
+        "D": 0.80308,
+        "E": 0.85928
+      }
+    },
+    {
+      "id": "formal_train_0059",
+      "gold": "C",
+      "pred": "A",
+      "correct": false,
+      "scores": {
+        "A": 0.16146,
+        "B": 0.42298,
+        "C": 0.51907,
+        "D": 0.2933,
+        "E": 0.42048
+      }
+    },
+    {
+      "id": "formal_train_0060",
+      "gold": "A",
+      "pred": "B",
+      "correct": false,
+      "scores": {
+        "A": 0.43343,
+        "B": 0.26437,
+        "C": 0.32148,
+        "D": 0.3371,
+        "E": 0.7951
+      }
+    },
+    {
+      "id": "formal_train_0061",
+      "gold": "A",
+      "pred": "A",
+      "correct": true,
+      "scores": {
+        "A": 0.244,
+        "B": 0.42488,
+        "C": 0.47007,
+        "D": 0.47465,
+        "E": 0.55685
+      }
+    },
+    {
+      "id": "formal_train_0062",
+      "gold": "D",
+      "pred": "A",
+      "correct": false,
+      "scores": {
+        "A": 0.15029,
+        "B": 0.25273,
+        "C": 0.33891,
+        "D": 0.31325,
+        "E": 0.52271
+      }
+    },
+    {
+      "id": "formal_train_0063",
+      "gold": "E",
+      "pred": "E",
+      "correct": true,
+      "scores": {
+        "A": 1.11656,
+        "B": 0.59644,
+        "C": 0.53148,
+        "D": 0.31813,
+        "E": 0.0631
+      }
+    },
+    {
+      "id": "formal_train_0064",
+      "gold": "A",
+      "pred": "B",
+      "correct": false,
+      "scores": {
+        "A": 0.25058,
+        "B": 0.18015,
+        "C": 0.44283,
+        "D": 0.33258,
+        "E": 0.45479
+      }
+    },
+    {
+      "id": "formal_train_0065",
+      "gold": "C",
+      "pred": "D",
+      "correct": false,
+      "scores": {
+        "A": 0.4576,
+        "B": 0.85051,
+        "C": 0.34696,
+        "D": 0.17272,
+        "E": 0.92177
+      }
+    },
+    {
+      "id": "formal_train_0066",
+      "gold": "C",
+      "pred": "A",
+      "correct": false,
+      "scores": {
+        "A": 0.18794,
+        "B": 0.81275,
+        "C": 0.36423,
+        "D": 0.63632,
+        "E": 0.37779
+      }
+    },
+    {
+      "id": "formal_train_0067",
+      "gold": "E",
+      "pred": "A",
+      "correct": false,
+      "scores": {
+        "A": 0.07045,
+        "B": 0.618,
+        "C": 0.54723,
+        "D": 0.93638,
+        "E": 0.85445
+      }
+    },
+    {
+      "id": "formal_train_0068",
+      "gold": "B",
+      "pred": "B",
+      "correct": true,
+      "scores": {
+        "A": 0.50511,
+        "B": 0.08397,
+        "C": 0.43304,
+        "D": 0.50656,
+        "E": 0.28432
+      }
+    },
+    {
+      "id": "formal_train_0069",
+      "gold": "B",
+      "pred": "E",
+      "correct": false,
+      "scores": {
+        "A": 0.22021,
+        "B": 0.23476,
+        "C": 0.48091,
+        "D": 0.44877,
+        "E": 0.11456
+      }
+    },
+    {
+      "id": "formal_train_0070",
+      "gold": "A",
+      "pred": "A",
+      "correct": true,
+      "scores": {
+        "A": 0.2957,
+        "B": 0.42944,
+        "C": 0.33788,
+        "D": 0.37658,
+        "E": 0.37995
+      }
+    },
+    {
+      "id": "formal_train_0071",
+      "gold": "A",
+      "pred": "D",
+      "correct": false,
+      "scores": {
+        "A": 0.4671,
+        "B": 0.52554,
+        "C": 0.29975,
+        "D": 0.15977,
+        "E": 0.73781
+      }
+    },
+    {
+      "id": "formal_train_0072",
+      "gold": "B",
+      "pred": "B",
+      "correct": true,
+      "scores": {
+        "A": 0.25267,
+        "B": 0.19256,
+        "C": 1.15539,
+        "D": 0.72545,
+        "E": 0.69807
+      }
+    },
+    {
+      "id": "formal_train_0073",
+      "gold": "D",
+      "pred": "A",
+      "correct": false,
+      "scores": {
+        "A": 0.10454,
+        "B": 0.44888,
+        "C": 0.54656,
+        "D": 0.58195,
+        "E": 0.6602
+      }
+    },
+    {
+      "id": "formal_train_0074",
+      "gold": "B",
+      "pred": "A",
+      "correct": false,
+      "scores": {
+        "A": 0.24437,
+        "B": 0.25316,
+        "C": 0.26989,
+        "D": 0.31152,
+        "E": 0.25714
+      }
+    },
+    {
+      "id": "formal_train_0075",
+      "gold": "A",
+      "pred": "A",
+      "correct": true,
+      "scores": {
+        "A": 0.11898,
+        "B": 0.55454,
+        "C": 0.15423,
+        "D": 0.3257,
+        "E": 0.67048
+      }
+    },
+    {
+      "id": "formal_train_0076",
+      "gold": "E",
+      "pred": "A",
+      "correct": false,
+      "scores": {
+        "A": 0.17246,
+        "B": 0.80087,
+        "C": 0.30756,
+        "D": 0.3063,
+        "E": 0.52363
+      }
+    },
+    {
+      "id": "formal_train_0077",
+      "gold": "B",
+      "pred": "E",
+      "correct": false,
+      "scores": {
+        "A": 0.30176,
+        "B": 0.3582,
+        "C": 0.35505,
+        "D": 0.42885,
+        "E": 0.26821
+      }
+    },
+    {
+      "id": "formal_train_0078",
+      "gold": "B",
+      "pred": "C",
+      "correct": false,
+      "scores": {
+        "A": 0.34056,
+        "B": 0.22725,
+        "C": 0.10443,
+        "D": 0.24006,
+        "E": 0.29589
+      }
+    },
+    {
+      "id": "formal_train_0079",
+      "gold": "A",
+      "pred": "B",
+      "correct": false,
+      "scores": {
+        "A": 0.24913,
+        "B": 0.10879,
+        "C": 0.29191,
+        "D": 0.39665,
+        "E": 0.69721
+      }
+    },
+    {
+      "id": "formal_train_0080",
+      "gold": "D",
+      "pred": "E",
+      "correct": false,
+      "scores": {
+        "A": 0.27512,
+        "B": 0.50419,
+        "C": 0.61263,
+        "D": 0.27831,
+        "E": 0.22046
+      }
+    },
+    {
+      "id": "formal_train_0081",
+      "gold": "E",
+      "pred": "E",
+      "correct": true,
+      "scores": {
+        "A": 0.21987,
+        "B": 0.16253,
+        "C": 0.28114,
+        "D": 0.19704,
+        "E": 0.04368
+      }
+    },
+    {
+      "id": "formal_train_0082",
+      "gold": "B",
+      "pred": "B",
+      "correct": true,
+      "scores": {
+        "A": 0.48571,
+        "B": 0.12402,
+        "C": 0.24695,
+        "D": 0.42827,
+        "E": 0.26942
+      }
+    },
+    {
+      "id": "formal_train_0083",
+      "gold": "C",
+      "pred": "A",
+      "correct": false,
+      "scores": {
+        "A": 0.13127,
+        "B": 0.20285,
+        "C": 0.4712,
+        "D": 0.20806,
+        "E": 0.57587
+      }
+    },
+    {
+      "id": "formal_train_0084",
+      "gold": "E",
+      "pred": "E",
+      "correct": true,
+      "scores": {
+        "A": 0.43846,
+        "B": 0.27033,
+        "C": 0.32955,
+        "D": 0.49955,
+        "E": 0.14459
+      }
+    },
+    {
+      "id": "formal_train_0085",
+      "gold": "E",
+      "pred": "E",
+      "correct": true,
+      "scores": {
+        "A": 0.46403,
+        "B": 0.66584,
+        "C": 0.51566,
+        "D": 0.92509,
+        "E": 0.22115
+      }
+    },
+    {
+      "id": "formal_train_0086",
+      "gold": "C",
+      "pred": "D",
+      "correct": false,
+      "scores": {
+        "A": 0.35282,
+        "B": 0.23921,
+        "C": 0.4182,
+        "D": 0.13666,
+        "E": 0.40793
+      }
+    },
+    {
+      "id": "formal_train_0087",
+      "gold": "E",
+      "pred": "A",
+      "correct": false,
+      "scores": {
+        "A": 0.22186,
+        "B": 0.28249,
+        "C": 0.24372,
+        "D": 0.58108,
+        "E": 0.31699
+      }
+    },
+    {
+      "id": "formal_train_0088",
+      "gold": "C",
+      "pred": "D",
+      "correct": false,
+      "scores": {
+        "A": 1.20532,
+        "B": 0.7787,
+        "C": 0.19294,
+        "D": 0.10451,
+        "E": 0.56893
+      }
+    },
+    {
+      "id": "formal_train_0089",
+      "gold": "B",
+      "pred": "B",
+      "correct": true,
+      "scores": {
+        "A": 0.39948,
+        "B": 0.2011,
+        "C": 0.52884,
+        "D": 0.44265,
+        "E": 0.35989
+      }
+    },
+    {
+      "id": "formal_train_0090",
+      "gold": "B",
+      "pred": "B",
+      "correct": true,
+      "scores": {
+        "A": 0.40733,
+        "B": 0.13339,
+        "C": 1.03607,
+        "D": 0.50606,
+        "E": 0.5077
+      }
+    },
+    {
+      "id": "formal_train_0091",
+      "gold": "D",
+      "pred": "D",
+      "correct": true,
+      "scores": {
+        "A": 0.28808,
+        "B": 0.31508,
+        "C": 0.3113,
+        "D": 0.12988,
+        "E": 0.38918
+      }
+    },
+    {
+      "id": "formal_train_0092",
+      "gold": "C",
+      "pred": "A",
+      "correct": false,
+      "scores": {
+        "A": 0.20011,
+        "B": 0.27913,
+        "C": 0.55058,
+        "D": 0.25436,
+        "E": 0.51822
+      }
+    },
+    {
+      "id": "formal_train_0093",
+      "gold": "D",
+      "pred": "E",
+      "correct": false,
+      "scores": {
+        "A": 0.23723,
+        "B": 0.49724,
+        "C": 0.66782,
+        "D": 0.27883,
+        "E": 0.22781
+      }
+    },
+    {
+      "id": "formal_train_0094",
+      "gold": "C",
+      "pred": "B",
+      "correct": false,
+      "scores": {
+        "A": 0.47144,
+        "B": 0.09359,
+        "C": 0.22127,
+        "D": 0.28798,
+        "E": 0.54332
+      }
+    },
+    {
+      "id": "formal_train_0095",
+      "gold": "A",
+      "pred": "B",
+      "correct": false,
+      "scores": {
+        "A": 0.3394,
+        "B": 0.19865,
+        "C": 0.34152,
+        "D": 0.2367,
+        "E": 0.5041
+      }
+    },
+    {
+      "id": "formal_train_0096",
+      "gold": "A",
+      "pred": "B",
+      "correct": false,
+      "scores": {
+        "A": 0.26823,
+        "B": 0.1724,
+        "C": 0.33914,
+        "D": 0.41571,
+        "E": 0.70696
+      }
+    },
+    {
+      "id": "formal_train_0097",
+      "gold": "B",
+      "pred": "A",
+      "correct": false,
+      "scores": {
+        "A": 0.1899,
+        "B": 0.27868,
+        "C": 0.77926,
+        "D": 0.4088,
+        "E": 0.718
+      }
+    },
+    {
+      "id": "formal_train_0098",
+      "gold": "C",
+      "pred": "E",
+      "correct": false,
+      "scores": {
+        "A": 0.91922,
+        "B": 0.49403,
+        "C": 0.14002,
+        "D": 0.34209,
+        "E": 0.0981
+      }
+    },
+    {
+      "id": "formal_train_0099",
+      "gold": "B",
+      "pred": "C",
+      "correct": false,
+      "scores": {
+        "A": 0.25741,
+        "B": 0.19619,
+        "C": 0.18334,
+        "D": 0.44864,
+        "E": 0.57505
+      }
+    },
+    {
+      "id": "formal_train_0100",
+      "gold": "D",
+      "pred": "A",
+      "correct": false,
+      "scores": {
+        "A": 0.17355,
+        "B": 0.31872,
+        "C": 0.2505,
+        "D": 0.19825,
+        "E": 0.22584
+      }
+    }
+  ]
+}

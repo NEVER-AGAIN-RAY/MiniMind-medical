@@ -1,0 +1,1946 @@
+{
+  "experiment": "lora_medical_mcq_pilot",
+  "mode": "lora",
+  "is_smoke": false,
+  "is_limited": true,
+  "limit_value": 100,
+  "split": "val",
+  "timestamp": "2026-09-12T15:58:55.021605",
+  "dataset": {
+    "path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/data/formal/val.jsonl",
+    "md5": "e01c3b433f03316d01966ac193c87147",
+    "count": 100
+  },
+  "weights": {
+    "base_weight_path": "/root/autodl-tmp/minimind-lora/out/full_sft_768.pth",
+    "base_weight_md5": "942a011c4b3868f6e17d7ba7d5bdc08a",
+    "lora_weight_path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/runs/formal/checkpoints/best_lora.pth",
+    "lora_weight_md5": "4ea6c725d39a53f01da1cd5b09443503"
+  },
+  "generation_config": {
+    "do_sample": false,
+    "open_thinking": false,
+    "max_new_tokens": 16,
+    "instruction": "请直接输出正确选项的字母（如 A、B、C、D、E），不要输出多余解释。"
+  },
+  "runtime_env": {
+    "device": "cuda:0",
+    "dtype": "bfloat16"
+  },
+  "metrics": {
+    "total_questions": 100,
+    "single_letter_format_compliance_rate": 1.0,
+    "accuracy": 0.25,
+    "natural_termination_rate": 1.0,
+    "truncation_rate": 0.0,
+    "letter_distribution": {
+      "A": 14,
+      "B": 38,
+      "E": 9,
+      "D": 23,
+      "C": 16
+    },
+    "counts": {
+      "format_compliant": 100,
+      "correct": 25,
+      "natural_termination": 100,
+      "truncated": 0
+    }
+  },
+  "details": [
+    {
+      "id": "formal_val_0001",
+      "question": "参苓白术散含有的功效是",
+      "options": {
+        "A": "疏肝",
+        "B": "通便",
+        "C": "举陷",
+        "D": "补血",
+        "E": "渗湿"
+      },
+      "official_answer": "E",
+      "raw_model_output": "A",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "A",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0002",
+      "question": "重庆开县油气田井喷事件中，泄漏出的剧毒窒息性气体是",
+      "options": {
+        "A": "氟化氢",
+        "B": "硫化氢",
+        "C": "甲基异氢酸酯",
+        "D": "氰化氢",
+        "E": "一氧化碳"
+      },
+      "official_answer": "B",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": true
+    },
+    {
+      "id": "formal_val_0003",
+      "question": "中西药合理联用可起到协同增效作用的是",
+      "options": {
+        "A": "小青龙汤与抗组胺药联用",
+        "B": "含鞣质较多的中成药与铁剂联用",
+        "C": "五味子糖浆与磺胺类药联用",
+        "D": "逍遥散与催眠镇静类药联用",
+        "E": "含乙醇的中成药与硝酸甘油联用"
+      },
+      "official_answer": "D",
+      "raw_model_output": "E",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "E",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0004",
+      "question": "用于治疗精神分裂症的药物是",
+      "options": {
+        "A": "氯丙嗪",
+        "B": "丙咪嗪",
+        "C": "司来吉兰",
+        "D": "哌替啶",
+        "E": "硫酸锂"
+      },
+      "official_answer": "A",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0005",
+      "question": "患者，女，27岁，已婚。近几个月来带下量多、黏稠、色黄，胸闷心烦，纳少便溏，舌淡红、苔黄略腻，脉细。其治法是",
+      "options": {
+        "A": "清热利湿止带",
+        "B": "健脾利湿止带",
+        "C": "健脾益气止带",
+        "D": "清热解毒止带",
+        "E": "补肾健脾止带"
+      },
+      "official_answer": "A",
+      "raw_model_output": "D",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "D",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0006",
+      "question": "女，28岁，患缺铁性贫血。膳食中应注意选择含铁丰富且吸收率高的食物尤其是",
+      "options": {
+        "A": "猪肝、瘦肉",
+        "B": "牛奶、鸡蛋",
+        "C": "大豆及豆制品",
+        "D": "鱼虾",
+        "E": "蔬菜、水果"
+      },
+      "official_answer": "A",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0007",
+      "question": "牙体外层被釉质覆盖的部分称为牙冠，也称为",
+      "options": {
+        "A": "临床牙冠",
+        "B": "解剖牙冠",
+        "C": "牙根",
+        "D": "牙颈",
+        "E": "釉牙骨质界"
+      },
+      "official_answer": "B",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": true
+    },
+    {
+      "id": "formal_val_0008",
+      "question": "具有重浊黏滞致病特点的邪气是",
+      "options": {
+        "A": "燥邪",
+        "B": "火邪",
+        "C": "风邪",
+        "D": "寒邪",
+        "E": "湿邪"
+      },
+      "official_answer": "E",
+      "raw_model_output": "A",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "A",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0009",
+      "question": "血液中降钙素主要由哪种细胞产生",
+      "options": {
+        "A": "胰岛A细胞",
+        "B": "胰岛B细胞",
+        "C": "甲状腺C细胞",
+        "D": "甲状旁腺细胞",
+        "E": "小肠上部S细胞"
+      },
+      "official_answer": "C",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0010",
+      "question": "引起疯牛病和人类克-雅病库鲁病等的病原因子是",
+      "options": {
+        "A": "病毒",
+        "B": "类病毒",
+        "C": "拟病毒",
+        "D": "朊病毒（朊粒）",
+        "E": "衣原体"
+      },
+      "official_answer": "D",
+      "raw_model_output": "A",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "A",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0011",
+      "question": "下列脊椎病变，除哪项外，脊椎叩痛常为阳性",
+      "options": {
+        "A": "脊椎结核",
+        "B": "棘间韧带损伤",
+        "C": "骨折",
+        "D": "骨质增生",
+        "E": "椎间盘脱出"
+      },
+      "official_answer": "D",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0012",
+      "question": "男，67岁，46缺失，牙槽嵴中度丰满，平整，余留牙正常，可摘局部义齿设计为47卡臂卡环，（牙合）支托窝应预备在",
+      "options": {
+        "A": "颊沟",
+        "B": "中央窝",
+        "C": "舌沟",
+        "D": "远中（牙合）边缘嵴",
+        "E": "近中（牙合）边缘嵴"
+      },
+      "official_answer": "E",
+      "raw_model_output": "D",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "D",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0013",
+      "question": "关于加巴喷丁的说法错误的是",
+      "options": {
+        "A": "加巴喷丁是GABA的环状衍生物，具有较高脂溶性",
+        "B": "加巴喷丁口服易吸收，在体内不代谢，以原型从尿中排除",
+        "C": "加巴喷丁对神经性疼痛有效",
+        "D": "加巴喷丁通过作用GABA受体而发挥作用",
+        "E": "加巴喷丁可与其他抗癫痫药物联合使用"
+      },
+      "official_answer": "D",
+      "raw_model_output": "E",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "E",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0014",
+      "question": "男，52岁。公司经理，吸烟10年，每天2包。体重75kg，身高166cm。患者的BMI是",
+      "options": {
+        "A": "21.4",
+        "B": "23.5",
+        "C": "25.8",
+        "D": "27.1",
+        "E": "29.4"
+      },
+      "official_answer": "D",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0015",
+      "question": "女，27岁。发热1个月，伴关节肿痛、脱发和口腔溃疡。化验：尿蛋白（+++），红细胞20～30/HP。血ANA（+）。最可能的诊断是",
+      "options": {
+        "A": "系统性红斑狼疮",
+        "B": "类风湿关节炎",
+        "C": "干燥综合征",
+        "D": "风湿热",
+        "E": "成人斯蒂尔病"
+      },
+      "official_answer": "A",
+      "raw_model_output": "A",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "A",
+      "is_correct": true
+    },
+    {
+      "id": "formal_val_0016",
+      "question": "单纯小脑幕裂孔疝的临床症状不包括",
+      "options": {
+        "A": "昏迷",
+        "B": "呕吐",
+        "C": "偏瘫",
+        "D": "双侧瞳孔大小多变",
+        "E": "病侧瞳孔散大"
+      },
+      "official_answer": "D",
+      "raw_model_output": "D",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "D",
+      "is_correct": true
+    },
+    {
+      "id": "formal_val_0017",
+      "question": "属于控释制剂的是",
+      "options": {
+        "A": "阿奇霉素分散片",
+        "B": "硫酸沙丁胺醇口崩片",
+        "C": "硫酸特布他林气雾剂",
+        "D": "复方丹参滴丸",
+        "E": "硝苯地平渗透泵片"
+      },
+      "official_answer": "E",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0018",
+      "question": "高血压脑出血最好发的部位是",
+      "options": {
+        "A": "脑室",
+        "B": "内囊和基底节附近",
+        "C": "丘脑",
+        "D": "脑桥",
+        "E": "小脑"
+      },
+      "official_answer": "B",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": true
+    },
+    {
+      "id": "formal_val_0019",
+      "question": "患儿男，2岁。脾胃虚弱，症见消化不良、不思乳食、腹胀便溏。宜选用的中成药是",
+      "options": {
+        "A": "薯蓣丸",
+        "B": "肥儿丸",
+        "C": "小儿化食丸",
+        "D": "启脾丸",
+        "E": "一捻金"
+      },
+      "official_answer": "D",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0020",
+      "question": "目前最常用的智力高低表示法是",
+      "options": {
+        "A": "比率智商",
+        "B": "离差智商",
+        "C": "百分位数",
+        "D": "智力年龄",
+        "E": "项目数"
+      },
+      "official_answer": "B",
+      "raw_model_output": "A",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "A",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0021",
+      "question": "膜剂常用的着色遮光剂是",
+      "options": {
+        "A": "EVA",
+        "B": "TiO₂",
+        "C": "SiO₂",
+        "D": "山梨醇",
+        "E": "聚山梨酯80"
+      },
+      "official_answer": "B",
+      "raw_model_output": "A",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "A",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0022",
+      "question": "下列关于自然因素和社会因素对人群健康状况的影响表述正确的是",
+      "options": {
+        "A": "自然因素对人群健康影响更为重要",
+        "B": "自然因素与社会因素的作用相同",
+        "C": "社会因素受自然因素的制约",
+        "D": "自然因素决定社会因素",
+        "E": "社会因素对人群健康的影响更为重要"
+      },
+      "official_answer": "E",
+      "raw_model_output": "E",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "E",
+      "is_correct": true
+    },
+    {
+      "id": "formal_val_0023",
+      "question": "流行病学病因研究中以下哪一条不为必须达到的",
+      "options": {
+        "A": "关联的强度",
+        "B": "关联的时间顺序",
+        "C": "终止效应",
+        "D": "关联的剂量-反应关系"
+      },
+      "official_answer": "C",
+      "raw_model_output": "C",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "C",
+      "is_correct": true
+    },
+    {
+      "id": "formal_val_0024",
+      "question": "全口义齿印模和模型的制作中，以下不正确的是",
+      "options": {
+        "A": "在印模膏阴模的组织面和边缘均匀地刮除2mm左右",
+        "B": "灌注的模型厚度不超过10mm",
+        "C": "用铅笔画出两侧翼上颌切迹和腭小凹后2mm的连线",
+        "D": "用刀沿上述连线刻一深约1～1.5mm的沟",
+        "E": "沿上述的沟向前逐渐变浅刮除石膏，最宽处约5mm"
+      },
+      "official_answer": "B",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": true
+    },
+    {
+      "id": "formal_val_0025",
+      "question": "治疗急性心肌梗死引起的室性心动过速的首选药是",
+      "options": {
+        "A": "奎尼丁",
+        "B": "普鲁卡因胺",
+        "C": "普萘洛尔",
+        "D": "利多卡因",
+        "E": "维拉帕米"
+      },
+      "official_answer": "D",
+      "raw_model_output": "A",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "A",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0026",
+      "question": "多生牙修复治疗时应考虑",
+      "options": {
+        "A": "观察",
+        "B": "牙髓治疗",
+        "C": "不作处理",
+        "D": "调磨后仍影响修复考虑拔除",
+        "E": "无需处理直接拔除"
+      },
+      "official_answer": "D",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0027",
+      "question": "苎麻根甘寒，除凉血止血，清热安胎外，又能",
+      "options": {
+        "A": "活血、杀虫",
+        "B": "燥湿、杀虫",
+        "C": "活血、利尿",
+        "D": "解毒、燥湿",
+        "E": "解毒、利尿"
+      },
+      "official_answer": "E",
+      "raw_model_output": "D",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "D",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0028",
+      "question": "提示血容量不足",
+      "options": {
+        "A": "中心静脉压很低，尿量多",
+        "B": "中心静脉压偏低，尿量少",
+        "C": "中心静脉压偏低，尿量多",
+        "D": "中心静脉压很高，尿量多",
+        "E": "中心静脉压很高，尿量少"
+      },
+      "official_answer": "B",
+      "raw_model_output": "D",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "D",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0029",
+      "question": "某纺织女工，30岁，接触棉尘5年。近3个月，每逢厂休息日后第一天上班日的下班前有胸部紧束感、气急、咳嗽、发热症状，该工人所患疾病可能是",
+      "options": {
+        "A": "感冒",
+        "B": "支气管炎",
+        "C": "棉尘症",
+        "D": "棉尘病",
+        "E": "肺结核"
+      },
+      "official_answer": "D",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0030",
+      "question": "有关AFP升高的临床意义，下列哪项正确",
+      "options": {
+        "A": "AFP＞200μg/L时可诊断肝细胞癌",
+        "B": "肝转移癌患者AFP常显著增高",
+        "C": "肝功异常伴有AFP增高常提示合并肝癌",
+        "D": "消化道其它肿瘤AFP不会升高",
+        "E": "肝细胞癌术后AFP又升高提示复发"
+      },
+      "official_answer": "E",
+      "raw_model_output": "E",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "E",
+      "is_correct": true
+    },
+    {
+      "id": "formal_val_0031",
+      "question": "吸入气雾剂的给药部位是",
+      "options": {
+        "A": "肝脏",
+        "B": "肾脏",
+        "C": "肺",
+        "D": "胆",
+        "E": "心脏"
+      },
+      "official_answer": "C",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0032",
+      "question": "成年男性，三月来双下肢无力，双下肢麻木逐渐发展到腰部，背后疼痛且咳嗽时加剧。查体左半侧T5下痛温觉消失；右下肢肌力Ⅲ°，腱反射亢进，Babinski征阳性，右下肢足趾振动觉位置觉消失。可能的诊断为",
+      "options": {
+        "A": "T8附近脊髓髓内病变",
+        "B": "左T8附近脊髓髓外病变",
+        "C": "右T3附近脊髓髓外病变",
+        "D": "T8附近脊髓休克性病变",
+        "E": "右T5附近脊髓髓内病变"
+      },
+      "official_answer": "C",
+      "raw_model_output": "D",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "D",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0033",
+      "question": "Ⅰ型超敏反应的发生机制中致敏是指",
+      "options": {
+        "A": "进入机体的变应原刺激B细胞产生的特异性IgE抗体",
+        "B": "进入机体的变应原刺激B细胞产生的特异性IgA抗体",
+        "C": "进入机体的变应原刺激B细胞产生的特异性IgM抗体",
+        "D": "进入机体的变应原刺激T细胞产生的特异性IgE抗体",
+        "E": "进入机体的变应原刺激T细胞产生的特异性IgA抗体"
+      },
+      "official_answer": "A",
+      "raw_model_output": "C",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "C",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0034",
+      "question": "男，22岁，大学生。平常乐于助人、尊师爱校。不仅在学习上经常帮助同学，而且在生活上也常常照顾他人，并能积极组织班级的集体活动。这种行为方式在性格的特征中属于",
+      "options": {
+        "A": "行为特征",
+        "B": "意志特征",
+        "C": "态度特征",
+        "D": "情绪特征",
+        "E": "理智特征"
+      },
+      "official_answer": "C",
+      "raw_model_output": "D",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "D",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0035",
+      "question": "男，72岁。间断咳嗽、咳痰20余年，加重伴喘憋1周。近2天出现嗜睡。查体：意识模糊，口唇发绀，球结膜水肿，双肺满布哮鸣音，双下肢水肿。该患者出现意识障碍最主要机制是",
+      "options": {
+        "A": "感染中毒性脑病",
+        "B": "组织缺氧",
+        "C": "电解质紊乱",
+        "D": "CO₂潴留",
+        "E": "脑出血"
+      },
+      "official_answer": "D",
+      "raw_model_output": "D",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "D",
+      "is_correct": true
+    },
+    {
+      "id": "formal_val_0036",
+      "question": "国家对传染病菌种毒种的采集采取",
+      "options": {
+        "A": "分类管理",
+        "B": "集中管理",
+        "C": "分区管理",
+        "D": "地域自制",
+        "E": "医院管理"
+      },
+      "official_answer": "A",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0037",
+      "question": "下列哪种血管病变可扪到静脉石",
+      "options": {
+        "A": "葡萄酒斑状毛细血管瘤",
+        "B": "杨梅样毛细血管瘤",
+        "C": "血管痣",
+        "D": "海绵状血管瘤",
+        "E": "蔓状血管瘤"
+      },
+      "official_answer": "D",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0038",
+      "question": "调查食品安全事故的原则是",
+      "options": {
+        "A": "严谨细致、严厉追责",
+        "B": "实事求是、尊重科学",
+        "C": "及时准确、维护稳定",
+        "D": "客观公正、依法办事",
+        "E": "诚实守信、以人为本"
+      },
+      "official_answer": "B",
+      "raw_model_output": "E",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "E",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0039",
+      "question": "患者，右上7远中舌侧大面积龋坏缺损，已经进行根管治疗，原银汞充填物经常脱落，现要求全冠修复。检查：无叩痛，无松动，咬合距离正常，临床牙冠较高，不宜采用的修复方法是",
+      "options": {
+        "A": "铸造金属全冠",
+        "B": "塑料全冠",
+        "C": "金属烤瓷全冠",
+        "D": "锤造金属全冠",
+        "E": "嵌体"
+      },
+      "official_answer": "B",
+      "raw_model_output": "D",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "D",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0040",
+      "question": "某地某年男性简略寿命表中0岁组的期望寿命为70.1岁，则1岁组的期望寿命",
+      "options": {
+        "A": "大于70.1岁",
+        "B": "小于70.1岁",
+        "C": "不一定",
+        "D": "大于等于70.1岁"
+      },
+      "official_answer": "C",
+      "raw_model_output": "C",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "C",
+      "is_correct": true
+    },
+    {
+      "id": "formal_val_0041",
+      "question": "胃痛的主穴为",
+      "options": {
+        "A": "上脘、中脘、下脘",
+        "B": "上脘、天枢、阴陵泉",
+        "C": "内关、阳陵泉、上脘",
+        "D": "内关、足三里、中脘",
+        "E": "上巨虚、内关、下脘"
+      },
+      "official_answer": "D",
+      "raw_model_output": "D",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "D",
+      "is_correct": true
+    },
+    {
+      "id": "formal_val_0042",
+      "question": "在队列研究中，结局的确切概念是指",
+      "options": {
+        "A": "统计检验结果",
+        "B": "暴露属性的分组结果",
+        "C": "观察中出现了预期结果事件",
+        "D": "观察期限的终止时间",
+        "E": "研究队列中存在的混杂结果"
+      },
+      "official_answer": "C",
+      "raw_model_output": "C",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "C",
+      "is_correct": true
+    },
+    {
+      "id": "formal_val_0043",
+      "question": "某校六年级（12岁年龄组）300名学生中恒牙有龋、失、补的人数为180人，未治龋齿数为328个，因龋失牙数为3个，因龋充填牙数为69个。该年级学生的龋均为",
+      "options": {
+        "A": "1.2",
+        "B": "1.3",
+        "C": "1.4",
+        "D": "1.5",
+        "E": "1.6"
+      },
+      "official_answer": "B",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": true
+    },
+    {
+      "id": "formal_val_0044",
+      "question": "有关流感地区分布特征的描述错误的是",
+      "options": {
+        "A": "在世界各地均可以发生",
+        "B": "一般是城市后农村",
+        "C": "先平原后山区",
+        "D": "各地发病率水平相近",
+        "E": "流行往往沿交通线发展"
+      },
+      "official_answer": "D",
+      "raw_model_output": "C",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "C",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0045",
+      "question": "发生传染病流行时，县级以上地方政府有权在本行政区域内",
+      "options": {
+        "A": "调集各级各类医疗、防疫人员参加疫情控制工作",
+        "B": "停工、停业、停课",
+        "C": "封锁甲类或按甲类传染病管理的传染病疫区",
+        "D": "封锁跨省、直辖市的疫区",
+        "E": "宣布疫区"
+      },
+      "official_answer": "A",
+      "raw_model_output": "D",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "D",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0046",
+      "question": "在低地方流行区，乙型肝炎在儿童中",
+      "options": {
+        "A": "少见",
+        "B": "多见",
+        "C": "一般",
+        "D": "较多见",
+        "E": "肯定不会发生"
+      },
+      "official_answer": "A",
+      "raw_model_output": "A",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "A",
+      "is_correct": true
+    },
+    {
+      "id": "formal_val_0047",
+      "question": "血燥生风的病因是",
+      "options": {
+        "A": "生血不足或失血过多",
+        "B": "久病耗血或年老精亏",
+        "C": "产后恶露日久不净",
+        "D": "热病后期，阴津亏损",
+        "E": "水不涵木，浮阳不潜"
+      },
+      "official_answer": "B",
+      "raw_model_output": "D",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "D",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0048",
+      "question": "下列各项中不属于“八法”内容的是",
+      "options": {
+        "A": "清法、补法",
+        "B": "和法、温法",
+        "C": "汗法、吐法",
+        "D": "下法、清法",
+        "E": "消法、通法"
+      },
+      "official_answer": "E",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0049",
+      "question": "对侧柏叶的说法正确的是",
+      "options": {
+        "A": "外表面灰棕色或黄棕色",
+        "B": "有香气",
+        "C": "两者均是",
+        "D": "两者均不是"
+      },
+      "official_answer": "B",
+      "raw_model_output": "C",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "C",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0050",
+      "question": "细菌性脑膜炎患者应用万古霉素治疗，快速大剂量静脉滴注后可能会产生",
+      "options": {
+        "A": "“胰岛素样自体免疫综合征”",
+        "B": "“灰婴综合征”",
+        "C": "“药源性流感综合征”",
+        "D": "“手足综合征”",
+        "E": "“红人综合征”"
+      },
+      "official_answer": "E",
+      "raw_model_output": "C",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "C",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0051",
+      "question": "在医疗机构药品采购管理中，关于药品采购品种限制的说法，正确的是",
+      "options": {
+        "A": "处方组成类同的复方制剂1～2种",
+        "B": "同一通用名称药品的品种，注射剂型和口服剂型合计不得超过2种",
+        "C": "每种药品剂型原则上不超过2种",
+        "D": "药品采购品种限制原则为“两品两规”"
+      },
+      "official_answer": "A",
+      "raw_model_output": "D",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "D",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0052",
+      "question": "患儿10岁，上前牙牙龈时常流脓1月余。查左上1远中舌面深龋，探无反应，无穿髓孔，牙松动Ⅰ度，叩（+），冷测无反应，唇侧牙龈近根尖处有一窦道。为确定诊断，临床需要作的检查是X线片，临床拟诊断为慢性根尖周炎，临床治疗应选择",
+      "options": {
+        "A": "干髓术",
+        "B": "活髓切断术",
+        "C": "根管治疗术",
+        "D": "拔除",
+        "E": "塑化治疗"
+      },
+      "official_answer": "C",
+      "raw_model_output": "D",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "D",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0053",
+      "question": "一位36岁妇女，到医院进行孕前咨询，了解生唐氏综合征孩子的概率，医生经过咨询告知可能发生的概率是",
+      "options": {
+        "A": "1/10000",
+        "B": "1/5000",
+        "C": "1/900",
+        "D": "1/800",
+        "E": "1/40"
+      },
+      "official_answer": "D",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0054",
+      "question": "注册商标有效期满，续展注册的时间应当在期满前",
+      "options": {
+        "A": "一个月内申请",
+        "B": "两个月内申请",
+        "C": "三个月内申请",
+        "D": "五个月内申请",
+        "E": "六个月内申请"
+      },
+      "official_answer": "E",
+      "raw_model_output": "C",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "C",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0055",
+      "question": "关于地西泮的叙述，哪项错误",
+      "options": {
+        "A": "肌内注射吸收慢而不规则",
+        "B": "口服治疗量对呼吸和循环影响小",
+        "C": "较大剂量易引起全身麻醉",
+        "D": "可用于治疗癫痫持续状态",
+        "E": "其代谢产物也有生物活性"
+      },
+      "official_answer": "C",
+      "raw_model_output": "D",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "D",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0056",
+      "question": "有关酶竞争性抑制剂特点的叙述，错误的是",
+      "options": {
+        "A": "抑制剂与底物结构相似",
+        "B": "抑制剂与底物竞争酶分子中的活性中心",
+        "C": "当抑制剂存在时，Km值变大",
+        "D": "抑制剂恒定时，增加底物浓度，能达到最大反应速度",
+        "E": "抑制剂与酶共价结合"
+      },
+      "official_answer": "E",
+      "raw_model_output": "D",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "D",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0057",
+      "question": "经空气传播的传染病",
+      "options": {
+        "A": "发病往往有年龄差异",
+        "B": "有时可造成暴发流行",
+        "C": "两种流行特征都有",
+        "D": "两种流行特征都无"
+      },
+      "official_answer": "C",
+      "raw_model_output": "C",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "C",
+      "is_correct": true
+    },
+    {
+      "id": "formal_val_0058",
+      "question": "负责建立国家基本药物制度，制定国家药物政策的是",
+      "options": {
+        "A": "卫生部门",
+        "B": "中医药管理部门",
+        "C": "发展和改革委员会",
+        "D": "工业和信息化管理部门",
+        "E": "公安部门"
+      },
+      "official_answer": "A",
+      "raw_model_output": "C",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "C",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0059",
+      "question": "医疗机构的下列行为中，不违反《医疗机构管理条例》的是",
+      "options": {
+        "A": "未将执业许可证、收费标准等悬挂于明显处所",
+        "B": "工作人员上岗工作未按规定佩带标牌",
+        "C": "未按规定办理校验手续",
+        "D": "擅自增加医师人数",
+        "E": "擅自涂改执业许可证"
+      },
+      "official_answer": "D",
+      "raw_model_output": "D",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "D",
+      "is_correct": true
+    },
+    {
+      "id": "formal_val_0060",
+      "question": "患儿，男，6个月。夜惊多汗，烦躁不安，面色不华，纳食不佳，枕秃，舌淡苔白，指纹淡。实验室检查：血钙磷乘积稍低，血碱性磷酸酶升高。诊断为佝偻病，其分期及证型是",
+      "options": {
+        "A": "活动早期，肾精亏损",
+        "B": "活动早期，肾虚骨弱",
+        "C": "活动早期，脾气虚弱",
+        "D": "活动期，肾精亏损",
+        "E": "活动期，肾虚骨弱"
+      },
+      "official_answer": "C",
+      "raw_model_output": "D",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "D",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0061",
+      "question": "根据特殊管理药品有关品种目录管理的规定，罂粟壳属于",
+      "options": {
+        "A": "第二类精神药品",
+        "B": "第一类精神药品",
+        "C": "医疗用毒性药品",
+        "D": "麻醉药品"
+      },
+      "official_answer": "D",
+      "raw_model_output": "C",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "C",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0062",
+      "question": "颈淋巴清扫术、下颌骨切除术、腮腺摘除术的最佳的引流方法是",
+      "options": {
+        "A": "负压引流",
+        "B": "油纱条引流",
+        "C": "片状引流",
+        "D": "管状引流",
+        "E": "碘仿纱条引流"
+      },
+      "official_answer": "A",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0063",
+      "question": "对于切除阑尾的术后病人，宜采取的医患模式是",
+      "options": {
+        "A": "主动-被动型",
+        "B": "被动-主动型",
+        "C": "指导合作型",
+        "D": "共同参与型",
+        "E": "合作-指导型"
+      },
+      "official_answer": "C",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0064",
+      "question": "女，36岁。前置胎盘大出血入院行手术治疗。术中输注红细胞悬液26单位，机采血小板2个治疗量，手术创面渗血不止。实验室检查：Hb100g/L，血小板90×10⁹/L，凝血酶原时间（PT）为21s（正常对照为11～15s），血浆纤维蛋白原0.6g/L。此时应输注",
+      "options": {
+        "A": "全血",
+        "B": "红细胞悬液",
+        "C": "浓缩血小板",
+        "D": "新鲜冰冻血浆",
+        "E": "浓缩白（粒）细胞"
+      },
+      "official_answer": "D",
+      "raw_model_output": "A",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "A",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0065",
+      "question": "川芎的分泌组织是",
+      "options": {
+        "A": "树脂道",
+        "B": "油管",
+        "C": "油室",
+        "D": "油细胞",
+        "E": "乳汁管"
+      },
+      "official_answer": "C",
+      "raw_model_output": "A",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "A",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0066",
+      "question": "普通型和典型偏头痛两者的区别之一，在于后者一定有",
+      "options": {
+        "A": "搏动性头痛",
+        "B": "恶心、呕吐",
+        "C": "畏光、畏声",
+        "D": "神经系统检查无异常",
+        "E": "10～40分钟先兆症状"
+      },
+      "official_answer": "E",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0067",
+      "question": "某男，35岁。五一假期外出旅游，因天气忽冷忽热而感冒，症见发热、头痛、咳嗽、口干、咽喉疼痛，舌淡红、苔薄黄、脉浮数。医师诊断为风热感冒，并处以银翘解毒颗粒。服用3天，诸症悉除。银翘解毒颗粒处方的组成有金银花、连翘、薄荷、荆芥、淡豆豉、炒牛蒡子、淡竹叶、桔梗、甘草。甘草在方中除调和诸药外，又能",
+      "options": {
+        "A": "化湿解毒",
+        "B": "泻火解毒",
+        "C": "利尿解毒",
+        "D": "散结解毒",
+        "E": "凉血解毒"
+      },
+      "official_answer": "B",
+      "raw_model_output": "D",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "D",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0068",
+      "question": "女，64岁。拟行直肠癌根治术。2型糖尿病病史20余年。现每日皮下注射胰岛素，平素晨起应用胰岛素12U。空腹血糖常为7～10mmol/L，尿糖（+～++）。下列围手术期处理不恰当的是",
+      "options": {
+        "A": "手术当日测定空腹血糖",
+        "B": "必须将空腹血糖控制到正常水平",
+        "C": "术前应用葡萄糖及胰岛素",
+        "D": "尿糖可维持原水平",
+        "E": "手术日晨停用胰岛素"
+      },
+      "official_answer": "B",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": true
+    },
+    {
+      "id": "formal_val_0069",
+      "question": "广泛搜寻可能的危险因子的分析性研究是",
+      "options": {
+        "A": "描述性研究",
+        "B": "检验性病例对照研究",
+        "C": "探索性病例对照研究",
+        "D": "历史性队列研究",
+        "E": "双向性队列研究"
+      },
+      "official_answer": "C",
+      "raw_model_output": "A",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "A",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0070",
+      "question": "慢性硬化性下颌下腺炎检查时压迫患侧腺体，导管口流出的液体为",
+      "options": {
+        "A": "絮状唾液",
+        "B": "少量黏稠而有咸味液体",
+        "C": "胶冻状液体",
+        "D": "黏稠脓性分泌物",
+        "E": "含有“硫磺颗粒”的脓液"
+      },
+      "official_answer": "D",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0071",
+      "question": "正常人口服治疗量氯丙嗪后，可出现",
+      "options": {
+        "A": "心情烦躁",
+        "B": "注意力集中",
+        "C": "失眠",
+        "D": "感情淡漠",
+        "E": "以上都正确"
+      },
+      "official_answer": "D",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0072",
+      "question": "男，28岁，建筑工人。下午3时露天工作时发生大汗、头痛、腹痛、呕吐、抽搐，无尿、便失禁，流涎，口吐白沫。当日最高气温38℃，既往体健。查体：T38.1℃，心率106次/分，血压90/60mmHg。神志清楚，面色潮红，双肺未闻及干湿啰音，心律齐。最可能的诊断为",
+      "options": {
+        "A": "热衰竭",
+        "B": "热射病",
+        "C": "热痉挛",
+        "D": "低血糖",
+        "E": "脱水"
+      },
+      "official_answer": "C",
+      "raw_model_output": "A",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "A",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0073",
+      "question": "治疗军团菌感染的首选药物是",
+      "options": {
+        "A": "青霉素G",
+        "B": "氟康唑",
+        "C": "四环素",
+        "D": "红霉素",
+        "E": "氯霉素"
+      },
+      "official_answer": "D",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0074",
+      "question": "2岁到青春前期，体重每年增加",
+      "options": {
+        "A": "0.5kg",
+        "B": "1kg",
+        "C": "1.5kg",
+        "D": "2kg",
+        "E": "2.5kg"
+      },
+      "official_answer": "D",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0075",
+      "question": "关于继发性肾病综合征的特点下列说法错误的一项是",
+      "options": {
+        "A": "过敏性紫癜好发于青少年",
+        "B": "系统性红斑狼疮好发于青壮年女性",
+        "C": "乙肝病毒相关性肾炎其肾脏病理以膜性肾炎最为多见",
+        "D": "糖尿病肾病多见于10年以上病程的糖尿病患者",
+        "E": "肾淀粉样变肾脏受累进展急速"
+      },
+      "official_answer": "E",
+      "raw_model_output": "E",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "E",
+      "is_correct": true
+    },
+    {
+      "id": "formal_val_0076",
+      "question": "全身消炎药治疗牙周病主要用于",
+      "options": {
+        "A": "牙周炎急性炎症期",
+        "B": "青春期龈炎",
+        "C": "龈缘炎",
+        "D": "增生性龈炎",
+        "E": "妊娠期龈炎"
+      },
+      "official_answer": "A",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0077",
+      "question": "结肠破裂",
+      "options": {
+        "A": "腹膜炎出现早",
+        "B": "腹膜炎严重，呈板状腹",
+        "C": "腹膜炎出现较晚，但较重",
+        "D": "腹膜炎出现较晚且较轻",
+        "E": "无腹膜刺激征"
+      },
+      "official_answer": "C",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0078",
+      "question": "下列哪一种情况，必须作牙体缺损的修复",
+      "options": {
+        "A": "左下6近中舌尖缺损，已作根管治疗，无症状",
+        "B": "左上4舌尖缺损少许，无过敏症状",
+        "C": "左上2唇面釉质缺损少许，无症状",
+        "D": "左上2远中切角缺损有叩痛，松动Ⅲ度",
+        "E": "左下7近中及远中颊尖缺损，已侵及髓室"
+      },
+      "official_answer": "A",
+      "raw_model_output": "E",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "E",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0079",
+      "question": "根据《中华人民共和国消费者权益保护法》，购买商品时，消费者的权利不包括",
+      "options": {
+        "A": "要求经营者提供商品的成分、生产工艺、有效期限",
+        "B": "获得质量保障、价格合理、计量正确等公平交易条件",
+        "C": "使用商品受到人身、财产损害的，可以要求经营者或生产者赔偿",
+        "D": "依法成立维护自身合法权益的社会团体",
+        "E": "对经营者提供的商品进行比较、鉴别和监督"
+      },
+      "official_answer": "A",
+      "raw_model_output": "D",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "D",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0080",
+      "question": "女，58岁。乏力、低热1个月。查体：双侧颈部、腋窝和腹股沟均可触及肿大淋巴结，最大者直径2cm、质韧、无触痛，胸骨无压痛，肝肋下未触及，脾肋下3cm。实验室检查：Hb76g/L，WBC5.2×10⁹/L，Plt123×10⁹/L，网织红细胞0.14，coombs试验（+），尿胆红素（—），尿胆原（+++）。针对该患者的贫血首选的治疗药物是",
+      "options": {
+        "A": "泼尼松",
+        "B": "促红细胞生成素",
+        "C": "环磷酰胺",
+        "D": "环孢素A",
+        "E": "丙种球蛋白"
+      },
+      "official_answer": "A",
+      "raw_model_output": "A",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "A",
+      "is_correct": true
+    },
+    {
+      "id": "formal_val_0081",
+      "question": "人类目前常用的化学物质有多少种",
+      "options": {
+        "A": "300万",
+        "B": "6万~7万",
+        "C": "40万",
+        "D": "100万",
+        "E": "15万"
+      },
+      "official_answer": "B",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": true
+    },
+    {
+      "id": "formal_val_0082",
+      "question": "第2、3、4鳃弓形成了一个大的位于中线的突起，此突起最后形成",
+      "options": {
+        "A": "舌体",
+        "B": "舌根",
+        "C": "界沟",
+        "D": "口咽膜",
+        "E": "奇结节"
+      },
+      "official_answer": "B",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": true
+    },
+    {
+      "id": "formal_val_0083",
+      "question": "28岁，初孕妇。孕32周，因全身水肿及头痛来诊，妊娠前即有面部及下肢水肿，查血压21.3/14.7kPa（160/110mmHg），尿液检查常规蛋白（+++），可见颗粒管型及红细胞。经治疗孕37周自然分娩，产后6周，血压降至17/10kPa（128/75mmHg），尿蛋白（++），水肿（+）。下列诊断以哪种可能性大",
+      "options": {
+        "A": "子痫前期",
+        "B": "妊娠合并肾炎",
+        "C": "慢性肾炎基础上并发子痫前期",
+        "D": "妊娠合并慢性高血压",
+        "E": "原发性高血压基础上并发子痫前期"
+      },
+      "official_answer": "C",
+      "raw_model_output": "D",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "D",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0084",
+      "question": "肾病综合征患者长期使用泼尼松时，用法为隔日清晨给药一次，这种给药方法的原理是",
+      "options": {
+        "A": "利用人体糖皮质激素分泌的昼夜节律性原理",
+        "B": "利用外源性糖皮质激素的生物等效原理",
+        "C": "利用糖皮质激素的脉冲式分泌原理",
+        "D": "利用糖皮质激素与盐皮质激素互为补充的原理",
+        "E": "利用糖皮质激素逐渐减量原理"
+      },
+      "official_answer": "A",
+      "raw_model_output": "D",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "D",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0085",
+      "question": "切断感染性腹泻途径的主要措施",
+      "options": {
+        "A": "到2025年腹泻导致的死亡率降到1‰以下",
+        "B": "前六个月纯母乳喂养婴儿",
+        "C": "“三管一灭”",
+        "D": "设立腹泻病门诊",
+        "E": "轮状病毒疫苗接种"
+      },
+      "official_answer": "C",
+      "raw_model_output": "C",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "C",
+      "is_correct": true
+    },
+    {
+      "id": "formal_val_0086",
+      "question": "有关胸骨的描述何者是错的",
+      "options": {
+        "A": "胸骨可分为柄、体和剑突三部分",
+        "B": "胸骨柄上缘中份有颈静脉切迹",
+        "C": "柄和体相接处微向前突形成胸骨角",
+        "D": "胸骨角向后平对第2胸椎",
+        "E": "胸骨柄的侧缘接第1肋"
+      },
+      "official_answer": "D",
+      "raw_model_output": "C",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "C",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0087",
+      "question": "适用于含毒性药物和贵重药物散剂的分剂量方法是",
+      "options": {
+        "A": "目测法",
+        "B": "等量递增法",
+        "C": "重量法",
+        "D": "估分法",
+        "E": "容量法"
+      },
+      "official_answer": "C",
+      "raw_model_output": "C",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "C",
+      "is_correct": true
+    },
+    {
+      "id": "formal_val_0088",
+      "question": "脾肾亏虚表现是",
+      "options": {
+        "A": "横目斜视",
+        "B": "昏睡露睛",
+        "C": "瞳孔散大",
+        "D": "目睛微定",
+        "E": "双睑下垂"
+      },
+      "official_answer": "E",
+      "raw_model_output": "A",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "A",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0089",
+      "question": "根据《处方管理办法》，吗啡缓释片用于门诊癌症疼痛患者的处方最大量为",
+      "options": {
+        "A": "一次常用量",
+        "B": "3日常用量",
+        "C": "5日常用量",
+        "D": "7日常用量",
+        "E": "15日常用量"
+      },
+      "official_answer": "E",
+      "raw_model_output": "C",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "C",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0090",
+      "question": "艾叶除温经止血外，又能",
+      "options": {
+        "A": "清热安胎",
+        "B": "解毒止痢",
+        "C": "散寒止痛",
+        "D": "疏肝止痛",
+        "E": "清肝泻火"
+      },
+      "official_answer": "C",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0091",
+      "question": "干扰素诱导生成的寡核苷酸是",
+      "options": {
+        "A": "2'-5'G",
+        "B": "3'-5'G",
+        "C": "2'-5'A",
+        "D": "3'-5'U",
+        "E": "2'-5'C"
+      },
+      "official_answer": "C",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0092",
+      "question": "某中学生全天能量推荐摄入量为2400kcal，按照合理营养的要求早餐应摄取的能量约为",
+      "options": {
+        "A": "240kcal",
+        "B": "480kcal",
+        "C": "720kcal",
+        "D": "960kcal",
+        "E": "1200kcal"
+      },
+      "official_answer": "C",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0093",
+      "question": "男，32岁。右上臂被重物砸伤2小时。局部疼痛、肿胀、活动受限。查体：右上臂中下部可见畸形及异常活动，垂腕、手指不能伸直。最可能合并损伤的神经",
+      "options": {
+        "A": "桡神经",
+        "B": "正中神经",
+        "C": "腋神经",
+        "D": "肌皮神经",
+        "E": "尺神经"
+      },
+      "official_answer": "A",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0094",
+      "question": "对某饭店进行食品卫生检查，下列哪一项不符合卫生要求",
+      "options": {
+        "A": "动物性食品和蔬菜分池清洗",
+        "B": "盛放生、熟食品的容器分开并有明显标记",
+        "C": "冰箱内熟食品放上层，生食品放下层",
+        "D": "冰箱内有私人药品，但分开存放",
+        "E": "木耳等干菜未放进冰箱储存"
+      },
+      "official_answer": "D",
+      "raw_model_output": "D",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "D",
+      "is_correct": true
+    },
+    {
+      "id": "formal_val_0095",
+      "question": "产后脉搏恢复正常的时间是",
+      "options": {
+        "A": "产后3～4天",
+        "B": "产后7天",
+        "C": "产后10天",
+        "D": "产后21天",
+        "E": "产后42天"
+      },
+      "official_answer": "B",
+      "raw_model_output": "C",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "C",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0096",
+      "question": "青霉素抗革兰阳性（G+）菌作用的机制是",
+      "options": {
+        "A": "干扰细菌蛋白质合成",
+        "B": "抑制细菌核酸代谢",
+        "C": "抑制细菌脂代谢",
+        "D": "抑制细菌细胞壁肽聚糖（粘肽）的合成",
+        "E": "破坏细菌细胞膜结构"
+      },
+      "official_answer": "D",
+      "raw_model_output": "E",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "E",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0097",
+      "question": "休克初期（微循环缺血性缺氧期）组织微循环灌流的特点是",
+      "options": {
+        "A": "多灌少流，灌多于流",
+        "B": "不灌不流，灌少于流",
+        "C": "少灌少流，灌少于流",
+        "D": "少灌少流，灌多于流",
+        "E": "多灌多流，灌少于流"
+      },
+      "official_answer": "C",
+      "raw_model_output": "E",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "E",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0098",
+      "question": "女性输尿管下部前方有",
+      "options": {
+        "A": "膀胱底",
+        "B": "输卵管",
+        "C": "子宫",
+        "D": "子宫动脉与之相交",
+        "E": "髂内动脉"
+      },
+      "official_answer": "D",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0099",
+      "question": "女，31岁取环后10天，发热3天。体：T38.6℃，P98次/分，R23次/分，BP100/80mmHg，宫颈举痛（＋），子宫压痛，右侧附件区可触及腊肠型肿物，触痛明显，活动度差。该患者最可能的诊断是",
+      "options": {
+        "A": "输卵管妊娠",
+        "B": "生殖器结核",
+        "C": "盆腔炎性疾病",
+        "D": "卵巢上皮性癌",
+        "E": "子宫内膜异位症"
+      },
+      "official_answer": "C",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0100",
+      "question": "属于B细胞的表面标志为",
+      "options": {
+        "A": "CD3",
+        "B": "CD4",
+        "C": "CD8",
+        "D": "CD19",
+        "E": "CD56"
+      },
+      "official_answer": "D",
+      "raw_model_output": "B",
+      "generated_tokens_count": 2,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": true,
+      "predicted_letter": "B",
+      "is_correct": false
+    }
+  ]
+}

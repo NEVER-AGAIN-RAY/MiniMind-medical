@@ -1,0 +1,32 @@
+{
+  "experiment": "concise_knowledge_target_validation",
+  "diagnostic_overfit50": {
+    "base_candidate_accuracy": 0.24,
+    "lora_rank16_epoch10_accuracy": 0.86,
+    "lora_rank16_epoch25_accuracy": 1.0,
+    "lora_rank16_final_accuracy": 1.0,
+    "lora_rank32_final_accuracy": 1.0,
+    "full_parameter_final_accuracy": 1.0,
+    "conclusion": "精简知识目标解决了训练信号被长解析稀释的问题；rank16 已有足够的训练集记忆能力。"
+  },
+  "held_out_locked_val200": {
+    "candidate_accuracy": 0.235,
+    "free_generation_answer_text_prefix_accuracy": 0.2,
+    "natural_termination_rate": 0.8,
+    "truncation_rate_at_64_tokens": 0.2,
+    "previous_full_rationale_candidate_accuracy": 0.195,
+    "paired_new_only_correct": 23,
+    "paired_old_only_correct": 15,
+    "paired_exact_p_value": 0.2558750795433298,
+    "conclusion": "比长解析方案高4个百分点，但样本量下差异不显著，仍接近随机水平，不能视为医学选择题能力已形成。"
+  },
+  "decision": {
+    "keep": "保留精简知识目标和rank16作为后续基线。",
+    "do_not_do": [
+      "暂不增加LoRA rank",
+      "暂不改为全参数训练",
+      "暂不直接扩到20000条同类数据"
+    ],
+    "next": "先审计训练数据中的解析质量和题型覆盖，再按医学知识点/题型分层构造更干净的训练与验证集；用学习曲线比较1000、5000、10000条的未见题准确率。"
+  }
+}

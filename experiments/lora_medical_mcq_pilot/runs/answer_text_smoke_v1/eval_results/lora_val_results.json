@@ -1,0 +1,283 @@
+{
+  "experiment": "lora_medical_mcq_pilot",
+  "mode": "lora",
+  "is_smoke": true,
+  "is_limited": false,
+  "limit_value": null,
+  "split": "val",
+  "timestamp": "2026-09-12T17:06:18.664899",
+  "dataset": {
+    "path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/data/smoke/val.jsonl",
+    "md5": "879eb35d3d11b83fc9c436f8e40c0dbd",
+    "count": 10
+  },
+  "weights": {
+    "base_weight_path": "/root/autodl-tmp/minimind-lora/out/full_sft_768.pth",
+    "base_weight_md5": "942a011c4b3868f6e17d7ba7d5bdc08a",
+    "lora_weight_path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_mcq_pilot/runs/answer_text_smoke_v1/checkpoints/best_lora.pth",
+    "lora_weight_md5": "3062a769f213e0c4ca64726e2e0e9723"
+  },
+  "generation_config": {
+    "do_sample": false,
+    "open_thinking": false,
+    "max_new_tokens": 64,
+    "instruction": "请按“正确答案：选项内容（字母）。”的格式回答，不要输出其他解释。",
+    "target_mode": "answer_text"
+  },
+  "runtime_env": {
+    "device": "cuda:0",
+    "dtype": "bfloat16"
+  },
+  "metrics": {
+    "total_questions": 10,
+    "single_letter_format_compliance_rate": 0.0,
+    "accuracy": 0.0,
+    "natural_termination_rate": 0.1,
+    "truncation_rate": 0.9,
+    "letter_distribution": {
+      "NON_COMPLIANT": 10
+    },
+    "answer_text_match_rate": 0.0,
+    "knowledge_consistency_rate": 0.0,
+    "counts": {
+      "format_compliant": 0,
+      "correct": 0,
+      "natural_termination": 1,
+      "truncated": 9,
+      "answer_text_match": 0,
+      "knowledge_consistent": 0
+    }
+  },
+  "details": [
+    {
+      "id": "formal_val_0001",
+      "question": "参苓白术散含有的功效是",
+      "options": {
+        "A": "疏肝",
+        "B": "通便",
+        "C": "举陷",
+        "D": "补血",
+        "E": "渗湿"
+      },
+      "official_answer": "E",
+      "raw_model_output": "正确答案：A. 疏肝\n\n解释：疏肝是中医理论中的一种治疗方法，主要通过疏肝的作用来治疗疾病。疏肝的功效主要体现在以下几个方面：\n\n1. **疏肝**：疏�",
+      "generated_tokens_count": 64,
+      "natural_termination": false,
+      "truncated": true,
+      "is_format_compliant": false,
+      "predicted_letter": null,
+      "predicted_answer_text": null,
+      "expected_answer_text": "渗湿",
+      "answer_text_present": false,
+      "knowledge_consistent": false,
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0002",
+      "question": "重庆开县油气田井喷事件中，泄漏出的剧毒窒息性气体是",
+      "options": {
+        "A": "氟化氢",
+        "B": "硫化氢",
+        "C": "甲基异氢酸酯",
+        "D": "氰化氢",
+        "E": "一氧化碳"
+      },
+      "official_answer": "B",
+      "raw_model_output": "正确答案：氰化氢\n\n氰化氢是氰化氢的一种，它在水中会与水反应生成氢气和氢气。氰化氢的化学式为CH3COOH，其化学式为CH",
+      "generated_tokens_count": 64,
+      "natural_termination": false,
+      "truncated": true,
+      "is_format_compliant": false,
+      "predicted_letter": null,
+      "predicted_answer_text": null,
+      "expected_answer_text": "硫化氢",
+      "answer_text_present": false,
+      "knowledge_consistent": false,
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0003",
+      "question": "中西药合理联用可起到协同增效作用的是",
+      "options": {
+        "A": "小青龙汤与抗组胺药联用",
+        "B": "含鞣质较多的中成药与铁剂联用",
+        "C": "五味子糖浆与磺胺类药联用",
+        "D": "逍遥散与催眠镇静类药联用",
+        "E": "含乙醇的中成药与硝酸甘油联用"
+      },
+      "official_answer": "D",
+      "raw_model_output": "正确答案：A. 小青龙汤与抗组胺药联用\n\n解释：小青龙汤与抗组胺药联用是中成药中的一种，具有清热解毒、活血化瘀的功效，常用于治疗慢性疾病、�",
+      "generated_tokens_count": 64,
+      "natural_termination": false,
+      "truncated": true,
+      "is_format_compliant": false,
+      "predicted_letter": null,
+      "predicted_answer_text": null,
+      "expected_answer_text": "逍遥散与催眠镇静类药联用",
+      "answer_text_present": false,
+      "knowledge_consistent": false,
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0004",
+      "question": "用于治疗精神分裂症的药物是",
+      "options": {
+        "A": "氯丙嗪",
+        "B": "丙咪嗪",
+        "C": "司来吉兰",
+        "D": "哌替啶",
+        "E": "硫酸锂"
+      },
+      "official_answer": "A",
+      "raw_model_output": "正确答案：A. 氯丙嗪\n\n氯丙嗪是一种抗精神病药物，主要用于治疗精神分裂症。它通过抑制大脑中的神经递质，如多巴胺、血清素和多巴胺",
+      "generated_tokens_count": 64,
+      "natural_termination": false,
+      "truncated": true,
+      "is_format_compliant": false,
+      "predicted_letter": null,
+      "predicted_answer_text": null,
+      "expected_answer_text": "氯丙嗪",
+      "answer_text_present": false,
+      "knowledge_consistent": false,
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0005",
+      "question": "患者，女，27岁，已婚。近几个月来带下量多、黏稠、色黄，胸闷心烦，纳少便溏，舌淡红、苔黄略腻，脉细。其治法是",
+      "options": {
+        "A": "清热利湿止带",
+        "B": "健脾利湿止带",
+        "C": "健脾益气止带",
+        "D": "清热解毒止带",
+        "E": "补肾健脾止带"
+      },
+      "official_answer": "A",
+      "raw_model_output": "选项内容：\nA. 清热利湿止带\nB. 健脾利湿止带\nC. 健脾利湿止带\nD. 清热解毒止带\nE. 补肾健脾止带\n\n正确答案：A.",
+      "generated_tokens_count": 64,
+      "natural_termination": false,
+      "truncated": true,
+      "is_format_compliant": false,
+      "predicted_letter": null,
+      "predicted_answer_text": null,
+      "expected_answer_text": "清热利湿止带",
+      "answer_text_present": false,
+      "knowledge_consistent": false,
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0006",
+      "question": "女，28岁，患缺铁性贫血。膳食中应注意选择含铁丰富且吸收率高的食物尤其是",
+      "options": {
+        "A": "猪肝、瘦肉",
+        "B": "牛奶、鸡蛋",
+        "C": "大豆及豆制品",
+        "D": "鱼虾",
+        "E": "蔬菜、水果"
+      },
+      "official_answer": "A",
+      "raw_model_output": "选项内容（字母）：\nA. 猪肝、瘦肉\nB. 牛奶、鸡蛋\nC. 大豆及豆制品\nD. 鱼虾\nE. 蔬菜、水果\n\n正确答案：A. 猪肝、瘦",
+      "generated_tokens_count": 64,
+      "natural_termination": false,
+      "truncated": true,
+      "is_format_compliant": false,
+      "predicted_letter": null,
+      "predicted_answer_text": null,
+      "expected_answer_text": "猪肝、瘦肉",
+      "answer_text_present": false,
+      "knowledge_consistent": false,
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0007",
+      "question": "牙体外层被釉质覆盖的部分称为牙冠，也称为",
+      "options": {
+        "A": "临床牙冠",
+        "B": "解剖牙冠",
+        "C": "牙根",
+        "D": "牙颈",
+        "E": "釉牙骨质界"
+      },
+      "official_answer": "B",
+      "raw_model_output": "正确答案：A. 临床牙冠\n\n牙冠是牙齿的外层，它位于牙齿的下方，是牙齿内部的保护层。牙冠的形成与牙齿的结构有关，牙冠的形成与牙齿",
+      "generated_tokens_count": 64,
+      "natural_termination": false,
+      "truncated": true,
+      "is_format_compliant": false,
+      "predicted_letter": null,
+      "predicted_answer_text": null,
+      "expected_answer_text": "解剖牙冠",
+      "answer_text_present": false,
+      "knowledge_consistent": false,
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0008",
+      "question": "具有重浊黏滞致病特点的邪气是",
+      "options": {
+        "A": "燥邪",
+        "B": "火邪",
+        "C": "风邪",
+        "D": "寒邪",
+        "E": "湿邪"
+      },
+      "official_answer": "E",
+      "raw_model_output": "正确答案：A. 燥邪\n\n解释：\n\n1. 燥邪是指那些在自然环境中容易生存、繁殖的生物，它们通常具有较强的生存能力，能够在极端环境中生存。这些生物通常具有较强的生",
+      "generated_tokens_count": 64,
+      "natural_termination": false,
+      "truncated": true,
+      "is_format_compliant": false,
+      "predicted_letter": null,
+      "predicted_answer_text": null,
+      "expected_answer_text": "湿邪",
+      "answer_text_present": false,
+      "knowledge_consistent": false,
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0009",
+      "question": "血液中降钙素主要由哪种细胞产生",
+      "options": {
+        "A": "胰岛A细胞",
+        "B": "胰岛B细胞",
+        "C": "甲状腺C细胞",
+        "D": "甲状旁腺细胞",
+        "E": "小肠上部S细胞"
+      },
+      "official_answer": "C",
+      "raw_model_output": "正确答案：胰岛B细胞\n\nA. 胰岛B细胞\nB. 胰岛C细胞",
+      "generated_tokens_count": 28,
+      "natural_termination": true,
+      "truncated": false,
+      "is_format_compliant": false,
+      "predicted_letter": null,
+      "predicted_answer_text": null,
+      "expected_answer_text": "甲状腺C细胞",
+      "answer_text_present": false,
+      "knowledge_consistent": false,
+      "is_correct": false
+    },
+    {
+      "id": "formal_val_0010",
+      "question": "引起疯牛病和人类克-雅病库鲁病等的病原因子是",
+      "options": {
+        "A": "病毒",
+        "B": "类病毒",
+        "C": "拟病毒",
+        "D": "朊病毒（朊粒）",
+        "E": "衣原体"
+      },
+      "official_answer": "D",
+      "raw_model_output": "正确答案：A. 病毒\n\n解释：病毒是一种由病毒引起的生物体，它们可以感染人类，并可能引起疾病。病毒可以引起各种疾病，包括感冒、流感、流感、艾滋病、某些类型的病毒等。病毒可以通过空气传播、",
+      "generated_tokens_count": 64,
+      "natural_termination": false,
+      "truncated": true,
+      "is_format_compliant": false,
+      "predicted_letter": null,
+      "predicted_answer_text": null,
+      "expected_answer_text": "朊病毒（朊粒）",
+      "answer_text_present": false,
+      "knowledge_consistent": false,
+      "is_correct": false
+    }
+  ]
+}

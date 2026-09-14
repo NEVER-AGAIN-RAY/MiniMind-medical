@@ -1,0 +1,862 @@
+{
+  "seed": 42,
+  "raw_question_count": 54497,
+  "total_rejected": 34253,
+  "reasons": {
+    "answer_absent_from_explanation": {
+      "count": 6750,
+      "examples": [
+        {
+          "source_row": 7,
+          "question": "食管疾病的胸痛特点是"
+        },
+        {
+          "source_row": 15,
+          "question": "干性胸膜炎的胸痛特点是"
+        },
+        {
+          "source_row": 23,
+          "question": "发作性呼气性呼吸困难，临床最常见于"
+        },
+        {
+          "source_row": 32,
+          "question": "急性左心功能不全，常伴有"
+        },
+        {
+          "source_row": 42,
+          "question": "犬吠样咳嗽，可见于"
+        },
+        {
+          "source_row": 49,
+          "question": "意识障碍伴瞳孔缩小，可见于"
+        },
+        {
+          "source_row": 51,
+          "question": "肺炎球菌肺炎，常伴有"
+        },
+        {
+          "source_row": 59,
+          "question": "符合中心性发绀特点的是"
+        },
+        {
+          "source_row": 61,
+          "question": "下列引起头痛的病因中，属于颅外病变的是"
+        },
+        {
+          "source_row": 68,
+          "question": "风湿性二尖瓣狭窄的特有体征是"
+        }
+      ]
+    },
+    "answer_not_in_options": {
+      "count": 1684,
+      "examples": [
+        {
+          "source_row": 5948,
+          "question": "属于牙周疾病二级预防概念"
+        },
+        {
+          "source_row": 20398,
+          "question": "下列不是艾滋病的传播途径的是"
+        },
+        {
+          "source_row": 40302,
+          "question": "/ml)的主要表现为"
+        },
+        {
+          "source_row": 40308,
+          "question": "下列联合用药中属于有益的药物相互作用有"
+        },
+        {
+          "source_row": 40317,
+          "question": "中国高脂血症预防指南（2007版）中将血脂通常分为哪三类"
+        },
+        {
+          "source_row": 40328,
+          "question": "可导致血压升高的药物有"
+        },
+        {
+          "source_row": 40333,
+          "question": "患者，女，30岁，因肺栓塞使用华法林抗凝治疗。药师除了需要关注患者的合并用药外，还需关注非药物因素对华法林疗效的影响。下列说法正确的有"
+        },
+        {
+          "source_row": 40365,
+          "question": "患者，男，64岁，夜间突发偏瘫、失语、头痛、恶心、呕吐，急诊入院。经影像学检查，诊断为缺血性脑卒中，距发病已7小时，可采用的治疗方案有"
+        },
+        {
+          "source_row": 40373,
+          "question": "具有控释和缓释作用的硝苯地平制剂的商品名包括"
+        },
+        {
+          "source_row": 40374,
+          "question": "患者，男，68岁，患高血压10年，2型糖尿病9年，陈旧性心肌梗死。长期服用二甲双胍片500mgtid、硝苯地平控释片30mgqd，目前血压160/90mmHg，"
+        }
+      ]
+    },
+    "answer_text_too_long_or_multi_sentence": {
+      "count": 993,
+      "examples": [
+        {
+          "source_row": 269,
+          "question": "慢阻肺低浓度氧疗的氧流量为"
+        },
+        {
+          "source_row": 368,
+          "question": "用口服葡萄糖耐量试验诊断糖尿病标准，其2小时血糖应"
+        },
+        {
+          "source_row": 574,
+          "question": "对不伤害原则的解释，正确的是"
+        },
+        {
+          "source_row": 672,
+          "question": "按公式计算，10个月婴儿的体重应为"
+        },
+        {
+          "source_row": 1468,
+          "question": "落枕穴位于手背，第二、三掌骨间的"
+        },
+        {
+          "source_row": 1470,
+          "question": "迎香穴位于"
+        },
+        {
+          "source_row": 1478,
+          "question": "天柱穴位于"
+        },
+        {
+          "source_row": 1783,
+          "question": "从任脉开始，由内向外的经脉排列是"
+        },
+        {
+          "source_row": 2257,
+          "question": "按照中国九分法计算烧伤面积，成人头、面、颈部占"
+        },
+        {
+          "source_row": 2415,
+          "question": "马钱子内服的用法用量"
+        }
+      ]
+    },
+    "combination_options": {
+      "count": 1176,
+      "examples": [
+        {
+          "source_row": 478,
+          "question": "诊断伤寒肥达反应有参考意义的抗体效价是"
+        },
+        {
+          "source_row": 575,
+          "question": "医学道德评价方式"
+        },
+        {
+          "source_row": 1074,
+          "question": "患者心悸，心胸憋闷，心痛时作，痛如针刺，唇甲青紫，舌质暗紫，或有瘀斑、瘀点。治疗代表方宜首选"
+        },
+        {
+          "source_row": 1098,
+          "question": "胁痛的基本病机为"
+        },
+        {
+          "source_row": 1433,
+          "question": "针刺皮肤松弛部位的腧穴，最适宜选用的进针方法"
+        },
+        {
+          "source_row": 1844,
+          "question": "以下哪一种属于从治法"
+        },
+        {
+          "source_row": 1845,
+          "question": "根据“诸寒之而热者取之阴”的治则，治宜"
+        },
+        {
+          "source_row": 1862,
+          "question": "中医精气神学说中的“神”的含义是指"
+        },
+        {
+          "source_row": 1885,
+          "question": "中医理论体系的主要特点是"
+        },
+        {
+          "source_row": 1890,
+          "question": "肺的阴阳属性是"
+        }
+      ]
+    },
+    "explanation_answer_conflict": {
+      "count": 376,
+      "examples": [
+        {
+          "source_row": 67,
+          "question": "靴形心脏常见于"
+        },
+        {
+          "source_row": 73,
+          "question": "病侧呼吸动度减弱伴叩诊为鼓音、呼吸音消失者，见于"
+        },
+        {
+          "source_row": 183,
+          "question": "提示肾小管病变严重、预后不良的尿液检查结果是"
+        },
+        {
+          "source_row": 283,
+          "question": "下列各项，可在使用有效抗结核药物的同时，加用糖皮质激素的是"
+        },
+        {
+          "source_row": 313,
+          "question": "主动脉瓣狭窄的典型三联征表现是"
+        },
+        {
+          "source_row": 426,
+          "question": "溃疡性结肠炎活动期的重要表现是"
+        },
+        {
+          "source_row": 456,
+          "question": "治疗急性坏死型胰腺炎的较好药物是"
+        },
+        {
+          "source_row": 481,
+          "question": "细菌性痢疾抗菌治疗，应首选的药物是"
+        },
+        {
+          "source_row": 485,
+          "question": "下列各项中，对于乙脑跟中毒性菌痢脑病的鉴别最有意义的是"
+        },
+        {
+          "source_row": 667,
+          "question": "“稚阴稚阳学说”首见于"
+        }
+      ]
+    },
+    "explanation_missing_or_empty": {
+      "count": 6137,
+      "examples": [
+        {
+          "source_row": 18,
+          "question": "患者，男，45岁。近日发现大便色黑，伴不规则上腹痛。检查：左锁骨上窝触及1个1cm1.2cm大小的淋巴结，质硬，大便隐血试验(+++)。应首先考虑的是"
+        },
+        {
+          "source_row": 140,
+          "question": "患者3年来经常心悸，气短。检查：心尖搏动稍向左下移位，心浊音界稍向左下扩大，心尖部听诊可闻及3／6级以上粗糙的收缩期吹风样杂音及舒张期隆隆样杂音。应首先考虑的是"
+        },
+        {
+          "source_row": 162,
+          "question": "Rv5+Svl>4.0mV，可诊断为"
+        },
+        {
+          "source_row": 163,
+          "question": "Rv5>2.5mV，STv5下移>0.05mV，Tv5倒置，电轴－22°，可诊断为"
+        },
+        {
+          "source_row": 168,
+          "question": "某肺叶发生肺不张时，典型的X线表现是"
+        },
+        {
+          "source_row": 170,
+          "question": "对二尖瓣狭窄程度的判定最有价值的检查是"
+        },
+        {
+          "source_row": 195,
+          "question": "患者，男，55岁。劳累及情绪激动后，多次出现短时间胸骨后疼痛，下列哪项血清检查对明确诊断最有参考意义"
+        },
+        {
+          "source_row": 570,
+          "question": "医学道德的意识现象和活动现象之间的关系是"
+        },
+        {
+          "source_row": 2660,
+          "question": "王某1998年于医科大学毕业分配到市级医院工作，《中华人民共和国执业医师法》颁布三个月后，其依照有关开办医疗机构的规定申请个体开业。依据《执业医师法》卫生行政部"
+        },
+        {
+          "source_row": 4383,
+          "question": "腮腺扪诊的正确方法为"
+        }
+      ]
+    },
+    "external_exact_duplicate": {
+      "count": 4357,
+      "examples": [
+        {
+          "source_row": 10,
+          "question": "可表现为发热伴干性咳嗽的疾病是"
+        },
+        {
+          "source_row": 25,
+          "question": "肝性脑病可见到的症状是"
+        },
+        {
+          "source_row": 39,
+          "question": "抽搐伴苦笑面容，见于"
+        },
+        {
+          "source_row": 40,
+          "question": "左心功能不全发生在夜间阵发性呼吸困难的机制是"
+        },
+        {
+          "source_row": 41,
+          "question": "急性胆囊炎的临床表现是"
+        },
+        {
+          "source_row": 44,
+          "question": "下列肺部疾病中，引起咯血最常见的疾病"
+        },
+        {
+          "source_row": 50,
+          "question": "下列关于溶血性黄疸的叙述，正确的是."
+        },
+        {
+          "source_row": 52,
+          "question": "下列各项，可见间歇热的是"
+        },
+        {
+          "source_row": 64,
+          "question": "急性胆囊炎可出现的是"
+        },
+        {
+          "source_row": 69,
+          "question": "上半身前倾坐位听诊更明显的是"
+        }
+      ]
+    },
+    "external_near_duplicate": {
+      "count": 330,
+      "examples": [
+        {
+          "source_row": 113,
+          "question": "患者胸骨下部显著前突，左、右胸廓塌陷，肋骨与肋软骨交界处变厚增大，上下相连呈串珠状。其诊断是"
+        },
+        {
+          "source_row": 235,
+          "question": "患者，26岁。近1个月来，以夜间咳嗽为主，痰中带血丝，伴低热，盗汗。应首先考虑的是"
+        },
+        {
+          "source_row": 253,
+          "question": "患者，女，65岁。查体：心尖搏动出现在剑突下，且深吸气时增强，肺动脉瓣第二心音增强。应首先考虑的是"
+        },
+        {
+          "source_row": 261,
+          "question": "患者，男，30岁。高热、寒战2天，胸痛，伴咳嗽，痰中带血。听诊：右肺中部可闻及湿性啰音。应首先考虑的是"
+        },
+        {
+          "source_row": 411,
+          "question": "男性，40岁。乙肝炎病史10年，近2个月右上腹胀痛加重。检查：面部有蜘蛛痣，右上腹压痛，肝肋缘下3cm，质硬，ALT40U/L，HBsAg（+），AFP500μ"
+        },
+        {
+          "source_row": 421,
+          "question": "患者近来尿少，大便反复带有鲜血。查体：面部有蜘蛛痣，左肋缘下触及脾脏，腹部叩诊有移动性浊音。应首先考虑的是"
+        },
+        {
+          "source_row": 852,
+          "question": "患者呕吐清水痰涎，脘闷不食，头晕心悸，舌苔白腻，脉滑。其证候是"
+        },
+        {
+          "source_row": 1078,
+          "question": "患者，男，60岁。胸闷疼痛，痰多气短，肢体沉重，形体肥胖，倦怠乏力，纳呆便溏，苔浊腻，脉滑。治疗应首选"
+        },
+        {
+          "source_row": 1879,
+          "question": "具有营养全身和化生血液作用的气是"
+        },
+        {
+          "source_row": 2046,
+          "question": "患者，男，40岁。腰膝酸软，眩晕耳鸣，精神萎靡，性功能减退，并有遗精、早泄。其病因是"
+        }
+      ]
+    },
+    "garbled_or_html": {
+      "count": 22,
+      "examples": [
+        {
+          "source_row": 12810,
+          "question": "急性重型肝炎诊断的重要依据是"
+        },
+        {
+          "source_row": 12861,
+          "question": "急性重型肝炎预后良好的标志是"
+        },
+        {
+          "source_row": 13988,
+          "question": "心电图表现为P波高尖，肢体导联P波电压>0.25mV的是"
+        },
+        {
+          "source_row": 13998,
+          "question": "诊断左心室肥大的最基本条件是"
+        },
+        {
+          "source_row": 14047,
+          "question": "下列哪项符合漏出液的特点"
+        },
+        {
+          "source_row": 14100,
+          "question": "肺动脉高压早期的X线表现是"
+        },
+        {
+          "source_row": 14135,
+          "question": "患者心悸气短1年，劳累后加重。检查：脉搏80次/分，节律不规整，心率约110次/分，心律完全不规则，心音强弱绝对不一致。此患者心律失常的类型是"
+        },
+        {
+          "source_row": 16865,
+          "question": "患儿周围血常规检查：MCV：79fl/dl，MCHC：30%，HGB：90g/L，PLT：150×10⁹/L，WBC：9×10⁹/L，其诊断是"
+        },
+        {
+          "source_row": 16871,
+          "question": "下列关于营养性缺铁性贫血的实验室检查叙述正确的是"
+        },
+        {
+          "source_row": 16873,
+          "question": "患儿周围血常规检查：MCH：28pg/L，HGB：60g/L，PLT：80×10⁹/L，WBC：3.2×10⁹/L。其诊断是"
+        }
+      ]
+    },
+    "internal_exact_duplicate": {
+      "count": 337,
+      "examples": [
+        {
+          "source_row": 257,
+          "question": "患者，男，20岁。突发胸闷，气急，咳嗽。听诊：两肺满布哮鸣音。应首先考虑的是"
+        },
+        {
+          "source_row": 263,
+          "question": "患者，男，60岁。脑溢血后长期卧床，2天前出现发热、咳嗽、呼吸困难等症状，胸透见两肺下叶有多数散在边缘不清小灶阴影。应首先考虑的是"
+        },
+        {
+          "source_row": 297,
+          "question": "对诊断心肌梗死最有意义的是"
+        },
+        {
+          "source_row": 453,
+          "question": "急性胃炎的临床表现是"
+        },
+        {
+          "source_row": 541,
+          "question": "传染性非典型肺炎主要传播途径是"
+        },
+        {
+          "source_row": 614,
+          "question": "紫癜风热伤络证的治法是"
+        },
+        {
+          "source_row": 1135,
+          "question": "患者黄疸日久，黄色晦暗如烟熏，纳少脘闷，大便溏，神疲畏寒，口淡不渴，舌淡苔腻，脉沉迟。治疗应首选"
+        },
+        {
+          "source_row": 1160,
+          "question": "治疗行痹，应首选"
+        },
+        {
+          "source_row": 1524,
+          "question": "既是络穴，又是八脉交会穴的腧穴是"
+        },
+        {
+          "source_row": 1818,
+          "question": "患者胃肠热盛，大便秘结。腹满硬痛而拒按，潮热，神昏谵语，但又兼见面色苍白，四肢厥冷，精神萎顿。其病机是"
+        }
+      ]
+    },
+    "internal_near_duplicate": {
+      "count": 228,
+      "examples": [
+        {
+          "source_row": 988,
+          "question": "患者干咳少痰，痰中带血，潮热盗汗，胸闷隐痛，身体逐渐消瘦，口燥咽干，舌红少苔，脉细数。其诊断是"
+        },
+        {
+          "source_row": 991,
+          "question": "患者身热，微恶风，汗少，肢体酸重，头昏重胀痛，咳嗽痰粘，鼻流浊涕，心烦，口渴，舌苔薄黄而腻，脉濡数。治疗应首选"
+        },
+        {
+          "source_row": 1681,
+          "question": "有形实邪闭阻气机所致的疼痛，其疼痛性质是"
+        },
+        {
+          "source_row": 2305,
+          "question": "治疗失荣早期气郁痰结证，应首选的方剂是"
+        },
+        {
+          "source_row": 2658,
+          "question": "《医疗机构管理条例、医疗机构管理条例实施细则、麻醉药品管理法》、《医疗事故处理条例》等规范性文件，在我国卫生法律体系中，属于"
+        },
+        {
+          "source_row": 2696,
+          "question": "必须按照国务院卫生行政部门的有关规定，严格执行消毒隔离制度，防止发生内感染和医源性感染的机构是"
+        },
+        {
+          "source_row": 3238,
+          "question": "患者，女，33岁。平素易生闷气，经行期乳房胀痛明显，此次妊娠后觉小腹胀痛不适，情志不畅，嗳气叹息，夜寐、食欲不佳，舌红，苔薄黄，脉弦滑。其证型为"
+        },
+        {
+          "source_row": 3242,
+          "question": "患者，女，33岁。平素易生闷气，经行期乳房胀痛明显，此次妊娠后觉小腹胀痛不适，情志不畅，嗳气叹息，夜寐、食欲不佳，舌红，苔薄黄，脉弦滑。治宜选方"
+        },
+        {
+          "source_row": 3546,
+          "question": "女，35岁，因左下后牙对冷热刺激敏感1周前来就诊。检查发现左下第一磨牙（牙合）面深龋洞，探诊洞底感酸痛，冷测反应一过性敏感，叩痛（-）。牙龈无异常。该患牙的诊断"
+        },
+        {
+          "source_row": 3568,
+          "question": "以X线检查结果作为重要诊断依据的牙髓炎是"
+        }
+      ]
+    },
+    "invalid_options_format": {
+      "count": 1488,
+      "examples": [
+        {
+          "source_row": 3324,
+          "question": "在银汞合金充填中使用固位钉"
+        },
+        {
+          "source_row": 3330,
+          "question": "关于制洞的基本原则，下列哪一项是错误的"
+        },
+        {
+          "source_row": 3332,
+          "question": "15远中邻（牙合）面窝洞，按Black窝洞分类法，应是"
+        },
+        {
+          "source_row": 3333,
+          "question": "空悬釉柱的处理原则是"
+        },
+        {
+          "source_row": 3347,
+          "question": "Black分类法是依据"
+        },
+        {
+          "source_row": 3350,
+          "question": "银汞合金充填刻形后磨光的目的在于"
+        },
+        {
+          "source_row": 3356,
+          "question": "（牙合）面盒形洞，一般应深入牙本质内"
+        },
+        {
+          "source_row": 3357,
+          "question": "充填术后出现冷热痛一般为"
+        },
+        {
+          "source_row": 3364,
+          "question": "盒形洞的基本特点，下列哪一条是错误的"
+        },
+        {
+          "source_row": 3365,
+          "question": "任何窝洞都需要"
+        }
+      ]
+    },
+    "knowledge_marker_remaining": {
+      "count": 120,
+      "examples": [
+        {
+          "source_row": 601,
+          "question": "患儿，6岁。睡中经常遗尿，醒后方觉，神疲乏力，面色苍白，肢凉畏寒，腰腿痠软，小便清长，舌淡苔白。治疗应首选"
+        },
+        {
+          "source_row": 612,
+          "question": "治疗皮肤黏膜淋巴结综合征卫气同病，应首选"
+        },
+        {
+          "source_row": 759,
+          "question": "患儿，3岁。大便稀溏，食入即泻，面色萎黄。治疗应首选"
+        },
+        {
+          "source_row": 869,
+          "question": "患者吞咽梗阻，胸膈痞闷，情志舒畅时可稍减轻，口干咽燥，舌偏红苔薄腻，脉弦滑。治疗应首选"
+        },
+        {
+          "source_row": 1324,
+          "question": "3天。便稀有黏液，肛门灼热，舌红，苔黄腻，治疗应选取哪组经脉为主"
+        },
+        {
+          "source_row": 1444,
+          "question": "取头、面、胸、腹部腧穴最适宜选用"
+        },
+        {
+          "source_row": 1630,
+          "question": "垂危病人突然出现神清多语、两颧泛红如妆、意欲进食的表现的是"
+        },
+        {
+          "source_row": 1807,
+          "question": "患者曾发高热，热退则口鼻、皮肤干燥，形瘦，目陷，唇舌干燥，舌质紫绛，边有瘀斑、瘀点。其病机是"
+        },
+        {
+          "source_row": 2074,
+          "question": "患者因劳累后，唇缘口角处见密集的小水庖，灼痒热痛，周身不适，心烦郁闷，大便干，小便黄，舌红，苔黄，脉弦数"
+        },
+        {
+          "source_row": 2801,
+          "question": "适宜用开窍剂治疗的症候是"
+        }
+      ]
+    },
+    "knowledge_mentions_wrong_options": {
+      "count": 181,
+      "examples": [
+        {
+          "source_row": 290,
+          "question": "内囊区出血的表现是"
+        },
+        {
+          "source_row": 292,
+          "question": "丘脑出血（内囊内侧型)的体征是"
+        },
+        {
+          "source_row": 558,
+          "question": "在感染过程中，最常见的表现形式是"
+        },
+        {
+          "source_row": 678,
+          "question": "小儿能独走的时间一般是"
+        },
+        {
+          "source_row": 702,
+          "question": "血证可闻及的口气是"
+        },
+        {
+          "source_row": 858,
+          "question": "呕吐肝气犯胃的最佳方"
+        },
+        {
+          "source_row": 1218,
+          "question": "治疗郁证日久，阴虚火旺者，应首选"
+        },
+        {
+          "source_row": 1414,
+          "question": "在五输穴中,合穴主要治疗"
+        },
+        {
+          "source_row": 1416,
+          "question": "心包经的原穴是"
+        },
+        {
+          "source_row": 1418,
+          "question": "骨会是"
+        }
+      ]
+    },
+    "knowledge_negative_statement": {
+      "count": 451,
+      "examples": [
+        {
+          "source_row": 13,
+          "question": "体温在39℃以上，一日内波动范围超过2℃者，多见于"
+        },
+        {
+          "source_row": 118,
+          "question": "空腹听诊出现震水音，可见于"
+        },
+        {
+          "source_row": 213,
+          "question": "慢性肾小球肾炎高血压型的主要特点是"
+        },
+        {
+          "source_row": 232,
+          "question": "下列哪种情况可触觉语颤增强"
+        },
+        {
+          "source_row": 247,
+          "question": "哮喘持续状态是指重度哮喘发作持续时间超过"
+        },
+        {
+          "source_row": 314,
+          "question": "在下列疾病中，哪项不会导致意识障碍"
+        },
+        {
+          "source_row": 341,
+          "question": "癫痫持续状态是指"
+        },
+        {
+          "source_row": 388,
+          "question": "粒细胞缺乏症可出现的临床表现是"
+        },
+        {
+          "source_row": 587,
+          "question": "下列哪种情况下，应给小儿及时断奶"
+        },
+        {
+          "source_row": 608,
+          "question": "患儿面色㿠白，全身浮肿，按之深陷难起，大便溏薄，神倦畏寒，腰酸肢冷。治疗应首选"
+        }
+      ]
+    },
+    "negative_question": {
+      "count": 7863,
+      "examples": [
+        {
+          "source_row": 2,
+          "question": "下列除哪项外均符合问诊的要求"
+        },
+        {
+          "source_row": 6,
+          "question": "下列除哪项外，均是采集主诉所要求的内容"
+        },
+        {
+          "source_row": 8,
+          "question": "下列除哪项外，均可胸痛"
+        },
+        {
+          "source_row": 9,
+          "question": "下列哪项除外，均属急腹症"
+        },
+        {
+          "source_row": 27,
+          "question": "下列哪项不属于意识障碍"
+        },
+        {
+          "source_row": 28,
+          "question": "下列除哪项外，常可引起肝细胞性黄疸"
+        },
+        {
+          "source_row": 29,
+          "question": "下列疾病均表现为干性咳嗽，但应除外哪一项疾病"
+        },
+        {
+          "source_row": 36,
+          "question": "下列哪项不属于吸气性呼吸困难"
+        },
+        {
+          "source_row": 37,
+          "question": "下列除哪项外，均可引起中枢性呕吐"
+        },
+        {
+          "source_row": 43,
+          "question": "下列不属谵妄表现的是"
+        }
+      ]
+    },
+    "no_knowledge_sentence": {
+      "count": 543,
+      "examples": [
+        {
+          "source_row": 26,
+          "question": "下列哪项属于非感染性发热的疾病"
+        },
+        {
+          "source_row": 171,
+          "question": "心肌损伤的心电图改变是"
+        },
+        {
+          "source_row": 210,
+          "question": "下列关于血尿素氮的改变及临床意义的叙述，正确的是"
+        },
+        {
+          "source_row": 350,
+          "question": "主动脉瓣关闭不全可出现的脉搏"
+        },
+        {
+          "source_row": 476,
+          "question": "伤寒患者出现玫瑰康疹，多见于"
+        },
+        {
+          "source_row": 540,
+          "question": "某人乙肝抗原抗体检查结果为HBsAg(-)抗-HBs(+)抗HBcIgG(+)抗HBe(+),应判断为"
+        },
+        {
+          "source_row": 565,
+          "question": "上述各项，涉及“公正”伦理问题的是"
+        },
+        {
+          "source_row": 606,
+          "question": "患儿，女，6岁。两个月来小便频数，淋沥不尽，精神倦怠，面色苍黄，手足不温，大便稀薄，眼睑微肿，舌淡苔薄，脉细无力。治疗应首选"
+        },
+        {
+          "source_row": 620,
+          "question": "患儿，1岁。发病于7月份，发热1个月未退，朝盛暮衰，口渴多饮，面色苍白，小便澄清频数，下肢清冷。其治法是"
+        },
+        {
+          "source_row": 646,
+          "question": "患儿，6岁。寒战，发热，头痛，身痛，无汗，鼻流清涕，喷嚏，咳嗽，喉痒，咽不红，舌苔薄白，脉浮紧。治疗应首选"
+        }
+      ]
+    },
+    "question_truncated": {
+      "count": 66,
+      "examples": [
+        {
+          "source_row": 218,
+          "question": "患者，女，32岁。近两年来间断发生尿路刺激征，不发热，尿中查到白细胞与颗粒管型。应首先考虑的是："
+        },
+        {
+          "source_row": 311,
+          "question": "患者，男，65岁。慢性支气管炎及高血压病史10年，近半年活动后自觉气短。检查：血压160/95mmHg（21.3/12.6kPa），心脏听诊未闻及器质性杂音，两"
+        },
+        {
+          "source_row": 348,
+          "question": "患者，男，50岁。高血压病史10年，今日剧烈头痛，眩晕，恶心，呕吐。查体：无肢体活动障碍，血压200/120mmHg（26.6/16kPa）。为快速降压，应选择"
+        },
+        {
+          "source_row": 362,
+          "question": "患儿，男，12岁。2年前诊断为1型糖尿病。今日在家中用胰岛素治疗后，突然发生昏迷。应首选的抢救措施是："
+        },
+        {
+          "source_row": 380,
+          "question": "患者因腹胀，全身疼痛而就诊。检查：脾肋缘下6cm，血液白细胞计数160×109/L，可见各阶段幼稚粒细胞少许。应首先考虑的是："
+        },
+        {
+          "source_row": 424,
+          "question": "患者，女，30岁。反复上腹痛6年，饥饿时加重，进食后减轻。近1周来进食后上腹部胀痛加重，但大量呕吐后减轻。查体：轻度脱水，上腹部膨隆，有震水音。应首先考虑的是："
+        },
+        {
+          "source_row": 438,
+          "question": "患者，男，24岁。近3年来反复餐后上腹痛，持续至下次进餐后才缓解。应首先考虑的是："
+        },
+        {
+          "source_row": 447,
+          "question": "患者，男，48岁。近3年来疲劳乏力，食欲减退，间歇性鼻出血，齿龈出血。今晨进硬食后，突然呕血，并出现黑便。检查：血压明显下降，心率120次/分，腹部膨隆，有移动"
+        },
+        {
+          "source_row": 457,
+          "question": "患者，男，50岁。反复上腹痛15年，腹痛常在饭后持续1～2小时。近半年疼痛加剧，食欲减退，体重减轻。检查：贫血貌，左锁骨上触及肿大淋巴结，血沉46mm/小时，大"
+        },
+        {
+          "source_row": 756,
+          "question": "治疗鹅口疮心脾积热证，应首选的方剂是："
+        }
+      ]
+    },
+    "visual_or_table_dependency": {
+      "count": 1151,
+      "examples": [
+        {
+          "source_row": 34,
+          "question": "意识大部分丧失、强刺激下吞咽反射、角膜反射存在的是"
+        },
+        {
+          "source_row": 136,
+          "question": "心室收缩时颈静脉有搏动，可见于"
+        },
+        {
+          "source_row": 286,
+          "question": "患者，男，63岁。主因胸骨后疼痛2h入院，活动时加重，伴大汗、恶心。既往有高血压、冠心病史。体格检查：血压104/55mmHg,心率112次/min、呼吸31次"
+        },
+        {
+          "source_row": 694,
+          "question": "较早对儿科发疹性传染病加以鉴别的医家是"
+        },
+        {
+          "source_row": 982,
+          "question": "患者咳嗽气急，咳痰量多、质稠、色黄，胸胁胀痛，面赤身热，口干，舌红苔黄，脉滑数。治疗应首选"
+        },
+        {
+          "source_row": 1099,
+          "question": "急黄神昏舌绛者，其治法是"
+        },
+        {
+          "source_row": 1111,
+          "question": "阳黄初起见表证者，其治法是"
+        },
+        {
+          "source_row": 1306,
+          "question": "患者，男，70岁。家属代诉患者近晨起床后半小时，突然昏仆，不省人事，目合口张，遗溺，手撒，四肢厥冷，脉细弱。治疗用隔盐灸，应首选"
+        },
+        {
+          "source_row": 1319,
+          "question": "取主穴外，还应选用的穴位是"
+        },
+        {
+          "source_row": 1326,
+          "question": "治疗行痹，在取主穴的基础上，应加"
+        }
+      ]
+    }
+  }
+}

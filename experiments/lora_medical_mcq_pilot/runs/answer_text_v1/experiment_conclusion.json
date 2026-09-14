@@ -1,0 +1,36 @@
+{
+  "experiment": "answer_text_target_v1",
+  "date": "2026-09-12",
+  "question": "把训练目标从单个选项字母改为正确答案文字在前、选项字母在后，能否改善医学单选题能力？",
+  "target_format": "正确答案：选项内容（字母）。",
+  "controlled_conditions": {
+    "base_weight_md5_prefix": "942a011c4b",
+    "train_questions": 1000,
+    "validation_questions": 200,
+    "epochs": 5,
+    "lora_rank": 16,
+    "deterministic_generation": true
+  },
+  "results": {
+    "random_baseline_accuracy": 0.2015,
+    "letter_target_validation_accuracy": 0.21,
+    "answer_text_target_validation_accuracy": 0.17,
+    "answer_text_target_format_compliance": 0.99,
+    "answer_text_target_natural_termination": 1.0,
+    "answer_text_and_letter_both_correct": 0.04,
+    "answer_text_target_train_first_100_accuracy": 0.3,
+    "candidate_scoring_train_first_100_accuracy": 0.3,
+    "candidate_scoring_validation_accuracy": 0.2
+  },
+  "conclusion": "答案文字目标能让模型学会新格式并正常结束，但本次1000题训练没有形成可泛化的医学判断能力；验证准确率未超过随机水平，也低于同题字母目标对照。",
+  "next_recommended_experiment": "先使用带可靠答案与解析的较大医学语义数据进行领域训练，再用短阶段单选题训练统一输出格式；下一轮应先做小规模规模曲线，不直接全量扩张。",
+  "artifacts": {
+    "training_summary": "checkpoints/train_summary.json",
+    "best_lora": "checkpoints/best_lora.pth",
+    "generation_train_eval": "eval_results/lora_train_results.json",
+    "generation_validation_eval": "eval_results/lora_val_results.json",
+    "candidate_scoring_train_eval": "eval_results/candidate_scoring_train.json",
+    "candidate_scoring_validation_eval": "eval_results/candidate_scoring_val.json",
+    "letter_target_reference": "../letter_reference_val200/eval_results/lora_val_results.json"
+  }
+}

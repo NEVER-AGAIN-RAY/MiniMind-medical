@@ -1,0 +1,306 @@
+{
+  "count": 50,
+  "accuracy": 0.48,
+  "details": [
+    {
+      "id": "knowledge_train_00001",
+      "gold": "D",
+      "pred": "B",
+      "correct": false
+    },
+    {
+      "id": "knowledge_train_00002",
+      "gold": "A",
+      "pred": "C",
+      "correct": false
+    },
+    {
+      "id": "knowledge_train_00003",
+      "gold": "E",
+      "pred": "C",
+      "correct": false
+    },
+    {
+      "id": "knowledge_train_00004",
+      "gold": "B",
+      "pred": "A",
+      "correct": false
+    },
+    {
+      "id": "knowledge_train_00005",
+      "gold": "D",
+      "pred": "A",
+      "correct": false
+    },
+    {
+      "id": "knowledge_train_00006",
+      "gold": "B",
+      "pred": "B",
+      "correct": true
+    },
+    {
+      "id": "knowledge_train_00007",
+      "gold": "B",
+      "pred": "B",
+      "correct": true
+    },
+    {
+      "id": "knowledge_train_00008",
+      "gold": "A",
+      "pred": "A",
+      "correct": true
+    },
+    {
+      "id": "knowledge_train_00009",
+      "gold": "A",
+      "pred": "C",
+      "correct": false
+    },
+    {
+      "id": "knowledge_train_00010",
+      "gold": "D",
+      "pred": "C",
+      "correct": false
+    },
+    {
+      "id": "knowledge_train_00011",
+      "gold": "B",
+      "pred": "B",
+      "correct": true
+    },
+    {
+      "id": "knowledge_train_00012",
+      "gold": "A",
+      "pred": "A",
+      "correct": true
+    },
+    {
+      "id": "knowledge_train_00013",
+      "gold": "C",
+      "pred": "C",
+      "correct": true
+    },
+    {
+      "id": "knowledge_train_00014",
+      "gold": "D",
+      "pred": "D",
+      "correct": true
+    },
+    {
+      "id": "knowledge_train_00015",
+      "gold": "E",
+      "pred": "C",
+      "correct": false
+    },
+    {
+      "id": "knowledge_train_00016",
+      "gold": "B",
+      "pred": "A",
+      "correct": false
+    },
+    {
+      "id": "knowledge_train_00017",
+      "gold": "B",
+      "pred": "C",
+      "correct": false
+    },
+    {
+      "id": "knowledge_train_00018",
+      "gold": "A",
+      "pred": "A",
+      "correct": true
+    },
+    {
+      "id": "knowledge_train_00019",
+      "gold": "B",
+      "pred": "B",
+      "correct": true
+    },
+    {
+      "id": "knowledge_train_00020",
+      "gold": "A",
+      "pred": "A",
+      "correct": true
+    },
+    {
+      "id": "knowledge_train_00021",
+      "gold": "C",
+      "pred": "C",
+      "correct": true
+    },
+    {
+      "id": "knowledge_train_00022",
+      "gold": "C",
+      "pred": "B",
+      "correct": false
+    },
+    {
+      "id": "knowledge_train_00023",
+      "gold": "A",
+      "pred": "D",
+      "correct": false
+    },
+    {
+      "id": "knowledge_train_00024",
+      "gold": "E",
+      "pred": "A",
+      "correct": false
+    },
+    {
+      "id": "knowledge_train_00025",
+      "gold": "C",
+      "pred": "B",
+      "correct": false
+    },
+    {
+      "id": "knowledge_train_00026",
+      "gold": "C",
+      "pred": "C",
+      "correct": true
+    },
+    {
+      "id": "knowledge_train_00027",
+      "gold": "A",
+      "pred": "B",
+      "correct": false
+    },
+    {
+      "id": "knowledge_train_00028",
+      "gold": "C",
+      "pred": "C",
+      "correct": true
+    },
+    {
+      "id": "knowledge_train_00029",
+      "gold": "A",
+      "pred": "D",
+      "correct": false
+    },
+    {
+      "id": "knowledge_train_00030",
+      "gold": "C",
+      "pred": "C",
+      "correct": true
+    },
+    {
+      "id": "knowledge_train_00031",
+      "gold": "C",
+      "pred": "A",
+      "correct": false
+    },
+    {
+      "id": "knowledge_train_00032",
+      "gold": "A",
+      "pred": "C",
+      "correct": false
+    },
+    {
+      "id": "knowledge_train_00033",
+      "gold": "A",
+      "pred": "A",
+      "correct": true
+    },
+    {
+      "id": "knowledge_train_00034",
+      "gold": "B",
+      "pred": "B",
+      "correct": true
+    },
+    {
+      "id": "knowledge_train_00035",
+      "gold": "B",
+      "pred": "B",
+      "correct": true
+    },
+    {
+      "id": "knowledge_train_00036",
+      "gold": "B",
+      "pred": "B",
+      "correct": true
+    },
+    {
+      "id": "knowledge_train_00037",
+      "gold": "B",
+      "pred": "B",
+      "correct": true
+    },
+    {
+      "id": "knowledge_train_00038",
+      "gold": "E",
+      "pred": "A",
+      "correct": false
+    },
+    {
+      "id": "knowledge_train_00039",
+      "gold": "B",
+      "pred": "C",
+      "correct": false
+    },
+    {
+      "id": "knowledge_train_00040",
+      "gold": "A",
+      "pred": "A",
+      "correct": true
+    },
+    {
+      "id": "knowledge_train_00041",
+      "gold": "D",
+      "pred": "E",
+      "correct": false
+    },
+    {
+      "id": "knowledge_train_00042",
+      "gold": "C",
+      "pred": "A",
+      "correct": false
+    },
+    {
+      "id": "knowledge_train_00043",
+      "gold": "E",
+      "pred": "E",
+      "correct": true
+    },
+    {
+      "id": "knowledge_train_00044",
+      "gold": "E",
+      "pred": "A",
+      "correct": false
+    },
+    {
+      "id": "knowledge_train_00045",
+      "gold": "C",
+      "pred": "C",
+      "correct": true
+    },
+    {
+      "id": "knowledge_train_00046",
+      "gold": "B",
+      "pred": "C",
+      "correct": false
+    },
+    {
+      "id": "knowledge_train_00047",
+      "gold": "D",
+      "pred": "D",
+      "correct": true
+    },
+    {
+      "id": "knowledge_train_00048",
+      "gold": "C",
+      "pred": "D",
+      "correct": false
+    },
+    {
+      "id": "knowledge_train_00049",
+      "gold": "A",
+      "pred": "B",
+      "correct": false
+    },
+    {
+      "id": "knowledge_train_00050",
+      "gold": "A",
+      "pred": "A",
+      "correct": true
+    }
+  ]
+}

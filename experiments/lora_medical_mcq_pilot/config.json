@@ -1,0 +1,89 @@
+{
+  "experiment_name": "lora_medical_mcq_pilot",
+  "description": "MiniMind 小规模医学单选题 LoRA 微调实验配置",
+  "version": "2.0.0",
+  "base_model": {
+    "weight_path": "out/full_sft_768.pth",
+    "hidden_size": 768,
+    "num_hidden_layers": 8,
+    "use_moe": 0,
+    "model_dir": "model"
+  },
+  "lora_config": {
+    "rank": 16,
+    "target_modules": "Linear modules with in_features == out_features",
+    "save_name": "lora_medical_mcq"
+  },
+  "data_config": {
+    "source": "CMExam (Chinese National Medical Licensing Examination)",
+    "official_urls": {
+      "train": "https://raw.githubusercontent.com/williamliujl/CMExam/main/data/train.csv",
+      "val": "https://raw.githubusercontent.com/williamliujl/CMExam/main/data/val.csv",
+      "test": "https://raw.githubusercontent.com/williamliujl/CMExam/main/data/test_with_annotations.csv"
+    },
+    "local_fallback_val_raw": "experiments/lora_medical_20260909/eval/v1/raw/cmexam_val.csv",
+    "original_eval_exclusion_path": "experiments/lora_medical_20260909/eval/v1/questions_mcq.jsonl",
+    "original_qa_exclusion_path": "dataset/lora_medical.jsonl",
+    "target_counts": {
+      "formal": {
+        "train": 1000,
+        "val": 200,
+        "test": 200
+      },
+      "smoke": {
+        "train": 20,
+        "val": 10
+      }
+    },
+    "deduplication": {
+      "near_duplicate_jaccard_threshold": 0.85,
+      "strict_original_eval_check": true
+    },
+    "instruction_prompt": "请直接输出正确选项的字母（如 A、B、C、D、E），不要输出多余解释。",
+    "seed": 42
+  },
+  "sequence_config": {
+    "max_seq_len": 340,
+    "prohibit_stem_truncation": true
+  },
+  "training_hyperparameters": {
+    "epochs": 5,
+    "batch_size": 16,
+    "learning_rate": 2e-4,
+    "weight_decay": 0.01,
+    "accumulation_steps": 2,
+    "grad_clip": 1.0,
+    "log_interval": 5,
+    "val_interval": 20,
+    "dtype": "bfloat16"
+  },
+  "smoke_hyperparameters": {
+    "epochs": 1,
+    "batch_size": 4,
+    "learning_rate": 2e-4,
+    "weight_decay": 0.01,
+    "accumulation_steps": 1,
+    "grad_clip": 1.0,
+    "log_interval": 1,
+    "val_interval": 2,
+    "dtype": "bfloat16"
+  },
+  "evaluation_config": {
+    "do_sample": false,
+    "open_thinking": false,
+    "max_new_tokens": 16,
+    "metrics": [
+      "single_letter_format_compliance_rate",
+      "accuracy",
+      "natural_termination_rate",
+      "truncation_rate",
+      "letter_distribution"
+    ]
+  },
+  "run_paths": {
+    "experiments_root": "experiments/lora_medical_mcq_pilot",
+    "formal_dir": "experiments/lora_medical_mcq_pilot/runs/formal",
+    "smoke_dir": "experiments/lora_medical_mcq_pilot/runs/smoke",
+    "allow_overwrite": false
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "generator": "prepare_data.py",
+  "version": "2.0.0",
+  "created_at": "2026-09-12",
+  "effective_config": {
+    "max_seq_len": 340,
+    "instruction_prompt": "请直接输出正确选项的字母（如 A、B、C、D、E），不要输出多余解释。",
+    "jaccard_threshold": 0.85,
+    "seed": 42,
+    "formal_counts": {
+      "train": 1000,
+      "val": 200,
+      "test": 200
+    },
+    "smoke_counts": {
+      "train": 20,
+      "val": 10,
+      "test": 0
+    }
+  },
+  "exclusion_audit": {
+    "original_eval_path": "/root/autodl-tmp/minimind-lora/experiments/lora_medical_20260909/eval/v1/questions_mcq.jsonl",
+    "original_eval_file_md5": "88d43470367eaa2e432a3fae8a77a86c",
+    "original_eval_loaded_count": 100,
+    "original_qa_path": "/root/autodl-tmp/minimind-lora/dataset/lora_medical.jsonl",
+    "original_qa_loaded_count": 25276
+  },
+  "split_filter_statistics": {
+    "train": {
+      "raw_total": 54497,
+      "invalid_answer_format": 48,
+      "invalid_options": 0,
+      "answer_not_in_options": 0,
+      "contains_image": 17,
+      "token_length_exceeded": 3,
+      "internal_exact_duplicate": 0,
+      "internal_near_duplicate": 0,
+      "excluded_original_eval_or_qa": 0,
+      "cross_split_duplicate": 0,
+      "passed": 1000
+    },
+    "val": {
+      "raw_total": 6811,
+      "invalid_answer_format": 7,
+      "invalid_options": 0,
+      "answer_not_in_options": 0,
+      "contains_image": 4,
+      "token_length_exceeded": 0,
+      "internal_exact_duplicate": 0,
+      "internal_near_duplicate": 0,
+      "excluded_original_eval_or_qa": 5,
+      "cross_split_duplicate": 0,
+      "passed": 200
+    },
+    "test": {
+      "raw_total": 6811,
+      "invalid_answer_format": 3,
+      "invalid_options": 0,
+      "answer_not_in_options": 0,
+      "contains_image": 2,
+      "token_length_exceeded": 2,
+      "internal_exact_duplicate": 0,
+      "internal_near_duplicate": 0,
+      "excluded_original_eval_or_qa": 0,
+      "cross_split_duplicate": 2,
+      "passed": 200
+    }
+  },
+  "output_hashes": {
+    "formal": {
+      "train_jsonl_md5": "bd51a76192da9faa9c56d90abd537056",
+      "val_jsonl_md5": "e01c3b433f03316d01966ac193c87147",
+      "test_jsonl_md5": "efd8bfab9576a159ff380f3286ecb1a6"
+    },
+    "smoke": {
+      "train_jsonl_md5": "1cb4d34ba7b7baf82837c6943f7eae52",
+      "val_jsonl_md5": "879eb35d3d11b83fc9c436f8e40c0dbd"
+    }
+  },
+  "answer_distributions": {
+    "formal_train": {
+      "A": 204,
+      "B": 219,
+      "C": 210,
+      "D": 194,
+      "E": 173
+    },
+    "formal_val": {
+      "A": 37,
+      "B": 35,
+      "C": 46,
+      "D": 48,
+      "E": 34
+    },
+    "formal_test": {
+      "A": 39,
+      "B": 30,
+      "C": 42,
+      "D": 48,
+      "E": 41
+    }
+  },
+  "token_length_summary": {
+    "max_seq_len_limit": 340,
+    "formal_train_max_tokens": 299,
+    "formal_val_max_tokens": 267,
+    "formal_test_max_tokens": 270
+  },
+  "guarantees": {
+    "no_stem_truncation": true,
+    "pairwise_split_disjoint": true,
+    "original_eval_overlap_excluded": true,
+    "smoke_isolated_from_formal_test": true
+  }
+}

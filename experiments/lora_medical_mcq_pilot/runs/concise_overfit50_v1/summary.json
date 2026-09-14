@@ -1,0 +1,42 @@
+{
+  "experiment": "concise_knowledge_overfit50_diagnosis",
+  "created_at": "2026-09-13T14:08:57.772300",
+  "data": "experiments/lora_medical_mcq_pilot/data/knowledge_overfit50_v1/train.jsonl",
+  "data_md5": "9d2c91d0622ec3fc24f775a43dadfe5d",
+  "base_weight": "out/full_sft_768.pth",
+  "base_weight_md5": "942a011c4b3868f6e17d7ba7d5bdc08a",
+  "sample_count": 50,
+  "max_length": 512,
+  "target_supervised_tokens": {
+    "min": 17,
+    "max": 181,
+    "mean": 47.96
+  },
+  "target_definition": "正确选项文字 + 原解析中第一句包含该答案文字的医学陈述；不含答案字母，不监督完整错误选项解析",
+  "results": [
+    {
+      "name": "lora_rank16",
+      "trainable_parameters": 393216,
+      "final_candidate_accuracy": 1.0,
+      "answer_text_prefix_accuracy": 1.0,
+      "natural_termination_rate": 0.82,
+      "elapsed_seconds": 36.77
+    },
+    {
+      "name": "lora_rank32",
+      "trainable_parameters": 786432,
+      "final_candidate_accuracy": 1.0,
+      "answer_text_prefix_accuracy": 1.0,
+      "natural_termination_rate": 0.8,
+      "elapsed_seconds": 36.75
+    },
+    {
+      "name": "full_parameter",
+      "trainable_parameters": 63912192,
+      "final_candidate_accuracy": 1.0,
+      "answer_text_prefix_accuracy": 1.0,
+      "natural_termination_rate": 0.8,
+      "elapsed_seconds": 39.94
+    }
+  ]
+}
