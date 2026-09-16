@@ -1,0 +1,104 @@
+{
+  "experiment_name": "lora_sentiment_20260914",
+  "description": "MiniMind 中文酒店评论情感二分类 LoRA 微调实验配置",
+  "version": "1.0.0",
+  "rationale": "判断所需信息全部在输入文本内，属于映射型任务而非知识型任务；对照 lora_medical_mcq_pilot 的失败结论设计。",
+  "base_model": {
+    "weight_path": "out/full_sft_768.pth",
+    "hidden_size": 768,
+    "num_hidden_layers": 8,
+    "use_moe": 0,
+    "model_dir": "model"
+  },
+  "lora_config": {
+    "rank": 16,
+    "target_modules": "Linear modules with in_features == out_features",
+    "save_name": "lora_sentiment"
+  },
+  "data_config": {
+    "source": "ChnSentiCorp_htl_all (中文酒店评论情感二分类)",
+    "raw_csv": "experiments/lora_sentiment_20260914/data/raw/ChnSentiCorp_htl_all.csv",
+    "raw_manifest": "experiments/lora_sentiment_20260914/data/raw/MANIFEST.json",
+    "label_map": {
+      "1": "正面",
+      "0": "负面"
+    },
+    "instruction_prompt": "判断下面这条酒店评论的情感倾向，只输出「正面」或「负面」，不要输出其他内容。",
+    "balanced_splits": true,
+    "target_counts": {
+      "formal": {
+        "train": 2000,
+        "val": 400,
+        "test": 400
+      },
+      "smoke": {
+        "train": 40,
+        "val": 20
+      }
+    },
+    "scale_curve_sizes": [250, 500, 1000, 2000],
+    "deduplication": {
+      "exact_dedup": true,
+      "near_duplicate_jaccard_threshold": 0.85,
+      "cross_split_check": true
+    },
+    "min_review_chars": 4,
+    "seed": 42
+  },
+  "sequence_config": {
+    "max_seq_len": 448,
+    "prohibit_review_truncation": true,
+    "measured_template_overhead_tokens": 44,
+    "note": "评论 token 预算 = 448 - 44(模板) - 3(目标) ≈ 401，覆盖约 96% 的评论；超长样本在 prepare_data.py 阶段筛除，绝不在训练时截断。"
+  },
+  "training_hyperparameters": {
+    "epochs": 3,
+    "batch_size": 16,
+    "learning_rate": 2e-4,
+    "weight_decay": 0.01,
+    "accumulation_steps": 2,
+    "grad_clip": 1.0,
+    "log_interval": 5,
+    "val_interval": 20,
+    "dtype": "bfloat16"
+  },
+  "smoke_hyperparameters": {
+    "epochs": 1,
+    "batch_size": 4,
+    "learning_rate": 2e-4,
+    "weight_decay": 0.01,
+    "accumulation_steps": 1,
+    "grad_clip": 1.0,
+    "log_interval": 1,
+    "val_interval": 2,
+    "dtype": "bfloat16"
+  },
+  "evaluation_config": {
+    "do_sample": false,
+    "open_thinking": false,
+    "max_new_tokens": 8,
+    "baselines": {
+      "random_accuracy": 0.5,
+      "majority_class_accuracy_balanced": 0.5,
+      "majority_class_accuracy_natural": 0.6854
+    },
+    "metrics": [
+      "accuracy",
+      "format_compliance_rate",
+      "natural_termination_rate",
+      "truncation_rate",
+      "per_class_precision_recall_f1",
+      "macro_f1",
+      "confusion_matrix",
+      "predicted_label_distribution",
+      "candidate_scoring_accuracy"
+    ],
+    "note": "predicted_label_distribution 用于检测模型是否塌缩到单一类别——医学实验中字母分布偏向 B 就是这种塌缩的信号。"
+  },
+  "run_paths": {
+    "experiments_root": "experiments/lora_sentiment_20260914",
+    "formal_dir": "experiments/lora_sentiment_20260914/runs/formal",
+    "smoke_dir": "experiments/lora_sentiment_20260914/runs/smoke",
+    "allow_overwrite": false
+  }
+}

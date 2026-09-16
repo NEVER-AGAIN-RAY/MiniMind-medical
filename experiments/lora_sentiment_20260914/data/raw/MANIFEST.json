@@ -1,0 +1,36 @@
+{
+  "description": "ChnSentiCorp 酒店评论情感二分类语料的冻结副本。2.8MB，直接入库。",
+  "source": "ChnSentiCorp_htl_all",
+  "upstream": "https://github.com/SophonPlus/ChineseNlpCorpus/tree/master/datasets/ChnSentiCorp_htl_all",
+  "frozen_from": "experiments/lora_intro_20260909/data/ChnSentiCorp_htl_all.csv",
+  "recorded_at": "2026-09-14",
+  "files": [
+    {
+      "name": "ChnSentiCorp_htl_all.csv",
+      "bytes": 2904858,
+      "sha256": "1d414b9c65caf3a836abdb4efded621968502ad3338e1a9d885ae131c86083f0"
+    }
+  ],
+  "schema": {
+    "label": "1 = 正面, 0= 负面",
+    "review": "评论正文，含逗号与引号，必须用 csv 模块解析"
+  },
+  "raw_statistics": {
+    "total_rows": 7766,
+    "empty_review_rows": 1,
+    "usable_rows": 7765,
+    "label_1_positive": 5322,
+    "label_0_negative": 2443,
+    "unique_review_texts": 7765,
+    "majority_class_ratio": 0.6854,
+    "review_token_percentiles": {
+      "note": "以 model/ 下的 minimind_tokenizer 在 1500 条随机样本上测得",
+      "p50": 75,
+      "p90": 247,
+      "p95": 371,
+      "p99": 785,
+      "max": 2494
+    }
+  },
+  "note": "负类仅 2443 条，是平衡切分的规模上限。"
+}
