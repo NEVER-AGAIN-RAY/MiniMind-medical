@@ -1,0 +1,93 @@
+{
+  "status": "complete",
+  "mode": "formal",
+  "created_at": "2026-09-17T18:35:30.475953",
+  "elapsed_seconds": 60.51,
+  "train_samples": 2800,
+  "val_samples": 400,
+  "hyperparameters": {
+    "epochs": 3,
+    "batch_size": 16,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.01,
+    "accumulation_steps": 2,
+    "grad_clip": 1.0,
+    "log_interval": 5,
+    "val_interval": 20,
+    "dtype": "bfloat16"
+  },
+  "initial_val_loss": 2.195116402762277,
+  "best_val_loss": 0.09630229830741882,
+  "best_step": 200,
+  "history": [
+    {
+      "step": 0,
+      "val_loss": 2.195116402762277
+    },
+    {
+      "step": 20,
+      "val_loss": 0.2022942992619106
+    },
+    {
+      "step": 40,
+      "val_loss": 0.18272442613329207
+    },
+    {
+      "step": 60,
+      "val_loss": 0.1577641330446516
+    },
+    {
+      "step": 80,
+      "val_loss": 0.11720710175377982
+    },
+    {
+      "step": 100,
+      "val_loss": 0.11073370456695557
+    },
+    {
+      "step": 120,
+      "val_loss": 0.11632917949131556
+    },
+    {
+      "step": 140,
+      "val_loss": 0.09898799964359828
+    },
+    {
+      "step": 160,
+      "val_loss": 0.1062441955293928
+    },
+    {
+      "step": 180,
+      "val_loss": 0.09746838365282331
+    },
+    {
+      "step": 200,
+      "val_loss": 0.09630229830741882
+    },
+    {
+      "step": 220,
+      "val_loss": 0.10329174297196525
+    },
+    {
+      "step": 240,
+      "val_loss": 0.10199084605489458
+    },
+    {
+      "step": 260,
+      "val_loss": 0.09681293794087001
+    },
+    {
+      "step": 264,
+      "val_loss": 0.09643628103392465
+    }
+  ],
+  "base_weight": {
+    "path": "/root/autodl-tmp/MiniMind-medical/out/full_sft_768.pth",
+    "md5": "942a011c4b3868f6e17d7ba7d5bdc08a"
+  },
+  "train_data_path": "/root/autodl-tmp/MiniMind-medical/experiments/lora_sentiment_20260914/data/scale/train_2800.jsonl",
+  "train_data_md5": "c981609d34090025c484521743f1a9b9",
+  "val_data_md5": "25b2718e5d9b7b9bd69fd6f97ccec248",
+  "best_lora_md5": "332df88687815ca9c9505d8044c9303e",
+  "final_lora_md5": "8b536ecfa0a0c5a80acdece12bbe398d"
+}

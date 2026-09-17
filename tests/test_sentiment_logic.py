@@ -39,6 +39,7 @@ from experiments.lora_sentiment_20260914.sentiment_dataset import (
 )
 from experiments.lora_sentiment_20260914.eval_sentiment import candidate_score, parse_generated
 from experiments.lora_sentiment_20260914.make_report import collapse_warning, verdict
+from experiments.lora_sentiment_20260914.analyze_saturation import mcnemar
 
 EXPERIMENT = ROOT / "experiments" / "lora_sentiment_20260914"
 DATA = EXPERIMENT / "data"
@@ -382,6 +383,46 @@ class TestCollapseDetection(unittest.TestCase):
 
     def test_empty_matrix_is_safe(self):
         self.assertEqual(collapse_warning({}), "")
+
+
+class TestMcNemar(unittest.TestCase):
+    """饱和结论建立在这个检验上，先把它的数学钉住。"""
+
+    @staticmethod
+    def pair(a_only: int, b_only: int, both: int = 0):
+        a, b = {}, {}
+        index = 0
+        for _ in range(a_only):      # a 对 b 错
+            a[index], b[index] = True, False; index += 1
+        for _ in range(b_only):      # a 错 b 对
+            a[index], b[index] = False, True; index += 1
+        for _ in range(both):        # 两者都对，不影响检验
+            a[index], b[index] = True, True; index += 1
+        return a, b
+
+    def test_no_disagreement_is_p_one(self):
+        a, b = self.pair(0, 0, both=100)
+        self.assertEqual(mcnemar(a, b), (0, 0, 1.0))
+
+    def test_lopsided_disagreement_is_significant(self):
+        a, b = self.pair(3, 30)
+        a_only, b_only, p = mcnemar(a, b)
+        self.assertEqual((a_only, b_only), (3, 30))
+        self.assertLess(p, 0.05)
+
+    def test_even_disagreement_is_not_significant(self):
+        # 8 对 6 正是 2000→2800 的情形，必须判为不显著。
+        _, _, p = mcnemar(*self.pair(8, 6))
+        self.assertGreater(p, 0.05)
+
+    def test_symmetric_in_arguments(self):
+        a, b = self.pair(5, 17)
+        self.assertAlmostEqual(mcnemar(a, b)[2], mcnemar(b, a)[2])
+
+    def test_matches_known_binomial_value(self):
+        # 全部 10 题都朝一个方向改变：p = 2 × (1/2)^10
+        _, _, p = mcnemar(*self.pair(0, 10))
+        self.assertAlmostEqual(p, 2 * 0.5 ** 10, places=6)
 
 
 if __name__ == "__main__":
