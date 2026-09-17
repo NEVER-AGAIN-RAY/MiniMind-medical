@@ -314,6 +314,73 @@ def figure_confusion(data: dict) -> None:
     save(fig, "fig5_confusion_matrix")
 
 
+def figure_capacity_vs_lr() -> None:
+    """图 6：rank 扫描与学习率对照——两条干预路径到达同一水平，代价相差 8 倍。
+
+    这是本实验最重要的一次自我纠错：原报告断言天花板来自基座容量，rank 扫描证伪了它，
+    学习率对照又进一步证明 rank 的收益其实来自等效更新幅度。
+
+    用点图而非柱状图：准确率的有意义基线是 0.5 而不是 0，柱状图会暗示零基线。
+    """
+    rows = [("epochs9", "rank 16, lr 2e-4", "anchor"),
+            ("rank_64", "rank 64, lr 2e-4", "rank"),
+            ("rank_128", "rank 128, lr 2e-4", "rank"),
+            ("rank_256", "rank 256, lr 2e-4", "rank"),
+            ("lrctl_4e4", "rank 16, lr 4e-4", "lr"),
+            ("lrctl_5e4", "rank 16, lr 5.7e-4", "lr"),
+            ("lrctl_8e4", "rank 16, lr 8e-4", "lr")]
+    loaded = []
+    for directory, label, kind in rows:
+        point = load_point(directory)
+        if point:
+            loaded.append((label, kind, point))
+    if len(loaded) < 3:
+        print("  ⏭  跳过 fig6：rank 扫描 / 学习率对照产物不足")
+        return
+
+    colour = {"anchor": INK_MUTED, "rank": ORANGE, "lr": BLUE}
+    fig, ax = plt.subplots(figsize=(7.8, 4.8))
+    ys = list(range(len(loaded)))[::-1]
+    anchor = next((p for _, kind, p in loaded if kind == "anchor"), None)
+    if anchor:
+        ax.axvline(anchor["accuracy"], color=GRID, linewidth=1.4, zorder=1)
+    for y, (label, kind, point) in zip(ys, loaded):
+        params = point["summary"].get("trainable_params")
+        if params is None:  # 锚点是加 --rank 之前跑的，没有这个字段
+            params = 16 * 2 * 768 * 16
+        ax.plot([0, point["accuracy"]], [y, y], color=GRID, linewidth=1.4, zorder=1)
+        ax.plot([point["accuracy"]], [y], marker="o", markersize=10, color=colour[kind],
+                markeredgecolor=SURFACE, markeredgewidth=2, zorder=3)
+        ax.annotate(f"{point['accuracy']:.4f}", xy=(point["accuracy"], y), xytext=(12, 0),
+                    textcoords="offset points", va="center", color=INK_2, fontsize=9.5)
+        # 参数量是第二个量纲，放到坐标区之外，避免与网格线叠在一起读成数据
+        ax.annotate(f"{params / 1e6:.2f}M", xy=(1.02, y), xycoords=("axes fraction", "data"),
+                    ha="left", va="center", color=INK_MUTED, fontsize=9.5)
+    ax.annotate("trainable\nparams", xy=(1.02, ys[0] + 1.05), xycoords=("axes fraction", "data"),
+                ha="left", va="bottom", color=INK_MUTED, fontsize=9)
+    ax.set_yticks(ys)
+    ax.set_yticklabels([label for label, _, _ in loaded])
+    ax.set_xlim(0.84, 0.90)
+    ax.set_xlabel("Accuracy on 400 held-out reviews")
+    ax.set_title("Learning rate matches rank — at an eighth the parameters",
+                 color=INK, loc="left")
+    # 两类干预必须能脱离颜色被识别，因此图例与左侧文字标签并存
+    handles = [plt.Line2D([], [], marker="o", linestyle="", markersize=9,
+                          markerfacecolor=colour[k], markeredgecolor=SURFACE,
+                          markeredgewidth=2, label=name)
+               for k, name in (("anchor", "baseline"), ("rank", "higher LoRA rank"),
+                               ("lr", "higher learning rate"))]
+    ax.legend(handles=handles, loc="lower right", ncol=3, bbox_to_anchor=(1.0, -0.28))
+    for side in ("top", "right"):
+        ax.spines[side].set_visible(False)
+    for side in ("left", "bottom"):
+        ax.spines[side].set_color(GRID)
+    ax.grid(axis="x", alpha=1.0)
+    ax.grid(axis="y", visible=False)
+    ax.tick_params(length=3, width=0.8)
+    save(fig, "fig6_capacity_vs_lr")
+
+
 def main() -> None:
     style()
     data = {}
@@ -335,6 +402,7 @@ def main() -> None:
     figure_mcnemar(data)
     figure_training_dynamics(data)
     figure_confusion(data)
+    figure_capacity_vs_lr()
     print(f"FIGURES_WRITTEN {FIGURES}")
 
 

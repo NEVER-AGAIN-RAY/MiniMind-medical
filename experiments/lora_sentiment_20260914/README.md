@@ -128,6 +128,23 @@ python -m pytest tests/test_sentiment_logic.py -q
 （含两个标签同时出现时判无效）、`candidate_score` 的切片位置、基线阈值换算、报告的
 阈值判定与单类别塌缩检测，以及已入库切分本身的不变量（平衡、互斥、长度预算、嵌套前缀）。
 
+## rank 扫描（容量对照）
+
+```bash
+bash experiments/lora_sentiment_20260914/run_rank_sweep.sh        # rank 4/8/32/64/128
+bash experiments/lora_sentiment_20260914/run_capacity_control.sh  # 学习率对照 + rank 256
+python experiments/lora_sentiment_20260914/analyze_rank.py        # 生成 rank_sweep.md
+```
+
+锚点是 `runs/epochs9`（rank 16，3672 条 × 9 epoch），扫描点与它只差 rank 一项。
+[`analyze_rank.py`](analyze_rank.py) 把每个点与锚点做 McNemar 配对检验，结果写入
+[`rank_sweep.md`](rank_sweep.md)。
+
+`run_capacity_control.sh` 解决一个混淆因素：本仓库的 LoRA 没有 `alpha/rank` 缩放，
+rank 越大等效更新幅度也越大，因此「高 rank 更好」可能只是「有效学习率更大」。
+对照把 rank 固定在 16、只放大学习率——**结果正是如此**：lr 8e-4 下 rank 16 达到 0.8875，
+与 rank 128 的 0.8850 无显著差异，参数量却只有 1/8。
+
 ## 当前状态
 
 - ✅ 数据准备已完成并核验（切分互斥、类别平衡、md5 一致、重跑逐字节可复现）
@@ -162,7 +179,16 @@ python -m pytest tests/test_sentiment_logic.py -q
 
 **旁证：val_loss 与准确率脱钩。** val_loss 从 0.2057 一路降到 0.0827，但准确率在
 2000 条之后不再变化——模型对监督 token 的把握确实还在提高，只是这份提高不再转化为
-更多答对的题。**限制来自 64M 的模型容量，不是数据量。**
+更多答对的题。**限制不是数据量。**
+
+> ⚠️ **勘误：** 这里原本写的是「限制来自 64M 的模型容量」，已被证伪。
+> 真实原因是**学习率偏低**：rank 保持 16 不变，只把 lr 从 2e-4 提到 8e-4，
+> 准确率就到 **0.8875**（相对锚点 p=0.0357），与 rank 128 无差异（p=1.0000）
+> 而参数量只有 1/8。瓶颈既不在基座也不在适配器，在一个没调过的超参数。
+> 见 [`rank_sweep.md`](rank_sweep.md)。
+>
+> 连带地，**「2000 条饱和」这个结论也只在 lr 2e-4 下成立**——整条规模曲线都用的
+> 这个学习率，需要在 8e-4 下重跑才能确认饱和点的位置。
 
 支撑"确实学会了"而非"碰巧蒙对"的三个旁证：
 - **格式合规率 100%**：400 题全部输出了可解析的标签，对比医学 MCQ 实验约 90% 无法解析
@@ -172,5 +198,6 @@ python -m pytest tests/test_sentiment_logic.py -q
 这印证了立项时的假设：失败的原因不是 LoRA 或 64M 模型不行，而是医学 MCQ 属于知识型
 任务——答案不在输入里。情感分类的判断依据全在评论正文内，同样的模型、同样的方法就有效。
 
-**要再往上走，该换的是模型而不是数据。** 若要继续，方向是更大的基座（MiniMind 有
-更大配置）或更高的 LoRA rank，而不是扩语料——后者已被证明无效。
+**要再往上走，先扫学习率。** 扩语料已被证明无效；但同一个基座、同一个 rank 16，
+只把 lr 从 2e-4 提到 8e-4 就能到 0.8875（见 [`rank_sweep.md`](rank_sweep.md)）。
+顺序是：**先扫学习率 → 再考虑 rank → 最后才谈换基座**。
