@@ -1,5 +1,8 @@
 # 情感分类 LoRA 实验（lora_sentiment_20260914）
 
+> 📄 **完整实验报告：[REPORT.md](REPORT.md)** —— 含五张论文规格图表与可复现性说明。
+> 本文件是实验设计与操作说明。
+
 在 MiniMind 64M 基座上用 LoRA 微调中文酒店评论情感二分类（ChnSentiCorp）。
 
 ## 为什么做这个实验
@@ -102,6 +105,17 @@ python experiments/lora_sentiment_20260914/make_report.py                    # �
 
 超参与路径全部集中在 [`config.json`](config.json)；训练产物写入 `runs/`
 （`allow_overwrite: false`，不会覆盖已有结果）。
+
+## 图表
+
+```bash
+pip install matplotlib   # requirements.txt 中默认注释掉，仅出图时需要
+python experiments/lora_sentiment_20260914/make_figures.py
+```
+
+[`make_figures.py`](make_figures.py) 从 `runs/` 直接读数生成 [`figures/`](figures/) 下五张图，
+同时输出 PDF（矢量，供排版）与 PNG（300 dpi，供预览），无任何硬编码数字。坐标轴与图注
+使用英文，以便在未装中文字体的机器上也能正确重绘。
 
 ## 测试
 
