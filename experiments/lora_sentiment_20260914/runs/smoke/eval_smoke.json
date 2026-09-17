@@ -1,0 +1,269 @@
+{
+  "report": {
+    "checkpoint": "/root/autodl-tmp/MiniMind-medical/experiments/lora_sentiment_20260914/runs/smoke/final_lora.pth",
+    "data": "/root/autodl-tmp/MiniMind-medical/experiments/lora_sentiment_20260914/data/smoke/val.jsonl",
+    "samples": 20,
+    "candidate_scoring_accuracy": 0.5,
+    "generation_accuracy": 0.5,
+    "baseline": {
+      "majority_class_accuracy": 0.5,
+      "random_expected_accuracy": 0.5,
+      "random_95ci": [
+        0.2809,
+        0.7191
+      ],
+      "min_accuracy_to_beat_random": 0.7191,
+      "beats_random": false,
+      "note": "candidate_scoring_accuracy 需高于 min_accuracy_to_beat_random 才算显著优于随机；不要直接与 0.5 比较。"
+    },
+    "format_compliance_rate": 1.0,
+    "macro_f1": 0.3333333333333333,
+    "confusion_matrix": {
+      "负面": {
+        "负面": 0,
+        "正面": 10
+      },
+      "正面": {
+        "负面": 0,
+        "正面": 10
+      }
+    },
+    "generation_predictions": {
+      "正面": 20
+    },
+    "per_class": {
+      "负面": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "正面": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666
+      }
+    }
+  },
+  "predictions": [
+    {
+      "id": "chnsenticorp_5502",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.5382306575775146,
+        "正面": -0.32515770196914673
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5221",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.389432907104492,
+        "正面": -0.37107911705970764
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6395",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.9933245182037354,
+        "正面": -0.6772209405899048
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_582",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.9532414674758911,
+        "正面": -0.4497621953487396
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6821",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.1729209423065186,
+        "正面": -0.3860728442668915
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_997",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.4836819171905518,
+        "正面": -0.35182493925094604
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7737",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.8788836002349854,
+        "正面": -0.45200079679489136
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_3660",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.6203863620758057,
+        "正面": -0.5711527466773987
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6387",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.186049222946167,
+        "正面": -0.48240381479263306
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_2893",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.730703353881836,
+        "正面": -0.5655658841133118
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6896",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.9087480306625366,
+        "正面": -0.5187184810638428
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_4205",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.664963722229004,
+        "正面": -0.2521578073501587
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7359",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.9386180639266968,
+        "正面": -0.36699798703193665
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_1944",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.017072916030884,
+        "正面": -0.521871030330658
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6456",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.040132522583008,
+        "正面": -0.5014463663101196
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_2778",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.6491544246673584,
+        "正面": -0.5032172799110413
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6847",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.107464075088501,
+        "正面": -0.5420237183570862
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5321",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.2442846298217773,
+        "正面": -0.5438475012779236
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6388",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.0909950733184814,
+        "正面": -0.3547259569168091
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_1526",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.676941156387329,
+        "正面": -0.6103496551513672
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    }
+  ]
+}

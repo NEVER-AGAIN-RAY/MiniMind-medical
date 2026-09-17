@@ -1,0 +1,4450 @@
+{
+  "report": {
+    "checkpoint": "/root/autodl-tmp/MiniMind-medical/experiments/lora_sentiment_20260914/runs/scale_1000/best_lora.pth",
+    "data": "/root/autodl-tmp/MiniMind-medical/experiments/lora_sentiment_20260914/data/formal/test.jsonl",
+    "samples": 400,
+    "candidate_scoring_accuracy": 0.7725,
+    "generation_accuracy": 0.7725,
+    "baseline": {
+      "majority_class_accuracy": 0.5,
+      "random_expected_accuracy": 0.5,
+      "random_95ci": [
+        0.451,
+        0.549
+      ],
+      "min_accuracy_to_beat_random": 0.549,
+      "beats_random": true,
+      "note": "candidate_scoring_accuracy 需高于 min_accuracy_to_beat_random 才算显著优于随机；不要直接与 0.5 比较。"
+    },
+    "format_compliance_rate": 1.0,
+    "macro_f1": 0.7724644475699329,
+    "confusion_matrix": {
+      "负面": {
+        "负面": 157,
+        "正面": 43
+      },
+      "正面": {
+        "负面": 48,
+        "正面": 152
+      }
+    },
+    "generation_predictions": {
+      "负面": 205,
+      "正面": 195
+    },
+    "per_class": {
+      "负面": {
+        "precision": 0.7658536585365854,
+        "recall": 0.785,
+        "f1": 0.7753086419753088
+      },
+      "正面": {
+        "precision": 0.7794871794871795,
+        "recall": 0.76,
+        "f1": 0.769620253164557
+      }
+    }
+  },
+  "predictions": [
+    {
+      "id": "chnsenticorp_7228",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.3969776928424835,
+        "正面": -1.1404260396957397
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_5216",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.44009262323379517,
+        "正面": -1.049971103668213
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_6948",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.5244397521018982,
+        "正面": -0.9020742774009705
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_5304",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.41617724299430847,
+        "正面": -1.086296796798706
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_6467",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.8338865637779236,
+        "正面": -0.5750584006309509
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_3742",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.6408917903900146,
+        "正面": -0.22331289947032928
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7664",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.2562440633773804,
+        "正面": -0.3408001959323883
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5283",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.4841616153717041,
+        "正面": -0.9629905223846436
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_6904",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.18182934820652008,
+        "正面": -1.8119480609893799
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_5096",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.1550236940383911,
+        "正面": -0.3846067190170288
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5363",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.9404866695404053,
+        "正面": -0.16181114315986633
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5139",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.7225654125213623,
+        "正面": -0.2018999457359314
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6627",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.04303917661309242,
+        "正面": -3.4545340538024902
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_2259",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.8305473327636719,
+        "正面": -0.17890529334545135
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6967",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.097343683242798,
+        "正面": -0.13419342041015625
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_1745",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.3932119905948639,
+        "正面": -1.135180950164795
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_6234",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.9140428900718689,
+        "正面": -0.5185337662696838
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_899",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.6538541913032532,
+        "正面": -0.745509684085846
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_5374",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.37095963954925537,
+        "正面": -1.1834129095077515
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1136",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.33247360587120056,
+        "正面": -1.2795164585113525
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_7067",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.11649024486541748,
+        "正面": -2.2239015102386475
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1486",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.2601540088653564,
+        "正面": -0.11408813297748566
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6235",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.27751246094703674,
+        "正面": -1.427010416984558
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_484",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.5456764698028564,
+        "正面": -0.8765530586242676
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_7452",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.28005293011665344,
+        "正面": -1.4264119863510132
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1764",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.208338737487793,
+        "正面": -0.12026270478963852
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6495",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.07470766454935074,
+        "正面": -2.653979778289795
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_3751",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.458612084388733,
+        "正面": -0.26995763182640076
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5487",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.0841655731201172,
+        "正面": -0.4196089208126068
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_887",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.542893648147583,
+        "正面": -0.2439880669116974
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7562",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.5395177602767944,
+        "正面": -0.8831397891044617
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1744",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.3548033237457275,
+        "正面": -0.3577413856983185
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6857",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.06369931995868683,
+        "正面": -2.864138603210449
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4747",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.763014793395996,
+        "正面": -0.1980878859758377
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7603",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.9626325964927673,
+        "正面": -0.48846933245658875
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_239",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.7439335584640503,
+        "正面": -0.19628460705280304
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6067",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.10853701084852219,
+        "正面": -2.31038236618042
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_3858",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.226581335067749,
+        "正面": -0.3526870012283325
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5628",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.6313466429710388,
+        "正面": -0.776684045791626
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4594",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.9194992184638977,
+        "正面": -0.5147883296012878
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7165",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.4320167303085327,
+        "正面": -1.0672639608383179
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1011",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -3.069112539291382,
+        "正面": -0.051102519035339355
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7748",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.8346580862998962,
+        "正面": -0.5758450031280518
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_3137",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.17336103320121765,
+        "正面": -1.92432701587677
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_6284",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.32874420285224915,
+        "正面": -1.2848495244979858
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4796",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.31567275524139404,
+        "正面": -1.3412469625473022
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_6483",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.14211471378803253,
+        "正面": -2.0849075317382812
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_3157",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.6774503588676453,
+        "正面": -0.7163066267967224
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_7280",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.7286452054977417,
+        "正面": -0.20194220542907715
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_2130",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.307152271270752,
+        "正面": -0.107707679271698
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5977",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.06357502937316895,
+        "正面": -2.8609917163848877
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1781",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.87504243850708,
+        "正面": -0.18605633080005646
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6583",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.5742422342300415,
+        "正面": -0.8415352702140808
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_284",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -3.7002322673797607,
+        "正面": -0.029737433418631554
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5513",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.13237954676151276,
+        "正面": -2.1089560985565186
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_3381",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.8043471574783325,
+        "正面": -0.18294911086559296
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6489",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.45551764965057373,
+        "正面": -1.0153461694717407
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1650",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.5733140707015991,
+        "正面": -0.2393818497657776
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6997",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.08632616698741913,
+        "正面": -2.549398899078369
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1450",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.4668259024620056,
+        "正面": -0.9942947030067444
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_5921",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.9863327145576477,
+        "正面": -0.48201626539230347
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_4687",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.3518388271331787,
+        "正面": -0.30603399872779846
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5410",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.5504460334777832,
+        "正面": -0.8647995591163635
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1883",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -4.011390686035156,
+        "正面": -0.021617459133267403
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7200",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.5364928841590881,
+        "正面": -0.8910900354385376
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1273",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.6193896532058716,
+        "正面": -0.22401905059814453
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7234",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.7541451454162598,
+        "正面": -0.19319763779640198
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_2296",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.715712070465088,
+        "正面": -0.20602579414844513
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5504",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.4373336136341095,
+        "正面": -1.060144066810608
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_845",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -5.826509952545166,
+        "正面": -0.006356607191264629
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6758",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.13072535395622253,
+        "正面": -2.1271021366119385
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_599",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.5197380781173706,
+        "正面": -0.2541244924068451
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6190",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.049920134246349335,
+        "正面": -3.203784942626953
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4861",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.2677085399627686,
+        "正面": -0.33603012561798096
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6302",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.4459629952907562,
+        "正面": -1.0274989604949951
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4570",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.9566929340362549,
+        "正面": -0.15860705077648163
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5738",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.26732364296913147,
+        "正面": -1.477049708366394
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_2245",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.11355112493038177,
+        "正面": -2.27779483795166
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_7348",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.41580042243003845,
+        "正面": -1.0849825143814087
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_3231",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.833777129650116,
+        "正面": -0.5838680267333984
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7135",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.15316443145275116,
+        "正面": -1.9653388261795044
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_2320",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.866713285446167,
+        "正面": -0.5510677695274353
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7132",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.22081510722637177,
+        "正面": -1.635520577430725
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_691",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.5416427850723267,
+        "正面": -0.24616765975952148
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7547",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.5135921239852905,
+        "正面": -0.2519708275794983
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_2822",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.1171303987503052,
+        "正面": -0.40250661969184875
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6936",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.10867355763912201,
+        "正面": -2.298064708709717
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_339",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -3.1749002933502197,
+        "正面": -0.0496273972094059
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6691",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.2875796854496002,
+        "正面": -1.4188318252563477
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_2595",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.5861926078796387,
+        "正面": -0.23296217620372772
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5631",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.08339069038629532,
+        "正面": -2.5973470211029053
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4101",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.09370855987071991,
+        "正面": -2.4422242641448975
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_6579",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.27193954586982727,
+        "正面": -1.4509714841842651
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_464",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.6027004718780518,
+        "正面": -0.8040204644203186
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_6016",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.09635479748249054,
+        "正面": -2.413182497024536
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_3666",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.6138384342193604,
+        "正面": -0.08250296860933304
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7596",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.7400245070457458,
+        "正面": -0.6586260199546814
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_39",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.3226234912872314,
+        "正面": -0.3153744041919708
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7076",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.023575669154524803,
+        "正面": -3.9724173545837402
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1950",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.3304469585418701,
+        "正面": -0.3116292655467987
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6503",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.09175477176904678,
+        "正面": -2.495372772216797
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_407",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.1777944564819336,
+        "正面": -0.1255674511194229
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7697",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.48550179600715637,
+        "正面": -0.9613975882530212
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_229",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.9255207777023315,
+        "正面": -0.5167790651321411
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6564",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.26788246631622314,
+        "正面": -1.4594249725341797
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4452",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.323451280593872,
+        "正面": -0.31856897473335266
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6345",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.3250388503074646,
+        "正面": -1.2900793552398682
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_2394",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.32395538687705994,
+        "正面": -1.3105283975601196
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_5677",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.20885813236236572,
+        "正面": -1.6801197528839111
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1350",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.6148381233215332,
+        "正面": -0.22622926533222198
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5331",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.12358462065458298,
+        "正面": -2.245567798614502
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1219",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.3946332931518555,
+        "正面": -0.2937316298484802
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7446",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.5737046003341675,
+        "正面": -0.845489501953125
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_3456",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.5752436518669128,
+        "正面": -0.8444708585739136
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_6113",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.032792091369629,
+        "正面": -0.48835521936416626
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_600",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -4.0701727867126465,
+        "正面": -0.021285442635416985
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6233",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.6452231407165527,
+        "正面": -0.7573062777519226
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4168",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -4.557436466217041,
+        "正面": -0.022791113704442978
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7667",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.09327954053878784,
+        "正面": -2.4423036575317383
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_3615",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -3.179447889328003,
+        "正面": -0.04573153331875801
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7252",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.029034877195954323,
+        "正面": -3.6666336059570312
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_943",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -3.0449271202087402,
+        "正面": -0.05519755184650421
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5653",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.31186792254447937,
+        "正面": -1.329265832901001
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_2230",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.0045185089111328,
+        "正面": -0.4687114357948303
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7624",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.24181929230690002,
+        "正面": -1.547037124633789
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4751",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.2329394817352295,
+        "正面": -0.11793723702430725
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7746",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.040000591427087784,
+        "正面": -3.3142294883728027
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4456",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.8535518646240234,
+        "正面": -0.5680700540542603
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6406",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.8725365996360779,
+        "正面": -0.5502187013626099
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_1625",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -3.3644869327545166,
+        "正面": -0.04079320654273033
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6362",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.12313102930784225,
+        "正面": -2.2325499057769775
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1808",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.6020056009292603,
+        "正面": -0.23487506806850433
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6034",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.7770166397094727,
+        "正面": -0.6256495714187622
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_43",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -3.2418673038482666,
+        "正面": -0.04297785460948944
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7123",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.49514713883399963,
+        "正面": -0.9495115876197815
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_2559",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.176029682159424,
+        "正面": -0.12590081989765167
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7375",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.9690959453582764,
+        "正面": -0.4860337972640991
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_2148",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.4600749015808105,
+        "正面": -0.2685607373714447
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7747",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.7695192098617554,
+        "正面": -0.6291530132293701
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_3394",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.0936851501464844,
+        "正面": -0.417011559009552
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5353",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.4270460307598114,
+        "正面": -1.0781596899032593
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_356",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.5115377306938171,
+        "正面": -0.9218223094940186
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_7247",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.08600914478302002,
+        "正面": -2.563234567642212
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4958",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -4.495730876922607,
+        "正面": -0.01876494660973549
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5519",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.36169567704200745,
+        "正面": -1.2394659519195557
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4030",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -3.589376211166382,
+        "正面": -0.03177163377404213
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5669",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.19559435546398163,
+        "正面": -1.867971658706665
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1208",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.6054511070251465,
+        "正面": -0.22812677919864655
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6199",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.1576574593782425,
+        "正面": -1.9426943063735962
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4798",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.2368311882019043,
+        "正面": -0.11950180679559708
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6759",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.1134985014796257,
+        "正面": -2.278877019882202
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_2928",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -4.748842239379883,
+        "正面": -0.012411662377417088
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6022",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.27031221985816956,
+        "正面": -1.4576274156570435
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_5248",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -3.6170403957366943,
+        "正面": -0.029721904546022415
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7313",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.18640631437301636,
+        "正面": -1.7849164009094238
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_507",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.4158817529678345,
+        "正面": -0.28692856431007385
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6365",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.18327836692333221,
+        "正面": -1.8058165311813354
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_3047",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.4591273069381714,
+        "正面": -1.009270429611206
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_6165",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.8640718460083008,
+        "正面": -0.553615927696228
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_4591",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.2760848999023438,
+        "正面": -0.11226803809404373
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7281",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.0704619884490967,
+        "正面": -0.14106377959251404
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_1021",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -3.687574863433838,
+        "正面": -0.030231067910790443
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5637",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.04037027060985565,
+        "正面": -3.2835662364959717
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4210",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.03836984187364578,
+        "正面": -3.3076436519622803
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_6696",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.6534673571586609,
+        "正面": -0.7418324947357178
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_3514",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.1829891204833984,
+        "正面": -0.1276477575302124
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6057",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.2748132348060608,
+        "正面": -1.4361845254898071
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_3904",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.6505249738693237,
+        "正面": -0.7499387860298157
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_7154",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.19958099722862244,
+        "正面": -1.733788013458252
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_2814",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.3216824531555176,
+        "正面": -0.1064252033829689
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6325",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.15682610869407654,
+        "正面": -1.9587912559509277
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_5154",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.0175292491912842,
+        "正面": -0.45980843901634216
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6779",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.043328881263733,
+        "正面": -0.4405127167701721
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_4293",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.3832414150238037,
+        "正面": -0.09993985295295715
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7521",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -3.083095073699951,
+        "正面": -0.053917158395051956
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_1939",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.056704264134168625,
+        "正面": -2.968229055404663
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_7019",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.07011417299509048,
+        "正面": -2.7278084754943848
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4391",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.6949840784072876,
+        "正面": -0.7027347087860107
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_6125",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.2705342471599579,
+        "正面": -1.4475274085998535
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_106",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.4178946614265442,
+        "正面": -1.0824884176254272
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_6953",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.10479052364826202,
+        "正面": -2.341663360595703
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4768",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.7695226669311523,
+        "正面": -0.06959810853004456
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7346",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.4012945294380188,
+        "正面": -1.1158957481384277
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4943",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.5172089338302612,
+        "正面": -0.9236823320388794
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_5916",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.06790757179260254,
+        "正面": -2.777562379837036
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4283",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.5672547817230225,
+        "正面": -0.08563574403524399
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5634",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.0211496353149414,
+        "正面": -0.46164217591285706
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_1824",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.2547186613082886,
+        "正面": -0.3423755168914795
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7459",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.664330780506134,
+        "正面": -0.7506604194641113
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4389",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.45008569955825806,
+        "正面": -1.0267735719680786
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_6535",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.26893875002861023,
+        "正面": -1.4755467176437378
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4176",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.8797850608825684,
+        "正面": -0.17153914272785187
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6921",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.21211086213588715,
+        "正面": -1.6684736013412476
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1139",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -3.3143603801727295,
+        "正面": -0.04247288033366203
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6804",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.39923301339149475,
+        "正面": -1.1207472085952759
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_2081",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.9208163619041443,
+        "正面": -0.5131464600563049
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6204",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.18549878895282745,
+        "正面": -1.8105396032333374
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1678",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.009427785873413,
+        "正面": -0.4616130292415619
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6510",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.09875437617301941,
+        "正面": -2.393460273742676
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_3633",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.3318958282470703,
+        "正面": -0.10733015835285187
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6697",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.4169190526008606,
+        "正面": -1.086761713027954
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_3868",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.5091371536254883,
+        "正面": -0.2928740680217743
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7427",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.29725033044815063,
+        "正面": -1.3774899244308472
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1173",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -5.324812889099121,
+        "正面": -0.008098198100924492
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6330",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.07169996947050095,
+        "正面": -2.726980686187744
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1997",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.5197501182556152,
+        "正面": -0.9211918711662292
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_7669",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.1691882461309433,
+        "正面": -1.8733538389205933
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_986",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.6073215007781982,
+        "正面": -0.2272735834121704
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5985",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.4543169438838959,
+        "正面": -1.0153144598007202
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_3424",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.697042465209961,
+        "正面": -0.07330738753080368
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6901",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.2950149476528168,
+        "正面": -1.3841979503631592
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4757",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -3.1940855979919434,
+        "正面": -0.04889899119734764
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5486",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.11737661063671112,
+        "正面": -2.2384402751922607
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1677",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.8780661821365356,
+        "正面": -0.551683783531189
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6827",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.057478856295347214,
+        "正面": -2.9093387126922607
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4091",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.11888407915830612,
+        "正面": -2.2159433364868164
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_7278",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.9574618935585022,
+        "正面": -0.4910300672054291
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_3212",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.8951286673545837,
+        "正面": -0.5303468108177185
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7510",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.4395429491996765,
+        "正面": -1.0422227382659912
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4358",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.416076421737671,
+        "正面": -0.2894761562347412
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6856",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.13666172325611115,
+        "正面": -2.078796863555908
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_2107",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.4854660034179688,
+        "正面": -0.09198498725891113
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7630",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.4941481351852417,
+        "正面": -0.27186867594718933
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_1159",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -3.853940963745117,
+        "正面": -0.02468402497470379
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7739",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.3067147135734558,
+        "正面": -1.3372565507888794
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_3468",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -3.144080877304077,
+        "正面": -0.05072649195790291
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6519",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.023805560544133186,
+        "正面": -3.901597023010254
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4157",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.6240410804748535,
+        "正面": -0.22826488316059113
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5949",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.3215969204902649,
+        "正面": -1.3053878545761108
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_3924",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.5833436250686646,
+        "正面": -0.8285967111587524
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_6017",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.4029872417449951,
+        "正面": -0.28660205006599426
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_2256",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.458721399307251,
+        "正面": -0.2711489498615265
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5528",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.35831043124198914,
+        "正面": -1.2095662355422974
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1402",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.5176539421081543,
+        "正面": -0.08706732094287872
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7566",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.3205413818359375,
+        "正面": -1.3058735132217407
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_2565",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.238964080810547,
+        "正面": -0.11705805361270905
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5769",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.13563519716262817,
+        "正面": -2.0919957160949707
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4675",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.3206062912940979,
+        "正面": -1.3135685920715332
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_7689",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.13455067574977875,
+        "正面": -2.106670379638672
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_2451",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.851865768432617,
+        "正面": -0.06378982961177826
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5986",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.8113310933113098,
+        "正面": -0.5975452661514282
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_1606",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.7474554181098938,
+        "正面": -0.649124801158905
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7096",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.08545882254838943,
+        "正面": -2.5445642471313477
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1923",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.8237725496292114,
+        "正面": -0.18005920946598053
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7750",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.40112239122390747,
+        "正面": -1.1117764711380005
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_870",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.7244021892547607,
+        "正面": -0.20269736647605896
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7011",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.23011934757232666,
+        "正面": -1.6116886138916016
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_88",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.9118620157241821,
+        "正面": -0.1656818985939026
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6088",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.2616182267665863,
+        "正面": -1.4852659702301025
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_2344",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -3.0354254245758057,
+        "正面": -0.05291679874062538
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6592",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.131588339805603,
+        "正面": -0.3946572244167328
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_2327",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.2917392253875732,
+        "正面": -0.1094135046005249
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7226",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.22520039975643158,
+        "正面": -1.6645547151565552
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_2591",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.525834083557129,
+        "正面": -0.0903581827878952
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6313",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.05741655081510544,
+        "正面": -2.9633350372314453
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1014",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.8495190143585205,
+        "正面": -0.17564864456653595
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6766",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.44995805621147156,
+        "正面": -1.0378562211990356
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_180",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.931187093257904,
+        "正面": -0.5184594988822937
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7221",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.2677599787712097,
+        "正面": -1.6660165786743164
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_509",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.908906102180481,
+        "正面": -0.5223186016082764
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6603",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.5511696338653564,
+        "正面": -0.8652734756469727
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1187",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.8053990602493286,
+        "正面": -0.6047438383102417
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6073",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.27727898955345154,
+        "正面": -1.4360592365264893
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_2340",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.5242201089859009,
+        "正面": -0.9104735255241394
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_5774",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.40705886483192444,
+        "正面": -1.1026451587677002
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_840",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.9789416790008545,
+        "正面": -0.4907161593437195
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5872",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.4363357424736023,
+        "正面": -1.0569581985473633
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1095",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -6.037641525268555,
+        "正面": -0.0066458964720368385
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5648",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.23489072918891907,
+        "正面": -1.593843698501587
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4193",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.3220190703868866,
+        "正面": -1.3049310445785522
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_7694",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.018074266612529755,
+        "正面": -4.0861029624938965
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_3167",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.6877195835113525,
+        "正面": -0.212675541639328
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7195",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.2558586597442627,
+        "正面": -0.34309858083724976
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_102",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.6806074380874634,
+        "正面": -0.7139238715171814
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_6559",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.7868480682373047,
+        "正面": -0.6348599195480347
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_29",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.47572964429855347,
+        "正面": -0.9779329895973206
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_6809",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.5954017043113708,
+        "正面": -0.8073996901512146
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_869",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.86419677734375,
+        "正面": -0.17962825298309326
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6501",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.10254906117916107,
+        "正面": -2.4306745529174805
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_3538",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.7150434255599976,
+        "正面": -0.6898550391197205
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6954",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.18143032491207123,
+        "正面": -1.8158026933670044
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_3566",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -3.9904980659484863,
+        "正面": -0.0246774610131979
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6255",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.2899990379810333,
+        "正面": -1.396997332572937
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_3284",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -3.000171422958374,
+        "正面": -0.05799839273095131
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6070",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.5243815779685974,
+        "正面": -0.9050835967063904
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_289",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -3.094170570373535,
+        "正面": -0.05375088006258011
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7549",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.3544327020645142,
+        "正面": -0.3051459491252899
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_1184",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.516331195831299,
+        "正面": -0.08985652029514313
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7620",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.47880521416664124,
+        "正面": -0.981321394443512
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4134",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.46923214197158813,
+        "正面": -0.9911669492721558
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_5862",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.1094990149140358,
+        "正面": -2.2990403175354004
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_401",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.5127514600753784,
+        "正面": -0.2546944320201874
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7477",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.4539124071598053,
+        "正面": -1.0152970552444458
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_3051",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.615145683288574,
+        "正面": -0.08256695419549942
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6075",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.5943499207496643,
+        "正面": -0.8113749027252197
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_2186",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.4923129081726074,
+        "正面": -0.09185371547937393
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7056",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.4873824417591095,
+        "正面": -0.9577276110649109
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_2449",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.3069226741790771,
+        "正面": -0.3232993185520172
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6453",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.09500771015882492,
+        "正面": -2.4416091442108154
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_2436",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.2912633419036865,
+        "正面": -0.10986262559890747
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5795",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.3187150955200195,
+        "正面": -0.31643441319465637
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_2484",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.7203111052513123,
+        "正面": -0.6718421578407288
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6183",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.4414229393005371,
+        "正面": -1.0388338565826416
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1737",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.6028239727020264,
+        "正面": -0.7983894348144531
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_6746",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.6060060858726501,
+        "正面": -0.793673574924469
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_2279",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.43930524587631226,
+        "正面": -1.0499740839004517
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_5517",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.10892608016729355,
+        "正面": -2.3003504276275635
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_651",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.5994850397109985,
+        "正面": -0.8029589653015137
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_6634",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.4227432608604431,
+        "正面": -1.0722596645355225
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4073",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.4004298746585846,
+        "正面": -1.126547932624817
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_7045",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.7367219924926758,
+        "正面": -0.6657071113586426
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_3621",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.5940465927124023,
+        "正面": -0.8357747197151184
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_7057",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.3373301923274994,
+        "正面": -1.2715551853179932
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_3252",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.9863948822021484,
+        "正面": -0.1529139280319214
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5936",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.0978385210037231,
+        "正面": -0.4111608862876892
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_1300",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.4190640151500702,
+        "正面": -1.0827285051345825
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_5849",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.03840972110629082,
+        "正面": -3.3780055046081543
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1452",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -4.593529224395752,
+        "正面": -0.017784645780920982
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7730",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.5356638431549072,
+        "正面": -0.891592800617218
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1210",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.1705244779586792,
+        "正面": -0.3775268495082855
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7042",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.4919373393058777,
+        "正面": -0.9537715911865234
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4378",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.7951815128326416,
+        "正面": -0.6096616387367249
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7098",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.02704715169966221,
+        "正面": -3.6773552894592285
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_761",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.0478121042251587,
+        "正面": -0.49565815925598145
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5492",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.49624940752983093,
+        "正面": -0.9495881199836731
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_3379",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.2554709911346436,
+        "正面": -0.34413617849349976
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7597",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.8124072551727295,
+        "正面": -0.06572567671537399
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_2696",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -3.8893399238586426,
+        "正面": -0.0371554009616375
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6881",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.38140934705734253,
+        "正面": -1.1578093767166138
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4355",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.3945837020874023,
+        "正面": -0.2923254072666168
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7086",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.206221342086792,
+        "正面": -1.7045785188674927
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4221",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.4877350330352783,
+        "正面": -0.2628481388092041
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6706",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.11972134560346603,
+        "正面": -2.248840808868408
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_2181",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.074172019958496,
+        "正面": -0.13794679939746857
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5539",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.2575901448726654,
+        "正面": -1.4999102354049683
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1110",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.9799035787582397,
+        "正面": -0.47981417179107666
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6752",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.16203346848487854,
+        "正面": -1.912880301475525
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_73",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -3.4939937591552734,
+        "正面": -0.034660547971725464
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5712",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.029049305245280266,
+        "正面": -3.733569860458374
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_2243",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -3.287367105484009,
+        "正面": -0.04364757984876633
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5585",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.1853731870651245,
+        "正面": -1.8049923181533813
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4182",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -3.8453104496002197,
+        "正面": -0.02507287636399269
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6349",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.22974275052547455,
+        "正面": -1.8277738094329834
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1955",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.07657790184021,
+        "正面": -0.14041808247566223
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6227",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.15013805031776428,
+        "正面": -1.9909064769744873
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_5184",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.6853266358375549,
+        "正面": -0.7085281014442444
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_5757",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.21889881789684296,
+        "正面": -1.6451863050460815
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_233",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.41954612731933594,
+        "正面": -1.0934722423553467
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_6539",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.14459848403930664,
+        "正面": -2.0245509147644043
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1566",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.262674331665039,
+        "正面": -0.11544297635555267
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7074",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.08351076394319534,
+        "正面": -2.5615124702453613
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1197",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.665968120098114,
+        "正面": -0.7264825701713562
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_5864",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.19782963395118713,
+        "正面": -1.7331403493881226
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4270",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.03548264503479,
+        "正面": -0.14540839195251465
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6546",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.7383522987365723,
+        "正面": -0.6623708009719849
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_799",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.7334603071212769,
+        "正面": -0.19924919307231903
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7315",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.05322503298521042,
+        "正面": -3.023473024368286
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1390",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.554734706878662,
+        "正面": -0.2413276731967926
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6335",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.9253604412078857,
+        "正面": -0.1649419665336609
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_4900",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.170498847961426,
+        "正面": -0.12504054605960846
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6340",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.6742332577705383,
+        "正面": -0.7183837294578552
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_2211",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.6220182180404663,
+        "正面": -0.2480178326368332
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5826",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.7986050248146057,
+        "正面": -0.6029757857322693
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_4679",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.5982241630554199,
+        "正面": -0.8147194385528564
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_7305",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.6712936162948608,
+        "正面": -0.21160192787647247
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_1694",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.2880518138408661,
+        "正面": -1.39569890499115
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_5897",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.1878395527601242,
+        "正面": -1.7870934009552002
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4231",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.8279553651809692,
+        "正面": -0.5837350487709045
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7197",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.3451600670814514,
+        "正面": -1.24159574508667
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1484",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.125844120979309,
+        "正面": -0.4031999111175537
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6303",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.4458170533180237,
+        "正面": -2.8612890243530273
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1075",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.402968406677246,
+        "正面": -0.09794115275144577
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7397",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.16032367944717407,
+        "正面": -1.9379982948303223
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_3489",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.2413194179534912,
+        "正面": -0.3533995747566223
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7310",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.3462848663330078,
+        "正面": -0.30893829464912415
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_3112",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.6742870211601257,
+        "正面": -0.7172598838806152
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_5607",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.43633484840393066,
+        "正面": -1.0466890335083008
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1377",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.225041389465332,
+        "正面": -0.11741409450769424
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5377",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.1015808954834938,
+        "正面": -3.560443162918091
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_871",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -4.041574001312256,
+        "正面": -0.026693910360336304
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6423",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.5029603838920593,
+        "正面": -0.9400729537010193
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_1532",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.2417922019958496,
+        "正面": -0.12405137717723846
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_5997",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.27207300066947937,
+        "正面": -1.4486299753189087
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4534",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.6375653147697449,
+        "正面": -0.765084981918335
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_6709",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.30983230471611023,
+        "正面": -1.3342845439910889
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_3253",
+      "truth": "正面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.5710416436195374,
+        "正面": -0.8458673357963562
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_6443",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.169400930404663,
+        "正面": -0.12531019747257233
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_1508",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.931366205215454,
+        "正面": -0.1634465456008911
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7584",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.684118628501892,
+        "正面": -0.20973990857601166
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_2675",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.3192312717437744,
+        "正面": -0.3202526569366455
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6142",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.16771332919597626,
+        "正面": -1.8873779773712158
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_3279",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.665295124053955,
+        "正面": -0.0778593122959137
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7476",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.13423116505146027,
+        "正面": -2.097203254699707
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4439",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.3305423259735107,
+        "正面": -0.10710908472537994
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6147",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.3222253918647766,
+        "正面": -1.3034729957580566
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_4639",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.630772352218628,
+        "正面": -0.22251637279987335
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_7214",
+      "truth": "负面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -2.513154983520508,
+        "正面": -0.08662007749080658
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_419",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -1.7980525493621826,
+        "正面": -0.18892954289913177
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    },
+    {
+      "id": "chnsenticorp_6078",
+      "truth": "负面",
+      "forced": "负面",
+      "forced_scores": {
+        "负面": -0.13218916952610016,
+        "正面": -2.269272804260254
+      },
+      "generated": "负面",
+      "generated_text": "负面"
+    },
+    {
+      "id": "chnsenticorp_3577",
+      "truth": "正面",
+      "forced": "正面",
+      "forced_scores": {
+        "负面": -0.8374429941177368,
+        "正面": -0.5742610692977905
+      },
+      "generated": "正面",
+      "generated_text": "正面"
+    }
+  ]
+}

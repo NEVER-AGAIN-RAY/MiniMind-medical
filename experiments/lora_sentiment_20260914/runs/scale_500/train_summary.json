@@ -1,0 +1,49 @@
+{
+  "status": "complete",
+  "mode": "formal",
+  "created_at": "2026-09-17T18:23:57.086787",
+  "elapsed_seconds": 12.09,
+  "train_samples": 500,
+  "val_samples": 400,
+  "hyperparameters": {
+    "epochs": 3,
+    "batch_size": 16,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.01,
+    "accumulation_steps": 2,
+    "grad_clip": 1.0,
+    "log_interval": 5,
+    "val_interval": 20,
+    "dtype": "bfloat16"
+  },
+  "initial_val_loss": 2.195116402762277,
+  "best_val_loss": 0.18301943983350483,
+  "best_step": 48,
+  "history": [
+    {
+      "step": 0,
+      "val_loss": 2.195116402762277
+    },
+    {
+      "step": 20,
+      "val_loss": 0.19591971669878278
+    },
+    {
+      "step": 40,
+      "val_loss": 0.18808811732700892
+    },
+    {
+      "step": 48,
+      "val_loss": 0.18301943983350483
+    }
+  ],
+  "base_weight": {
+    "path": "/root/autodl-tmp/MiniMind-medical/out/full_sft_768.pth",
+    "md5": "942a011c4b3868f6e17d7ba7d5bdc08a"
+  },
+  "train_data_path": "/root/autodl-tmp/MiniMind-medical/experiments/lora_sentiment_20260914/data/scale/train_500.jsonl",
+  "train_data_md5": "81f53ab712c70139c144afc522eeb367",
+  "val_data_md5": "25b2718e5d9b7b9bd69fd6f97ccec248",
+  "best_lora_md5": "c19fbd33e809d10fc16c49cfde86f358",
+  "final_lora_md5": "87d1172409572a5dacfd451c8fa1734a"
+}
