@@ -48,6 +48,14 @@ Some apparent duplicates are intentional:
 | `minimind-3/` | Downloaded Transformers model package | Track metadata; ignore model weights |
 | `artifacts/archives/` | Transfer bundles and cloud-run archives | Keep locally; never commit archives |
 
+Everything in this table is excluded from Git. The list is exhaustive: it does
+**not** generalise into a rule that generated files are never committed. In
+particular, the split files an experiment's `prepare_data.py` writes under
+`experiments/<topic>/data/` *are* tracked — they are that experiment's frozen
+inputs, and re-running the generator is not a reliable way to recover them
+(token-length filtering depends on the installed tokenizer, so a different
+`transformers` version can yield different splits from the same seed).
+
 The names `out/` and `minimind-3/` deliberately match upstream scripts. Moving
 them would make the repository look marginally cleaner but would require many
 fragile path overrides.
