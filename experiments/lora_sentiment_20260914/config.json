@@ -78,9 +78,10 @@
     "open_thinking": false,
     "max_new_tokens": 8,
     "baselines": {
-      "random_accuracy": 0.5,
+      "random_expected_accuracy": 0.5,
       "majority_class_accuracy_balanced": 0.5,
-      "majority_class_accuracy_natural": 0.6854
+      "majority_class_accuracy_natural": 0.6854,
+      "note": "平衡集合上固定预测多数类的准确率严格等于 0.5；随机预测只是期望为 0.5，单次实测会在抽样误差内波动。各评测集的 95% 区间与「优于随机」所需最低准确率由 prepare_data.py 写入 data/manifest.json 的 baselines.per_split。"
     },
     "metrics": [
       "accuracy",

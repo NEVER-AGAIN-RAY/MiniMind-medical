@@ -1,0 +1,164 @@
+{
+  "generator": "prepare_data.py",
+  "version": "1.0.0",
+  "created_at": "2026-09-17T09:38:47.342610",
+  "source": {
+    "path": "experiments/lora_sentiment_20260914/data/raw/ChnSentiCorp_htl_all.csv",
+    "md5": "8824a3e3f27de0831389fde01df425da",
+    "manifest": "experiments/lora_sentiment_20260914/data/raw/MANIFEST.json"
+  },
+  "effective_config": {
+    "max_seq_len": 448,
+    "instruction_prompt": "判断下面这条酒店评论的情感倾向，只输出「正面」或「负面」，不要输出其他内容。",
+    "jaccard_threshold": 0.85,
+    "min_review_chars": 4,
+    "seed": 42,
+    "balanced_splits": true,
+    "formal_counts": {
+      "train": 2000,
+      "val": 400,
+      "test": 400
+    },
+    "smoke_counts": {
+      "train": 40,
+      "val": 20
+    }
+  },
+  "filter_statistics": {
+    "raw_total": 7766,
+    "token_length_exceeded": 317,
+    "too_short": 2,
+    "empty_review": 1,
+    "after_basic_filters": 7446,
+    "near_duplicate_dropped": 2,
+    "after_dedup": 7444,
+    "pool_by_label": {
+      "负面": 2266,
+      "正面": 5178
+    }
+  },
+  "splits": {
+    "formal_test": {
+      "path": "experiments/lora_sentiment_20260914/data/formal/test.jsonl",
+      "count": 400,
+      "label_counts": {
+        "负面": 200,
+        "正面": 200
+      },
+      "md5": "01e44479647e5282b5389391ce6da4cc"
+    },
+    "formal_val": {
+      "path": "experiments/lora_sentiment_20260914/data/formal/val.jsonl",
+      "count": 400,
+      "label_counts": {
+        "负面": 200,
+        "正面": 200
+      },
+      "md5": "25b2718e5d9b7b9bd69fd6f97ccec248"
+    },
+    "formal_train": {
+      "path": "experiments/lora_sentiment_20260914/data/formal/train.jsonl",
+      "count": 2000,
+      "label_counts": {
+        "负面": 1000,
+        "正面": 1000
+      },
+      "md5": "899d3d48030ea2fd6ef117661f674ed9"
+    },
+    "smoke_train": {
+      "path": "experiments/lora_sentiment_20260914/data/smoke/train.jsonl",
+      "count": 40,
+      "label_counts": {
+        "负面": 20,
+        "正面": 20
+      },
+      "md5": "6b08994005ee91ea2c93fd3e54a1022b"
+    },
+    "smoke_val": {
+      "path": "experiments/lora_sentiment_20260914/data/smoke/val.jsonl",
+      "count": 20,
+      "label_counts": {
+        "负面": 10,
+        "正面": 10
+      },
+      "md5": "ecc87bb4883327f5f958bfaa55b29d61"
+    }
+  },
+  "scale_curve": {
+    "250": {
+      "path": "experiments/lora_sentiment_20260914/data/scale/train_250.jsonl",
+      "count": 250,
+      "label_counts": {
+        "负面": 125,
+        "正面": 125
+      },
+      "md5": "350e5671206742694d0a93edca2ee486"
+    },
+    "500": {
+      "path": "experiments/lora_sentiment_20260914/data/scale/train_500.jsonl",
+      "count": 500,
+      "label_counts": {
+        "负面": 250,
+        "正面": 250
+      },
+      "md5": "81f53ab712c70139c144afc522eeb367"
+    },
+    "1000": {
+      "path": "experiments/lora_sentiment_20260914/data/scale/train_1000.jsonl",
+      "count": 1000,
+      "label_counts": {
+        "负面": 500,
+        "正面": 500
+      },
+      "md5": "4129114a9e36717da8f8ba8bd8d8d23f"
+    },
+    "2000": {
+      "path": "experiments/lora_sentiment_20260914/data/scale/train_2000.jsonl",
+      "count": 2000,
+      "label_counts": {
+        "负面": 1000,
+        "正面": 1000
+      },
+      "md5": "899d3d48030ea2fd6ef117661f674ed9"
+    }
+  },
+  "baselines": {
+    "majority_class_accuracy": 0.5,
+    "majority_class_note": "各评测集正负各半，固定预测任一类的准确率严格等于 0.5。",
+    "random_expected_accuracy": 0.5,
+    "random_note": "随机预测的期望准确率是 0.5，单次实测按 Binomial(n, 0.5)/n 波动；判断是否真的学到东西，要看下方各集合的 min_accuracy_to_beat_random。",
+    "per_split": {
+      "formal_test": {
+        "n": 400,
+        "random_expected_accuracy": 0.5,
+        "random_95ci": [
+          0.451,
+          0.549
+        ],
+        "min_accuracy_to_beat_random": 0.549
+      },
+      "formal_val": {
+        "n": 400,
+        "random_expected_accuracy": 0.5,
+        "random_95ci": [
+          0.451,
+          0.549
+        ],
+        "min_accuracy_to_beat_random": 0.549
+      },
+      "smoke_val": {
+        "n": 20,
+        "random_expected_accuracy": 0.5,
+        "random_95ci": [
+          0.2809,
+          0.7191
+        ],
+        "min_accuracy_to_beat_random": 0.7191
+      }
+    }
+  },
+  "token_length_summary": {
+    "max_observed": 446,
+    "budget": 448
+  }
+}

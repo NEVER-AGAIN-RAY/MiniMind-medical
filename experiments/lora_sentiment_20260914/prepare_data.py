@@ -14,8 +14,10 @@
   6. 平衡切分：正负各半，train/val/test 三者互不重叠
   7. 规模曲线子集：250/500/1000/2000 的嵌套前缀，每个前缀都保持正负平衡
 
-设计理由见 README.md。核心是保证 val/test 平衡，从而让随机基线与多数类
-基线都恰好等于 0.5，准确率可以直接解读。
+设计理由见 README.md。核心是保证 val/test 平衡：固定预测多数类的准确率
+因此严格等于 0.5，随机预测的期望准确率也是 0.5（单次实测会在抽样误差内
+波动）。manifest 的 baselines 字段记录了各评测集的 95% 抽样区间与
+"优于随机"所需的最低准确率，读结果时以该阈值为准，不要直接比 0.5。
 
 用法：
     python experiments/lora_sentiment_20260914/prepare_data.py
@@ -26,6 +28,7 @@ import argparse
 import csv
 import hashlib
 import json
+import math
 import random
 import re
 import sys
@@ -150,6 +153,36 @@ def label_counts(records: list[dict]) -> dict[str, int]:
     for record in records:
         counts[record["label_text"]] += 1
     return counts
+
+
+def baseline_block(all_named: dict[str, list[dict]]) -> dict:
+    """各评测集的基线与判定阈值。
+
+    平衡切分让固定预测多数类的准确率严格等于 0.5；随机预测的期望也是 0.5，
+    但单次实测服从 Binomial(n, 0.5)/n，n 越小波动越大。因此这里同时给出每个
+    评测集的 95% 抽样区间与"显著优于随机"所需的最低准确率——smoke 集只有 20
+    条，区间宽到准确率数字基本不可解读，它只用来验证流程能跑通。
+    """
+    per_split = {}
+    for name, items in all_named.items():
+        if name.endswith("_train"):
+            continue
+        n = len(items)
+        half_width = 1.96 * math.sqrt(0.25 / n)
+        per_split[name] = {
+            "n": n,
+            "random_expected_accuracy": 0.5,
+            "random_95ci": [round(0.5 - half_width, 4), round(0.5 + half_width, 4)],
+            "min_accuracy_to_beat_random": round(0.5 + half_width, 4),
+        }
+    return {
+        "majority_class_accuracy": 0.5,
+        "majority_class_note": "各评测集正负各半，固定预测任一类的准确率严格等于 0.5。",
+        "random_expected_accuracy": 0.5,
+        "random_note": "随机预测的期望准确率是 0.5，单次实测按 Binomial(n, 0.5)/n 波动；"
+                       "判断是否真的学到东西，要看下方各集合的 min_accuracy_to_beat_random。",
+        "per_split": per_split,
+    }
 
 
 def prepare(args) -> None:
@@ -366,11 +399,7 @@ def prepare(args) -> None:
             for name, items in all_named.items()
         },
         "scale_curve": scale_files,
-        "baselines": {
-            "random_accuracy": 0.5,
-            "majority_class_accuracy": 0.5,
-            "note": "val/test 正负各半，因此随机基线与多数类基线都恰好是 0.5。",
-        },
+        "baselines": baseline_block(all_named),
         "token_length_summary": {
             "max_observed": max((r["token_length"] for r in records), default=0),
             "budget": max_seq_len,
