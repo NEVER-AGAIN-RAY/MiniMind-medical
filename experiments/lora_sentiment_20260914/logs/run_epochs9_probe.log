@@ -1,0 +1,523 @@
+MODE=formal train=3672 val=400 initial_val_loss=2.195116
+epoch=1/9 batch=5/2070 loss=1.373888 lr=0.00020000
+epoch=1/9 batch=10/2070 loss=0.670505 lr=0.00019999
+epoch=1/9 batch=15/2070 loss=0.216482 lr=0.00019998
+epoch=1/9 batch=20/2070 loss=0.348773 lr=0.00019996
+epoch=1/9 batch=25/2070 loss=0.241920 lr=0.00019994
+epoch=1/9 batch=30/2070 loss=0.230945 lr=0.00019991
+epoch=1/9 batch=35/2070 loss=0.187641 lr=0.00019988
+epoch=1/9 batch=40/2070 loss=0.210006 lr=0.00019983
+validation step=20 val_loss=0.194190 improved=True
+epoch=1/9 batch=45/2070 loss=0.155522 lr=0.00019980
+epoch=1/9 batch=50/2070 loss=0.229297 lr=0.00019974
+epoch=1/9 batch=55/2070 loss=0.240105 lr=0.00019970
+epoch=1/9 batch=60/2070 loss=0.296472 lr=0.00019963
+epoch=1/9 batch=65/2070 loss=0.197694 lr=0.00019958
+epoch=1/9 batch=70/2070 loss=0.227264 lr=0.00019949
+epoch=1/9 batch=75/2070 loss=0.196138 lr=0.00019943
+epoch=1/9 batch=80/2070 loss=0.170689 lr=0.00019934
+validation step=40 val_loss=0.202182 improved=False
+epoch=1/9 batch=85/2070 loss=0.209099 lr=0.00019927
+epoch=1/9 batch=90/2070 loss=0.207064 lr=0.00019916
+epoch=1/9 batch=95/2070 loss=0.170052 lr=0.00019909
+epoch=1/9 batch=100/2070 loss=0.185927 lr=0.00019897
+epoch=1/9 batch=105/2070 loss=0.128071 lr=0.00019888
+epoch=1/9 batch=110/2070 loss=0.139813 lr=0.00019875
+epoch=1/9 batch=115/2070 loss=0.248624 lr=0.00019866
+epoch=1/9 batch=120/2070 loss=0.160894 lr=0.00019851
+validation step=60 val_loss=0.149260 improved=True
+epoch=1/9 batch=125/2070 loss=0.136781 lr=0.00019841
+epoch=1/9 batch=130/2070 loss=0.194459 lr=0.00019825
+epoch=1/9 batch=135/2070 loss=0.182766 lr=0.00019815
+epoch=1/9 batch=140/2070 loss=0.096992 lr=0.00019798
+epoch=1/9 batch=145/2070 loss=0.167386 lr=0.00019786
+epoch=1/9 batch=150/2070 loss=0.102671 lr=0.00019768
+epoch=1/9 batch=155/2070 loss=0.027912 lr=0.00019755
+epoch=1/9 batch=160/2070 loss=0.104630 lr=0.00019736
+validation step=80 val_loss=0.113459 improved=True
+epoch=1/9 batch=165/2070 loss=0.118547 lr=0.00019723
+epoch=1/9 batch=170/2070 loss=0.111577 lr=0.00019702
+epoch=1/9 batch=175/2070 loss=0.165554 lr=0.00019688
+epoch=1/9 batch=180/2070 loss=0.054737 lr=0.00019666
+epoch=1/9 batch=185/2070 loss=0.170789 lr=0.00019651
+epoch=1/9 batch=190/2070 loss=0.124222 lr=0.00019628
+epoch=1/9 batch=195/2070 loss=0.155043 lr=0.00019613
+epoch=1/9 batch=200/2070 loss=0.168759 lr=0.00019589
+validation step=100 val_loss=0.125675 improved=False
+epoch=1/9 batch=205/2070 loss=0.109451 lr=0.00019572
+epoch=1/9 batch=210/2070 loss=0.099367 lr=0.00019547
+epoch=1/9 batch=215/2070 loss=0.089544 lr=0.00019529
+epoch=1/9 batch=220/2070 loss=0.145941 lr=0.00019503
+epoch=1/9 batch=225/2070 loss=0.082064 lr=0.00019485
+epoch=1/9 batch=230/2070 loss=0.071448 lr=0.00019457
+epoch=2/9 batch=235/2070 loss=0.104125 lr=0.00019438
+epoch=2/9 batch=240/2070 loss=0.070610 lr=0.00019410
+validation step=120 val_loss=0.116465 improved=False
+epoch=2/9 batch=245/2070 loss=0.122260 lr=0.00019390
+epoch=2/9 batch=250/2070 loss=0.145603 lr=0.00019360
+epoch=2/9 batch=255/2070 loss=0.094286 lr=0.00019340
+epoch=2/9 batch=260/2070 loss=0.082084 lr=0.00019308
+epoch=2/9 batch=265/2070 loss=0.062113 lr=0.00019287
+epoch=2/9 batch=270/2070 loss=0.052972 lr=0.00019255
+epoch=2/9 batch=275/2070 loss=0.102834 lr=0.00019233
+epoch=2/9 batch=280/2070 loss=0.136006 lr=0.00019200
+validation step=140 val_loss=0.097689 improved=True
+epoch=2/9 batch=285/2070 loss=0.170472 lr=0.00019177
+epoch=2/9 batch=290/2070 loss=0.117773 lr=0.00019142
+epoch=2/9 batch=295/2070 loss=0.070261 lr=0.00019119
+epoch=2/9 batch=300/2070 loss=0.064000 lr=0.00019083
+epoch=2/9 batch=305/2070 loss=0.073040 lr=0.00019059
+epoch=2/9 batch=310/2070 loss=0.122590 lr=0.00019022
+epoch=2/9 batch=315/2070 loss=0.070797 lr=0.00018997
+epoch=2/9 batch=320/2070 loss=0.089240 lr=0.00018959
+validation step=160 val_loss=0.131798 improved=False
+epoch=2/9 batch=325/2070 loss=0.066316 lr=0.00018934
+epoch=2/9 batch=330/2070 loss=0.071799 lr=0.00018895
+epoch=2/9 batch=335/2070 loss=0.038471 lr=0.00018868
+epoch=2/9 batch=340/2070 loss=0.028478 lr=0.00018828
+epoch=2/9 batch=345/2070 loss=0.094285 lr=0.00018801
+epoch=2/9 batch=350/2070 loss=0.167012 lr=0.00018760
+epoch=2/9 batch=355/2070 loss=0.102640 lr=0.00018732
+epoch=2/9 batch=360/2070 loss=0.039531 lr=0.00018690
+validation step=180 val_loss=0.095592 improved=True
+epoch=2/9 batch=365/2070 loss=0.071426 lr=0.00018661
+epoch=2/9 batch=370/2070 loss=0.138044 lr=0.00018618
+epoch=2/9 batch=375/2070 loss=0.037914 lr=0.00018589
+epoch=2/9 batch=380/2070 loss=0.128930 lr=0.00018544
+epoch=2/9 batch=385/2070 loss=0.064067 lr=0.00018514
+epoch=2/9 batch=390/2070 loss=0.109916 lr=0.00018469
+epoch=2/9 batch=395/2070 loss=0.096394 lr=0.00018438
+epoch=2/9 batch=400/2070 loss=0.114427 lr=0.00018392
+validation step=200 val_loss=0.090068 improved=True
+epoch=2/9 batch=405/2070 loss=0.161282 lr=0.00018361
+epoch=2/9 batch=410/2070 loss=0.229620 lr=0.00018313
+epoch=2/9 batch=415/2070 loss=0.037643 lr=0.00018281
+epoch=2/9 batch=420/2070 loss=0.108944 lr=0.00018233
+epoch=2/9 batch=425/2070 loss=0.201945 lr=0.00018200
+epoch=2/9 batch=430/2070 loss=0.073730 lr=0.00018151
+epoch=2/9 batch=435/2070 loss=0.029307 lr=0.00018117
+epoch=2/9 batch=440/2070 loss=0.124504 lr=0.00018067
+validation step=220 val_loss=0.088155 improved=True
+epoch=2/9 batch=445/2070 loss=0.033827 lr=0.00018033
+epoch=2/9 batch=450/2070 loss=0.092677 lr=0.00017981
+epoch=2/9 batch=455/2070 loss=0.092780 lr=0.00017947
+epoch=2/9 batch=460/2070 loss=0.075189 lr=0.00017894
+epoch=3/9 batch=465/2070 loss=0.021525 lr=0.00017859
+epoch=3/9 batch=470/2070 loss=0.135918 lr=0.00017806
+epoch=3/9 batch=475/2070 loss=0.128984 lr=0.00017770
+epoch=3/9 batch=480/2070 loss=0.179345 lr=0.00017716
+validation step=240 val_loss=0.090964 improved=False
+epoch=3/9 batch=485/2070 loss=0.044713 lr=0.00017679
+epoch=3/9 batch=490/2070 loss=0.121005 lr=0.00017624
+epoch=3/9 batch=495/2070 loss=0.046919 lr=0.00017587
+epoch=3/9 batch=500/2070 loss=0.108378 lr=0.00017531
+epoch=3/9 batch=505/2070 loss=0.050787 lr=0.00017493
+epoch=3/9 batch=510/2070 loss=0.149630 lr=0.00017436
+epoch=3/9 batch=515/2070 loss=0.125409 lr=0.00017398
+epoch=3/9 batch=520/2070 loss=0.102609 lr=0.00017340
+validation step=260 val_loss=0.118759 improved=False
+epoch=3/9 batch=525/2070 loss=0.080455 lr=0.00017301
+epoch=3/9 batch=530/2070 loss=0.085521 lr=0.00017242
+epoch=3/9 batch=535/2070 loss=0.046423 lr=0.00017203
+epoch=3/9 batch=540/2070 loss=0.109351 lr=0.00017143
+epoch=3/9 batch=545/2070 loss=0.098009 lr=0.00017103
+epoch=3/9 batch=550/2070 loss=0.075399 lr=0.00017042
+epoch=3/9 batch=555/2070 loss=0.079916 lr=0.00017002
+epoch=3/9 batch=560/2070 loss=0.020802 lr=0.00016941
+validation step=280 val_loss=0.087008 improved=True
+epoch=3/9 batch=565/2070 loss=0.038501 lr=0.00016899
+epoch=3/9 batch=570/2070 loss=0.052920 lr=0.00016837
+epoch=3/9 batch=575/2070 loss=0.120241 lr=0.00016796
+epoch=3/9 batch=580/2070 loss=0.028334 lr=0.00016733
+epoch=3/9 batch=585/2070 loss=0.047721 lr=0.00016690
+epoch=3/9 batch=590/2070 loss=0.034964 lr=0.00016627
+epoch=3/9 batch=595/2070 loss=0.137994 lr=0.00016584
+epoch=3/9 batch=600/2070 loss=0.177281 lr=0.00016519
+validation step=300 val_loss=0.093691 improved=False
+epoch=3/9 batch=605/2070 loss=0.117326 lr=0.00016476
+epoch=3/9 batch=610/2070 loss=0.077474 lr=0.00016411
+epoch=3/9 batch=615/2070 loss=0.107208 lr=0.00016367
+epoch=3/9 batch=620/2070 loss=0.073573 lr=0.00016301
+epoch=3/9 batch=625/2070 loss=0.077683 lr=0.00016257
+epoch=3/9 batch=630/2070 loss=0.060696 lr=0.00016190
+epoch=3/9 batch=635/2070 loss=0.098698 lr=0.00016145
+epoch=3/9 batch=640/2070 loss=0.029069 lr=0.00016078
+validation step=320 val_loss=0.094113 improved=False
+epoch=3/9 batch=645/2070 loss=0.099931 lr=0.00016033
+epoch=3/9 batch=650/2070 loss=0.074883 lr=0.00015965
+epoch=3/9 batch=655/2070 loss=0.104612 lr=0.00015919
+epoch=3/9 batch=660/2070 loss=0.054730 lr=0.00015850
+epoch=3/9 batch=665/2070 loss=0.127863 lr=0.00015804
+epoch=3/9 batch=670/2070 loss=0.076626 lr=0.00015734
+epoch=3/9 batch=675/2070 loss=0.086285 lr=0.00015688
+epoch=3/9 batch=680/2070 loss=0.151065 lr=0.00015618
+validation step=340 val_loss=0.085256 improved=True
+epoch=3/9 batch=685/2070 loss=0.074492 lr=0.00015571
+epoch=3/9 batch=690/2070 loss=0.056416 lr=0.00015500
+epoch=4/9 batch=695/2070 loss=0.106865 lr=0.00015453
+epoch=4/9 batch=700/2070 loss=0.062694 lr=0.00015381
+epoch=4/9 batch=705/2070 loss=0.127888 lr=0.00015333
+epoch=4/9 batch=710/2070 loss=0.053325 lr=0.00015261
+epoch=4/9 batch=715/2070 loss=0.056084 lr=0.00015213
+epoch=4/9 batch=720/2070 loss=0.030336 lr=0.00015141
+validation step=360 val_loss=0.093831 improved=False
+epoch=4/9 batch=725/2070 loss=0.130498 lr=0.00015092
+epoch=4/9 batch=730/2070 loss=0.057627 lr=0.00015019
+epoch=4/9 batch=735/2070 loss=0.140397 lr=0.00014970
+epoch=4/9 batch=740/2070 loss=0.046282 lr=0.00014896
+epoch=4/9 batch=745/2070 loss=0.089532 lr=0.00014847
+epoch=4/9 batch=750/2070 loss=0.075924 lr=0.00014773
+epoch=4/9 batch=755/2070 loss=0.041641 lr=0.00014723
+epoch=4/9 batch=760/2070 loss=0.040337 lr=0.00014648
+validation step=380 val_loss=0.091155 improved=False
+epoch=4/9 batch=765/2070 loss=0.037274 lr=0.00014598
+epoch=4/9 batch=770/2070 loss=0.066124 lr=0.00014523
+epoch=4/9 batch=775/2070 loss=0.025152 lr=0.00014473
+epoch=4/9 batch=780/2070 loss=0.070558 lr=0.00014397
+epoch=4/9 batch=785/2070 loss=0.034037 lr=0.00014346
+epoch=4/9 batch=790/2070 loss=0.041187 lr=0.00014270
+epoch=4/9 batch=795/2070 loss=0.027937 lr=0.00014219
+epoch=4/9 batch=800/2070 loss=0.077811 lr=0.00014142
+validation step=400 val_loss=0.082670 improved=True
+epoch=4/9 batch=805/2070 loss=0.111585 lr=0.00014091
+epoch=4/9 batch=810/2070 loss=0.113654 lr=0.00014014
+epoch=4/9 batch=815/2070 loss=0.058278 lr=0.00013962
+epoch=4/9 batch=820/2070 loss=0.043119 lr=0.00013885
+epoch=4/9 batch=825/2070 loss=0.079071 lr=0.00013833
+epoch=4/9 batch=830/2070 loss=0.032157 lr=0.00013755
+epoch=4/9 batch=835/2070 loss=0.054356 lr=0.00013703
+epoch=4/9 batch=840/2070 loss=0.137057 lr=0.00013625
+validation step=420 val_loss=0.087287 improved=False
+epoch=4/9 batch=845/2070 loss=0.088338 lr=0.00013573
+epoch=4/9 batch=850/2070 loss=0.035278 lr=0.00013494
+epoch=4/9 batch=855/2070 loss=0.079669 lr=0.00013441
+epoch=4/9 batch=860/2070 loss=0.029848 lr=0.00013362
+epoch=4/9 batch=865/2070 loss=0.043938 lr=0.00013310
+epoch=4/9 batch=870/2070 loss=0.106552 lr=0.00013230
+epoch=4/9 batch=875/2070 loss=0.159314 lr=0.00013177
+epoch=4/9 batch=880/2070 loss=0.036392 lr=0.00013098
+validation step=440 val_loss=0.095999 improved=False
+epoch=4/9 batch=885/2070 loss=0.068748 lr=0.00013045
+epoch=4/9 batch=890/2070 loss=0.044133 lr=0.00012965
+epoch=4/9 batch=895/2070 loss=0.036630 lr=0.00012911
+epoch=4/9 batch=900/2070 loss=0.048024 lr=0.00012831
+epoch=4/9 batch=905/2070 loss=0.136596 lr=0.00012778
+epoch=4/9 batch=910/2070 loss=0.012836 lr=0.00012697
+epoch=4/9 batch=915/2070 loss=0.023415 lr=0.00012643
+epoch=4/9 batch=920/2070 loss=0.107282 lr=0.00012563
+validation step=460 val_loss=0.088630 improved=False
+epoch=5/9 batch=925/2070 loss=0.069483 lr=0.00012509
+epoch=5/9 batch=930/2070 loss=0.024480 lr=0.00012428
+epoch=5/9 batch=935/2070 loss=0.040114 lr=0.00012374
+epoch=5/9 batch=940/2070 loss=0.038480 lr=0.00012293
+epoch=5/9 batch=945/2070 loss=0.059674 lr=0.00012239
+epoch=5/9 batch=950/2070 loss=0.068013 lr=0.00012158
+epoch=5/9 batch=955/2070 loss=0.045981 lr=0.00012104
+epoch=5/9 batch=960/2070 loss=0.022536 lr=0.00012022
+validation step=480 val_loss=0.083767 improved=False
+epoch=5/9 batch=965/2070 loss=0.028628 lr=0.00011968
+epoch=5/9 batch=970/2070 loss=0.095901 lr=0.00011886
+epoch=5/9 batch=975/2070 loss=0.060521 lr=0.00011832
+epoch=5/9 batch=980/2070 loss=0.108553 lr=0.00011750
+epoch=5/9 batch=985/2070 loss=0.054634 lr=0.00011696
+epoch=5/9 batch=990/2070 loss=0.045172 lr=0.00011614
+epoch=5/9 batch=995/2070 loss=0.125408 lr=0.00011560
+epoch=5/9 batch=1000/2070 loss=0.006288 lr=0.00011478
+validation step=500 val_loss=0.083001 improved=False
+epoch=5/9 batch=1005/2070 loss=0.014463 lr=0.00011423
+epoch=5/9 batch=1010/2070 loss=0.143979 lr=0.00011341
+epoch=5/9 batch=1015/2070 loss=0.023302 lr=0.00011287
+epoch=5/9 batch=1020/2070 loss=0.050048 lr=0.00011205
+epoch=5/9 batch=1025/2070 loss=0.059161 lr=0.00011150
+epoch=5/9 batch=1030/2070 loss=0.025977 lr=0.00011068
+epoch=5/9 batch=1035/2070 loss=0.019466 lr=0.00011014
+epoch=5/9 batch=1040/2070 loss=0.055047 lr=0.00010932
+validation step=520 val_loss=0.086882 improved=False
+epoch=5/9 batch=1045/2070 loss=0.105143 lr=0.00010877
+epoch=5/9 batch=1050/2070 loss=0.075700 lr=0.00010795
+epoch=5/9 batch=1055/2070 loss=0.061084 lr=0.00010741
+epoch=5/9 batch=1060/2070 loss=0.046129 lr=0.00010659
+epoch=5/9 batch=1065/2070 loss=0.098038 lr=0.00010604
+epoch=5/9 batch=1070/2070 loss=0.048190 lr=0.00010522
+epoch=5/9 batch=1075/2070 loss=0.030009 lr=0.00010468
+epoch=5/9 batch=1080/2070 loss=0.132978 lr=0.00010386
+validation step=540 val_loss=0.090705 improved=False
+epoch=5/9 batch=1085/2070 loss=0.016349 lr=0.00010331
+epoch=5/9 batch=1090/2070 loss=0.060669 lr=0.00010250
+epoch=5/9 batch=1095/2070 loss=0.043629 lr=0.00010195
+epoch=5/9 batch=1100/2070 loss=0.032745 lr=0.00010114
+epoch=5/9 batch=1105/2070 loss=0.048361 lr=0.00010059
+epoch=5/9 batch=1110/2070 loss=0.066258 lr=0.00009978
+epoch=5/9 batch=1115/2070 loss=0.093090 lr=0.00009924
+epoch=5/9 batch=1120/2070 loss=0.032892 lr=0.00009842
+validation step=560 val_loss=0.090493 improved=False
+epoch=5/9 batch=1125/2070 loss=0.034020 lr=0.00009788
+epoch=5/9 batch=1130/2070 loss=0.008631 lr=0.00009707
+epoch=5/9 batch=1135/2070 loss=0.076248 lr=0.00009653
+epoch=5/9 batch=1140/2070 loss=0.047478 lr=0.00009572
+epoch=5/9 batch=1145/2070 loss=0.024137 lr=0.00009518
+epoch=5/9 batch=1150/2070 loss=0.161673 lr=0.00009437
+epoch=6/9 batch=1155/2070 loss=0.042790 lr=0.00009383
+epoch=6/9 batch=1160/2070 loss=0.009515 lr=0.00009303
+validation step=580 val_loss=0.084759 improved=False
+epoch=6/9 batch=1165/2070 loss=0.009988 lr=0.00009249
+epoch=6/9 batch=1170/2070 loss=0.090143 lr=0.00009169
+epoch=6/9 batch=1175/2070 loss=0.018815 lr=0.00009115
+epoch=6/9 batch=1180/2070 loss=0.059725 lr=0.00009035
+epoch=6/9 batch=1185/2070 loss=0.120617 lr=0.00008982
+epoch=6/9 batch=1190/2070 loss=0.019597 lr=0.00008902
+epoch=6/9 batch=1195/2070 loss=0.060122 lr=0.00008849
+epoch=6/9 batch=1200/2070 loss=0.109978 lr=0.00008770
+validation step=600 val_loss=0.088823 improved=False
+epoch=6/9 batch=1205/2070 loss=0.022713 lr=0.00008717
+epoch=6/9 batch=1210/2070 loss=0.030666 lr=0.00008638
+epoch=6/9 batch=1215/2070 loss=0.066380 lr=0.00008585
+epoch=6/9 batch=1220/2070 loss=0.020480 lr=0.00008506
+epoch=6/9 batch=1225/2070 loss=0.069266 lr=0.00008454
+epoch=6/9 batch=1230/2070 loss=0.040844 lr=0.00008375
+epoch=6/9 batch=1235/2070 loss=0.037308 lr=0.00008323
+epoch=6/9 batch=1240/2070 loss=0.072503 lr=0.00008245
+validation step=620 val_loss=0.093577 improved=False
+epoch=6/9 batch=1245/2070 loss=0.115416 lr=0.00008193
+epoch=6/9 batch=1250/2070 loss=0.218349 lr=0.00008115
+epoch=6/9 batch=1255/2070 loss=0.038716 lr=0.00008063
+epoch=6/9 batch=1260/2070 loss=0.052736 lr=0.00007986
+epoch=6/9 batch=1265/2070 loss=0.013734 lr=0.00007935
+epoch=6/9 batch=1270/2070 loss=0.029334 lr=0.00007858
+epoch=6/9 batch=1275/2070 loss=0.026422 lr=0.00007807
+epoch=6/9 batch=1280/2070 loss=0.039985 lr=0.00007730
+validation step=640 val_loss=0.086353 improved=False
+epoch=6/9 batch=1285/2070 loss=0.017249 lr=0.00007679
+epoch=6/9 batch=1290/2070 loss=0.028746 lr=0.00007603
+epoch=6/9 batch=1295/2070 loss=0.047722 lr=0.00007553
+epoch=6/9 batch=1300/2070 loss=0.102875 lr=0.00007477
+epoch=6/9 batch=1305/2070 loss=0.042035 lr=0.00007427
+epoch=6/9 batch=1310/2070 loss=0.101655 lr=0.00007352
+epoch=6/9 batch=1315/2070 loss=0.067807 lr=0.00007302
+epoch=6/9 batch=1320/2070 loss=0.050053 lr=0.00007227
+validation step=660 val_loss=0.085891 improved=False
+epoch=6/9 batch=1325/2070 loss=0.092675 lr=0.00007178
+epoch=6/9 batch=1330/2070 loss=0.022553 lr=0.00007104
+epoch=6/9 batch=1335/2070 loss=0.045935 lr=0.00007055
+epoch=6/9 batch=1340/2070 loss=0.043736 lr=0.00006981
+epoch=6/9 batch=1345/2070 loss=0.092140 lr=0.00006932
+epoch=6/9 batch=1350/2070 loss=0.053307 lr=0.00006859
+epoch=6/9 batch=1355/2070 loss=0.013569 lr=0.00006811
+epoch=6/9 batch=1360/2070 loss=0.046294 lr=0.00006739
+validation step=680 val_loss=0.086115 improved=False
+epoch=6/9 batch=1365/2070 loss=0.082018 lr=0.00006691
+epoch=6/9 batch=1370/2070 loss=0.016106 lr=0.00006619
+epoch=6/9 batch=1375/2070 loss=0.056207 lr=0.00006571
+epoch=6/9 batch=1380/2070 loss=0.002537 lr=0.00006500
+epoch=7/9 batch=1385/2070 loss=0.035079 lr=0.00006453
+epoch=7/9 batch=1390/2070 loss=0.103546 lr=0.00006382
+epoch=7/9 batch=1395/2070 loss=0.016725 lr=0.00006335
+epoch=7/9 batch=1400/2070 loss=0.025430 lr=0.00006266
+validation step=700 val_loss=0.089832 improved=False
+epoch=7/9 batch=1405/2070 loss=0.099268 lr=0.00006219
+epoch=7/9 batch=1410/2070 loss=0.023437 lr=0.00006150
+epoch=7/9 batch=1415/2070 loss=0.061349 lr=0.00006104
+epoch=7/9 batch=1420/2070 loss=0.075114 lr=0.00006035
+epoch=7/9 batch=1425/2070 loss=0.006772 lr=0.00005990
+epoch=7/9 batch=1430/2070 loss=0.120081 lr=0.00005922
+epoch=7/9 batch=1435/2070 loss=0.046779 lr=0.00005877
+epoch=7/9 batch=1440/2070 loss=0.041426 lr=0.00005810
+validation step=720 val_loss=0.091714 improved=False
+epoch=7/9 batch=1445/2070 loss=0.009004 lr=0.00005765
+epoch=7/9 batch=1450/2070 loss=0.066546 lr=0.00005699
+epoch=7/9 batch=1455/2070 loss=0.100886 lr=0.00005655
+epoch=7/9 batch=1460/2070 loss=0.023323 lr=0.00005589
+epoch=7/9 batch=1465/2070 loss=0.005338 lr=0.00005546
+epoch=7/9 batch=1470/2070 loss=0.030017 lr=0.00005481
+epoch=7/9 batch=1475/2070 loss=0.044474 lr=0.00005438
+epoch=7/9 batch=1480/2070 loss=0.021302 lr=0.00005373
+validation step=740 val_loss=0.091815 improved=False
+epoch=7/9 batch=1485/2070 loss=0.075402 lr=0.00005331
+epoch=7/9 batch=1490/2070 loss=0.027281 lr=0.00005267
+epoch=7/9 batch=1495/2070 loss=0.036039 lr=0.00005225
+epoch=7/9 batch=1500/2070 loss=0.017381 lr=0.00005163
+epoch=7/9 batch=1505/2070 loss=0.018949 lr=0.00005121
+epoch=7/9 batch=1510/2070 loss=0.006572 lr=0.00005059
+epoch=7/9 batch=1515/2070 loss=0.037842 lr=0.00005019
+epoch=7/9 batch=1520/2070 loss=0.118061 lr=0.00004958
+validation step=760 val_loss=0.092775 improved=False
+epoch=7/9 batch=1525/2070 loss=0.044438 lr=0.00004917
+epoch=7/9 batch=1530/2070 loss=0.016202 lr=0.00004857
+epoch=7/9 batch=1535/2070 loss=0.061255 lr=0.00004817
+epoch=7/9 batch=1540/2070 loss=0.025219 lr=0.00004758
+epoch=7/9 batch=1545/2070 loss=0.004348 lr=0.00004719
+epoch=7/9 batch=1550/2070 loss=0.052518 lr=0.00004660
+epoch=7/9 batch=1555/2070 loss=0.118589 lr=0.00004622
+epoch=7/9 batch=1560/2070 loss=0.050249 lr=0.00004564
+validation step=780 val_loss=0.091880 improved=False
+epoch=7/9 batch=1565/2070 loss=0.035457 lr=0.00004526
+epoch=7/9 batch=1570/2070 loss=0.024537 lr=0.00004469
+epoch=7/9 batch=1575/2070 loss=0.035733 lr=0.00004432
+epoch=7/9 batch=1580/2070 loss=0.028266 lr=0.00004376
+epoch=7/9 batch=1585/2070 loss=0.009193 lr=0.00004339
+epoch=7/9 batch=1590/2070 loss=0.021476 lr=0.00004284
+epoch=7/9 batch=1595/2070 loss=0.030641 lr=0.00004248
+epoch=7/9 batch=1600/2070 loss=0.012614 lr=0.00004194
+validation step=800 val_loss=0.091855 improved=False
+epoch=7/9 batch=1605/2070 loss=0.009779 lr=0.00004159
+epoch=7/9 batch=1610/2070 loss=0.098066 lr=0.00004106
+epoch=8/9 batch=1615/2070 loss=0.033975 lr=0.00004071
+epoch=8/9 batch=1620/2070 loss=0.027773 lr=0.00004019
+epoch=8/9 batch=1625/2070 loss=0.039971 lr=0.00003984
+epoch=8/9 batch=1630/2070 loss=0.064410 lr=0.00003933
+epoch=8/9 batch=1635/2070 loss=0.058522 lr=0.00003900
+epoch=8/9 batch=1640/2070 loss=0.104832 lr=0.00003849
+validation step=820 val_loss=0.092658 improved=False
+epoch=8/9 batch=1645/2070 loss=0.051904 lr=0.00003816
+epoch=8/9 batch=1650/2070 loss=0.003255 lr=0.00003767
+epoch=8/9 batch=1655/2070 loss=0.057725 lr=0.00003735
+epoch=8/9 batch=1660/2070 loss=0.027481 lr=0.00003687
+epoch=8/9 batch=1665/2070 loss=0.089480 lr=0.00003655
+epoch=8/9 batch=1670/2070 loss=0.014858 lr=0.00003608
+epoch=8/9 batch=1675/2070 loss=0.063860 lr=0.00003577
+epoch=8/9 batch=1680/2070 loss=0.004938 lr=0.00003531
+validation step=840 val_loss=0.093852 improved=False
+epoch=8/9 batch=1685/2070 loss=0.019561 lr=0.00003501
+epoch=8/9 batch=1690/2070 loss=0.054841 lr=0.00003456
+epoch=8/9 batch=1695/2070 loss=0.043450 lr=0.00003426
+epoch=8/9 batch=1700/2070 loss=0.036942 lr=0.00003382
+epoch=8/9 batch=1705/2070 loss=0.037855 lr=0.00003353
+epoch=8/9 batch=1710/2070 loss=0.076490 lr=0.00003310
+epoch=8/9 batch=1715/2070 loss=0.013740 lr=0.00003282
+epoch=8/9 batch=1720/2070 loss=0.043065 lr=0.00003240
+validation step=860 val_loss=0.096890 improved=False
+epoch=8/9 batch=1725/2070 loss=0.007748 lr=0.00003213
+epoch=8/9 batch=1730/2070 loss=0.042304 lr=0.00003172
+epoch=8/9 batch=1735/2070 loss=0.058282 lr=0.00003145
+epoch=8/9 batch=1740/2070 loss=0.019882 lr=0.00003105
+epoch=8/9 batch=1745/2070 loss=0.029241 lr=0.00003079
+epoch=8/9 batch=1750/2070 loss=0.007803 lr=0.00003041
+epoch=8/9 batch=1755/2070 loss=0.079803 lr=0.00003015
+epoch=8/9 batch=1760/2070 loss=0.038694 lr=0.00002978
+validation step=880 val_loss=0.096521 improved=False
+epoch=8/9 batch=1765/2070 loss=0.073317 lr=0.00002953
+epoch=8/9 batch=1770/2070 loss=0.017759 lr=0.00002917
+epoch=8/9 batch=1775/2070 loss=0.026157 lr=0.00002893
+epoch=8/9 batch=1780/2070 loss=0.016861 lr=0.00002858
+epoch=8/9 batch=1785/2070 loss=0.050617 lr=0.00002835
+epoch=8/9 batch=1790/2070 loss=0.014917 lr=0.00002800
+epoch=8/9 batch=1795/2070 loss=0.045687 lr=0.00002778
+epoch=8/9 batch=1800/2070 loss=0.017603 lr=0.00002745
+validation step=900 val_loss=0.096747 improved=False
+epoch=8/9 batch=1805/2070 loss=0.050996 lr=0.00002723
+epoch=8/9 batch=1810/2070 loss=0.039353 lr=0.00002692
+epoch=8/9 batch=1815/2070 loss=0.111720 lr=0.00002671
+epoch=8/9 batch=1820/2070 loss=0.006896 lr=0.00002640
+epoch=8/9 batch=1825/2070 loss=0.050919 lr=0.00002620
+epoch=8/9 batch=1830/2070 loss=0.012848 lr=0.00002590
+epoch=8/9 batch=1835/2070 loss=0.010762 lr=0.00002571
+epoch=8/9 batch=1840/2070 loss=0.013310 lr=0.00002543
+validation step=920 val_loss=0.098226 improved=False
+epoch=9/9 batch=1845/2070 loss=0.014231 lr=0.00002524
+epoch=9/9 batch=1850/2070 loss=0.009006 lr=0.00002497
+epoch=9/9 batch=1855/2070 loss=0.026027 lr=0.00002479
+epoch=9/9 batch=1860/2070 loss=0.064176 lr=0.00002453
+epoch=9/9 batch=1865/2070 loss=0.003899 lr=0.00002436
+epoch=9/9 batch=1870/2070 loss=0.035380 lr=0.00002411
+epoch=9/9 batch=1875/2070 loss=0.031735 lr=0.00002395
+epoch=9/9 batch=1880/2070 loss=0.035409 lr=0.00002372
+validation step=940 val_loss=0.097436 improved=False
+epoch=9/9 batch=1885/2070 loss=0.006229 lr=0.00002356
+epoch=9/9 batch=1890/2070 loss=0.013452 lr=0.00002334
+epoch=9/9 batch=1895/2070 loss=0.009504 lr=0.00002319
+epoch=9/9 batch=1900/2070 loss=0.017670 lr=0.00002298
+epoch=9/9 batch=1905/2070 loss=0.003226 lr=0.00002284
+epoch=9/9 batch=1910/2070 loss=0.009730 lr=0.00002264
+epoch=9/9 batch=1915/2070 loss=0.005037 lr=0.00002251
+epoch=9/9 batch=1920/2070 loss=0.025151 lr=0.00002232
+validation step=960 val_loss=0.102144 improved=False
+epoch=9/9 batch=1925/2070 loss=0.005586 lr=0.00002220
+epoch=9/9 batch=1930/2070 loss=0.040190 lr=0.00002202
+epoch=9/9 batch=1935/2070 loss=0.049066 lr=0.00002191
+epoch=9/9 batch=1940/2070 loss=0.014080 lr=0.00002175
+epoch=9/9 batch=1945/2070 loss=0.010638 lr=0.00002164
+epoch=9/9 batch=1950/2070 loss=0.021447 lr=0.00002149
+epoch=9/9 batch=1955/2070 loss=0.024544 lr=0.00002139
+epoch=9/9 batch=1960/2070 loss=0.052452 lr=0.00002125
+validation step=980 val_loss=0.100818 improved=False
+epoch=9/9 batch=1965/2070 loss=0.037378 lr=0.00002116
+epoch=9/9 batch=1970/2070 loss=0.017511 lr=0.00002103
+epoch=9/9 batch=1975/2070 loss=0.030643 lr=0.00002095
+epoch=9/9 batch=1980/2070 loss=0.002094 lr=0.00002084
+epoch=9/9 batch=1985/2070 loss=0.005213 lr=0.00002077
+epoch=9/9 batch=1990/2070 loss=0.004780 lr=0.00002066
+epoch=9/9 batch=1995/2070 loss=0.008061 lr=0.00002060
+epoch=9/9 batch=2000/2070 loss=0.035634 lr=0.00002051
+validation step=1000 val_loss=0.101222 improved=False
+epoch=9/9 batch=2005/2070 loss=0.076107 lr=0.00002045
+epoch=9/9 batch=2010/2070 loss=0.094001 lr=0.00002037
+epoch=9/9 batch=2015/2070 loss=0.011735 lr=0.00002032
+epoch=9/9 batch=2020/2070 loss=0.045084 lr=0.00002026
+epoch=9/9 batch=2025/2070 loss=0.031244 lr=0.00002022
+epoch=9/9 batch=2030/2070 loss=0.022035 lr=0.00002017
+epoch=9/9 batch=2035/2070 loss=0.044632 lr=0.00002013
+epoch=9/9 batch=2040/2070 loss=0.036954 lr=0.00002009
+validation step=1020 val_loss=0.100566 improved=False
+epoch=9/9 batch=2045/2070 loss=0.004674 lr=0.00002007
+epoch=9/9 batch=2050/2070 loss=0.004405 lr=0.00002004
+epoch=9/9 batch=2055/2070 loss=0.012332 lr=0.00002003
+epoch=9/9 batch=2060/2070 loss=0.028647 lr=0.00002001
+epoch=9/9 batch=2065/2070 loss=0.053893 lr=0.00002000
+epoch=9/9 batch=2070/2070 loss=0.001616 lr=0.00002000
+validation step=1035 val_loss=0.104267 improved=False
+TRAINING_COMPLETE best_step=400 best_val_loss=0.082670 run_dir=/root/autodl-tmp/MiniMind-medical/experiments/lora_sentiment_20260914/runs/epochs9
+evaluated=50/400
+evaluated=100/400
+evaluated=150/400
+evaluated=200/400
+evaluated=250/400
+evaluated=300/400
+evaluated=350/400
+evaluated=400/400
+{
+  "checkpoint": "/root/autodl-tmp/MiniMind-medical/experiments/lora_sentiment_20260914/runs/epochs9/best_lora.pth",
+  "data": "/root/autodl-tmp/MiniMind-medical/experiments/lora_sentiment_20260914/data/formal/test.jsonl",
+  "samples": 400,
+  "candidate_scoring_accuracy": 0.8575,
+  "generation_accuracy": 0.8575,
+  "baseline": {
+    "majority_class_accuracy": 0.5,
+    "random_expected_accuracy": 0.5,
+    "random_95ci": [
+      0.451,
+      0.549
+    ],
+    "min_accuracy_to_beat_random": 0.549,
+    "beats_random": true,
+    "note": "candidate_scoring_accuracy 需高于 min_accuracy_to_beat_random 才算显著优于随机；不要直接与 0.5 比较。"
+  },
+  "format_compliance_rate": 1.0,
+  "macro_f1": 0.8571777573149417,
+  "confusion_matrix": {
+    "负面": {
+      "负面": 162,
+      "正面": 38
+    },
+    "正面": {
+      "负面": 19,
+      "正面": 181
+    }
+  },
+  "generation_predictions": {
+    "负面": 181,
+    "正面": 219
+  },
+  "per_class": {
+    "负面": {
+      "precision": 0.8950276243093923,
+      "recall": 0.81,
+      "f1": 0.8503937007874015
+    },
+    "正面": {
+      "precision": 0.8264840182648402,
+      "recall": 0.905,
+      "f1": 0.863961813842482
+    }
+  }
+}
+EVALUATION_COMPLETE output=/root/autodl-tmp/MiniMind-medical/experiments/lora_sentiment_20260914/runs/epochs9/eval_formal.json

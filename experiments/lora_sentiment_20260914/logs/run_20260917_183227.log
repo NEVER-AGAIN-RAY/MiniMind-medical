@@ -1,0 +1,448 @@
+================================================================================
+ MiniMind 情感分类 LoRA 云端全流程
+ 工作目录: /root/autodl-tmp/MiniMind-medical
+ Python  : /root/autodl-tmp/MiniMind-medical/.venv/bin/python (Python 3.12.3)
+ 时间    : 2026-09-17 18:32:27
+ 参数    : （无）
+ 日志    : /root/autodl-tmp/MiniMind-medical/experiments/lora_sentiment_20260914/logs/run_20260917_183227.log
+================================================================================
+📦 依赖快照与 pip_freeze_20260917_182104.txt 一致，不重复落盘
+
+--------------------------------------------------------------------------------
+▶ Step 1: 预检
+--------------------------------------------------------------------------------
+  torch 2.8.0+cu128 | transformers 4.57.6
+  ✅ GPU: NVIDIA GeForce RTX 3080 Ti (12.5 GB)
+  ✅ 基座权重: /root/autodl-tmp/MiniMind-medical/out/full_sft_768.pth (138 MB)
+  ✅ 切分数据校验通过（10 个文件 md5 一致）
+  · formal_test: n=400，判定优于随机需准确率 > 0.549
+  · formal_val: n=400，判定优于随机需准确率 > 0.549
+  · smoke_val: n=20，判定优于随机需准确率 > 0.7191
+✅ Step 1 预检通过
+
+--------------------------------------------------------------------------------
+▶ Step 2: 冒烟（40 条训练 + 20 条评测，仅验证流程）
+--------------------------------------------------------------------------------
+⏭  已有冒烟产物，跳过（--force 可重跑）
+
+--------------------------------------------------------------------------------
+▶ Step 3: 正式训练（3672 条 × 3 epoch，语料上限）
+--------------------------------------------------------------------------------
+MODE=formal train=3672 val=400 initial_val_loss=2.195116
+epoch=1/3 batch=5/690 loss=1.373855 lr=0.00019999
+epoch=1/3 batch=10/690 loss=0.667903 lr=0.00019991
+epoch=1/3 batch=15/690 loss=0.215411 lr=0.00019982
+epoch=1/3 batch=20/690 loss=0.344142 lr=0.00019963
+epoch=1/3 batch=25/690 loss=0.250297 lr=0.00019946
+epoch=1/3 batch=30/690 loss=0.242194 lr=0.00019916
+epoch=1/3 batch=35/690 loss=0.181566 lr=0.00019892
+epoch=1/3 batch=40/690 loss=0.207726 lr=0.00019851
+validation step=20 val_loss=0.193871 improved=True
+epoch=1/3 batch=45/690 loss=0.160065 lr=0.00019820
+epoch=1/3 batch=50/690 loss=0.243460 lr=0.00019768
+epoch=1/3 batch=55/690 loss=0.221752 lr=0.00019729
+epoch=1/3 batch=60/690 loss=0.282015 lr=0.00019666
+epoch=1/3 batch=65/690 loss=0.196191 lr=0.00019621
+epoch=1/3 batch=70/690 loss=0.220217 lr=0.00019547
+epoch=1/3 batch=75/690 loss=0.196992 lr=0.00019494
+epoch=1/3 batch=80/690 loss=0.165787 lr=0.00019410
+validation step=40 val_loss=0.203640 improved=False
+epoch=1/3 batch=85/690 loss=0.207962 lr=0.00019350
+epoch=1/3 batch=90/690 loss=0.199796 lr=0.00019255
+epoch=1/3 batch=95/690 loss=0.164721 lr=0.00019188
+epoch=1/3 batch=100/690 loss=0.187156 lr=0.00019083
+epoch=1/3 batch=105/690 loss=0.123908 lr=0.00019010
+epoch=1/3 batch=110/690 loss=0.139870 lr=0.00018895
+epoch=1/3 batch=115/690 loss=0.241833 lr=0.00018815
+epoch=1/3 batch=120/690 loss=0.158049 lr=0.00018690
+validation step=60 val_loss=0.149251 improved=True
+epoch=1/3 batch=125/690 loss=0.134129 lr=0.00018603
+epoch=1/3 batch=130/690 loss=0.196627 lr=0.00018469
+epoch=1/3 batch=135/690 loss=0.172528 lr=0.00018376
+epoch=1/3 batch=140/690 loss=0.094105 lr=0.00018233
+epoch=1/3 batch=145/690 loss=0.165229 lr=0.00018134
+epoch=1/3 batch=150/690 loss=0.096735 lr=0.00017981
+epoch=1/3 batch=155/690 loss=0.026433 lr=0.00017877
+epoch=1/3 batch=160/690 loss=0.100687 lr=0.00017716
+validation step=80 val_loss=0.112529 improved=True
+epoch=1/3 batch=165/690 loss=0.118772 lr=0.00017605
+epoch=1/3 batch=170/690 loss=0.116774 lr=0.00017436
+epoch=1/3 batch=175/690 loss=0.153489 lr=0.00017320
+epoch=1/3 batch=180/690 loss=0.057441 lr=0.00017143
+epoch=1/3 batch=185/690 loss=0.168765 lr=0.00017022
+epoch=1/3 batch=190/690 loss=0.121936 lr=0.00016837
+epoch=1/3 batch=195/690 loss=0.156104 lr=0.00016712
+epoch=1/3 batch=200/690 loss=0.165799 lr=0.00016519
+validation step=100 val_loss=0.122311 improved=False
+epoch=1/3 batch=205/690 loss=0.108317 lr=0.00016389
+epoch=1/3 batch=210/690 loss=0.098041 lr=0.00016190
+epoch=1/3 batch=215/690 loss=0.089742 lr=0.00016055
+epoch=1/3 batch=220/690 loss=0.141347 lr=0.00015850
+epoch=1/3 batch=225/690 loss=0.082748 lr=0.00015711
+epoch=1/3 batch=230/690 loss=0.073981 lr=0.00015500
+epoch=2/3 batch=235/690 loss=0.105420 lr=0.00015357
+epoch=2/3 batch=240/690 loss=0.067183 lr=0.00015141
+validation step=120 val_loss=0.113830 improved=False
+epoch=2/3 batch=245/690 loss=0.134432 lr=0.00014994
+epoch=2/3 batch=250/690 loss=0.131555 lr=0.00014773
+epoch=2/3 batch=255/690 loss=0.088049 lr=0.00014623
+epoch=2/3 batch=260/690 loss=0.095659 lr=0.00014397
+epoch=2/3 batch=265/690 loss=0.056942 lr=0.00014244
+epoch=2/3 batch=270/690 loss=0.058115 lr=0.00014014
+epoch=2/3 batch=275/690 loss=0.105444 lr=0.00013859
+epoch=2/3 batch=280/690 loss=0.130638 lr=0.00013625
+validation step=140 val_loss=0.098479 improved=True
+epoch=2/3 batch=285/690 loss=0.189388 lr=0.00013468
+epoch=2/3 batch=290/690 loss=0.092581 lr=0.00013230
+epoch=2/3 batch=295/690 loss=0.073979 lr=0.00013071
+epoch=2/3 batch=300/690 loss=0.070821 lr=0.00012831
+epoch=2/3 batch=305/690 loss=0.047041 lr=0.00012670
+epoch=2/3 batch=310/690 loss=0.130493 lr=0.00012428
+epoch=2/3 batch=315/690 loss=0.092575 lr=0.00012266
+epoch=2/3 batch=320/690 loss=0.071334 lr=0.00012022
+validation step=160 val_loss=0.112309 improved=False
+epoch=2/3 batch=325/690 loss=0.077305 lr=0.00011859
+epoch=2/3 batch=330/690 loss=0.102219 lr=0.00011614
+epoch=2/3 batch=335/690 loss=0.035297 lr=0.00011451
+epoch=2/3 batch=340/690 loss=0.033091 lr=0.00011205
+epoch=2/3 batch=345/690 loss=0.072009 lr=0.00011041
+epoch=2/3 batch=350/690 loss=0.155244 lr=0.00010795
+epoch=2/3 batch=355/690 loss=0.095741 lr=0.00010631
+epoch=2/3 batch=360/690 loss=0.030565 lr=0.00010386
+validation step=180 val_loss=0.096279 improved=True
+epoch=2/3 batch=365/690 loss=0.068357 lr=0.00010222
+epoch=2/3 batch=370/690 loss=0.131382 lr=0.00009978
+epoch=2/3 batch=375/690 loss=0.034413 lr=0.00009815
+epoch=2/3 batch=380/690 loss=0.127252 lr=0.00009572
+epoch=2/3 batch=385/690 loss=0.069563 lr=0.00009410
+epoch=2/3 batch=390/690 loss=0.115659 lr=0.00009169
+epoch=2/3 batch=395/690 loss=0.100683 lr=0.00009009
+epoch=2/3 batch=400/690 loss=0.109147 lr=0.00008770
+validation step=200 val_loss=0.092406 improved=True
+epoch=2/3 batch=405/690 loss=0.159260 lr=0.00008611
+epoch=2/3 batch=410/690 loss=0.224633 lr=0.00008375
+epoch=2/3 batch=415/690 loss=0.041343 lr=0.00008219
+epoch=2/3 batch=420/690 loss=0.103377 lr=0.00007986
+epoch=2/3 batch=425/690 loss=0.206271 lr=0.00007832
+epoch=2/3 batch=430/690 loss=0.072433 lr=0.00007603
+epoch=2/3 batch=435/690 loss=0.038647 lr=0.00007452
+epoch=2/3 batch=440/690 loss=0.132366 lr=0.00007227
+validation step=220 val_loss=0.091338 improved=True
+epoch=2/3 batch=445/690 loss=0.041953 lr=0.00007079
+epoch=2/3 batch=450/690 loss=0.120784 lr=0.00006859
+epoch=2/3 batch=455/690 loss=0.080504 lr=0.00006715
+epoch=2/3 batch=460/690 loss=0.052648 lr=0.00006500
+epoch=3/3 batch=465/690 loss=0.024439 lr=0.00006359
+epoch=3/3 batch=470/690 loss=0.122839 lr=0.00006150
+epoch=3/3 batch=475/690 loss=0.120666 lr=0.00006013
+epoch=3/3 batch=480/690 loss=0.128811 lr=0.00005810
+validation step=240 val_loss=0.091492 improved=False
+epoch=3/3 batch=485/690 loss=0.049757 lr=0.00005677
+epoch=3/3 batch=490/690 loss=0.093976 lr=0.00005481
+epoch=3/3 batch=495/690 loss=0.029391 lr=0.00005352
+epoch=3/3 batch=500/690 loss=0.123144 lr=0.00005163
+epoch=3/3 batch=505/690 loss=0.078528 lr=0.00005039
+epoch=3/3 batch=510/690 loss=0.144008 lr=0.00004857
+epoch=3/3 batch=515/690 loss=0.179847 lr=0.00004738
+epoch=3/3 batch=520/690 loss=0.052390 lr=0.00004564
+validation step=260 val_loss=0.090842 improved=True
+epoch=3/3 batch=525/690 loss=0.072263 lr=0.00004451
+epoch=3/3 batch=530/690 loss=0.085946 lr=0.00004284
+epoch=3/3 batch=535/690 loss=0.059828 lr=0.00004176
+epoch=3/3 batch=540/690 loss=0.076502 lr=0.00004019
+epoch=3/3 batch=545/690 loss=0.106005 lr=0.00003916
+epoch=3/3 batch=550/690 loss=0.077378 lr=0.00003767
+epoch=3/3 batch=555/690 loss=0.100814 lr=0.00003671
+epoch=3/3 batch=560/690 loss=0.020625 lr=0.00003531
+validation step=280 val_loss=0.089464 improved=True
+epoch=3/3 batch=565/690 loss=0.047547 lr=0.00003441
+epoch=3/3 batch=570/690 loss=0.060406 lr=0.00003310
+epoch=3/3 batch=575/690 loss=0.128128 lr=0.00003226
+epoch=3/3 batch=580/690 loss=0.035095 lr=0.00003105
+epoch=3/3 batch=585/690 loss=0.050312 lr=0.00003028
+epoch=3/3 batch=590/690 loss=0.041983 lr=0.00002917
+epoch=3/3 batch=595/690 loss=0.147165 lr=0.00002846
+epoch=3/3 batch=600/690 loss=0.198344 lr=0.00002745
+validation step=300 val_loss=0.095849 improved=False
+epoch=3/3 batch=605/690 loss=0.105519 lr=0.00002681
+epoch=3/3 batch=610/690 loss=0.063782 lr=0.00002590
+epoch=3/3 batch=615/690 loss=0.100086 lr=0.00002533
+epoch=3/3 batch=620/690 loss=0.089328 lr=0.00002453
+epoch=3/3 batch=625/690 loss=0.085636 lr=0.00002403
+epoch=3/3 batch=630/690 loss=0.085761 lr=0.00002334
+epoch=3/3 batch=635/690 loss=0.068477 lr=0.00002291
+epoch=3/3 batch=640/690 loss=0.038477 lr=0.00002232
+validation step=320 val_loss=0.092075 improved=False
+epoch=3/3 batch=645/690 loss=0.109752 lr=0.00002197
+epoch=3/3 batch=650/690 loss=0.080587 lr=0.00002149
+epoch=3/3 batch=655/690 loss=0.097525 lr=0.00002121
+epoch=3/3 batch=660/690 loss=0.062238 lr=0.00002084
+epoch=3/3 batch=665/690 loss=0.121246 lr=0.00002063
+epoch=3/3 batch=670/690 loss=0.093797 lr=0.00002037
+epoch=3/3 batch=675/690 loss=0.086440 lr=0.00002024
+epoch=3/3 batch=680/690 loss=0.168859 lr=0.00002009
+validation step=340 val_loss=0.091010 improved=False
+epoch=3/3 batch=685/690 loss=0.045623 lr=0.00002003
+epoch=3/3 batch=690/690 loss=0.043391 lr=0.00002000
+validation step=345 val_loss=0.090441 improved=False
+TRAINING_COMPLETE best_step=280 best_val_loss=0.089464 run_dir=/root/autodl-tmp/MiniMind-medical/experiments/lora_sentiment_20260914/runs/formal
+✅ Step 3 完成
+
+--------------------------------------------------------------------------------
+▶ Step 4: 正式评测（test 400 题）
+--------------------------------------------------------------------------------
+evaluated=50/400
+evaluated=100/400
+evaluated=150/400
+evaluated=200/400
+evaluated=250/400
+evaluated=300/400
+evaluated=350/400
+evaluated=400/400
+{
+  "checkpoint": "/root/autodl-tmp/MiniMind-medical/experiments/lora_sentiment_20260914/runs/formal/best_lora.pth",
+  "data": "/root/autodl-tmp/MiniMind-medical/experiments/lora_sentiment_20260914/data/formal/test.jsonl",
+  "samples": 400,
+  "candidate_scoring_accuracy": 0.8525,
+  "generation_accuracy": 0.8525,
+  "baseline": {
+    "majority_class_accuracy": 0.5,
+    "random_expected_accuracy": 0.5,
+    "random_95ci": [
+      0.451,
+      0.549
+    ],
+    "min_accuracy_to_beat_random": 0.549,
+    "beats_random": true,
+    "note": "candidate_scoring_accuracy 需高于 min_accuracy_to_beat_random 才算显著优于随机；不要直接与 0.5 比较。"
+  },
+  "format_compliance_rate": 1.0,
+  "macro_f1": 0.8523883687038323,
+  "confusion_matrix": {
+    "负面": {
+      "负面": 176,
+      "正面": 24
+    },
+    "正面": {
+      "负面": 35,
+      "正面": 165
+    }
+  },
+  "generation_predictions": {
+    "负面": 211,
+    "正面": 189
+  },
+  "per_class": {
+    "负面": {
+      "precision": 0.8341232227488151,
+      "recall": 0.88,
+      "f1": 0.8564476885644767
+    },
+    "正面": {
+      "precision": 0.873015873015873,
+      "recall": 0.825,
+      "f1": 0.8483290488431877
+    }
+  }
+}
+EVALUATION_COMPLETE output=/root/autodl-tmp/MiniMind-medical/experiments/lora_sentiment_20260914/runs/formal/eval_formal.json
+✅ Step 4 完成
+
+--------------------------------------------------------------------------------
+▶ Step 5: 规模曲线（250 / 500 / 1000 / 2000 / 2800；3672 点即 Step 3/4 的正式训练）
+--------------------------------------------------------------------------------
+⏭  scale_250 已有产物，跳过
+⏭  scale_500 已有产物，跳过
+⏭  scale_1000 已有产物，跳过
+⏭  scale_2000 已有产物，跳过
+
+· 规模点 2800 条
+MODE=formal train=2800 val=400 initial_val_loss=2.195116
+epoch=1/3 batch=5/525 loss=1.416542 lr=0.00019997
+epoch=1/3 batch=10/525 loss=0.897981 lr=0.00019984
+epoch=1/3 batch=15/525 loss=0.245872 lr=0.00019969
+epoch=1/3 batch=20/525 loss=0.443201 lr=0.00019936
+epoch=1/3 batch=25/525 loss=0.292347 lr=0.00019908
+epoch=1/3 batch=30/525 loss=0.269201 lr=0.00019857
+epoch=1/3 batch=35/525 loss=0.189263 lr=0.00019816
+epoch=1/3 batch=40/525 loss=0.206949 lr=0.00019746
+validation step=20 val_loss=0.202294 improved=True
+epoch=1/3 batch=45/525 loss=0.198343 lr=0.00019693
+epoch=1/3 batch=50/525 loss=0.242769 lr=0.00019605
+epoch=1/3 batch=55/525 loss=0.206337 lr=0.00019539
+epoch=1/3 batch=60/525 loss=0.210237 lr=0.00019433
+epoch=1/3 batch=65/525 loss=0.253422 lr=0.00019355
+epoch=1/3 batch=70/525 loss=0.194242 lr=0.00019231
+epoch=1/3 batch=75/525 loss=0.185998 lr=0.00019142
+epoch=1/3 batch=80/525 loss=0.212354 lr=0.00019000
+validation step=40 val_loss=0.182724 improved=True
+epoch=1/3 batch=85/525 loss=0.181325 lr=0.00018899
+epoch=1/3 batch=90/525 loss=0.164092 lr=0.00018740
+epoch=1/3 batch=95/525 loss=0.169294 lr=0.00018629
+epoch=1/3 batch=100/525 loss=0.191328 lr=0.00018453
+epoch=1/3 batch=105/525 loss=0.176295 lr=0.00018331
+epoch=1/3 batch=110/525 loss=0.124580 lr=0.00018140
+epoch=1/3 batch=115/525 loss=0.172081 lr=0.00018008
+epoch=1/3 batch=120/525 loss=0.192330 lr=0.00017802
+validation step=60 val_loss=0.157764 improved=True
+epoch=1/3 batch=125/525 loss=0.209391 lr=0.00017660
+epoch=1/3 batch=130/525 loss=0.133950 lr=0.00017439
+epoch=1/3 batch=135/525 loss=0.124373 lr=0.00017288
+epoch=1/3 batch=140/525 loss=0.166453 lr=0.00017054
+epoch=1/3 batch=145/525 loss=0.117133 lr=0.00016894
+epoch=1/3 batch=150/525 loss=0.163556 lr=0.00016647
+epoch=1/3 batch=155/525 loss=0.195060 lr=0.00016479
+epoch=1/3 batch=160/525 loss=0.199691 lr=0.00016221
+validation step=80 val_loss=0.117207 improved=True
+epoch=1/3 batch=165/525 loss=0.098786 lr=0.00016045
+epoch=1/3 batch=170/525 loss=0.231436 lr=0.00015775
+epoch=1/3 batch=175/525 loss=0.045708 lr=0.00015500
+epoch=2/3 batch=180/525 loss=0.110982 lr=0.00015313
+epoch=2/3 batch=185/525 loss=0.131119 lr=0.00015029
+epoch=2/3 batch=190/525 loss=0.166602 lr=0.00014836
+epoch=2/3 batch=195/525 loss=0.076301 lr=0.00014543
+validation step=100 val_loss=0.110734 improved=True
+epoch=2/3 batch=200/525 loss=0.076645 lr=0.00014345
+epoch=2/3 batch=205/525 loss=0.134626 lr=0.00014045
+epoch=2/3 batch=210/525 loss=0.080889 lr=0.00013842
+epoch=2/3 batch=215/525 loss=0.044689 lr=0.00013536
+epoch=2/3 batch=220/525 loss=0.109465 lr=0.00013329
+epoch=2/3 batch=225/525 loss=0.133320 lr=0.00013018
+epoch=2/3 batch=230/525 loss=0.089444 lr=0.00012808
+epoch=2/3 batch=235/525 loss=0.064287 lr=0.00012492
+validation step=120 val_loss=0.116329 improved=False
+epoch=2/3 batch=240/525 loss=0.048589 lr=0.00012281
+epoch=2/3 batch=245/525 loss=0.101270 lr=0.00011962
+epoch=2/3 batch=250/525 loss=0.143989 lr=0.00011749
+epoch=2/3 batch=255/525 loss=0.094820 lr=0.00011428
+epoch=2/3 batch=260/525 loss=0.061028 lr=0.00011214
+epoch=2/3 batch=265/525 loss=0.171521 lr=0.00010893
+epoch=2/3 batch=270/525 loss=0.057260 lr=0.00010679
+epoch=2/3 batch=275/525 loss=0.084666 lr=0.00010358
+validation step=140 val_loss=0.098988 improved=True
+epoch=2/3 batch=280/525 loss=0.079765 lr=0.00010144
+epoch=2/3 batch=285/525 loss=0.073440 lr=0.00009825
+epoch=2/3 batch=290/525 loss=0.108825 lr=0.00009613
+epoch=2/3 batch=295/525 loss=0.083901 lr=0.00009297
+epoch=2/3 batch=300/525 loss=0.074955 lr=0.00009087
+epoch=2/3 batch=305/525 loss=0.127455 lr=0.00008774
+epoch=2/3 batch=310/525 loss=0.110325 lr=0.00008567
+epoch=2/3 batch=315/525 loss=0.110512 lr=0.00008260
+validation step=160 val_loss=0.106244 improved=False
+epoch=2/3 batch=320/525 loss=0.079944 lr=0.00008056
+epoch=2/3 batch=325/525 loss=0.091323 lr=0.00007755
+epoch=2/3 batch=330/525 loss=0.106435 lr=0.00007556
+epoch=2/3 batch=335/525 loss=0.192851 lr=0.00007261
+epoch=2/3 batch=340/525 loss=0.152873 lr=0.00007067
+epoch=2/3 batch=345/525 loss=0.058299 lr=0.00006781
+epoch=2/3 batch=350/525 loss=0.162262 lr=0.00006500
+epoch=3/3 batch=355/525 loss=0.079796 lr=0.00006316
+validation step=180 val_loss=0.097468 improved=True
+epoch=3/3 batch=360/525 loss=0.072642 lr=0.00006044
+epoch=3/3 batch=365/525 loss=0.077280 lr=0.00005867
+epoch=3/3 batch=370/525 loss=0.069629 lr=0.00005607
+epoch=3/3 batch=375/525 loss=0.073561 lr=0.00005437
+epoch=3/3 batch=380/525 loss=0.094836 lr=0.00005188
+epoch=3/3 batch=385/525 loss=0.086496 lr=0.00005026
+epoch=3/3 batch=390/525 loss=0.166398 lr=0.00004789
+epoch=3/3 batch=395/525 loss=0.095095 lr=0.00004636
+validation step=200 val_loss=0.096302 improved=True
+epoch=3/3 batch=400/525 loss=0.059975 lr=0.00004413
+epoch=3/3 batch=405/525 loss=0.029482 lr=0.00004269
+epoch=3/3 batch=410/525 loss=0.103440 lr=0.00004060
+epoch=3/3 batch=415/525 loss=0.051911 lr=0.00003926
+epoch=3/3 batch=420/525 loss=0.077139 lr=0.00003731
+epoch=3/3 batch=425/525 loss=0.083280 lr=0.00003607
+epoch=3/3 batch=430/525 loss=0.084862 lr=0.00003429
+epoch=3/3 batch=435/525 loss=0.049206 lr=0.00003315
+validation step=220 val_loss=0.103292 improved=False
+epoch=3/3 batch=440/525 loss=0.058531 lr=0.00003153
+epoch=3/3 batch=445/525 loss=0.085703 lr=0.00003050
+epoch=3/3 batch=450/525 loss=0.069036 lr=0.00002905
+epoch=3/3 batch=455/525 loss=0.139442 lr=0.00002813
+epoch=3/3 batch=460/525 loss=0.073305 lr=0.00002685
+epoch=3/3 batch=465/525 loss=0.070762 lr=0.00002605
+epoch=3/3 batch=470/525 loss=0.070196 lr=0.00002495
+epoch=3/3 batch=475/525 loss=0.034703 lr=0.00002427
+validation step=240 val_loss=0.101991 improved=False
+epoch=3/3 batch=480/525 loss=0.024924 lr=0.00002335
+epoch=3/3 batch=485/525 loss=0.103672 lr=0.00002280
+epoch=3/3 batch=490/525 loss=0.142769 lr=0.00002206
+epoch=3/3 batch=495/525 loss=0.110266 lr=0.00002163
+epoch=3/3 batch=500/525 loss=0.053680 lr=0.00002107
+epoch=3/3 batch=505/525 loss=0.142124 lr=0.00002077
+epoch=3/3 batch=510/525 loss=0.131282 lr=0.00002041
+epoch=3/3 batch=515/525 loss=0.068144 lr=0.00002023
+validation step=260 val_loss=0.096813 improved=False
+epoch=3/3 batch=520/525 loss=0.108618 lr=0.00002006
+epoch=3/3 batch=525/525 loss=0.119399 lr=0.00002000
+validation step=264 val_loss=0.096436 improved=False
+TRAINING_COMPLETE best_step=200 best_val_loss=0.096302 run_dir=/root/autodl-tmp/MiniMind-medical/experiments/lora_sentiment_20260914/runs/scale_2800
+evaluated=50/400
+evaluated=100/400
+evaluated=150/400
+evaluated=200/400
+evaluated=250/400
+evaluated=300/400
+evaluated=350/400
+evaluated=400/400
+{
+  "checkpoint": "/root/autodl-tmp/MiniMind-medical/experiments/lora_sentiment_20260914/runs/scale_2800/best_lora.pth",
+  "data": "/root/autodl-tmp/MiniMind-medical/experiments/lora_sentiment_20260914/data/formal/test.jsonl",
+  "samples": 400,
+  "candidate_scoring_accuracy": 0.835,
+  "generation_accuracy": 0.835,
+  "baseline": {
+    "majority_class_accuracy": 0.5,
+    "random_expected_accuracy": 0.5,
+    "random_95ci": [
+      0.451,
+      0.549
+    ],
+    "min_accuracy_to_beat_random": 0.549,
+    "beats_random": true,
+    "note": "candidate_scoring_accuracy 需高于 min_accuracy_to_beat_random 才算显著优于随机；不要直接与 0.5 比较。"
+  },
+  "format_compliance_rate": 1.0,
+  "macro_f1": 0.8349958748968724,
+  "confusion_matrix": {
+    "负面": {
+      "负面": 166,
+      "正面": 34
+    },
+    "正面": {
+      "负面": 32,
+      "正面": 168
+    }
+  },
+  "generation_predictions": {
+    "负面": 198,
+    "正面": 202
+  },
+  "per_class": {
+    "负面": {
+      "precision": 0.8383838383838383,
+      "recall": 0.83,
+      "f1": 0.8341708542713568
+    },
+    "正面": {
+      "precision": 0.8316831683168316,
+      "recall": 0.84,
+      "f1": 0.835820895522388
+    }
+  }
+}
+EVALUATION_COMPLETE output=/root/autodl-tmp/MiniMind-medical/experiments/lora_sentiment_20260914/runs/scale_2800/eval_formal.json
+✅ Step 5 完成
+
+--------------------------------------------------------------------------------
+▶ Step 6: 汇总报告
+--------------------------------------------------------------------------------
+REPORT_WRITTEN /root/autodl-tmp/MiniMind-medical/experiments/lora_sentiment_20260914/results.md
+✅ Step 6 完成
+
+================================================================================
+ 全流程结束  2026-09-17 18:36:02
+ 日志: /root/autodl-tmp/MiniMind-medical/experiments/lora_sentiment_20260914/logs/run_20260917_183227.log
+ 报告: /root/autodl-tmp/MiniMind-medical/experiments/lora_sentiment_20260914/results.md
+================================================================================
