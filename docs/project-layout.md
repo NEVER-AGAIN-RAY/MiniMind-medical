@@ -29,11 +29,15 @@ Some apparent duplicates are intentional:
 
 - `minimind-3/images/` belongs to the standalone Hugging Face model package and
   supports the README files shipped with that package.
-- `experiments/lora_intro_20260909/data/lora_medical.jsonl` is a frozen input to
-  a historical experiment, while `dataset/lora_medical.jsonl` is the canonical
-  project dataset.
-- Timestamped `pip_freeze` files and run logs are retained as audit evidence for
-  completed runs.
+- Run logs (`run_<timestamp>.log`) are retained as audit evidence for completed
+  runs. Each log's header cites a per-run `pip_freeze_<timestamp>.txt`, but all
+  eight of those snapshots were byte-identical, so they were collapsed into a
+  single `pip_freeze_all_runs_20260910.txt` that describes the environment of
+  every run in that directory.
+- `experiments/lora_intro_20260909/data/` no longer stores its two input files.
+  Both were byte-identical to copies already in the repository, so they were
+  replaced by `data/MANIFEST.json`, which records each file's `sha256` and the
+  exact command to restore it before re-running `experiment.py`.
 
 ## Local and generated artifacts
 

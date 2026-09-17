@@ -1,0 +1,25 @@
+{
+  "description": "本实验输入数据的冻结依赖记录。两个原始文件都与仓库内已有副本逐字节相同，为避免重复入库已移除，改由本文件记录 sha256 与恢复方式。",
+  "recorded_at": "2026-09-16",
+  "files": [
+    {
+      "name": "lora_medical.jsonl",
+      "bytes": 34002385,
+      "sha256": "abf66d2bf14bf5704f6c9f1a166061f55d95e4dfd03c29a3c33d085ccaca593f",
+      "identical_to": "dataset/lora_medical.jsonl",
+      "used_by": null,
+      "note": "experiment.py 并未读取此文件（脚本只读取 data/ChnSentiCorp_htl_all.csv）。它是当时随实验一起复制进来的冻结输入，内容与 dataset/ 下的规范数据集完全一致。",
+      "restore": "cp dataset/lora_medical.jsonl experiments/lora_intro_20260909/data/lora_medical.jsonl"
+    },
+    {
+      "name": "ChnSentiCorp_htl_all.csv",
+      "bytes": 2904858,
+      "sha256": "1d414b9c65caf3a836abdb4efded621968502ad3338e1a9d885ae131c86083f0",
+      "identical_to": "experiments/lora_sentiment_20260914/data/raw/ChnSentiCorp_htl_all.csv",
+      "used_by": "experiment.py:123",
+      "note": "情感实验的 MANIFEST 以 frozen_from 字段指向本路径，且 sha256 一致，故此处副本冗余。重跑 experiment.py 前需先按下方命令恢复。",
+      "restore": "cp experiments/lora_sentiment_20260914/data/raw/ChnSentiCorp_htl_all.csv experiments/lora_intro_20260909/data/ChnSentiCorp_htl_all.csv"
+    }
+  ],
+  "verify": "cd experiments/lora_intro_20260909 && python -c \"import json,hashlib,pathlib;[print(hashlib.sha256(pathlib.Path('data',f['name']).read_bytes()).hexdigest()==f['sha256'], f['name']) for f in json.load(open('data/MANIFEST.json'))['files'] if pathlib.Path('data',f['name']).exists()]\""
+}
