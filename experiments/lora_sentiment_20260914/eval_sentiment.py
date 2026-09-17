@@ -3,6 +3,7 @@
 
 import argparse
 import json
+import math
 import re
 import sys
 from collections import Counter
@@ -48,7 +49,12 @@ def candidate_score(model, prompt_ids, target_ids, device) -> float:
 
 
 def parse_generated(text: str):
-    match = re.search(r"(?:^|[\s：:「『])(正面|负面)(?:$|[\s。！!，,」』])", text.strip())
+    stripped_text = text.strip()
+    # 保守口径（沿用 run_eval.py 的 extract_mcq_choice）：模型同时吐出两个标签时
+    # 属于犹豫而非作答，判为无效，不能任选其一记成答对。
+    if len(set(re.findall(r"正面|负面", stripped_text))) > 1:
+        return None
+    match = re.search(r"(?:^|[\s：:「『])(正面|负面)(?:$|[\s。！!，,」』])", stripped_text)
     if match:
         return match.group(1)
     stripped = text.strip()
@@ -128,10 +134,23 @@ def main() -> None:
         f1 = 2 * precision * recall / (precision + recall) if precision + recall else 0.0
         per_class[label] = {"precision": precision, "recall": recall, "f1": f1}
         f1_values.append(f1)
+    # 基线阈值随实际评测条数计算：--limit 会改变 n，进而改变判定门槛。
+    half_width = 1.96 * math.sqrt(0.25 / total)
+    threshold = 0.5 + half_width
+    forced_accuracy = forced_correct / total
     report = {
         "checkpoint": str(checkpoint), "data": str(data_path), "samples": total,
-        "candidate_scoring_accuracy": forced_correct / total,
+        "candidate_scoring_accuracy": forced_accuracy,
         "generation_accuracy": generated_correct / total,
+        "baseline": {
+            "majority_class_accuracy": 0.5,
+            "random_expected_accuracy": 0.5,
+            "random_95ci": [round(0.5 - half_width, 4), round(0.5 + half_width, 4)],
+            "min_accuracy_to_beat_random": round(threshold, 4),
+            "beats_random": forced_accuracy > threshold,
+            "note": "candidate_scoring_accuracy 需高于 min_accuracy_to_beat_random 才算显著优于随机；"
+                    "不要直接与 0.5 比较。",
+        },
         "format_compliance_rate": compliant / total,
         "macro_f1": sum(f1_values) / len(f1_values),
         "confusion_matrix": forced_confusion,

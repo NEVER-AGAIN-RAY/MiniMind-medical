@@ -68,23 +68,58 @@ python experiments/lora_sentiment_20260914/prepare_data.py --overwrite  # 重新
 
 ## 训练与评测
 
-本地无 GPU、无基座权重（`out/` 不存在），训练与评测**只在云端执行**；本地只做数据准备
-与无权重的纯逻辑验证。
+本地无 GPU，训练与正式评测**只在云端执行**；本地只做数据准备与无权重的纯逻辑验证。
+
+云端一条命令跑完全流程：
+
+```bash
+bash experiments/lora_sentiment_20260914/run_cloud.sh
+```
+
+[`run_cloud.sh`](run_cloud.sh) 的六个步骤：预检 → 冒烟 → 正式训练 → 正式评测 →
+规模曲线 → 汇总报告。已完成的步骤依据产物自动跳过，`--force` 强制重跑，
+`--step N` / `--from-step N` / `--skip-smoke` / `--skip-scale` 控制范围。
+全部终端输出经 `tee` 落盘到 `logs/run_<时间戳>.log`（`latest.log` 指向最近一次）；
+依赖快照只在与上一份不同时才落盘，避免堆积一堆逐字节相同的 `pip_freeze` 文件。
+
+**预检会拒绝占位权重**：若 `out/PLACEHOLDER_README.txt` 存在（说明基座是本地干跑用的
+随机初始化权重），脚本直接退出，除非显式加 `--allow-placeholder`。随机权重跑出来的
+准确率毫无意义，这道闸门防止它混进正式结果。
+
+也可以单独调用各脚本：
 
 ```bash
 python experiments/lora_sentiment_20260914/train_sentiment_lora.py --smoke   # 40/20 冒烟
 python experiments/lora_sentiment_20260914/train_sentiment_lora.py           # 正式训练
-python experiments/lora_sentiment_20260914/eval_sentiment.py --split smoke
-python experiments/lora_sentiment_20260914/eval_sentiment.py --split formal
+python experiments/lora_sentiment_20260914/train_sentiment_lora.py \
+    --train-file experiments/lora_sentiment_20260914/data/scale/train_500.jsonl  # 规模曲线某点
+python experiments/lora_sentiment_20260914/eval_sentiment.py --split formal \
+    --checkpoint experiments/lora_sentiment_20260914/runs/formal/best_lora.pth
+python experiments/lora_sentiment_20260914/make_report.py                    # 汇总 results.md
 ```
 
-超参与路径全部集中在 [`config.json`](config.json)；训练产物写入 `runs/{smoke,formal}/`
+`--train-file` 的验证集固定为 `formal/val.jsonl`，否则规模曲线各点的 val_loss 无法横向比较。
+
+超参与路径全部集中在 [`config.json`](config.json)；训练产物写入 `runs/`
 （`allow_overwrite: false`，不会覆盖已有结果）。
+
+## 测试
+
+```bash
+python -m pytest tests/test_sentiment_logic.py -q
+```
+
+37 个纯逻辑用例，不加载任何模型权重（只用分词器与几个元素的桩张量），2 核 CPU 上约 10 秒：
+标签归一化、prompt/target 构建、数据集的监督掩码与「超长抛错而非截断」、生成结果解析
+（含两个标签同时出现时判无效）、`candidate_score` 的切片位置、基线阈值换算、报告的
+阈值判定与单类别塌缩检测，以及已入库切分本身的不变量（平衡、互斥、长度预算、嵌套前缀）。
 
 ## 当前状态
 
 - ✅ 数据准备已完成并核验（切分互斥、类别平衡、md5 一致、重跑逐字节可复现）
+- ✅ 纯逻辑单元测试（37 例全通过）
+- ✅ `run_cloud.sh` 六步流程 + `make_report.py` 汇总
+- ✅ 本地占位权重干跑：训练、评测、报告三条链路端到端跑通
 - ⬜ 云端冒烟与正式训练
-- ⬜ 评测与规模曲线
-- ⬜ `run_cloud.sh` 一键流程（参照 [医学实验的版本](../lora_medical_20260909/run_cloud.sh)）
-- ⬜ 纯逻辑单元测试（参照 [`tests/test_eval_logic.py`](../../tests/test_eval_logic.py)）
+- ⬜ 正式评测与规模曲线
+- ⬜ 结果解读与结论（LoRA 在映射型任务上是否有效）

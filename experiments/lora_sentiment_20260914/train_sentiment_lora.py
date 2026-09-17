@@ -53,6 +53,10 @@ def parse_args():
     parser.add_argument("--learning-rate", type=float, default=None)
     parser.add_argument("--num-workers", type=int, default=4)
     parser.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
+    parser.add_argument(
+        "--train-file", type=Path, default=None,
+        help="覆盖训练集路径，用于 data/scale/ 下的规模曲线子集；验证集始终使用 formal/val.jsonl",
+    )
     return parser.parse_args()
 
 
@@ -80,8 +84,13 @@ def main() -> None:
     setup_seed(seed)
     random.seed(seed)
     max_length = config["sequence_config"]["max_seq_len"]
-    train_path = HERE / "data" / mode / "train.jsonl"
-    val_path = HERE / "data" / mode / "val.jsonl"
+    if args.train_file is not None:
+        train_path = args.train_file if args.train_file.is_absolute() else ROOT / args.train_file
+        # 规模曲线的各个点必须共用同一个验证集，否则 val_loss 在点之间不可比。
+        val_path = HERE / "data" / "formal" / "val.jsonl"
+    else:
+        train_path = HERE / "data" / mode / "train.jsonl"
+        val_path = HERE / "data" / mode / "val.jsonl"
     base_weight = ROOT / config["base_model"]["weight_path"]
     for required in (train_path, val_path, base_weight):
         if not required.exists():
@@ -195,6 +204,7 @@ def main() -> None:
         "best_step": best_step,
         "history": history,
         "base_weight": {"path": str(base_weight), "md5": md5_file(base_weight)},
+        "train_data_path": str(train_path),
         "train_data_md5": md5_file(train_path),
         "val_data_md5": md5_file(val_path),
         "best_lora_md5": md5_file(run_dir / "best_lora.pth"),
