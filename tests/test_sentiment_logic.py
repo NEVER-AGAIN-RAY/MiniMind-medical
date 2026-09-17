@@ -297,11 +297,13 @@ class TestFrozenSplits(unittest.TestCase):
             cls.splits[name] = [json.loads(l) for l in open(path, encoding="utf-8") if l.strip()]
 
     def test_expected_sizes(self):
-        self.assertEqual(len(self.splits["formal_train"]), 2000)
-        self.assertEqual(len(self.splits["formal_val"]), 400)
-        self.assertEqual(len(self.splits["formal_test"]), 400)
-        self.assertEqual(len(self.splits["smoke_train"]), 40)
-        self.assertEqual(len(self.splits["smoke_val"]), 20)
+        # 期望值取自 config，避免调整切分规模时还要同步改测试。
+        config = json.loads((EXPERIMENT / "config.json").read_text(encoding="utf-8"))
+        counts = config["data_config"]["target_counts"]
+        for prefix in ("formal", "smoke"):
+            for split, expected in counts[prefix].items():
+                self.assertEqual(len(self.splits[f"{prefix}_{split}"]), expected,
+                                 f"{prefix}_{split} 条数与 config 不符")
 
     def test_every_split_is_balanced(self):
         for name, rows in self.splits.items():
@@ -326,7 +328,8 @@ class TestFrozenSplits(unittest.TestCase):
 
     def test_scale_subsets_are_nested_prefixes(self):
         train_ids = [r["id"] for r in self.splits["formal_train"]]
-        for size in (250, 500, 1000, 2000):
+        config = json.loads((EXPERIMENT / "config.json").read_text(encoding="utf-8"))
+        for size in config["data_config"]["scale_curve_sizes"]:
             rows = [json.loads(l) for l in open(DATA / f"scale/train_{size}.jsonl", encoding="utf-8") if l.strip()]
             self.assertEqual([r["id"] for r in rows], train_ids[:size], f"train_{size} 不是训练集前缀")
             positives = sum(r["label_text"] == "正面" for r in rows)

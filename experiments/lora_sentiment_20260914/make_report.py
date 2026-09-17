@@ -22,7 +22,10 @@ ROOT = HERE.parents[1]
 RUNS = HERE / "runs"
 
 # 规模曲线的各个点：formal 训练用的就是 2000 条，直接复用，不重复训练。
-SCALE_POINTS = (("scale_250", 250), ("scale_500", 500), ("scale_1000", 1000), ("formal", 2000))
+SCALE_POINTS = (
+    ("scale_250", 250), ("scale_500", 500), ("scale_1000", 1000),
+    ("scale_2000", 2000), ("scale_2800", 2800), ("formal", 3672),
+)
 
 
 def load_json(path: Path):
@@ -82,7 +85,7 @@ def main() -> None:
     formal_eval = load_json(RUNS / "formal" / "eval_formal.json")
     formal_train = load_json(RUNS / "formal" / "train_summary.json")
 
-    lines += ["## 正式结果（test，400 题）", ""]
+    lines += ["## 正式结果（3672 条训练，test 400 题）", ""]
     if formal_eval is None:
         lines += ["_尚未产出。_", ""]
     else:

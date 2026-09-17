@@ -5,9 +5,9 @@
 # 执行步骤：
 #   Step 1: 预检 (Python / GPU / 基座权重 / 切分数据 md5 / 目录)
 #   Step 2: 冒烟 (40 条训练 10 步 + LoRA 重载与 20 条评测，仅验证流程)
-#   Step 3: 正式训练 (formal/train.jsonl, 2000 条 × 3 epoch)
+#   Step 3: 正式训练 (formal/train.jsonl, 3672 条 × 3 epoch，3672 为语料上限)
 #   Step 4: 正式评测 (formal/test.jsonl, 400 题)
-#   Step 5: 规模曲线 (250 / 500 / 1000 条各训练并评测；2000 条复用 Step 3/4)
+#   Step 5: 规模曲线 (250 / 500 / 1000 / 2000 / 2800 各训练并评测；3672 即 Step 3/4)
 #   Step 6: 汇总报告 (results.md)
 #
 # 用法：
@@ -181,7 +181,7 @@ fi
 
 # ----------------------------------- Step 3 -----------------------------------
 if should_run 3; then
-    banner 3 "正式训练（2000 条 × 3 epoch）"
+    banner 3 "正式训练（3672 条 × 3 epoch，语料上限）"
     FORMAL_DIR="${RUNS_DIR}/formal"
     if done_already "${FORMAL_DIR}/train_summary.json"; then
         echo "⏭  已有训练产物，跳过（--force 可重跑）"
@@ -209,8 +209,8 @@ fi
 
 # ----------------------------------- Step 5 -----------------------------------
 if should_run 5 && [ "${SKIP_SCALE}" != true ]; then
-    banner 5 "规模曲线（250 / 500 / 1000；2000 点复用 Step 3/4 的结果）"
-    for SIZE in 250 500 1000; do
+    banner 5 "规模曲线（250 / 500 / 1000 / 2000 / 2800；3672 点即 Step 3/4 的正式训练）"
+    for SIZE in 250 500 1000 2000 2800; do
         POINT_DIR="${RUNS_DIR}/scale_${SIZE}"
         if done_already "${POINT_DIR}/eval_formal.json"; then
             echo "⏭  scale_${SIZE} 已有产物，跳过"

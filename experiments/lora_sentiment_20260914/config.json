@@ -27,7 +27,7 @@
     "balanced_splits": true,
     "target_counts": {
       "formal": {
-        "train": 2000,
+        "train": 3672,
         "val": 400,
         "test": 400
       },
@@ -36,14 +36,21 @@
         "val": 20
       }
     },
-    "scale_curve_sizes": [250, 500, 1000, 2000],
+    "scale_curve_sizes": [
+      250,
+      500,
+      1000,
+      2000,
+      2800
+    ],
     "deduplication": {
       "exact_dedup": true,
       "near_duplicate_jaccard_threshold": 0.85,
       "cross_split_check": true
     },
     "min_review_chars": 4,
-    "seed": 42
+    "seed": 42,
+    "ceiling_note": "训练集 3672 条是语料上限：去重与长度过滤后负面池 2266 条，扣除 test/val/smoke 每类占用的 430 条，每类最多剩 1836 条。想再扩必须缩小评测集、放宽 max_seq_len （会让被筛除的 317 条超长样本回到池中、破坏与既有结果的可比性），或换更大的语料。"
   },
   "sequence_config": {
     "max_seq_len": 448,
@@ -54,7 +61,7 @@
   "training_hyperparameters": {
     "epochs": 3,
     "batch_size": 16,
-    "learning_rate": 2e-4,
+    "learning_rate": 0.0002,
     "weight_decay": 0.01,
     "accumulation_steps": 2,
     "grad_clip": 1.0,
@@ -65,7 +72,7 @@
   "smoke_hyperparameters": {
     "epochs": 1,
     "batch_size": 4,
-    "learning_rate": 2e-4,
+    "learning_rate": 0.0002,
     "weight_decay": 0.01,
     "accumulation_steps": 1,
     "grad_clip": 1.0,
