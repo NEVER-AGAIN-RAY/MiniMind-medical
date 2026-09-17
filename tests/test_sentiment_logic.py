@@ -37,7 +37,9 @@ from experiments.lora_sentiment_20260914.sentiment_dataset import (
     measure_total_length,
     normalize_raw_label,
 )
-from experiments.lora_sentiment_20260914.eval_sentiment import candidate_score, parse_generated
+from experiments.lora_sentiment_20260914.eval_sentiment import (
+    candidate_score, infer_rank, parse_generated,
+)
 from experiments.lora_sentiment_20260914.make_report import collapse_warning, verdict
 from experiments.lora_sentiment_20260914.analyze_saturation import mcnemar
 
@@ -253,6 +255,53 @@ class TestCandidateScore(unittest.TestCase):
         short = candidate_score(model, [1, 2], [3, 3], "cpu")
         long = candidate_score(model, [1, 2, 4, 5, 6], [3, 3], "cpu")
         self.assertAlmostEqual(short, long, places=5)
+
+
+class TestInferRank(unittest.TestCase):
+    """rank 是 checkpoint 的属性而非全局配置——rank 扫描下 config.json 的值
+    不再适用于每一个 checkpoint，必须从权重形状本身读出来。"""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.dir = Path(self.tmp.name)
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def _checkpoint(self, name: str, state: dict) -> Path:
+        path = self.dir / name
+        torch.save(state, path)
+        return path
+
+    def test_reads_rank_from_A_matrix_shape(self):
+        for rank in (4, 16, 128):
+            path = self._checkpoint(f"r{rank}.pth", {
+                "layers.0.self_attn.q_proj.lora.A.weight": torch.zeros(rank, 768),
+                "layers.0.self_attn.q_proj.lora.B.weight": torch.zeros(768, rank),
+            })
+            self.assertEqual(infer_rank(path), rank)
+
+    def test_rejects_mixed_ranks(self):
+        path = self._checkpoint("mixed.pth", {
+            "layers.0.self_attn.q_proj.lora.A.weight": torch.zeros(8, 768),
+            "layers.1.self_attn.q_proj.lora.A.weight": torch.zeros(16, 768),
+        })
+        with self.assertRaises(ValueError):
+            infer_rank(path)
+
+    def test_rejects_checkpoint_without_lora_weights(self):
+        path = self._checkpoint("empty.pth", {"layers.0.self_attn.q_proj.weight": torch.zeros(4, 4)})
+        with self.assertRaises(ValueError):
+            infer_rank(path)
+
+    def test_matches_stored_checkpoints(self):
+        """已入库的 8 次运行全部是 rank 16，推断结果必须与之一致。"""
+        checkpoints = sorted((EXPERIMENT / "runs").glob("*/best_lora.pth"))
+        if not checkpoints:
+            self.skipTest("本地没有 runs/ 产物")
+        for checkpoint in checkpoints:
+            with self.subTest(run=checkpoint.parent.name):
+                self.assertGreater(infer_rank(checkpoint), 0)
 
 
 class TestBaselineThresholds(unittest.TestCase):

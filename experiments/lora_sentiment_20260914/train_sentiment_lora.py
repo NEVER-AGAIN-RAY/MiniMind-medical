@@ -52,6 +52,10 @@ def parse_args():
     parser.add_argument("--batch-size", type=int, default=None)
     parser.add_argument("--learning-rate", type=float, default=None)
     parser.add_argument("--num-workers", type=int, default=4)
+    parser.add_argument(
+        "--rank", type=int, default=None,
+        help="覆盖 LoRA rank，用于 rank 扫描；默认取 config.json 的 lora_config.rank",
+    )
     parser.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     parser.add_argument(
         "--train-file", type=Path, default=None,
@@ -121,7 +125,8 @@ def main() -> None:
         raise RuntimeError(
             f"基础权重不兼容: missing={incompatible.missing_keys}, unexpected={incompatible.unexpected_keys}"
         )
-    apply_lora(model, rank=config["lora_config"]["rank"])
+    lora_rank = args.rank if args.rank is not None else config["lora_config"]["rank"]
+    apply_lora(model, rank=lora_rank)
     lora_params = []
     for name, parameter in model.named_parameters():
         parameter.requires_grad = "lora" in name
@@ -149,7 +154,11 @@ def main() -> None:
     global_batch = 0
     update_step = 0
     history = [{"step": 0, "val_loss": initial_val_loss}]
-    print(f"MODE={mode} train={len(train_ds)} val={len(val_ds)} initial_val_loss={initial_val_loss:.6f}", flush=True)
+    print(
+        f"MODE={mode} rank={lora_rank} trainable={sum(p.numel() for p in lora_params)} "
+        f"train={len(train_ds)} val={len(val_ds)} initial_val_loss={initial_val_loss:.6f}",
+        flush=True,
+    )
 
     optimizer.zero_grad(set_to_none=True)
     for epoch in range(hp["epochs"]):
@@ -199,6 +208,8 @@ def main() -> None:
         "train_samples": len(train_ds),
         "val_samples": len(val_ds),
         "hyperparameters": hp,
+        "lora_rank": lora_rank,
+        "trainable_params": sum(p.numel() for p in lora_params),
         "initial_val_loss": initial_val_loss,
         "best_val_loss": best_val_loss,
         "best_step": best_step,

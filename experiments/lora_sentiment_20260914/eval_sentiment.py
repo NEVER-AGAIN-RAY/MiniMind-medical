@@ -32,7 +32,24 @@ def parse_args():
     parser.add_argument("--output", type=Path, default=None)
     parser.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     parser.add_argument("--limit", type=int, default=None)
+    parser.add_argument(
+        "--rank", type=int, default=None,
+        help="覆盖 LoRA rank；默认从 checkpoint 的 A 矩阵形状推断，避免与训练时的 rank 不一致",
+    )
     return parser.parse_args()
+
+
+def infer_rank(checkpoint: Path) -> int:
+    """从 checkpoint 自身推断 rank：A 矩阵形状为 (rank, in_features)。
+
+    rank 是 checkpoint 的属性而非全局配置——rank 扫描下 config.json 的值不再适用于
+    每一个 checkpoint，从权重本身读取才不会错配（错配会在 load_state_dict 处报形状错误）。
+    """
+    state = torch.load(checkpoint, map_location="cpu", weights_only=True)
+    ranks = {tuple(v.shape)[0] for k, v in state.items() if k.endswith("lora.A.weight")}
+    if len(ranks) != 1:
+        raise ValueError(f"无法从 {checkpoint} 推断唯一的 rank: {sorted(ranks)}")
+    return ranks.pop()
 
 
 def candidate_score(model, prompt_ids, target_ids, device) -> float:
@@ -80,7 +97,8 @@ def main() -> None:
     model = MiniMindForCausalLM(model_config)
     weights = torch.load(ROOT / base["weight_path"], map_location="cpu", weights_only=True)
     model.load_state_dict(weights, strict=True)
-    apply_lora(model, rank=config["lora_config"]["rank"])
+    lora_rank = args.rank if args.rank is not None else infer_rank(checkpoint)
+    apply_lora(model, rank=lora_rank)
     load_lora(model, str(checkpoint))
     model.to(args.device).eval()
 
@@ -140,6 +158,7 @@ def main() -> None:
     forced_accuracy = forced_correct / total
     report = {
         "checkpoint": str(checkpoint), "data": str(data_path), "samples": total,
+        "lora_rank": lora_rank,
         "candidate_scoring_accuracy": forced_accuracy,
         "generation_accuracy": generated_correct / total,
         "baseline": {
