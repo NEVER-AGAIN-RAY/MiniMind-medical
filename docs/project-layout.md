@@ -47,8 +47,12 @@ Some apparent duplicates are intentional:
 | `out/` | PyTorch checkpoints and completion markers | Keep locally; never commit weights |
 | `minimind-3/` | Downloaded Transformers model package | Track metadata; ignore model weights |
 | `artifacts/archives/` | Transfer bundles and cloud-run archives | Keep locally; never commit archives |
+| `experiments/*/data/raw/*.csv` | Large source corpora (CMExam, medical dialogue) | Keep locally; restore from the sibling `MANIFEST.json` |
 
-Everything in this table is excluded from Git. The list is exhaustive: it does
+Everything in this table is excluded from Git. A raw corpus row is the one case
+where the file is recoverable rather than disposable: each `data/raw/MANIFEST.json`
+records every source file's `sha256` and download URL, and the experiment's
+`fetch_raw.py` (where present) re-downloads and verifies them. The list is exhaustive: it does
 **not** generalise into a rule that generated files are never committed. In
 particular, the split files an experiment's `prepare_data.py` writes under
 `experiments/<topic>/data/` *are* tracked — they are that experiment's frozen

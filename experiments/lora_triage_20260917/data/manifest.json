@@ -1,0 +1,244 @@
+{
+  "generator": "prepare_data.py",
+  "version": "1.0.0",
+  "created_at": "2026-09-17T13:53:42.654301",
+  "source": {
+    "dir": "experiments/lora_triage_20260917/data/raw",
+    "manifest": "experiments/lora_triage_20260917/data/raw/MANIFEST.json",
+    "files": {
+      "儿科": "儿科5-14000.csv",
+      "内科": "内科5000-33000.csv",
+      "外科": "外科5-14000.csv",
+      "妇产科": "妇产科6-28000.csv",
+      "男科": "男科5-13000.csv",
+      "肿瘤科": "肿瘤科5-10000.csv"
+    }
+  },
+  "effective_config": {
+    "max_seq_len": 320,
+    "instruction_prompt": "根据下面这段患者自述，判断应当挂哪个科室，只输出科室名称，不要输出其他内容。可选科室：内科、外科、妇产科、儿科、肿瘤科、男科。",
+    "jaccard_threshold": 0.85,
+    "near_duplicate_scope": "within_label",
+    "min_ask_chars": 8,
+    "subsample_per_label": 5000,
+    "seed": 42,
+    "balanced_splits": true,
+    "labels": [
+      "内科",
+      "外科",
+      "妇产科",
+      "儿科",
+      "肿瘤科",
+      "男科"
+    ],
+    "formal_counts": {
+      "train": 12000,
+      "val": 600,
+      "test": 600
+    },
+    "smoke_counts": {
+      "train": 60,
+      "val": 30
+    }
+  },
+  "filter_statistics": {
+    "scanned": 792099,
+    "distinct_asks": 609161,
+    "cross_label_contradictions": 1425,
+    "exact_duplicate": 83682,
+    "too_short": 104332,
+    "cross_label_contradiction": 3368,
+    "empty_ask": 7,
+    "considered_内科": 158091,
+    "considered_外科": 88007,
+    "considered_妇产科": 134929,
+    "considered_儿科": 77967,
+    "considered_肿瘤科": 62054,
+    "considered_男科": 79662,
+    "token_length_exceeded": 103,
+    "near_duplicate_dropped": 145,
+    "pool_by_label": {
+      "内科": 4951,
+      "外科": 4969,
+      "妇产科": 4977,
+      "儿科": 4963,
+      "肿瘤科": 4940,
+      "男科": 4952
+    }
+  },
+  "splits": {
+    "formal_test": {
+      "path": "experiments/lora_triage_20260917/data/formal/test.jsonl",
+      "count": 600,
+      "label_counts": {
+        "内科": 100,
+        "外科": 100,
+        "妇产科": 100,
+        "儿科": 100,
+        "肿瘤科": 100,
+        "男科": 100
+      },
+      "md5": "bc94ee3de2937b9c2547a56f426f47c2"
+    },
+    "formal_val": {
+      "path": "experiments/lora_triage_20260917/data/formal/val.jsonl",
+      "count": 600,
+      "label_counts": {
+        "内科": 100,
+        "外科": 100,
+        "妇产科": 100,
+        "儿科": 100,
+        "肿瘤科": 100,
+        "男科": 100
+      },
+      "md5": "2078cc4076ed5f7ed1412177ffc1861b"
+    },
+    "formal_train": {
+      "path": "experiments/lora_triage_20260917/data/formal/train.jsonl",
+      "count": 12000,
+      "label_counts": {
+        "内科": 2000,
+        "外科": 2000,
+        "妇产科": 2000,
+        "儿科": 2000,
+        "肿瘤科": 2000,
+        "男科": 2000
+      },
+      "md5": "b15a40d8b4cf2e5b0f6ac83f69bdf1ac"
+    },
+    "smoke_train": {
+      "path": "experiments/lora_triage_20260917/data/smoke/train.jsonl",
+      "count": 60,
+      "label_counts": {
+        "内科": 10,
+        "外科": 10,
+        "妇产科": 10,
+        "儿科": 10,
+        "肿瘤科": 10,
+        "男科": 10
+      },
+      "md5": "a9ab1baec9de36cd172c0baf4cfd2b89"
+    },
+    "smoke_val": {
+      "path": "experiments/lora_triage_20260917/data/smoke/val.jsonl",
+      "count": 30,
+      "label_counts": {
+        "内科": 5,
+        "外科": 5,
+        "妇产科": 5,
+        "儿科": 5,
+        "肿瘤科": 5,
+        "男科": 5
+      },
+      "md5": "66431faf7a3f8fe8321caaecd4820be3"
+    }
+  },
+  "scale_curve": {
+    "600": {
+      "path": "experiments/lora_triage_20260917/data/scale/train_600.jsonl",
+      "count": 600,
+      "label_counts": {
+        "内科": 100,
+        "外科": 100,
+        "妇产科": 100,
+        "儿科": 100,
+        "肿瘤科": 100,
+        "男科": 100
+      },
+      "md5": "b604c64908407770f027ebade43f0908"
+    },
+    "1200": {
+      "path": "experiments/lora_triage_20260917/data/scale/train_1200.jsonl",
+      "count": 1200,
+      "label_counts": {
+        "内科": 200,
+        "外科": 200,
+        "妇产科": 200,
+        "儿科": 200,
+        "肿瘤科": 200,
+        "男科": 200
+      },
+      "md5": "613ea4fb0785e705d315a8507bcd018c"
+    },
+    "2400": {
+      "path": "experiments/lora_triage_20260917/data/scale/train_2400.jsonl",
+      "count": 2400,
+      "label_counts": {
+        "内科": 400,
+        "外科": 400,
+        "妇产科": 400,
+        "儿科": 400,
+        "肿瘤科": 400,
+        "男科": 400
+      },
+      "md5": "31072ba0cd1d9d2b81de38845773f047"
+    },
+    "4800": {
+      "path": "experiments/lora_triage_20260917/data/scale/train_4800.jsonl",
+      "count": 4800,
+      "label_counts": {
+        "内科": 800,
+        "外科": 800,
+        "妇产科": 800,
+        "儿科": 800,
+        "肿瘤科": 800,
+        "男科": 800
+      },
+      "md5": "291f778de9063d842338a0cc5ee463fc"
+    },
+    "9600": {
+      "path": "experiments/lora_triage_20260917/data/scale/train_9600.jsonl",
+      "count": 9600,
+      "label_counts": {
+        "内科": 1600,
+        "外科": 1600,
+        "妇产科": 1600,
+        "儿科": 1600,
+        "肿瘤科": 1600,
+        "男科": 1600
+      },
+      "md5": "bdeece1068f221d07fa039796cfc7546"
+    }
+  },
+  "baselines": {
+    "num_classes": 6,
+    "majority_class_accuracy": 0.1667,
+    "majority_class_note": "各评测集六类等量，固定预测任一类的准确率严格等于 1/6。",
+    "random_expected_accuracy": 0.1667,
+    "random_note": "随机预测的期望准确率是 1/6，单次实测按 Binomial(n, 1/6)/n 波动；判断是否真的学到东西，要看下方各集合的 min_accuracy_to_beat_random。",
+    "per_split": {
+      "formal_test": {
+        "n": 600,
+        "random_expected_accuracy": 0.1667,
+        "random_95ci": [
+          0.1368,
+          0.1965
+        ],
+        "min_accuracy_to_beat_random": 0.1965
+      },
+      "formal_val": {
+        "n": 600,
+        "random_expected_accuracy": 0.1667,
+        "random_95ci": [
+          0.1368,
+          0.1965
+        ],
+        "min_accuracy_to_beat_random": 0.1965
+      },
+      "smoke_val": {
+        "n": 30,
+        "random_expected_accuracy": 0.1667,
+        "random_95ci": [
+          0.0333,
+          0.3
+        ],
+        "min_accuracy_to_beat_random": 0.3
+      }
+    }
+  },
+  "token_length_summary": {
+    "max_observed": 320,
+    "budget": 320,
+    "longest_target_tokens": 7
+  }
+}

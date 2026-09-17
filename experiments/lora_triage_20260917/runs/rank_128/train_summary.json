@@ -1,0 +1,171 @@
+{
+  "status": "complete",
+  "mode": "formal",
+  "created_at": "2026-09-17T22:51:39.090613",
+  "elapsed_seconds": 197.24,
+  "train_samples": 12000,
+  "val_samples": 600,
+  "train_label_distribution": {
+    "内科": 2000,
+    "外科": 2000,
+    "妇产科": 2000,
+    "儿科": 2000,
+    "肿瘤科": 2000,
+    "男科": 2000
+  },
+  "val_label_distribution": {
+    "内科": 100,
+    "外科": 100,
+    "妇产科": 100,
+    "儿科": 100,
+    "肿瘤科": 100,
+    "男科": 100
+  },
+  "hyperparameters": {
+    "epochs": 3,
+    "batch_size": 16,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.01,
+    "accumulation_steps": 2,
+    "grad_clip": 1.0,
+    "log_interval": 20,
+    "val_interval": 40,
+    "dtype": "bfloat16"
+  },
+  "lora_rank": 128,
+  "trainable_params": 3145728,
+  "initial_val_loss": 3.098687270591999,
+  "best_val_loss": 0.11041584911017582,
+  "best_step": 640,
+  "history": [
+    {
+      "step": 0,
+      "val_loss": 3.098687270591999
+    },
+    {
+      "step": 40,
+      "val_loss": 0.2457878665266366
+    },
+    {
+      "step": 80,
+      "val_loss": 0.18659404064046925
+    },
+    {
+      "step": 120,
+      "val_loss": 0.15441341959196947
+    },
+    {
+      "step": 160,
+      "val_loss": 0.18659097276884934
+    },
+    {
+      "step": 200,
+      "val_loss": 0.15440017831736597
+    },
+    {
+      "step": 240,
+      "val_loss": 0.14167336332386937
+    },
+    {
+      "step": 280,
+      "val_loss": 0.15482396898598508
+    },
+    {
+      "step": 320,
+      "val_loss": 0.12667898630273752
+    },
+    {
+      "step": 360,
+      "val_loss": 0.1313740136705596
+    },
+    {
+      "step": 400,
+      "val_loss": 0.12126643139740516
+    },
+    {
+      "step": 440,
+      "val_loss": 0.12705015355143054
+    },
+    {
+      "step": 480,
+      "val_loss": 0.12913625322539232
+    },
+    {
+      "step": 520,
+      "val_loss": 0.12209047407939516
+    },
+    {
+      "step": 560,
+      "val_loss": 0.11843478433017073
+    },
+    {
+      "step": 600,
+      "val_loss": 0.12443107785849736
+    },
+    {
+      "step": 640,
+      "val_loss": 0.11041584911017582
+    },
+    {
+      "step": 680,
+      "val_loss": 0.11106573532367575
+    },
+    {
+      "step": 720,
+      "val_loss": 0.12086838541359737
+    },
+    {
+      "step": 760,
+      "val_loss": 0.1163844763821569
+    },
+    {
+      "step": 800,
+      "val_loss": 0.1179601354845639
+    },
+    {
+      "step": 840,
+      "val_loss": 0.11758104546316739
+    },
+    {
+      "step": 880,
+      "val_loss": 0.11697606333370866
+    },
+    {
+      "step": 920,
+      "val_loss": 0.1171369273087074
+    },
+    {
+      "step": 960,
+      "val_loss": 0.11714753816867697
+    },
+    {
+      "step": 1000,
+      "val_loss": 0.11479033626359085
+    },
+    {
+      "step": 1040,
+      "val_loss": 0.11577324764481907
+    },
+    {
+      "step": 1080,
+      "val_loss": 0.11740474877686335
+    },
+    {
+      "step": 1120,
+      "val_loss": 0.12040530640503457
+    },
+    {
+      "step": 1125,
+      "val_loss": 0.12032468146291272
+    }
+  ],
+  "base_weight": {
+    "path": "/root/autodl-tmp/MiniMind-medical/out/full_sft_768.pth",
+    "md5": "942a011c4b3868f6e17d7ba7d5bdc08a"
+  },
+  "train_data_path": "/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/data/formal/train.jsonl",
+  "train_data_md5": "b15a40d8b4cf2e5b0f6ac83f69bdf1ac",
+  "val_data_md5": "2078cc4076ed5f7ed1412177ffc1861b",
+  "best_lora_md5": "84de8213485f3f2d80c9ed5720793ae3",
+  "final_lora_md5": "2081c32c809d9e5845200680e7941218"
+}

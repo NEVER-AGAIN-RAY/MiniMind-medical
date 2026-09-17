@@ -30,3 +30,6 @@ experiments/**/tmp/
 
 # 大体积原始题库：按同目录 MANIFEST.json 的 URL 与 sha256 重新下载
 experiments/lora_medical_mcq_pilot/data/raw/*.csv
+
+# 大体积原始语料：按同目录 MANIFEST.json 的 URL 与 sha256 重新下载
+experiments/lora_triage_20260917/data/raw/*.csv

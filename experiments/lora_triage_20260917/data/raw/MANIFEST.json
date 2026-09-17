@@ -1,0 +1,61 @@
+{
+  "description": "中文医疗问答语料的冻结依赖记录。六个 CSV 共约 370MB，均不进 Git；按下方 URL 重新下载后校验 sha256 即可复现全部切分。文件为 GB18030 编码，label 取自目录名（顶层科室），CSV 内的 department 列是更细的子科室。",
+  "source": "Chinese-medical-dialogue-data",
+  "repository": "https://github.com/Toyhom/Chinese-medical-dialogue-data",
+  "license": "MIT（见仓库 LICENSE）",
+  "recorded_at": "2026-09-17",
+  "encoding": "GB18030",
+  "columns": [
+    "department",
+    "title",
+    "ask",
+    "answer"
+  ],
+  "used_column": "ask（患者自述；title 是标题、answer 是医生回复，本实验都不使用）",
+  "files": [
+    {
+      "label": "内科",
+      "name": "内科5000-33000.csv",
+      "bytes": 104648347,
+      "sha256": "9fd5a19caa5b37aa6f7a3fa4bf5e9ce97716f0407c94a41ade951627f2f4db20",
+      "url": "https://raw.githubusercontent.com/Toyhom/Chinese-medical-dialogue-data/master/Data_%E6%95%B0%E6%8D%AE/IM_%E5%86%85%E7%A7%91/%E5%86%85%E7%A7%915000-33000.csv"
+    },
+    {
+      "label": "外科",
+      "name": "外科5-14000.csv",
+      "bytes": 53533443,
+      "sha256": "60e3b50693cae8f0d236a0b40fdd57d5ec333f57b8c07df678eb8f109507cdbe",
+      "url": "https://raw.githubusercontent.com/Toyhom/Chinese-medical-dialogue-data/master/Data_%E6%95%B0%E6%8D%AE/Surgical_%E5%A4%96%E7%A7%91/%E5%A4%96%E7%A7%915-14000.csv"
+    },
+    {
+      "label": "妇产科",
+      "name": "妇产科6-28000.csv",
+      "bytes": 80068561,
+      "sha256": "8309e60d468518e980bf32116119088905cc222c903f168e329316f507ead424",
+      "url": "https://raw.githubusercontent.com/Toyhom/Chinese-medical-dialogue-data/master/Data_%E6%95%B0%E6%8D%AE/OAGD_%E5%A6%87%E4%BA%A7%E7%A7%91/%E5%A6%87%E4%BA%A7%E7%A7%916-28000.csv"
+    },
+    {
+      "label": "儿科",
+      "name": "儿科5-14000.csv",
+      "bytes": 48307180,
+      "sha256": "9dd2e6a62e9f899f7d9f1a863c74cc3d1b78aceb078c78bbcb9a031f1cad7d51",
+      "url": "https://raw.githubusercontent.com/Toyhom/Chinese-medical-dialogue-data/master/Data_%E6%95%B0%E6%8D%AE/Pediatric_%E5%84%BF%E7%A7%91/%E5%84%BF%E7%A7%915-14000.csv"
+    },
+    {
+      "label": "肿瘤科",
+      "name": "肿瘤科5-10000.csv",
+      "bytes": 38369383,
+      "sha256": "9f80f38f6cf0817269ec7f73bc87b6905351e08899614ebebdb78c4b4e420e71",
+      "url": "https://raw.githubusercontent.com/Toyhom/Chinese-medical-dialogue-data/master/Data_%E6%95%B0%E6%8D%AE/Oncology_%E8%82%BF%E7%98%A4%E7%A7%91/%E8%82%BF%E7%98%A4%E7%A7%915-10000.csv"
+    },
+    {
+      "label": "男科",
+      "name": "男科5-13000.csv",
+      "bytes": 45306694,
+      "sha256": "f544b61ba12401d657578266d3c9c8d014928e1d4638d8c5d3b8e220ea82d5e4",
+      "url": "https://raw.githubusercontent.com/Toyhom/Chinese-medical-dialogue-data/master/Data_%E6%95%B0%E6%8D%AE/Andriatria_%E7%94%B7%E7%A7%91/%E7%94%B7%E7%A7%915-13000.csv"
+    }
+  ],
+  "verify": "cd experiments/lora_triage_20260917 && python -c \"import json,hashlib,pathlib;m=json.load(open('data/raw/MANIFEST.json'));[print(('OK  ' if hashlib.sha256(pathlib.Path('data/raw',f['name']).read_bytes()).hexdigest()==f['sha256'] else 'BAD ')+f['name']) for f in m['files']]\"",
+  "regenerate": "python experiments/lora_triage_20260917/fetch_raw.py"
+}

@@ -1,0 +1,109 @@
+{
+  "experiment_name": "lora_triage_20260917",
+  "description": "MiniMind 中文医疗科室分诊六分类 LoRA 微调实验配置",
+  "version": "1.0.0",
+  "rationale": "把 lora_sentiment_20260914 的「映射型任务有效」结论搬回医学领域检验。分诊所需信息（症状、部位、性别、年龄线索）全部在患者自述内，属映射型；对照 lora_medical_mcq_pilot 的知识型任务失败结论设计。六分类把随机基线从 0.5 压到 0.1667，信号空间比二分类大得多。",
+  "base_model": {
+    "weight_path": "out/full_sft_768.pth",
+    "hidden_size": 768,
+    "num_hidden_layers": 8,
+    "use_moe": 0,
+    "model_dir": "model"
+  },
+  "lora_config": {
+    "rank": 16,
+    "target_modules": "Linear modules with in_features == out_features",
+    "save_name": "lora_triage"
+  },
+  "data_config": {
+    "source": "Chinese-medical-dialogue-data (Toyhom)，六个科室目录各一个 GB18030 编码 CSV",
+    "raw_dir": "experiments/lora_triage_20260917/data/raw",
+    "raw_manifest": "experiments/lora_triage_20260917/data/raw/MANIFEST.json",
+    "raw_encoding": "GB18030",
+    "label_source": "目录名（顶层科室）；CSV 内的 department 列是更细的子科室，不作为标签",
+    "labels": ["内科", "外科", "妇产科", "儿科", "肿瘤科", "男科"],
+    "instruction_prompt": "根据下面这段患者自述，判断应当挂哪个科室，只输出科室名称，不要输出其他内容。可选科室：内科、外科、妇产科、儿科、肿瘤科、男科。",
+    "balanced_splits": true,
+    "subsample_per_label": 5000,
+    "target_counts": {
+      "formal": {
+        "train": 12000,
+        "val": 600,
+        "test": 600
+      },
+      "smoke": {
+        "train": 60,
+        "val": 30
+      }
+    },
+    "scale_curve_sizes": [600, 1200, 2400, 4800, 9600],
+    "deduplication": {
+      "exact_dedup": true,
+      "cross_label_contradiction_drop": true,
+      "near_duplicate_jaccard_threshold": 0.85,
+      "near_duplicate_scope": "within_label",
+      "cross_split_check": true
+    },
+    "min_ask_chars": 8,
+    "seed": 42,
+    "corpus_note": "原始语料 79 万条（最小类肿瘤科 7.5 万），远超本实验所需。这与情感实验不同——那里 3672 条就是语料上限，饱和点与语料上限纠缠在一起；这里可以把规模曲线一路推到 12000 条而不触顶，从而把「模型容量饱和」与「语料耗尽」彻底分开。"
+  },
+  "sequence_config": {
+    "max_seq_len": 320,
+    "prohibit_ask_truncation": true,
+    "measured_template_overhead_tokens": 77,
+    "note": "抽样实测：max_seq_len=320 覆盖约 99.7% 的样本，超长样本在 prepare_data.py 阶段筛除，绝不在训练时截断。长度预算按最长标签「肿瘤科」（7 tokens）核算，避免同一条自述在不同标签下一个进一个不进。"
+  },
+  "training_hyperparameters": {
+    "epochs": 3,
+    "batch_size": 16,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.01,
+    "accumulation_steps": 2,
+    "grad_clip": 1.0,
+    "log_interval": 20,
+    "val_interval": 40,
+    "dtype": "bfloat16"
+  },
+  "smoke_hyperparameters": {
+    "epochs": 1,
+    "batch_size": 4,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.01,
+    "accumulation_steps": 1,
+    "grad_clip": 1.0,
+    "log_interval": 1,
+    "val_interval": 2,
+    "dtype": "bfloat16"
+  },
+  "evaluation_config": {
+    "do_sample": false,
+    "open_thinking": false,
+    "max_new_tokens": 10,
+    "primary_metric": "candidate_scoring_accuracy_mean",
+    "baselines": {
+      "random_expected_accuracy": 0.16666666666666666,
+      "majority_class_accuracy_balanced": 0.16666666666666666,
+      "note": "六类平衡集合上固定预测任一类的准确率严格等于 1/6；随机预测的期望也是 1/6，单次实测会在抽样误差内波动。各评测集的 95% 区间与「优于随机」所需最低准确率由 prepare_data.py 写入 data/manifest.json 的 baselines.per_split。"
+    },
+    "metrics": [
+      "candidate_scoring_accuracy_mean",
+      "candidate_scoring_accuracy_sum",
+      "generation_accuracy",
+      "format_compliance_rate",
+      "per_class_precision_recall_f1",
+      "macro_f1",
+      "confusion_matrix",
+      "predicted_label_distribution",
+      "scoring_agreement"
+    ],
+    "scoring_note": "六个科室名的 token 数不等（内科/外科/儿科/男科 4，妇产科 6，肿瘤科 7）。log-prob 求和口径（sum）会系统性压低长标签，因此主指标取每 token 平均（mean）。两个口径同时记录，差异本身是诊断信号。",
+    "collapse_note": "predicted_label_distribution 用于检测模型是否塌缩到单一类别——医学 MCQ 实验中字母分布偏向 B 就是这种塌缩的信号。"
+  },
+  "run_paths": {
+    "experiments_root": "experiments/lora_triage_20260917",
+    "formal_dir": "experiments/lora_triage_20260917/runs/formal",
+    "smoke_dir": "experiments/lora_triage_20260917/runs/smoke",
+    "allow_overwrite": false
+  }
+}
