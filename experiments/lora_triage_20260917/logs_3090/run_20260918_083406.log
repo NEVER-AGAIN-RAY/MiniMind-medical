@@ -1,0 +1,161 @@
+================================================================================
+ MiniMind 医疗科室分诊 LoRA 云端全流程
+ 工作目录: /root/autodl-tmp/MiniMind-medical
+ Python  : /root/autodl-tmp/MiniMind-medical/.venv/bin/python (Python 3.12.3)
+ 时间    : 2026-09-18 08:34:06
+ 参数    : --step 2
+ 日志    : /root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/logs/run_20260918_083406.log
+================================================================================
+📦 依赖快照与 pip_freeze_20260918_083403.txt 一致，不重复落盘
+
+--------------------------------------------------------------------------------
+▶ Step 2: 冒烟（60 条训练 + 30 条评测，仅验证流程）
+--------------------------------------------------------------------------------
+MODE=smoke rank=16 trainable=393216 train=60 val=30 initial_val_loss=2.983609
+epoch=1/1 batch=1/15 loss=2.435720 lr=0.00019803
+epoch=1/1 batch=2/15 loss=2.824999 lr=0.00019222
+validation step=2 val_loss=2.520561 improved=True
+epoch=1/1 batch=3/15 loss=2.776747 lr=0.00018281
+epoch=1/1 batch=4/15 loss=2.867649 lr=0.00017022
+validation step=4 val_loss=1.910057 improved=True
+epoch=1/1 batch=5/15 loss=2.165499 lr=0.00015500
+epoch=1/1 batch=6/15 loss=2.097093 lr=0.00013781
+validation step=6 val_loss=1.482522 improved=True
+epoch=1/1 batch=7/15 loss=1.658141 lr=0.00011941
+epoch=1/1 batch=8/15 loss=0.744593 lr=0.00010059
+validation step=8 val_loss=1.245932 improved=True
+epoch=1/1 batch=9/15 loss=1.139186 lr=0.00008219
+epoch=1/1 batch=10/15 loss=1.371073 lr=0.00006500
+validation step=10 val_loss=1.132777 improved=True
+epoch=1/1 batch=11/15 loss=1.109356 lr=0.00004978
+epoch=1/1 batch=12/15 loss=1.407341 lr=0.00003719
+validation step=12 val_loss=1.077270 improved=True
+epoch=1/1 batch=13/15 loss=0.933465 lr=0.00002778
+epoch=1/1 batch=14/15 loss=1.497998 lr=0.00002197
+validation step=14 val_loss=1.042611 improved=True
+epoch=1/1 batch=15/15 loss=0.893106 lr=0.00002000
+validation step=15 val_loss=1.025082 improved=True
+TRAINING_COMPLETE best_step=15 best_val_loss=1.025082 run_dir=/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/runs/smoke
+evaluated=30/30
+{
+  "checkpoint": "/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/runs/smoke/final_lora.pth",
+  "data": "/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/data/smoke/val.jsonl",
+  "samples": 30,
+  "lora_rank": 16,
+  "num_classes": 6,
+  "candidate_scoring_accuracy_mean": 0.16666666666666666,
+  "candidate_scoring_accuracy_sum": 0.16666666666666666,
+  "generation_accuracy": 0.16666666666666666,
+  "scoring_agreement": 1.0,
+  "scoring_note": "主指标是 candidate_scoring_accuracy_mean（每 token 平均 log-prob）。六个科室名 token 数不等，求和口径会系统性压低长标签，仅作对照。",
+  "baseline": {
+    "majority_class_accuracy": 0.1667,
+    "random_expected_accuracy": 0.1667,
+    "random_95ci": [
+      0.0333,
+      0.3
+    ],
+    "min_accuracy_to_beat_random": 0.3,
+    "beats_random": false,
+    "note": "candidate_scoring_accuracy_mean 需高于 min_accuracy_to_beat_random 才算显著优于随机；不要直接与 1/6 比较。"
+  },
+  "format_compliance_rate": 0.9666666666666667,
+  "macro_f1": 0.047619047619047616,
+  "confusion_matrix": {
+    "内科": {
+      "内科": 5,
+      "外科": 0,
+      "妇产科": 0,
+      "儿科": 0,
+      "肿瘤科": 0,
+      "男科": 0
+    },
+    "外科": {
+      "内科": 5,
+      "外科": 0,
+      "妇产科": 0,
+      "儿科": 0,
+      "肿瘤科": 0,
+      "男科": 0
+    },
+    "妇产科": {
+      "内科": 5,
+      "外科": 0,
+      "妇产科": 0,
+      "儿科": 0,
+      "肿瘤科": 0,
+      "男科": 0
+    },
+    "儿科": {
+      "内科": 5,
+      "外科": 0,
+      "妇产科": 0,
+      "儿科": 0,
+      "肿瘤科": 0,
+      "男科": 0
+    },
+    "肿瘤科": {
+      "内科": 5,
+      "外科": 0,
+      "妇产科": 0,
+      "儿科": 0,
+      "肿瘤科": 0,
+      "男科": 0
+    },
+    "男科": {
+      "内科": 5,
+      "外科": 0,
+      "妇产科": 0,
+      "儿科": 0,
+      "肿瘤科": 0,
+      "男科": 0
+    }
+  },
+  "predicted_label_distribution": {
+    "内科": 30
+  },
+  "generation_predictions": {
+    "内科": 29,
+    "INVALID": 1
+  },
+  "per_class": {
+    "内科": {
+      "precision": 0.16666666666666666,
+      "recall": 1.0,
+      "f1": 0.2857142857142857
+    },
+    "外科": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "妇产科": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "儿科": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "肿瘤科": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "男科": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    }
+  }
+}
+EVALUATION_COMPLETE output=/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/runs/smoke/eval_smoke.json
+✅ Step 2 完成（冒烟准确率不可解读，只看流程是否跑通）
+
+================================================================================
+ 全流程结束  2026-09-18 08:34:24
+ 日志: /root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/logs/run_20260918_083406.log
+ 报告: /root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/saturation.md
+================================================================================

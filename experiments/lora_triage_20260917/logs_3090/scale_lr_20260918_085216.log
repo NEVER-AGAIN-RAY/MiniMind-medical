@@ -1,0 +1,931 @@
+================================================================================
+ 科室分诊 规模曲线重跑   2026-09-18 08:52:16
+ 学习率: 0.0008（tag 8e4）
+ 规模点: 600 1200 2400 4800 9600
+ 12000 点: 复用 /root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/runs/lr_8e4
+================================================================================
+
+▶ scale_600_lr8e4  (600 条, lr=0.0008)
+MODE=formal rank=16 trainable=393216 train=600 val=600 initial_val_loss=3.098687
+epoch=1/3 batch=20/114 loss=0.472974 lr=0.00074669
+epoch=2/3 batch=40/114 loss=0.267877 lr=0.00060255
+epoch=2/3 batch=60/114 loss=0.204740 lr=0.00041027
+epoch=3/3 batch=80/114 loss=0.151303 lr=0.00022680
+validation step=40 val_loss=0.262498 improved=True
+epoch=3/3 batch=100/114 loss=0.266182 lr=0.00010646
+epoch=3/3 batch=114/114 loss=0.079395 lr=0.00008000
+validation step=57 val_loss=0.248015 improved=True
+TRAINING_COMPLETE best_step=57 best_val_loss=0.248015 run_dir=/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/runs/scale_600_lr8e4
+evaluated=50/600
+evaluated=100/600
+evaluated=150/600
+evaluated=200/600
+evaluated=250/600
+evaluated=300/600
+evaluated=350/600
+evaluated=400/600
+evaluated=450/600
+evaluated=500/600
+evaluated=550/600
+evaluated=600/600
+{
+  "checkpoint": "/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/runs/scale_600_lr8e4/best_lora.pth",
+  "data": "/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/data/formal/test.jsonl",
+  "samples": 600,
+  "lora_rank": 16,
+  "num_classes": 6,
+  "candidate_scoring_accuracy_mean": 0.58,
+  "candidate_scoring_accuracy_sum": 0.6016666666666667,
+  "generation_accuracy": 0.6,
+  "scoring_agreement": 0.8783333333333333,
+  "scoring_note": "主指标是 candidate_scoring_accuracy_mean（每 token 平均 log-prob）。六个科室名 token 数不等，求和口径会系统性压低长标签，仅作对照。",
+  "baseline": {
+    "majority_class_accuracy": 0.1667,
+    "random_expected_accuracy": 0.1667,
+    "random_95ci": [
+      0.1368,
+      0.1965
+    ],
+    "min_accuracy_to_beat_random": 0.1965,
+    "beats_random": true,
+    "note": "candidate_scoring_accuracy_mean 需高于 min_accuracy_to_beat_random 才算显著优于随机；不要直接与 1/6 比较。"
+  },
+  "format_compliance_rate": 1.0,
+  "macro_f1": 0.5531966455363553,
+  "confusion_matrix": {
+    "内科": {
+      "内科": 48,
+      "外科": 2,
+      "妇产科": 9,
+      "儿科": 11,
+      "肿瘤科": 30,
+      "男科": 0
+    },
+    "外科": {
+      "内科": 45,
+      "外科": 9,
+      "妇产科": 7,
+      "儿科": 3,
+      "肿瘤科": 30,
+      "男科": 6
+    },
+    "妇产科": {
+      "内科": 5,
+      "外科": 4,
+      "妇产科": 82,
+      "儿科": 3,
+      "肿瘤科": 3,
+      "男科": 3
+    },
+    "儿科": {
+      "内科": 6,
+      "外科": 5,
+      "妇产科": 13,
+      "儿科": 66,
+      "肿瘤科": 6,
+      "男科": 4
+    },
+    "肿瘤科": {
+      "内科": 7,
+      "外科": 2,
+      "妇产科": 5,
+      "儿科": 2,
+      "肿瘤科": 84,
+      "男科": 0
+    },
+    "男科": {
+      "内科": 12,
+      "外科": 5,
+      "妇产科": 17,
+      "儿科": 2,
+      "肿瘤科": 5,
+      "男科": 59
+    }
+  },
+  "predicted_label_distribution": {
+    "内科": 123,
+    "肿瘤科": 158,
+    "妇产科": 133,
+    "外科": 27,
+    "男科": 72,
+    "儿科": 87
+  },
+  "generation_predictions": {
+    "内科": 161,
+    "肿瘤科": 119,
+    "妇产科": 100,
+    "外科": 39,
+    "男科": 89,
+    "儿科": 92
+  },
+  "per_class": {
+    "内科": {
+      "precision": 0.3902439024390244,
+      "recall": 0.48,
+      "f1": 0.4304932735426009
+    },
+    "外科": {
+      "precision": 0.3333333333333333,
+      "recall": 0.09,
+      "f1": 0.14173228346456693
+    },
+    "妇产科": {
+      "precision": 0.6165413533834586,
+      "recall": 0.82,
+      "f1": 0.7038626609442059
+    },
+    "儿科": {
+      "precision": 0.7586206896551724,
+      "recall": 0.66,
+      "f1": 0.7058823529411765
+    },
+    "肿瘤科": {
+      "precision": 0.5316455696202531,
+      "recall": 0.84,
+      "f1": 0.6511627906976744
+    },
+    "男科": {
+      "precision": 0.8194444444444444,
+      "recall": 0.59,
+      "f1": 0.6860465116279069
+    }
+  }
+}
+EVALUATION_COMPLETE output=/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/runs/scale_600_lr8e4/eval_formal.json
+
+▶ scale_1200_lr8e4  (1200 条, lr=0.0008)
+MODE=formal rank=16 trainable=393216 train=1200 val=600 initial_val_loss=3.098687
+epoch=1/3 batch=20/225 loss=0.373913 lr=0.00078642
+epoch=1/3 batch=40/225 loss=0.371720 lr=0.00074669
+epoch=1/3 batch=60/225 loss=0.380634 lr=0.00068382
+validation step=40 val_loss=0.241474 improved=True
+epoch=2/3 batch=80/225 loss=0.224635 lr=0.00060255
+epoch=2/3 batch=100/225 loss=0.180501 lr=0.00050902
+epoch=2/3 batch=120/225 loss=0.278646 lr=0.00041027
+epoch=2/3 batch=140/225 loss=0.281611 lr=0.00031377
+validation step=80 val_loss=0.202853 improved=True
+epoch=3/3 batch=160/225 loss=0.095011 lr=0.00021888
+epoch=3/3 batch=180/225 loss=0.074721 lr=0.00014992
+epoch=3/3 batch=200/225 loss=0.105050 lr=0.00010286
+epoch=3/3 batch=220/225 loss=0.119277 lr=0.00008123
+epoch=3/3 batch=225/225 loss=0.119702 lr=0.00008000
+validation step=114 val_loss=0.187964 improved=True
+TRAINING_COMPLETE best_step=114 best_val_loss=0.187964 run_dir=/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/runs/scale_1200_lr8e4
+evaluated=50/600
+evaluated=100/600
+evaluated=150/600
+evaluated=200/600
+evaluated=250/600
+evaluated=300/600
+evaluated=350/600
+evaluated=400/600
+evaluated=450/600
+evaluated=500/600
+evaluated=550/600
+evaluated=600/600
+{
+  "checkpoint": "/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/runs/scale_1200_lr8e4/best_lora.pth",
+  "data": "/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/data/formal/test.jsonl",
+  "samples": 600,
+  "lora_rank": 16,
+  "num_classes": 6,
+  "candidate_scoring_accuracy_mean": 0.71,
+  "candidate_scoring_accuracy_sum": 0.7216666666666667,
+  "generation_accuracy": 0.7216666666666667,
+  "scoring_agreement": 0.9583333333333334,
+  "scoring_note": "主指标是 candidate_scoring_accuracy_mean（每 token 平均 log-prob）。六个科室名 token 数不等，求和口径会系统性压低长标签，仅作对照。",
+  "baseline": {
+    "majority_class_accuracy": 0.1667,
+    "random_expected_accuracy": 0.1667,
+    "random_95ci": [
+      0.1368,
+      0.1965
+    ],
+    "min_accuracy_to_beat_random": 0.1965,
+    "beats_random": true,
+    "note": "candidate_scoring_accuracy_mean 需高于 min_accuracy_to_beat_random 才算显著优于随机；不要直接与 1/6 比较。"
+  },
+  "format_compliance_rate": 1.0,
+  "macro_f1": 0.6988991064597324,
+  "confusion_matrix": {
+    "内科": {
+      "内科": 62,
+      "外科": 12,
+      "妇产科": 5,
+      "儿科": 11,
+      "肿瘤科": 8,
+      "男科": 2
+    },
+    "外科": {
+      "内科": 28,
+      "外科": 35,
+      "妇产科": 5,
+      "儿科": 3,
+      "肿瘤科": 20,
+      "男科": 9
+    },
+    "妇产科": {
+      "内科": 3,
+      "外科": 2,
+      "妇产科": 89,
+      "儿科": 2,
+      "肿瘤科": 1,
+      "男科": 3
+    },
+    "儿科": {
+      "内科": 11,
+      "外科": 4,
+      "妇产科": 7,
+      "儿科": 71,
+      "肿瘤科": 2,
+      "男科": 5
+    },
+    "肿瘤科": {
+      "内科": 5,
+      "外科": 0,
+      "妇产科": 5,
+      "儿科": 1,
+      "肿瘤科": 86,
+      "男科": 3
+    },
+    "男科": {
+      "内科": 3,
+      "外科": 4,
+      "妇产科": 7,
+      "儿科": 2,
+      "肿瘤科": 1,
+      "男科": 83
+    }
+  },
+  "predicted_label_distribution": {
+    "内科": 112,
+    "外科": 57,
+    "妇产科": 118,
+    "肿瘤科": 118,
+    "男科": 105,
+    "儿科": 90
+  },
+  "generation_predictions": {
+    "内科": 120,
+    "外科": 62,
+    "妇产科": 103,
+    "肿瘤科": 108,
+    "男科": 111,
+    "儿科": 96
+  },
+  "per_class": {
+    "内科": {
+      "precision": 0.5535714285714286,
+      "recall": 0.62,
+      "f1": 0.5849056603773586
+    },
+    "外科": {
+      "precision": 0.6140350877192983,
+      "recall": 0.35,
+      "f1": 0.445859872611465
+    },
+    "妇产科": {
+      "precision": 0.7542372881355932,
+      "recall": 0.89,
+      "f1": 0.8165137614678899
+    },
+    "儿科": {
+      "precision": 0.7888888888888889,
+      "recall": 0.71,
+      "f1": 0.7473684210526317
+    },
+    "肿瘤科": {
+      "precision": 0.7288135593220338,
+      "recall": 0.86,
+      "f1": 0.7889908256880733
+    },
+    "男科": {
+      "precision": 0.7904761904761904,
+      "recall": 0.83,
+      "f1": 0.8097560975609757
+    }
+  }
+}
+EVALUATION_COMPLETE output=/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/runs/scale_1200_lr8e4/eval_formal.json
+
+▶ scale_2400_lr8e4  (2400 条, lr=0.0008)
+MODE=formal rank=16 trainable=393216 train=2400 val=600 initial_val_loss=3.098687
+epoch=1/3 batch=20/450 loss=0.454229 lr=0.00079650
+epoch=1/3 batch=40/450 loss=0.414019 lr=0.00078605
+epoch=1/3 batch=60/450 loss=0.337458 lr=0.00076888
+epoch=1/3 batch=80/450 loss=0.182956 lr=0.00074530
+validation step=40 val_loss=0.259334 improved=True
+epoch=1/3 batch=100/450 loss=0.258297 lr=0.00071578
+epoch=1/3 batch=120/450 loss=0.154591 lr=0.00068089
+epoch=1/3 batch=140/450 loss=0.337731 lr=0.00064131
+epoch=2/3 batch=160/450 loss=0.167947 lr=0.00059781
+validation step=80 val_loss=0.207729 improved=True
+epoch=2/3 batch=180/450 loss=0.123511 lr=0.00055125
+epoch=2/3 batch=200/450 loss=0.207989 lr=0.00050251
+epoch=2/3 batch=220/450 loss=0.078445 lr=0.00045256
+epoch=2/3 batch=240/450 loss=0.199763 lr=0.00040237
+validation step=120 val_loss=0.178625 improved=True
+epoch=2/3 batch=260/450 loss=0.179357 lr=0.00035291
+epoch=2/3 batch=280/450 loss=0.084629 lr=0.00030514
+epoch=2/3 batch=300/450 loss=0.052988 lr=0.00026000
+epoch=3/3 batch=320/450 loss=0.217715 lr=0.00021836
+validation step=160 val_loss=0.162329 improved=True
+epoch=3/3 batch=340/450 loss=0.077622 lr=0.00018104
+epoch=3/3 batch=360/450 loss=0.029510 lr=0.00014875
+epoch=3/3 batch=380/450 loss=0.165848 lr=0.00012214
+epoch=3/3 batch=400/450 loss=0.135546 lr=0.00010171
+validation step=200 val_loss=0.156603 improved=True
+epoch=3/3 batch=420/450 loss=0.155922 lr=0.00008787
+epoch=3/3 batch=440/450 loss=0.172938 lr=0.00008088
+epoch=3/3 batch=450/450 loss=0.082898 lr=0.00008000
+validation step=225 val_loss=0.157112 improved=False
+TRAINING_COMPLETE best_step=200 best_val_loss=0.156603 run_dir=/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/runs/scale_2400_lr8e4
+evaluated=50/600
+evaluated=100/600
+evaluated=150/600
+evaluated=200/600
+evaluated=250/600
+evaluated=300/600
+evaluated=350/600
+evaluated=400/600
+evaluated=450/600
+evaluated=500/600
+evaluated=550/600
+evaluated=600/600
+{
+  "checkpoint": "/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/runs/scale_2400_lr8e4/best_lora.pth",
+  "data": "/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/data/formal/test.jsonl",
+  "samples": 600,
+  "lora_rank": 16,
+  "num_classes": 6,
+  "candidate_scoring_accuracy_mean": 0.78,
+  "candidate_scoring_accuracy_sum": 0.785,
+  "generation_accuracy": 0.785,
+  "scoring_agreement": 0.9866666666666667,
+  "scoring_note": "主指标是 candidate_scoring_accuracy_mean（每 token 平均 log-prob）。六个科室名 token 数不等，求和口径会系统性压低长标签，仅作对照。",
+  "baseline": {
+    "majority_class_accuracy": 0.1667,
+    "random_expected_accuracy": 0.1667,
+    "random_95ci": [
+      0.1368,
+      0.1965
+    ],
+    "min_accuracy_to_beat_random": 0.1965,
+    "beats_random": true,
+    "note": "candidate_scoring_accuracy_mean 需高于 min_accuracy_to_beat_random 才算显著优于随机；不要直接与 1/6 比较。"
+  },
+  "format_compliance_rate": 1.0,
+  "macro_f1": 0.7790319971322709,
+  "confusion_matrix": {
+    "内科": {
+      "内科": 63,
+      "外科": 13,
+      "妇产科": 5,
+      "儿科": 10,
+      "肿瘤科": 8,
+      "男科": 1
+    },
+    "外科": {
+      "内科": 13,
+      "外科": 67,
+      "妇产科": 3,
+      "儿科": 3,
+      "肿瘤科": 9,
+      "男科": 5
+    },
+    "妇产科": {
+      "内科": 3,
+      "外科": 3,
+      "妇产科": 91,
+      "儿科": 1,
+      "肿瘤科": 1,
+      "男科": 1
+    },
+    "儿科": {
+      "内科": 15,
+      "外科": 4,
+      "妇产科": 5,
+      "儿科": 74,
+      "肿瘤科": 1,
+      "男科": 1
+    },
+    "肿瘤科": {
+      "内科": 3,
+      "外科": 2,
+      "妇产科": 3,
+      "儿科": 4,
+      "肿瘤科": 87,
+      "男科": 1
+    },
+    "男科": {
+      "内科": 0,
+      "外科": 11,
+      "妇产科": 1,
+      "儿科": 2,
+      "肿瘤科": 0,
+      "男科": 86
+    }
+  },
+  "predicted_label_distribution": {
+    "内科": 97,
+    "外科": 100,
+    "妇产科": 108,
+    "肿瘤科": 106,
+    "男科": 95,
+    "儿科": 94
+  },
+  "generation_predictions": {
+    "内科": 99,
+    "外科": 101,
+    "妇产科": 102,
+    "肿瘤科": 105,
+    "男科": 97,
+    "儿科": 96
+  },
+  "per_class": {
+    "内科": {
+      "precision": 0.6494845360824743,
+      "recall": 0.63,
+      "f1": 0.6395939086294417
+    },
+    "外科": {
+      "precision": 0.67,
+      "recall": 0.67,
+      "f1": 0.67
+    },
+    "妇产科": {
+      "precision": 0.8425925925925926,
+      "recall": 0.91,
+      "f1": 0.8749999999999999
+    },
+    "儿科": {
+      "precision": 0.7872340425531915,
+      "recall": 0.74,
+      "f1": 0.7628865979381443
+    },
+    "肿瘤科": {
+      "precision": 0.8207547169811321,
+      "recall": 0.87,
+      "f1": 0.8446601941747572
+    },
+    "男科": {
+      "precision": 0.9052631578947369,
+      "recall": 0.86,
+      "f1": 0.8820512820512821
+    }
+  }
+}
+EVALUATION_COMPLETE output=/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/runs/scale_2400_lr8e4/eval_formal.json
+
+▶ scale_4800_lr8e4  (4800 条, lr=0.0008)
+MODE=formal rank=16 trainable=393216 train=4800 val=600 initial_val_loss=3.098687
+epoch=1/3 batch=20/900 loss=0.474044 lr=0.00079912
+epoch=1/3 batch=40/900 loss=0.317616 lr=0.00079650
+epoch=1/3 batch=60/900 loss=0.426211 lr=0.00079213
+epoch=1/3 batch=80/900 loss=0.248400 lr=0.00078605
+validation step=40 val_loss=0.241942 improved=True
+epoch=1/3 batch=100/900 loss=0.273431 lr=0.00077829
+epoch=1/3 batch=120/900 loss=0.186501 lr=0.00076888
+epoch=1/3 batch=140/900 loss=0.208301 lr=0.00075786
+epoch=1/3 batch=160/900 loss=0.356586 lr=0.00074530
+validation step=80 val_loss=0.184107 improved=True
+epoch=1/3 batch=180/900 loss=0.194815 lr=0.00073125
+epoch=1/3 batch=200/900 loss=0.188929 lr=0.00071578
+epoch=1/3 batch=220/900 loss=0.132147 lr=0.00069896
+epoch=1/3 batch=240/900 loss=0.126514 lr=0.00068089
+validation step=120 val_loss=0.167033 improved=True
+epoch=1/3 batch=260/900 loss=0.153263 lr=0.00066164
+epoch=1/3 batch=280/900 loss=0.157653 lr=0.00064131
+epoch=1/3 batch=300/900 loss=0.089182 lr=0.00062000
+epoch=2/3 batch=320/900 loss=0.146397 lr=0.00059781
+validation step=160 val_loss=0.157529 improved=True
+epoch=2/3 batch=340/900 loss=0.074012 lr=0.00057486
+epoch=2/3 batch=360/900 loss=0.057292 lr=0.00055125
+epoch=2/3 batch=380/900 loss=0.156035 lr=0.00052709
+epoch=2/3 batch=400/900 loss=0.184394 lr=0.00050251
+validation step=200 val_loss=0.174360 improved=False
+epoch=2/3 batch=420/900 loss=0.106436 lr=0.00047763
+epoch=2/3 batch=440/900 loss=0.058620 lr=0.00045256
+epoch=2/3 batch=460/900 loss=0.078884 lr=0.00042744
+epoch=2/3 batch=480/900 loss=0.227422 lr=0.00040237
+validation step=240 val_loss=0.156675 improved=True
+epoch=2/3 batch=500/900 loss=0.143863 lr=0.00037749
+epoch=2/3 batch=520/900 loss=0.112709 lr=0.00035291
+epoch=2/3 batch=540/900 loss=0.116336 lr=0.00032875
+epoch=2/3 batch=560/900 loss=0.137616 lr=0.00030514
+validation step=280 val_loss=0.147213 improved=True
+epoch=2/3 batch=580/900 loss=0.116840 lr=0.00028219
+epoch=2/3 batch=600/900 loss=0.151428 lr=0.00026000
+epoch=3/3 batch=620/900 loss=0.039342 lr=0.00023869
+epoch=3/3 batch=640/900 loss=0.086659 lr=0.00021836
+validation step=320 val_loss=0.149270 improved=False
+epoch=3/3 batch=660/900 loss=0.106390 lr=0.00019911
+epoch=3/3 batch=680/900 loss=0.039642 lr=0.00018104
+epoch=3/3 batch=700/900 loss=0.099239 lr=0.00016422
+epoch=3/3 batch=720/900 loss=0.115921 lr=0.00014875
+validation step=360 val_loss=0.145907 improved=True
+epoch=3/3 batch=740/900 loss=0.050787 lr=0.00013470
+epoch=3/3 batch=760/900 loss=0.142453 lr=0.00012214
+epoch=3/3 batch=780/900 loss=0.079648 lr=0.00011112
+epoch=3/3 batch=800/900 loss=0.045076 lr=0.00010171
+validation step=400 val_loss=0.144224 improved=True
+epoch=3/3 batch=820/900 loss=0.136365 lr=0.00009395
+epoch=3/3 batch=840/900 loss=0.073491 lr=0.00008787
+epoch=3/3 batch=860/900 loss=0.069024 lr=0.00008350
+epoch=3/3 batch=880/900 loss=0.135927 lr=0.00008088
+validation step=440 val_loss=0.142204 improved=True
+epoch=3/3 batch=900/900 loss=0.084793 lr=0.00008000
+validation step=450 val_loss=0.140738 improved=True
+TRAINING_COMPLETE best_step=450 best_val_loss=0.140738 run_dir=/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/runs/scale_4800_lr8e4
+evaluated=50/600
+evaluated=100/600
+evaluated=150/600
+evaluated=200/600
+evaluated=250/600
+evaluated=300/600
+evaluated=350/600
+evaluated=400/600
+evaluated=450/600
+evaluated=500/600
+evaluated=550/600
+evaluated=600/600
+{
+  "checkpoint": "/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/runs/scale_4800_lr8e4/best_lora.pth",
+  "data": "/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/data/formal/test.jsonl",
+  "samples": 600,
+  "lora_rank": 16,
+  "num_classes": 6,
+  "candidate_scoring_accuracy_mean": 0.7916666666666666,
+  "candidate_scoring_accuracy_sum": 0.7966666666666666,
+  "generation_accuracy": 0.7966666666666666,
+  "scoring_agreement": 0.9816666666666667,
+  "scoring_note": "主指标是 candidate_scoring_accuracy_mean（每 token 平均 log-prob）。六个科室名 token 数不等，求和口径会系统性压低长标签，仅作对照。",
+  "baseline": {
+    "majority_class_accuracy": 0.1667,
+    "random_expected_accuracy": 0.1667,
+    "random_95ci": [
+      0.1368,
+      0.1965
+    ],
+    "min_accuracy_to_beat_random": 0.1965,
+    "beats_random": true,
+    "note": "candidate_scoring_accuracy_mean 需高于 min_accuracy_to_beat_random 才算显著优于随机；不要直接与 1/6 比较。"
+  },
+  "format_compliance_rate": 1.0,
+  "macro_f1": 0.7918435378802853,
+  "confusion_matrix": {
+    "内科": {
+      "内科": 62,
+      "外科": 12,
+      "妇产科": 4,
+      "儿科": 12,
+      "肿瘤科": 10,
+      "男科": 0
+    },
+    "外科": {
+      "内科": 15,
+      "外科": 70,
+      "妇产科": 2,
+      "儿科": 3,
+      "肿瘤科": 8,
+      "男科": 2
+    },
+    "妇产科": {
+      "内科": 5,
+      "外科": 3,
+      "妇产科": 88,
+      "儿科": 0,
+      "肿瘤科": 3,
+      "男科": 1
+    },
+    "儿科": {
+      "内科": 13,
+      "外科": 3,
+      "妇产科": 4,
+      "儿科": 78,
+      "肿瘤科": 2,
+      "男科": 0
+    },
+    "肿瘤科": {
+      "内科": 3,
+      "外科": 3,
+      "妇产科": 2,
+      "儿科": 3,
+      "肿瘤科": 88,
+      "男科": 1
+    },
+    "男科": {
+      "内科": 0,
+      "外科": 10,
+      "妇产科": 0,
+      "儿科": 1,
+      "肿瘤科": 0,
+      "男科": 89
+    }
+  },
+  "predicted_label_distribution": {
+    "外科": 101,
+    "妇产科": 100,
+    "儿科": 97,
+    "肿瘤科": 111,
+    "男科": 93,
+    "内科": 98
+  },
+  "generation_predictions": {
+    "外科": 102,
+    "妇产科": 97,
+    "儿科": 101,
+    "肿瘤科": 103,
+    "男科": 95,
+    "内科": 102
+  },
+  "per_class": {
+    "内科": {
+      "precision": 0.6326530612244898,
+      "recall": 0.62,
+      "f1": 0.6262626262626263
+    },
+    "外科": {
+      "precision": 0.693069306930693,
+      "recall": 0.7,
+      "f1": 0.6965174129353233
+    },
+    "妇产科": {
+      "precision": 0.88,
+      "recall": 0.88,
+      "f1": 0.88
+    },
+    "儿科": {
+      "precision": 0.8041237113402062,
+      "recall": 0.78,
+      "f1": 0.7918781725888325
+    },
+    "肿瘤科": {
+      "precision": 0.7927927927927928,
+      "recall": 0.88,
+      "f1": 0.8341232227488151
+    },
+    "男科": {
+      "precision": 0.956989247311828,
+      "recall": 0.89,
+      "f1": 0.922279792746114
+    }
+  }
+}
+EVALUATION_COMPLETE output=/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/runs/scale_4800_lr8e4/eval_formal.json
+
+▶ scale_9600_lr8e4  (9600 条, lr=0.0008)
+MODE=formal rank=16 trainable=393216 train=9600 val=600 initial_val_loss=3.098687
+epoch=1/3 batch=20/1800 loss=0.431937 lr=0.00079978
+epoch=1/3 batch=40/1800 loss=0.303903 lr=0.00079912
+epoch=1/3 batch=60/1800 loss=0.282474 lr=0.00079803
+epoch=1/3 batch=80/1800 loss=0.253569 lr=0.00079650
+validation step=40 val_loss=0.261033 improved=True
+epoch=1/3 batch=100/1800 loss=0.249039 lr=0.00079453
+epoch=1/3 batch=120/1800 loss=0.155839 lr=0.00079213
+epoch=1/3 batch=140/1800 loss=0.233779 lr=0.00078931
+epoch=1/3 batch=160/1800 loss=0.271782 lr=0.00078605
+validation step=80 val_loss=0.191828 improved=True
+epoch=1/3 batch=180/1800 loss=0.211822 lr=0.00078238
+epoch=1/3 batch=200/1800 loss=0.194998 lr=0.00077829
+epoch=1/3 batch=220/1800 loss=0.123027 lr=0.00077379
+epoch=1/3 batch=240/1800 loss=0.114249 lr=0.00076888
+validation step=120 val_loss=0.169767 improved=True
+epoch=1/3 batch=260/1800 loss=0.385467 lr=0.00076357
+epoch=1/3 batch=280/1800 loss=0.074107 lr=0.00075786
+epoch=1/3 batch=300/1800 loss=0.146368 lr=0.00075177
+epoch=1/3 batch=320/1800 loss=0.181953 lr=0.00074530
+validation step=160 val_loss=0.161314 improved=True
+epoch=1/3 batch=340/1800 loss=0.423627 lr=0.00073845
+epoch=1/3 batch=360/1800 loss=0.190486 lr=0.00073125
+epoch=1/3 batch=380/1800 loss=0.252693 lr=0.00072368
+epoch=1/3 batch=400/1800 loss=0.103588 lr=0.00071578
+validation step=200 val_loss=0.171317 improved=False
+epoch=1/3 batch=420/1800 loss=0.132266 lr=0.00070753
+epoch=1/3 batch=440/1800 loss=0.162798 lr=0.00069896
+epoch=1/3 batch=460/1800 loss=0.233448 lr=0.00069008
+epoch=1/3 batch=480/1800 loss=0.143255 lr=0.00068089
+validation step=240 val_loss=0.156387 improved=True
+epoch=1/3 batch=500/1800 loss=0.208577 lr=0.00067140
+epoch=1/3 batch=520/1800 loss=0.192123 lr=0.00066164
+epoch=1/3 batch=540/1800 loss=0.112199 lr=0.00065160
+epoch=1/3 batch=560/1800 loss=0.303215 lr=0.00064131
+validation step=280 val_loss=0.140879 improved=True
+epoch=1/3 batch=580/1800 loss=0.255667 lr=0.00063077
+epoch=1/3 batch=600/1800 loss=0.101550 lr=0.00062000
+epoch=2/3 batch=620/1800 loss=0.131564 lr=0.00060901
+epoch=2/3 batch=640/1800 loss=0.094017 lr=0.00059781
+validation step=320 val_loss=0.133002 improved=True
+epoch=2/3 batch=660/1800 loss=0.144322 lr=0.00058643
+epoch=2/3 batch=680/1800 loss=0.173213 lr=0.00057486
+epoch=2/3 batch=700/1800 loss=0.094461 lr=0.00056313
+epoch=2/3 batch=720/1800 loss=0.109775 lr=0.00055125
+validation step=360 val_loss=0.139420 improved=False
+epoch=2/3 batch=740/1800 loss=0.021753 lr=0.00053923
+epoch=2/3 batch=760/1800 loss=0.179995 lr=0.00052709
+epoch=2/3 batch=780/1800 loss=0.156151 lr=0.00051485
+epoch=2/3 batch=800/1800 loss=0.160588 lr=0.00050251
+validation step=400 val_loss=0.135279 improved=False
+epoch=2/3 batch=820/1800 loss=0.224085 lr=0.00049010
+epoch=2/3 batch=840/1800 loss=0.070839 lr=0.00047763
+epoch=2/3 batch=860/1800 loss=0.089963 lr=0.00046511
+epoch=2/3 batch=880/1800 loss=0.063431 lr=0.00045256
+validation step=440 val_loss=0.145568 improved=False
+epoch=2/3 batch=900/1800 loss=0.211171 lr=0.00044000
+epoch=2/3 batch=920/1800 loss=0.090728 lr=0.00042744
+epoch=2/3 batch=940/1800 loss=0.032779 lr=0.00041489
+epoch=2/3 batch=960/1800 loss=0.152476 lr=0.00040237
+validation step=480 val_loss=0.131281 improved=True
+epoch=2/3 batch=980/1800 loss=0.112020 lr=0.00038990
+epoch=2/3 batch=1000/1800 loss=0.093554 lr=0.00037749
+epoch=2/3 batch=1020/1800 loss=0.125926 lr=0.00036515
+epoch=2/3 batch=1040/1800 loss=0.108152 lr=0.00035291
+validation step=520 val_loss=0.127166 improved=True
+epoch=2/3 batch=1060/1800 loss=0.155372 lr=0.00034077
+epoch=2/3 batch=1080/1800 loss=0.082655 lr=0.00032875
+epoch=2/3 batch=1100/1800 loss=0.040263 lr=0.00031687
+epoch=2/3 batch=1120/1800 loss=0.233952 lr=0.00030514
+validation step=560 val_loss=0.126558 improved=True
+epoch=2/3 batch=1140/1800 loss=0.128384 lr=0.00029357
+epoch=2/3 batch=1160/1800 loss=0.049022 lr=0.00028219
+epoch=2/3 batch=1180/1800 loss=0.056320 lr=0.00027099
+epoch=2/3 batch=1200/1800 loss=0.058671 lr=0.00026000
+validation step=600 val_loss=0.121534 improved=True
+epoch=3/3 batch=1220/1800 loss=0.097332 lr=0.00024923
+epoch=3/3 batch=1240/1800 loss=0.098795 lr=0.00023869
+epoch=3/3 batch=1260/1800 loss=0.041211 lr=0.00022840
+epoch=3/3 batch=1280/1800 loss=0.083800 lr=0.00021836
+validation step=640 val_loss=0.123881 improved=False
+epoch=3/3 batch=1300/1800 loss=0.038063 lr=0.00020860
+epoch=3/3 batch=1320/1800 loss=0.106189 lr=0.00019911
+epoch=3/3 batch=1340/1800 loss=0.101613 lr=0.00018992
+epoch=3/3 batch=1360/1800 loss=0.090330 lr=0.00018104
+validation step=680 val_loss=0.120692 improved=True
+epoch=3/3 batch=1380/1800 loss=0.065197 lr=0.00017247
+epoch=3/3 batch=1400/1800 loss=0.033871 lr=0.00016422
+epoch=3/3 batch=1420/1800 loss=0.062550 lr=0.00015632
+epoch=3/3 batch=1440/1800 loss=0.073219 lr=0.00014875
+validation step=720 val_loss=0.117076 improved=True
+epoch=3/3 batch=1460/1800 loss=0.081264 lr=0.00014155
+epoch=3/3 batch=1480/1800 loss=0.044039 lr=0.00013470
+epoch=3/3 batch=1500/1800 loss=0.085156 lr=0.00012823
+epoch=3/3 batch=1520/1800 loss=0.081087 lr=0.00012214
+validation step=760 val_loss=0.120280 improved=False
+epoch=3/3 batch=1540/1800 loss=0.105358 lr=0.00011643
+epoch=3/3 batch=1560/1800 loss=0.059976 lr=0.00011112
+epoch=3/3 batch=1580/1800 loss=0.071620 lr=0.00010621
+epoch=3/3 batch=1600/1800 loss=0.156381 lr=0.00010171
+validation step=800 val_loss=0.120681 improved=False
+epoch=3/3 batch=1620/1800 loss=0.059239 lr=0.00009762
+epoch=3/3 batch=1640/1800 loss=0.153060 lr=0.00009395
+epoch=3/3 batch=1660/1800 loss=0.081710 lr=0.00009069
+epoch=3/3 batch=1680/1800 loss=0.087495 lr=0.00008787
+validation step=840 val_loss=0.117988 improved=False
+epoch=3/3 batch=1700/1800 loss=0.079799 lr=0.00008547
+epoch=3/3 batch=1720/1800 loss=0.037030 lr=0.00008350
+epoch=3/3 batch=1740/1800 loss=0.055995 lr=0.00008197
+epoch=3/3 batch=1760/1800 loss=0.030376 lr=0.00008088
+validation step=880 val_loss=0.116626 improved=True
+epoch=3/3 batch=1780/1800 loss=0.025204 lr=0.00008022
+epoch=3/3 batch=1800/1800 loss=0.055430 lr=0.00008000
+validation step=900 val_loss=0.116422 improved=True
+TRAINING_COMPLETE best_step=900 best_val_loss=0.116422 run_dir=/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/runs/scale_9600_lr8e4
+evaluated=50/600
+evaluated=100/600
+evaluated=150/600
+evaluated=200/600
+evaluated=250/600
+evaluated=300/600
+evaluated=350/600
+evaluated=400/600
+evaluated=450/600
+evaluated=500/600
+evaluated=550/600
+evaluated=600/600
+{
+  "checkpoint": "/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/runs/scale_9600_lr8e4/best_lora.pth",
+  "data": "/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/data/formal/test.jsonl",
+  "samples": 600,
+  "lora_rank": 16,
+  "num_classes": 6,
+  "candidate_scoring_accuracy_mean": 0.82,
+  "candidate_scoring_accuracy_sum": 0.82,
+  "generation_accuracy": 0.82,
+  "scoring_agreement": 0.9783333333333334,
+  "scoring_note": "主指标是 candidate_scoring_accuracy_mean（每 token 平均 log-prob）。六个科室名 token 数不等，求和口径会系统性压低长标签，仅作对照。",
+  "baseline": {
+    "majority_class_accuracy": 0.1667,
+    "random_expected_accuracy": 0.1667,
+    "random_95ci": [
+      0.1368,
+      0.1965
+    ],
+    "min_accuracy_to_beat_random": 0.1965,
+    "beats_random": true,
+    "note": "candidate_scoring_accuracy_mean 需高于 min_accuracy_to_beat_random 才算显著优于随机；不要直接与 1/6 比较。"
+  },
+  "format_compliance_rate": 1.0,
+  "macro_f1": 0.8180460441510072,
+  "confusion_matrix": {
+    "内科": {
+      "内科": 68,
+      "外科": 11,
+      "妇产科": 4,
+      "儿科": 10,
+      "肿瘤科": 7,
+      "男科": 0
+    },
+    "外科": {
+      "内科": 12,
+      "外科": 67,
+      "妇产科": 4,
+      "儿科": 3,
+      "肿瘤科": 9,
+      "男科": 5
+    },
+    "妇产科": {
+      "内科": 4,
+      "外科": 2,
+      "妇产科": 88,
+      "儿科": 1,
+      "肿瘤科": 4,
+      "男科": 1
+    },
+    "儿科": {
+      "内科": 11,
+      "外科": 1,
+      "妇产科": 4,
+      "儿科": 82,
+      "肿瘤科": 2,
+      "男科": 0
+    },
+    "肿瘤科": {
+      "内科": 4,
+      "外科": 1,
+      "妇产科": 1,
+      "儿科": 2,
+      "肿瘤科": 91,
+      "男科": 1
+    },
+    "男科": {
+      "内科": 1,
+      "外科": 2,
+      "妇产科": 0,
+      "儿科": 1,
+      "肿瘤科": 0,
+      "男科": 96
+    }
+  },
+  "predicted_label_distribution": {
+    "内科": 100,
+    "外科": 84,
+    "妇产科": 101,
+    "儿科": 99,
+    "肿瘤科": 113,
+    "男科": 103
+  },
+  "generation_predictions": {
+    "内科": 104,
+    "外科": 90,
+    "妇产科": 98,
+    "儿科": 102,
+    "肿瘤科": 103,
+    "男科": 103
+  },
+  "per_class": {
+    "内科": {
+      "precision": 0.68,
+      "recall": 0.68,
+      "f1": 0.68
+    },
+    "外科": {
+      "precision": 0.7976190476190477,
+      "recall": 0.67,
+      "f1": 0.7282608695652173
+    },
+    "妇产科": {
+      "precision": 0.8712871287128713,
+      "recall": 0.88,
+      "f1": 0.8756218905472637
+    },
+    "儿科": {
+      "precision": 0.8282828282828283,
+      "recall": 0.82,
+      "f1": 0.8241206030150754
+    },
+    "肿瘤科": {
+      "precision": 0.8053097345132744,
+      "recall": 0.91,
+      "f1": 0.8544600938967136
+    },
+    "男科": {
+      "precision": 0.9320388349514563,
+      "recall": 0.96,
+      "f1": 0.9458128078817734
+    }
+  }
+}
+EVALUATION_COMPLETE output=/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/runs/scale_9600_lr8e4/eval_formal.json
+
+ 规模曲线重跑结束  2026-09-18 09:02:05
+ 分析: /root/autodl-tmp/MiniMind-medical/.venv/bin/python experiments/lora_triage_20260917/analyze_scale.py --curve-lr 8e4

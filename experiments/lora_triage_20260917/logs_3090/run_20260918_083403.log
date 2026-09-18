@@ -1,0 +1,27 @@
+================================================================================
+ MiniMind 医疗科室分诊 LoRA 云端全流程
+ 工作目录: /root/autodl-tmp/MiniMind-medical
+ Python  : /root/autodl-tmp/MiniMind-medical/.venv/bin/python (Python 3.12.3)
+ 时间    : 2026-09-18 08:34:03
+ 参数    : --step 1
+ 日志    : /root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/logs/run_20260918_083403.log
+================================================================================
+📦 依赖快照已保存: pip_freeze_20260918_083403.txt
+
+--------------------------------------------------------------------------------
+▶ Step 1: 预检
+--------------------------------------------------------------------------------
+  torch 2.8.0+cu128 | transformers 4.57.6
+  ✅ GPU: NVIDIA GeForce RTX 3090 (25.3 GB)
+  ✅ 基座权重: /root/autodl-tmp/MiniMind-medical/out/full_sft_768.pth (138 MB)
+  ✅ 切分数据校验通过（10 个文件 md5 一致）
+  · formal_test: n=600，判定优于随机需准确率 > 0.1965
+  · formal_val: n=600，判定优于随机需准确率 > 0.1965
+  · smoke_val: n=30，判定优于随机需准确率 > 0.3
+✅ Step 1 预检通过
+
+================================================================================
+ 全流程结束  2026-09-18 08:34:06
+ 日志: /root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/logs/run_20260918_083403.log
+ 报告: /root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/saturation.md
+================================================================================

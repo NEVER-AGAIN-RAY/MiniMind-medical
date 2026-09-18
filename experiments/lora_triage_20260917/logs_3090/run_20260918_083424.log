@@ -1,0 +1,164 @@
+================================================================================
+ MiniMind 医疗科室分诊 LoRA 云端全流程
+ 工作目录: /root/autodl-tmp/MiniMind-medical
+ Python  : /root/autodl-tmp/MiniMind-medical/.venv/bin/python (Python 3.12.3)
+ 时间    : 2026-09-18 08:34:24
+ 参数    : --step 3
+ 日志    : /root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/logs/run_20260918_083424.log
+================================================================================
+📦 依赖快照与 pip_freeze_20260918_083403.txt 一致，不重复落盘
+
+--------------------------------------------------------------------------------
+▶ Step 3: 正式训练（12000 条 × 3 epoch）
+--------------------------------------------------------------------------------
+MODE=formal rank=16 trainable=393216 train=12000 val=600 initial_val_loss=3.098687
+epoch=1/3 batch=20/2250 loss=1.042097 lr=0.00019996
+epoch=1/3 batch=40/2250 loss=0.329452 lr=0.00019986
+epoch=1/3 batch=60/2250 loss=0.413399 lr=0.00019968
+epoch=1/3 batch=80/2250 loss=0.375923 lr=0.00019944
+validation step=40 val_loss=0.354699 improved=True
+epoch=1/3 batch=100/2250 loss=0.397158 lr=0.00019912
+epoch=1/3 batch=120/2250 loss=0.319429 lr=0.00019874
+epoch=1/3 batch=140/2250 loss=0.282553 lr=0.00019829
+epoch=1/3 batch=160/2250 loss=0.336884 lr=0.00019776
+validation step=80 val_loss=0.270928 improved=True
+epoch=1/3 batch=180/2250 loss=0.250725 lr=0.00019717
+epoch=1/3 batch=200/2250 loss=0.218098 lr=0.00019651
+epoch=1/3 batch=220/2250 loss=0.248003 lr=0.00019579
+epoch=1/3 batch=240/2250 loss=0.181745 lr=0.00019499
+validation step=120 val_loss=0.209834 improved=True
+epoch=1/3 batch=260/2250 loss=0.185229 lr=0.00019413
+epoch=1/3 batch=280/2250 loss=0.118786 lr=0.00019321
+epoch=1/3 batch=300/2250 loss=0.204425 lr=0.00019222
+epoch=1/3 batch=320/2250 loss=0.212464 lr=0.00019116
+validation step=160 val_loss=0.206861 improved=True
+epoch=1/3 batch=340/2250 loss=0.098028 lr=0.00019005
+epoch=1/3 batch=360/2250 loss=0.217497 lr=0.00018887
+epoch=1/3 batch=380/2250 loss=0.153106 lr=0.00018763
+epoch=1/3 batch=400/2250 loss=0.123574 lr=0.00018632
+validation step=200 val_loss=0.192694 improved=True
+epoch=1/3 batch=420/2250 loss=0.174238 lr=0.00018496
+epoch=1/3 batch=440/2250 loss=0.187148 lr=0.00018354
+epoch=1/3 batch=460/2250 loss=0.328272 lr=0.00018207
+epoch=1/3 batch=480/2250 loss=0.240757 lr=0.00018053
+validation step=240 val_loss=0.181849 improved=True
+epoch=1/3 batch=500/2250 loss=0.071651 lr=0.00017894
+epoch=1/3 batch=520/2250 loss=0.209568 lr=0.00017730
+epoch=1/3 batch=540/2250 loss=0.152067 lr=0.00017561
+epoch=1/3 batch=560/2250 loss=0.074475 lr=0.00017386
+validation step=280 val_loss=0.177534 improved=True
+epoch=1/3 batch=580/2250 loss=0.147633 lr=0.00017207
+epoch=1/3 batch=600/2250 loss=0.217649 lr=0.00017022
+epoch=1/3 batch=620/2250 loss=0.094729 lr=0.00016833
+epoch=1/3 batch=640/2250 loss=0.092344 lr=0.00016639
+validation step=320 val_loss=0.153912 improved=True
+epoch=1/3 batch=660/2250 loss=0.315333 lr=0.00016441
+epoch=1/3 batch=680/2250 loss=0.203139 lr=0.00016239
+epoch=1/3 batch=700/2250 loss=0.191873 lr=0.00016033
+epoch=1/3 batch=720/2250 loss=0.150850 lr=0.00015822
+validation step=360 val_loss=0.154497 improved=False
+epoch=1/3 batch=740/2250 loss=0.110820 lr=0.00015608
+epoch=2/3 batch=760/2250 loss=0.063205 lr=0.00015391
+epoch=2/3 batch=780/2250 loss=0.098210 lr=0.00015170
+epoch=2/3 batch=800/2250 loss=0.142947 lr=0.00014945
+validation step=400 val_loss=0.154564 improved=False
+epoch=2/3 batch=820/2250 loss=0.068871 lr=0.00014718
+epoch=2/3 batch=840/2250 loss=0.055667 lr=0.00014488
+epoch=2/3 batch=860/2250 loss=0.123042 lr=0.00014255
+epoch=2/3 batch=880/2250 loss=0.108283 lr=0.00014019
+validation step=440 val_loss=0.145796 improved=True
+epoch=2/3 batch=900/2250 loss=0.226390 lr=0.00013781
+epoch=2/3 batch=920/2250 loss=0.136195 lr=0.00013541
+epoch=2/3 batch=940/2250 loss=0.103924 lr=0.00013299
+epoch=2/3 batch=960/2250 loss=0.168922 lr=0.00013055
+validation step=480 val_loss=0.149587 improved=False
+epoch=2/3 batch=980/2250 loss=0.171813 lr=0.00012810
+epoch=2/3 batch=1000/2250 loss=0.110325 lr=0.00012563
+epoch=2/3 batch=1020/2250 loss=0.085957 lr=0.00012315
+epoch=2/3 batch=1040/2250 loss=0.100789 lr=0.00012066
+validation step=520 val_loss=0.148874 improved=False
+epoch=2/3 batch=1060/2250 loss=0.189853 lr=0.00011816
+epoch=2/3 batch=1080/2250 loss=0.160144 lr=0.00011565
+epoch=2/3 batch=1100/2250 loss=0.072463 lr=0.00011314
+epoch=2/3 batch=1120/2250 loss=0.151918 lr=0.00011063
+validation step=560 val_loss=0.137312 improved=True
+epoch=2/3 batch=1140/2250 loss=0.172607 lr=0.00010812
+epoch=2/3 batch=1160/2250 loss=0.103997 lr=0.00010560
+epoch=2/3 batch=1180/2250 loss=0.125617 lr=0.00010310
+epoch=2/3 batch=1200/2250 loss=0.152825 lr=0.00010059
+validation step=600 val_loss=0.141970 improved=False
+epoch=2/3 batch=1220/2250 loss=0.136855 lr=0.00009810
+epoch=2/3 batch=1240/2250 loss=0.137807 lr=0.00009561
+epoch=2/3 batch=1260/2250 loss=0.065909 lr=0.00009314
+epoch=2/3 batch=1280/2250 loss=0.168871 lr=0.00009067
+validation step=640 val_loss=0.138233 improved=False
+epoch=2/3 batch=1300/2250 loss=0.247878 lr=0.00008823
+epoch=2/3 batch=1320/2250 loss=0.187408 lr=0.00008580
+epoch=2/3 batch=1340/2250 loss=0.168194 lr=0.00008339
+epoch=2/3 batch=1360/2250 loss=0.127901 lr=0.00008100
+validation step=680 val_loss=0.142356 improved=False
+epoch=2/3 batch=1380/2250 loss=0.128417 lr=0.00007863
+epoch=2/3 batch=1400/2250 loss=0.086669 lr=0.00007629
+epoch=2/3 batch=1420/2250 loss=0.062858 lr=0.00007397
+epoch=2/3 batch=1440/2250 loss=0.096232 lr=0.00007168
+validation step=720 val_loss=0.138275 improved=False
+epoch=2/3 batch=1460/2250 loss=0.098694 lr=0.00006942
+epoch=2/3 batch=1480/2250 loss=0.151960 lr=0.00006719
+epoch=2/3 batch=1500/2250 loss=0.156721 lr=0.00006500
+epoch=3/3 batch=1520/2250 loss=0.145055 lr=0.00006284
+validation step=760 val_loss=0.137723 improved=False
+epoch=3/3 batch=1540/2250 loss=0.138919 lr=0.00006072
+epoch=3/3 batch=1560/2250 loss=0.087667 lr=0.00005864
+epoch=3/3 batch=1580/2250 loss=0.115921 lr=0.00005659
+epoch=3/3 batch=1600/2250 loss=0.137286 lr=0.00005459
+validation step=800 val_loss=0.135330 improved=True
+epoch=3/3 batch=1620/2250 loss=0.098425 lr=0.00005263
+epoch=3/3 batch=1640/2250 loss=0.172552 lr=0.00005072
+epoch=3/3 batch=1660/2250 loss=0.205496 lr=0.00004885
+epoch=3/3 batch=1680/2250 loss=0.123246 lr=0.00004703
+validation step=840 val_loss=0.133396 improved=True
+epoch=3/3 batch=1700/2250 loss=0.051061 lr=0.00004526
+epoch=3/3 batch=1720/2250 loss=0.123879 lr=0.00004354
+epoch=3/3 batch=1740/2250 loss=0.235741 lr=0.00004187
+epoch=3/3 batch=1760/2250 loss=0.087639 lr=0.00004025
+validation step=880 val_loss=0.131298 improved=True
+epoch=3/3 batch=1780/2250 loss=0.055276 lr=0.00003869
+epoch=3/3 batch=1800/2250 loss=0.079635 lr=0.00003719
+epoch=3/3 batch=1820/2250 loss=0.237296 lr=0.00003574
+epoch=3/3 batch=1840/2250 loss=0.129359 lr=0.00003435
+validation step=920 val_loss=0.131337 improved=False
+epoch=3/3 batch=1860/2250 loss=0.143038 lr=0.00003302
+epoch=3/3 batch=1880/2250 loss=0.097651 lr=0.00003175
+epoch=3/3 batch=1900/2250 loss=0.104200 lr=0.00003053
+epoch=3/3 batch=1920/2250 loss=0.105352 lr=0.00002939
+validation step=960 val_loss=0.132605 improved=False
+epoch=3/3 batch=1940/2250 loss=0.081270 lr=0.00002830
+epoch=3/3 batch=1960/2250 loss=0.087540 lr=0.00002728
+epoch=3/3 batch=1980/2250 loss=0.246104 lr=0.00002632
+epoch=3/3 batch=2000/2250 loss=0.088449 lr=0.00002543
+validation step=1000 val_loss=0.130878 improved=True
+epoch=3/3 batch=2020/2250 loss=0.068623 lr=0.00002460
+epoch=3/3 batch=2040/2250 loss=0.125440 lr=0.00002384
+epoch=3/3 batch=2060/2250 loss=0.153471 lr=0.00002315
+epoch=3/3 batch=2080/2250 loss=0.243136 lr=0.00002252
+validation step=1040 val_loss=0.132054 improved=False
+epoch=3/3 batch=2100/2250 loss=0.079802 lr=0.00002197
+epoch=3/3 batch=2120/2250 loss=0.086000 lr=0.00002148
+epoch=3/3 batch=2140/2250 loss=0.077642 lr=0.00002106
+epoch=3/3 batch=2160/2250 loss=0.037820 lr=0.00002071
+validation step=1080 val_loss=0.131181 improved=False
+epoch=3/3 batch=2180/2250 loss=0.099081 lr=0.00002043
+epoch=3/3 batch=2200/2250 loss=0.103055 lr=0.00002022
+epoch=3/3 batch=2220/2250 loss=0.109772 lr=0.00002008
+epoch=3/3 batch=2240/2250 loss=0.087269 lr=0.00002001
+validation step=1120 val_loss=0.131870 improved=False
+epoch=3/3 batch=2250/2250 loss=0.103102 lr=0.00002000
+validation step=1125 val_loss=0.131897 improved=False
+TRAINING_COMPLETE best_step=1000 best_val_loss=0.130878 run_dir=/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/runs/formal
+✅ Step 3 完成
+
+================================================================================
+ 全流程结束  2026-09-18 08:37:20
+ 日志: /root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/logs/run_20260918_083424.log
+ 报告: /root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/saturation.md
+================================================================================

@@ -1,0 +1,156 @@
+================================================================================
+ MiniMind 医疗科室分诊 LoRA 云端全流程
+ 工作目录: /root/autodl-tmp/MiniMind-medical
+ Python  : /root/autodl-tmp/MiniMind-medical/.venv/bin/python (Python 3.12.3)
+ 时间    : 2026-09-18 08:37:20
+ 参数    : --step 4
+ 日志    : /root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/logs/run_20260918_083720.log
+================================================================================
+📦 依赖快照与 pip_freeze_20260918_083403.txt 一致，不重复落盘
+
+--------------------------------------------------------------------------------
+▶ Step 4: 正式评测（test 600 题，六类平衡）
+--------------------------------------------------------------------------------
+evaluated=50/600
+evaluated=100/600
+evaluated=150/600
+evaluated=200/600
+evaluated=250/600
+evaluated=300/600
+evaluated=350/600
+evaluated=400/600
+evaluated=450/600
+evaluated=500/600
+evaluated=550/600
+evaluated=600/600
+{
+  "checkpoint": "/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/runs/formal/best_lora.pth",
+  "data": "/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/data/formal/test.jsonl",
+  "samples": 600,
+  "lora_rank": 16,
+  "num_classes": 6,
+  "candidate_scoring_accuracy_mean": 0.7916666666666666,
+  "candidate_scoring_accuracy_sum": 0.7933333333333333,
+  "generation_accuracy": 0.7933333333333333,
+  "scoring_agreement": 0.9816666666666667,
+  "scoring_note": "主指标是 candidate_scoring_accuracy_mean（每 token 平均 log-prob）。六个科室名 token 数不等，求和口径会系统性压低长标签，仅作对照。",
+  "baseline": {
+    "majority_class_accuracy": 0.1667,
+    "random_expected_accuracy": 0.1667,
+    "random_95ci": [
+      0.1368,
+      0.1965
+    ],
+    "min_accuracy_to_beat_random": 0.1965,
+    "beats_random": true,
+    "note": "candidate_scoring_accuracy_mean 需高于 min_accuracy_to_beat_random 才算显著优于随机；不要直接与 1/6 比较。"
+  },
+  "format_compliance_rate": 1.0,
+  "macro_f1": 0.792329817566468,
+  "confusion_matrix": {
+    "内科": {
+      "内科": 70,
+      "外科": 9,
+      "妇产科": 4,
+      "儿科": 10,
+      "肿瘤科": 5,
+      "男科": 2
+    },
+    "外科": {
+      "内科": 23,
+      "外科": 61,
+      "妇产科": 4,
+      "儿科": 1,
+      "肿瘤科": 6,
+      "男科": 5
+    },
+    "妇产科": {
+      "内科": 5,
+      "外科": 3,
+      "妇产科": 88,
+      "儿科": 1,
+      "肿瘤科": 2,
+      "男科": 1
+    },
+    "儿科": {
+      "内科": 13,
+      "外科": 2,
+      "妇产科": 5,
+      "儿科": 79,
+      "肿瘤科": 1,
+      "男科": 0
+    },
+    "肿瘤科": {
+      "内科": 8,
+      "外科": 1,
+      "妇产科": 4,
+      "儿科": 0,
+      "肿瘤科": 86,
+      "男科": 1
+    },
+    "男科": {
+      "内科": 1,
+      "外科": 6,
+      "妇产科": 1,
+      "儿科": 1,
+      "肿瘤科": 0,
+      "男科": 91
+    }
+  },
+  "predicted_label_distribution": {
+    "内科": 120,
+    "外科": 82,
+    "妇产科": 106,
+    "儿科": 92,
+    "肿瘤科": 100,
+    "男科": 100
+  },
+  "generation_predictions": {
+    "内科": 128,
+    "外科": 83,
+    "妇产科": 98,
+    "儿科": 93,
+    "肿瘤科": 97,
+    "男科": 101
+  },
+  "per_class": {
+    "内科": {
+      "precision": 0.5833333333333334,
+      "recall": 0.7,
+      "f1": 0.6363636363636365
+    },
+    "外科": {
+      "precision": 0.7439024390243902,
+      "recall": 0.61,
+      "f1": 0.6703296703296703
+    },
+    "妇产科": {
+      "precision": 0.8301886792452831,
+      "recall": 0.88,
+      "f1": 0.8543689320388349
+    },
+    "儿科": {
+      "precision": 0.8586956521739131,
+      "recall": 0.79,
+      "f1": 0.8229166666666666
+    },
+    "肿瘤科": {
+      "precision": 0.86,
+      "recall": 0.86,
+      "f1": 0.8599999999999999
+    },
+    "男科": {
+      "precision": 0.91,
+      "recall": 0.91,
+      "f1": 0.91
+    }
+  }
+}
+EVALUATION_COMPLETE output=/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/runs/formal/eval_formal.json
+✅ Step 4 完成
+
+================================================================================
+ 全流程结束  2026-09-18 08:38:17
+ 日志: /root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/logs/run_20260918_083720.log
+ 报告: /root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/saturation.md
+================================================================================

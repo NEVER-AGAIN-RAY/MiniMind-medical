@@ -1,0 +1,67 @@
+{
+  "status": "complete",
+  "mode": "formal",
+  "created_at": "2026-09-18T08:53:54.885507",
+  "elapsed_seconds": 18.0,
+  "train_samples": 1200,
+  "val_samples": 600,
+  "train_label_distribution": {
+    "内科": 200,
+    "外科": 200,
+    "妇产科": 200,
+    "儿科": 200,
+    "肿瘤科": 200,
+    "男科": 200
+  },
+  "val_label_distribution": {
+    "内科": 100,
+    "外科": 100,
+    "妇产科": 100,
+    "儿科": 100,
+    "肿瘤科": 100,
+    "男科": 100
+  },
+  "hyperparameters": {
+    "epochs": 3,
+    "batch_size": 16,
+    "learning_rate": 0.0008,
+    "weight_decay": 0.01,
+    "accumulation_steps": 2,
+    "grad_clip": 1.0,
+    "log_interval": 20,
+    "val_interval": 40,
+    "dtype": "bfloat16"
+  },
+  "lora_rank": 16,
+  "trainable_params": 393216,
+  "initial_val_loss": 3.098687270591999,
+  "best_val_loss": 0.1879638591305963,
+  "best_step": 114,
+  "history": [
+    {
+      "step": 0,
+      "val_loss": 3.098687270591999
+    },
+    {
+      "step": 40,
+      "val_loss": 0.24147359650710534
+    },
+    {
+      "step": 80,
+      "val_loss": 0.20285336921954977
+    },
+    {
+      "step": 114,
+      "val_loss": 0.1879638591305963
+    }
+  ],
+  "base_weight": {
+    "path": "/root/autodl-tmp/MiniMind-medical/out/full_sft_768.pth",
+    "md5": "942a011c4b3868f6e17d7ba7d5bdc08a"
+  },
+  "train_data_path": "/root/autodl-tmp/MiniMind-medical/experiments/lora_triage_20260917/data/scale/train_1200.jsonl",
+  "train_data_md5": "613ea4fb0785e705d315a8507bcd018c",
+  "val_data_md5": "2078cc4076ed5f7ed1412177ffc1861b",
+  "best_lora_md5": "565ed3c51d5da4c2d8b5c5786cc683e2",
+  "final_lora_md5": "23cb8225f81822267d97df295e510ae8"
+}
