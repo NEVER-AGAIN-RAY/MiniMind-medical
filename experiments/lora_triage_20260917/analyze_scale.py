@@ -23,11 +23,25 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 RUNS = HERE / "runs"
 
+SCALE_SIZES = [600, 1200, 2400, 4800, 9600]
+
 # (运行目录, 训练条数, 备注)
-POINTS = [
-    ("scale_600", 600, ""), ("scale_1200", 1200, ""), ("scale_2400", 2400, ""),
-    ("scale_4800", 4800, ""), ("scale_9600", 9600, ""), ("formal", 12000, "正式训练集"),
-]
+POINTS = [(f"scale_{n}", n, "") for n in SCALE_SIZES] + [("formal", 12000, "正式训练集")]
+
+
+def curve_points(lr_tag: str | None):
+    """lr_tag 为空时是 run_cloud.sh 跑的 lr 2e-4 原始曲线；否则是 run_scale_lr.sh
+    在指定学习率下重跑的曲线。重跑曲线的 12000 点直接复用 run_lr_check.sh 的
+    runs/lr_<tag>——同样的数据同样的轮数，没有理由再训一遍。"""
+    if not lr_tag:
+        return POINTS
+    return [(f"scale_{n}_lr{lr_tag}", n, "") for n in SCALE_SIZES] + \
+           [(f"lr_{lr_tag}", 12000, "正式训练集")]
+
+
+def lr_display(lr_tag: str) -> str:
+    """运行目录里的 tag 写法（8e4 / 16e4）还原成学习率（8e-4 / 16e-4）。"""
+    return lr_tag.replace("e4", "e-4")
 ALPHA = 0.05
 PRIMARY = "candidate_scoring_accuracy_mean"
 
@@ -42,9 +56,9 @@ RANK_POINTS = [("rank_64", 64), ("rank_128", 128)]
 LR_POINTS = [("lr_4e4", "4e-4（2×）"), ("lr_8e4", "8e-4（4×）")]
 
 
-def load(directory: str):
-    evaluation = RUNS / directory / "eval_formal.json"
-    summary = RUNS / directory / "train_summary.json"
+def load(directory: str, root: Path = RUNS):
+    evaluation = root / directory / "eval_formal.json"
+    summary = root / directory / "train_summary.json"
     if not evaluation.exists() or not summary.exists():
         return None
     payload = json.loads(evaluation.read_text(encoding="utf-8"))
@@ -72,16 +86,35 @@ def mcnemar(a: dict, b: dict) -> tuple[int, int, float]:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="科室分诊规模曲线饱和分析")
-    parser.add_argument("--output", type=Path, default=HERE / "saturation.md")
+    parser.add_argument("--output", type=Path, default=None)
+    parser.add_argument(
+        "--runs-dir", type=Path, default=RUNS, metavar="DIR",
+        help="重跑曲线的产物目录（默认 runs/）。与原曲线不在同一台机器上跑时用它分开存放，"
+             "对照一节的 lr 2e-4 基线始终取自 runs/",
+    )
+    parser.add_argument(
+        "--curve-lr", default=None, metavar="TAG",
+        help="分析 run_scale_lr.sh 在指定学习率下重跑的曲线（如 8e4）；默认分析 lr 2e-4 的原始曲线",
+    )
     args = parser.parse_args()
+    if args.output is None:
+        args.output = HERE / (f"saturation_lr{args.curve_lr}.md" if args.curve_lr
+                              else "saturation.md")
 
-    loaded = [(d, n, note, load(d)) for d, n, note in POINTS]
+    curve_root = args.runs_dir if args.curve_lr else RUNS
+    loaded = [(d, n, note, load(d, curve_root)) for d, n, note in curve_points(args.curve_lr)]
     available = [(d, n, note, data) for d, n, note, data in loaded if data]
     if len(available) < 2:
-        raise SystemExit("可用的评测产物不足两个，先跑 run_cloud.sh")
+        raise SystemExit(
+            f"可用的评测产物不足两个，先跑 run_scale_lr.sh --lr {lr_display(args.curve_lr)}"
+            if args.curve_lr else "可用的评测产物不足两个，先跑 run_cloud.sh")
 
     threshold = available[-1][3]["report"]["baseline"]["min_accuracy_to_beat_random"]
-    lines = ["# 科室分诊规模曲线饱和分析", "",
+    lr_label = lr_display(args.curve_lr) if args.curve_lr else "2e-4"
+    heading = f"# 科室分诊规模曲线饱和分析（lr {lr_label}）"
+    intro = ([f"本曲线在 **lr {lr_label}** 下重跑，用于检验原曲线「9600 条饱和」这个结论",
+              "有多少是 lr 2e-4 欠训练造成的假象。", ""] if args.curve_lr else [])
+    lines = [heading, ""] + intro + [
              "六类平衡，随机基线 1/6；各点评测同一批 600 道题，用 McNemar 配对检验。",
              f"判定「优于随机」所需准确率 > {threshold}。", "",
              "## 各点结果", "",
@@ -107,10 +140,39 @@ def main() -> None:
 
     best = max(available, key=lambda item: item[3]["accuracy"])
     first_flat = next((a for a, b, sig in verdicts if not sig), None)
+    # 显著性沿曲线不一定单调：lr 8e-4 下 2400→4800 不显著，4800→9600 又显著了。
+    # 这种情况下「第一个不显著的相邻步」不是饱和点——真正的饱和点是最后一次
+    # 显著提升的终点，此后才是再加数据也不动的那一段。
+    significant_steps = [(a, b) for a, b, sig in verdicts if sig]
+    first_flat_point = first_flat
+    first_flat = significant_steps[-1][1] if significant_steps and first_flat else first_flat
+    irregular = bool(significant_steps) and first_flat_point is not None \
+        and any(a >= first_flat_point for a, _ in significant_steps)
     lines += ["", "## 结论", ""]
-    if first_flat is None:
+    if first_flat_point is None:
         lines += [f"到 {available[-1][1]} 条为止每一步提升都显著，**尚未饱和**。"
                   "语料还有 79 万条，曲线仍有上探空间——继续加数据是有收益的。"]
+    elif args.curve_lr:
+        lines += [
+            f"提升在 **{first_flat} 条**处止步，此后每一步都无法通过显著性检验。",
+            "",
+            f"准确率天花板约 {best[3]['accuracy']:.2%}（{best[1]} 条）。",
+            "",
+        ]
+        if irregular:
+            lines += [
+                f"⚠️ **显著性沿曲线并不单调**：{first_flat_point} → "
+                f"{next(b for a, b, _ in verdicts if a == first_flat_point)} 这一步不显著，"
+                f"但再往后又出现了显著提升。因此饱和点取的是**最后一次显著提升的终点"
+                f"（{first_flat} 条）**，而不是第一个不显著的点——n=600 时单步的抽样噪声"
+                "足以让曲线中段出现一个假平台。",
+                "",
+            ]
+        lines += [
+            f"**这个饱和点是在调好的学习率（{lr_label}）下测的**，因此不再有"
+            "「平台期其实是欠训练」这个替代解释——原曲线 lr 2e-4 下的 9600 条饱和点"
+            "当初正是栽在这一条上。逐点对照见下一节。",
+        ]
     else:
         anchor_rank = available[-1][3]["summary"].get("lora_rank", "（未记录）")
         lines += [
@@ -134,6 +196,42 @@ def main() -> None:
             "",
             f"下一步应当在 {best[1]} 条上重跑一个高 rank 点，才能把这两者分开。",
         ]
+
+    # ---- 与 lr 2e-4 原曲线的逐点对照（仅重跑曲线）----
+    if args.curve_lr:
+        baseline = [(n, load(d)) for d, n, _ in POINTS]
+        baseline = {n: data for n, data in baseline if data}
+        paired = [(n, baseline[n], data) for _, n, _, data in available if n in baseline]
+        if paired:
+            lines += ["", "## 与 lr 2e-4 原曲线的逐点对照", "",
+                      f"同样的训练子集、同样的 600 道测试题，只改学习率（2e-4 → {lr_label}）。",
+                      "",
+                      "| 训练条数 | lr 2e-4 | " + f"lr {lr_label}" + " | 差值 | p |",
+                      "| --- | --- | --- | --- | --- |"]
+            gains = []
+            for n, old, new in paired:
+                _, _, p_value = mcnemar(old["correct"], new["correct"])
+                delta = new["accuracy"] - old["accuracy"]
+                gains.append((n, delta, p_value))
+                mark = "✅" if p_value < ALPHA and delta > 0 else (
+                    "⚠️" if p_value < ALPHA else "—")
+                lines.append(f"| {n} | {old['accuracy']:.4f} | {new['accuracy']:.4f} | "
+                             f"{delta:+.4f} | {p_value:.4f} {mark} |")
+            lifted = [n for n, delta, p_value in gains if p_value < ALPHA and delta > 0]
+            lines += [""]
+            if lifted:
+                lines += [
+                    f"**整条曲线被抬高**：{len(lifted)}/{len(gains)} 个规模点显著提升"
+                    f"（{'、'.join(f'{n} 条' for n in lifted)}）。",
+                    "",
+                    "换句话说，原曲线上「加数据不再有收益」的那段平台期，"
+                    "有一部分收益其实一直躺在学习率里没被取走。",
+                ]
+            else:
+                lines += [
+                    "**没有任何一个规模点被显著抬高。** 提高学习率在 12000 条上的收益"
+                    "没有推广到更小的训练集——值得单独查一下小样本点是否欠训练轮数不足。",
+                ]
 
     # ---- 适配器容量检验 ----
     anchor_data = next((d for name, _, _, d in available if name == RANK_ANCHOR[0]), None)

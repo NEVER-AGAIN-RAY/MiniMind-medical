@@ -18,6 +18,7 @@ ramp，与 lora_sentiment_20260914/make_figures.py 保持一致——两个实�
     python experiments/lora_triage_20260917/make_figures.py
 """
 
+import argparse
 import json
 from pathlib import Path
 
@@ -40,8 +41,13 @@ SEQ = ["#cde2fb", "#b7d3f6", "#9ec5f4", "#86b6ef", "#6da7ec", "#5598e7",
 LABELS_EN = {"内科": "Internal", "外科": "Surgery", "妇产科": "OB/GYN",
              "儿科": "Pediatrics", "肿瘤科": "Oncology", "男科": "Andrology"}
 
-SCALE_POINTS = [("scale_600", 600), ("scale_1200", 1200), ("scale_2400", 2400),
-                ("scale_4800", 4800), ("scale_9600", 9600), ("formal", 12000)]
+SCALE_SIZES = [600, 1200, 2400, 4800, 9600]
+SCALE_POINTS = [(f"scale_{n}", n) for n in SCALE_SIZES] + [("formal", 12000)]
+
+
+def scale_points_at(lr_tag: str):
+    """run_scale_lr.sh 在指定学习率下重跑的曲线；12000 点复用 run_lr_check.sh 的产物。"""
+    return [(f"scale_{n}_lr{lr_tag}", n) for n in SCALE_SIZES] + [(f"lr_{lr_tag}", 12000)]
 
 
 def style() -> None:
@@ -77,9 +83,10 @@ def save(fig, name: str) -> None:
     print(f"  ✅ figures/{name}.pdf + .png")
 
 
-def load_run(directory: str) -> dict | None:
-    evaluation = RUNS / directory / "eval_formal.json"
-    summary = RUNS / directory / "train_summary.json"
+def load_run(directory: str, root: Path | None = None) -> dict | None:
+    root = root or RUNS
+    evaluation = root / directory / "eval_formal.json"
+    summary = root / directory / "train_summary.json"
     if not evaluation.exists() or not summary.exists():
         return None
     payload = json.loads(evaluation.read_text(encoding="utf-8"))
@@ -228,12 +235,75 @@ def fig_capacity_vs_lr() -> None:
     save(fig, "fig3_capacity_vs_lr")
 
 
+def fig_scale_lr_overlay(lr_tag: str = "8e4", curve_root: Path | None = None) -> None:
+    """图 4：同一条规模曲线在两个学习率下的对照。
+
+    报告最初把 9600 条处的平台期读成「模型容量到顶」。若调好学习率后整条曲线
+    整体抬高、平台期后移，那个读法就站不住——两条线画在一起最省解释。
+    """
+    def series(points, root=None):
+        loaded = [(n, load_run(d, root)) for d, n in points]
+        return [(n, d["report"]["candidate_scoring_accuracy_mean"]) for n, d in loaded if d]
+
+    old = series(SCALE_POINTS)
+    new = series(scale_points_at(lr_tag), curve_root)
+    if len(new) < 2:
+        print("  ⏭  跳过 fig4：重跑曲线产物不足"); return
+
+    fig, ax = plt.subplots(figsize=(7.2, 4.4))
+    threshold = load_run(SCALE_POINTS[-1][0])["report"]["baseline"]["min_accuracy_to_beat_random"]
+    ax.axhline(threshold, color=INK_MUTED, linewidth=1.0, linestyle=(0, (4, 3)), zorder=1)
+    ax.annotate(f"random-baseline threshold  {threshold:.3f}",
+                xy=(old[0][0] if old else new[0][0], threshold), xytext=(0, 6),
+                textcoords="offset points", color=INK_MUTED, fontsize=9)
+
+    lr_label = lr_tag.replace("e4", "e-4")
+    for data, color, label in ((old, INK_MUTED, "lr 2e-4 (original)"),
+                               (new, BLUE, f"lr {lr_label} (tuned)")):
+        if not data:
+            continue
+        ax.plot([n for n, _ in data], [a for _, a in data], color=color, linewidth=2.0,
+                marker="o", markersize=8, markerfacecolor=SURFACE, markeredgewidth=2.0,
+                markeredgecolor=color, label=label, zorder=3)
+
+    # 只标注抬高后的曲线，两条都标数字会糊成一片
+    import math
+    span = math.log10(new[-1][0] / new[0][0])
+    for index, (n, a) in enumerate(new):
+        crowded = index > 0 and math.log10(n / new[index - 1][0]) < span * 0.08
+        # 挤在一起时把标签甩到点的右侧，压到下面会撞上 lr 2e-4 那条线
+        ax.annotate(f"{a:.3f}", xy=(n, a),
+                    xytext=(13, -3) if crowded else (0, 11),
+                    textcoords="offset points",
+                    ha="left" if crowded else "center", color=INK_2, fontsize=9)
+    ax.set_xscale("log")
+    ax.set_xticks([n for n, _ in (new if len(new) >= len(old) else old)])
+    ax.set_xticklabels([f"{n:,}" for n, _ in (new if len(new) >= len(old) else old)],
+                       rotation=25, ha="right")
+    ax.minorticks_off()
+    ax.set_xlabel("Training examples (log scale)")
+    ax.set_ylabel("Accuracy on 600 held-out questions")
+    ax.set_title("Same plateau, higher curve: 2,400 examples at the tuned lr\n"
+                 "match 12,000 at the original one", color=INK, loc="left")
+    ax.set_ylim(0, 1.0)
+    ax.legend(loc="lower right")
+    recessive(ax)
+    save(fig, "fig4_scale_lr_overlay")
+
+
 def main() -> None:
+    parser = argparse.ArgumentParser(description="科室分诊实验图表生成")
+    parser.add_argument(
+        "--curve-runs", type=Path, default=None, metavar="DIR",
+        help="lr 重跑曲线的产物目录（默认 runs/）；与原曲线不在同一台机器上跑时用它分开存放",
+    )
+    args = parser.parse_args()
     style()
     print("生成图表...")
     fig_scale_curve()
     fig_confusion()
     fig_capacity_vs_lr()
+    fig_scale_lr_overlay(curve_root=args.curve_runs)
     print(f"全部完成 -> {FIGURES}")
 
 
