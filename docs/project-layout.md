@@ -34,6 +34,14 @@ Some apparent duplicates are intentional:
   eight of those snapshots were byte-identical, so they were collapsed into a
   single `pip_freeze_all_runs_20260910.txt` that describes the environment of
   every run in that directory.
+- `experiments/lora_triage_20260917/runs_3090/` and `logs_3090/` are a second
+  hardware generation of that experiment's `runs/` and `logs/`, not a backup. The
+  learning-rate re-run of the scale curve was executed on an RTX 3090 while the
+  original curve came from an RTX 3080 Ti, so the two sets are kept apart to keep
+  "which numbers came from the same machine" answerable. The re-run reproduces the
+  original anchor first (0.7917 vs 0.7900, one question out of 600) to license
+  comparing across the two. Use `analyze_scale.py --runs-dir` to point the analysis
+  at a non-default set; its lr 2e-4 baseline column always reads from `runs/`.
 - `experiments/lora_intro_20260909/data/` no longer stores its two input files.
   Both were byte-identical to copies already in the repository, so they were
   replaced by `data/MANIFEST.json`, which records each file's `sha256` and the

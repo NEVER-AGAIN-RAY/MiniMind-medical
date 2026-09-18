@@ -175,6 +175,10 @@ prompt/target 构建、**长度预算按最长标签核算**、数据集的监�
 bash experiments/lora_triage_20260917/run_rank_check.sh   # rank 64 / 128
 bash experiments/lora_triage_20260917/run_lr_check.sh     # lr 4e-4 / 8e-4
 python experiments/lora_triage_20260917/analyze_scale.py  # 生成 saturation.md
+
+# 学习率定下来之后，整条规模曲线在新学习率下重跑（12000 点复用 run_lr_check.sh 的产物）
+bash experiments/lora_triage_20260917/run_scale_lr.sh --lr 0.0008
+python experiments/lora_triage_20260917/analyze_scale.py --curve-lr 8e4 --runs-dir runs_3090
 ```
 
 规模曲线在 9600 条处饱和，而语料还剩 98%——很容易据此写下「天花板来自模型容量」。
@@ -187,6 +191,14 @@ python experiments/lora_triage_20260917/analyze_scale.py  # 生成 saturation.md
 结果：**rank 16 + lr 8e-4 = 0.8333**，与 rank 64（1.57M 参数）无显著差异，参数量只有 1/4。
 瓶颈是一个没调过的超参数，不是容量。详见 [REPORT.md §3.3](REPORT.md)。
 
+`run_scale_lr.sh` 是这条链的最后一环：学习率既然被证明偏低，原来那条曲线上的每一个点
+都是在欠训练状态下测的。重跑的结论一分为二——**六个点全部被显著抬高，但饱和点没有移动**
+（仍在 9600 条）。详见 [REPORT.md §3.4](REPORT.md) 与 [saturation_lr8e4.md](saturation_lr8e4.md)。
+
+产物放在 `runs_3090/` 而不是 `runs/`：这一批跑在另一块显卡上，混在一起就查不出
+「哪些数字来自同一台机器」了。`analyze_scale.py --runs-dir` 就是为此存在——
+对照一节的 lr 2e-4 基线始终取自 `runs/`，重跑曲线取自指定目录。
+
 ## 当前状态
 
 - ✅ 原始语料已下载并校验 sha256（370MB，不入库）
@@ -196,4 +208,8 @@ python experiments/lora_triage_20260917/analyze_scale.py  # 生成 saturation.md
 - ✅ 云端全流程已跑完（RTX 3080 Ti，约 15 分钟）
 - ✅ 正式评测 **准确率 0.7900**（rank 16, lr 2e-4），规模曲线在 9600 条饱和
 - ✅ 对照实验：**rank 16 + lr 8e-4 达到 0.8333**，瓶颈是学习率而非容量
-- ⚠️ 规模曲线全程使用 lr 2e-4，「9600 条饱和」需在调好的学习率下重跑才算数
+- ✅ lr 上界已兜住：8e-4 之后走平（1.6e-3 = 0.8250，3.2e-3 = 0.8283），8e-4 在拐点上
+- ✅ 规模曲线已在 lr 8e-4 下重跑（RTX 3090，产物在 `runs_3090/`）：
+  **六个点全部显著抬高，饱和点仍在 9600 条**——被推翻的是天花板的高度，不是位置
+- ✅ 跨硬件锚点复现：12000 条 @ 2e-4 在 3090 上得 0.7917，与 3080 Ti 的 0.7900 差 1/600 题
+- ⚠️ 最优学习率与数据量之间是否有交互作用未测（lr 扫描全部在 12000 条上做）
